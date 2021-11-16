@@ -136,16 +136,15 @@ displacement operator:
  .. code-block:: none
 
     Available inputs:
-         -   read_cyclic : Enum Dataprocessing::Ecyclicreading, int, optional
-             If 0 cyclic symmetry is ignored, if 1 cyclic sector is read, if 2
-             cyclic expansion is done, if 3 cyclic expansion is done and stages are
-             merged (default is 1)
+         -   bool_rotate_to_global : bool, optional
+             If true the field is rotated to global coordinate system (default
+             true)               
                              
          -   data_sources : DataSources
              Result file path container, used if no streams are set
                              
-         -   fields_container : FieldsContainer, optional
-             Fields container already allocated modified inplace
+         -   mesh : MeshedRegion, MeshesContainer, optional
+             Prevents from reading the mesh in the result files
                              
          -   mesh_scoping : ScopingsContainer, Scoping, optional
              Nodes or elements scoping requiered in output. the scoping's location
@@ -157,15 +156,16 @@ displacement operator:
              scoping) or time/freq step ids (use scoping with timefreq_steps
              location) requiered in output
                              
-         -   mesh : MeshedRegion, MeshesContainer, optional
-             Prevents from reading the mesh in the result files
-                             
          -   streams_container : StreamsContainer, optional
              Result file container allowed to be kept open to cache data
                              
-         -   bool_rotate_to_global : bool, optional
-             If true the field is rotated to global coordinate system (default
-             true)               
+         -   fields_container : FieldsContainer, optional
+             Fields container already allocated modified inplace
+                             
+         -   read_cyclic : Enum Dataprocessing::Ecyclicreading, int, optional
+             If 0 cyclic symmetry is ignored, if 1 cyclic sector is read, if 2
+             cyclic expansion is done, if 3 cyclic expansion is done and stages are
+             merged (default is 1)
                              
 
     Available outputs:
@@ -329,10 +329,9 @@ Plot the displacement:
 
 
 
-.. image-sg:: /examples/00-basic/images/sphx_glr_01-basic_operators_001.png
-   :alt: 01 basic operators
-   :srcset: /examples/00-basic/images/sphx_glr_01-basic_operators_001.png
-   :class: sphx-glr-single-img
+.. image:: /examples/00-basic/images/sphx_glr_01-basic_operators_001.png
+    :alt: 01 basic operators
+    :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -377,7 +376,7 @@ datasources object directly. The ``DataSources`` constructor input is a path.
 
  .. code-block:: none
 
-    c:\hostedtoolcache\windows\python\3.8.10\x64\lib\site-packages\ansys\dpf\core\examples\static.rst
+    C:\ProgramData\Anaconda3\lib\site-packages\ansys\dpf\core\examples\static.rst
 
 
 
@@ -434,7 +433,7 @@ Get the output and print the result data:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.271 seconds)
+   **Total running time of the script:** ( 0 minutes  1.158 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_01-basic_operators.py:

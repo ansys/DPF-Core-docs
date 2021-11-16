@@ -177,23 +177,20 @@ Specify to the result that you want to work on a specific named selection:
 
     *
 
-      .. image-sg:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_001.png
+      .. image:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_001.png
           :alt: 06 use result helpers
-          :srcset: /examples/00-basic/images/sphx_glr_06-use_result_helpers_001.png
           :class: sphx-glr-multi-img
 
     *
 
-      .. image-sg:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_002.png
+      .. image:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_002.png
           :alt: 06 use result helpers
-          :srcset: /examples/00-basic/images/sphx_glr_06-use_result_helpers_002.png
           :class: sphx-glr-multi-img
 
     *
 
-      .. image-sg:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_003.png
+      .. image:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_003.png
           :alt: 06 use result helpers
-          :srcset: /examples/00-basic/images/sphx_glr_06-use_result_helpers_003.png
           :class: sphx-glr-multi-img
 
 
@@ -225,23 +222,20 @@ Specify to the result that you want to work on specific nodes:
 
     *
 
-      .. image-sg:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_004.png
+      .. image:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_004.png
           :alt: 06 use result helpers
-          :srcset: /examples/00-basic/images/sphx_glr_06-use_result_helpers_004.png
           :class: sphx-glr-multi-img
 
     *
 
-      .. image-sg:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_005.png
+      .. image:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_005.png
           :alt: 06 use result helpers
-          :srcset: /examples/00-basic/images/sphx_glr_06-use_result_helpers_005.png
           :class: sphx-glr-multi-img
 
     *
 
-      .. image-sg:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_006.png
+      .. image:: /examples/00-basic/images/sphx_glr_06-use_result_helpers_006.png
           :alt: 06 use result helpers
-          :srcset: /examples/00-basic/images/sphx_glr_06-use_result_helpers_006.png
           :class: sphx-glr-multi-img
 
 
@@ -251,7 +245,7 @@ Specify to the result that you want to work on specific nodes:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.007 seconds)
+   **Total running time of the script:** ( 0 minutes  4.903 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_06-use_result_helpers.py:

@@ -1,4 +1,2 @@
 ansys namespace
 ===============
-
-.. py:module:: ansys

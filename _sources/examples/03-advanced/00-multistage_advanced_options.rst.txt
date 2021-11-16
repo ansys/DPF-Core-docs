@@ -217,10 +217,9 @@ plot the expanded result on the expanded mesh
 
 
 
-.. image-sg:: /examples/03-advanced/images/sphx_glr_00-multistage_advanced_options_001.png
-   :alt: 00 multistage advanced options
-   :srcset: /examples/03-advanced/images/sphx_glr_00-multistage_advanced_options_001.png
-   :class: sphx-glr-single-img
+.. image:: /examples/03-advanced/images/sphx_glr_00-multistage_advanced_options_001.png
+    :alt: 00 multistage advanced options
+    :class: sphx-glr-single-img
 
 
 
@@ -249,10 +248,9 @@ Choose to expand only some sectors for the mesh
 
 
 
-.. image-sg:: /examples/03-advanced/images/sphx_glr_00-multistage_advanced_options_002.png
-   :alt: 00 multistage advanced options
-   :srcset: /examples/03-advanced/images/sphx_glr_00-multistage_advanced_options_002.png
-   :class: sphx-glr-single-img
+.. image:: /examples/03-advanced/images/sphx_glr_00-multistage_advanced_options_002.png
+    :alt: 00 multistage advanced options
+    :class: sphx-glr-single-img
 
 
 
@@ -317,7 +315,7 @@ Check results precisely
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.497 seconds)
+   **Total running time of the script:** ( 0 minutes  2.004 seconds)
 
 
 .. _sphx_glr_download_examples_03-advanced_00-multistage_advanced_options.py:

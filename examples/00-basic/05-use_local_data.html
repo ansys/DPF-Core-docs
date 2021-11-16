@@ -4,12 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bring a Field’s Data Locally to Improve Performance &#8212; PyDPF-Core 0.3.2 documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -24,13 +23,13 @@
 
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -42,10 +41,7 @@
     <link rel="next" title="Load Plugin" href="06-load_plugin.html" />
     <link rel="prev" title="Write/Load and Upload/Download a Result File" href="04-basic-load-file.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -61,87 +57,63 @@
 
 <div class="container-xl">
 
-  <div id="navbar-start">
+    <a class="navbar-brand" href="../../index.html">
     
+      <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
     
-
-<a class="navbar-brand" href="https://dpfdocs.pyansys.com/">
-  <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo">
-</a>
-
-
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" >
+        <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+      </span>
+    </button>
     
-  </div>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon" >
-      <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-    </span>
-  </button>
-
-  
-  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
-    <div id="navbar-center" class="mr-auto">
-      
-      <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../getting_started/index.html">
-  Getting Started
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../user_guide/index.html">
-  User Guide
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../operator_reference.html">
-  Operators
- </a>
-</li>
-
-<li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../index.html">
-  Examples
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../contributing.html">
-  Contributing
- </a>
-</li>
-
-    
-</ul>
-      </div>
-      
-    </div>
-
-    <div id="navbar-end">
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../getting_started/index.html">Getting Started</a>
         </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../api/index.html">APIs</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../operator_reference.html">Operators</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../contributing.html">Contributing</a>
+        </li>
+        
+        
       </ul>
-      </div>
+
+
       
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/DPF-Core" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square" style="font-size:24px"></i></span>
+            </a>
+          </li>
+        
+        
+        
+      </ul>
     </div>
-  </div>
 </div>
     </nav>
     
@@ -394,7 +366,7 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-00-basic-05-use-local-data-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="bring-a-field-s-data-locally-to-improve-performance">
+<div class="sphx-glr-example-title section" id="bring-a-field-s-data-locally-to-improve-performance">
 <span id="ref-use-local-data-example"></span><span id="sphx-glr-examples-00-basic-05-use-local-data-py"></span><h1>Bring a Field’s Data Locally to Improve Performance<a class="headerlink" href="#bring-a-field-s-data-locally-to-improve-performance" title="Permalink to this headline">¶</a></h1>
 <p>Reducing the number of calls to the server is key to improving
 performance. Using the <code class="docutils literal notranslate"><span class="pre">as_local_field</span></code> option brings the data
@@ -442,8 +414,8 @@ Cumulative     Frequency (Hz) LoadStep       Substep        Harmonic index
 6              928.278013     1              6              0.000000
 </pre></div>
 </div>
-</section>
-<section id="create-the-workflow">
+</div>
+<div class="section" id="create-the-workflow">
 <h1>Create the Workflow<a class="headerlink" href="#create-the-workflow" title="Permalink to this headline">¶</a></h1>
 <p>Maximum principal stress usually occurs on the skin of the
 model. Computing results only on this skin reduces the data size.</p>
@@ -458,7 +430,8 @@ model. Computing results only on this skin reduces the data size.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">skin_mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_05-use_local_data_001.png" srcset="../../_images/sphx_glr_05-use_local_data_001.png" alt="05 use local data" class = "sphx-glr-single-img"/><p>Compute the stress principal inveriants on the skin nodes only:</p>
+<img alt="05 use local data" class="sphx-glr-single-img" src="../../_images/sphx_glr_05-use_local_data_001.png" />
+<p>Compute the stress principal inveriants on the skin nodes only:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stress_op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">stress</span><span class="p">(</span><span class="n">data_sources</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">data_sources</span><span class="p">)</span>
 <span class="n">stress_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">requested_location</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">locations</span><span class="o">.</span><span class="n">nodal</span><span class="p">)</span>
 <span class="n">stress_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">mesh_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">skin_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">nodes_mesh_scoping</span><span class="p">)</span>
@@ -470,8 +443,8 @@ model. Computing results only on this skin reduces the data size.</p>
 <span class="n">principal_stress_3</span> <span class="o">=</span> <span class="n">principal_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">fields_eig_3</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
-</section>
-<section id="manipulate-data-locally">
+</div>
+<div class="section" id="manipulate-data-locally">
 <h1>Manipulate Data Locally<a class="headerlink" href="#manipulate-data-locally" title="Permalink to this headline">¶</a></h1>
 <p>This example goes over the fields, keeping the largest invariant value
 by node if the averaged value of invariants is large enough.
@@ -496,15 +469,16 @@ Exploring data allows you to customize it to meet your needs.</p>
                         <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="plot-result-field">
+</div>
+<div class="section" id="plot-result-field">
 <h1>Plot Result Field<a class="headerlink" href="#plot-result-field" title="Permalink to this headline">¶</a></h1>
 <p>Plot the result field on the skin mesh:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">skin_mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">field_to_keep</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_05-use_local_data_002.png" srcset="../../_images/sphx_glr_05-use_local_data_002.png" alt="05 use local data" class = "sphx-glr-single-img"/></section>
-<section id="plot-initial-invariants">
+<img alt="05 use local data" class="sphx-glr-single-img" src="../../_images/sphx_glr_05-use_local_data_002.png" />
+</div>
+<div class="section" id="plot-initial-invariants">
 <h1>Plot Initial Invariants<a class="headerlink" href="#plot-initial-invariants" title="Permalink to this headline">¶</a></h1>
 <p>Plot the initial invariants on the skin mesh:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">skin_mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">principal_stress_1</span><span class="p">)</span>
@@ -513,11 +487,14 @@ Exploring data allows you to customize it to meet your needs.</p>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_05-use_local_data_003.png" srcset="../../_images/sphx_glr_05-use_local_data_003.png" alt="05 use local data" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_05-use_local_data_004.png" srcset="../../_images/sphx_glr_05-use_local_data_004.png" alt="05 use local data" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_05-use_local_data_005.png" srcset="../../_images/sphx_glr_05-use_local_data_005.png" alt="05 use local data" class = "sphx-glr-multi-img"/></li>
+<li><img alt="05 use local data" class="sphx-glr-multi-img" src="../../_images/sphx_glr_05-use_local_data_003.png" />
+</li>
+<li><img alt="05 use local data" class="sphx-glr-multi-img" src="../../_images/sphx_glr_05-use_local_data_004.png" />
+</li>
+<li><img alt="05 use local data" class="sphx-glr-multi-img" src="../../_images/sphx_glr_05-use_local_data_005.png" />
+</li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.878 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.634 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-05-use-local-data-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/588398b53425e5d702dbb6eb2434ee16/05-use_local_data.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">05-use_local_data.py</span></code></a></p>
@@ -527,7 +504,7 @@ Exploring data allows you to customize it to meet your needs.</p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</section>
+</div>
 
 
               </div>
@@ -539,19 +516,20 @@ Exploring data allows you to customize it to meet your needs.</p>
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright (c) 2021 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2021 ANSYS, Inc. All rights reserved.<br/>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
 </p>
     </div>
     

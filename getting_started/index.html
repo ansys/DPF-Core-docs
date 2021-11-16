@@ -4,12 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Getting Started &#8212; PyDPF-Core 0.3.2 documentation</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -24,13 +23,13 @@
 
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -42,10 +41,7 @@
     <link rel="next" title="Using DPF Through Docker" href="docker.html" />
     <link rel="prev" title="PyAnsys DPF-Core" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -61,87 +57,63 @@
 
 <div class="container-xl">
 
-  <div id="navbar-start">
+    <a class="navbar-brand" href="../index.html">
     
+      <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo" />
     
-
-<a class="navbar-brand" href="https://dpfdocs.pyansys.com/">
-  <img src="../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo">
-</a>
-
-
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" >
+        <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+      </span>
+    </button>
     
-  </div>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon" >
-      <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-    </span>
-  </button>
-
-  
-  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
-    <div id="navbar-center" class="mr-auto">
-      
-      <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 current active nav-item">
- <a class="current reference internal nav-link" href="#">
-  Getting Started
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../user_guide/index.html">
-  User Guide
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../operator_reference.html">
-  Operators
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../examples/index.html">
-  Examples
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../contributing.html">
-  Contributing
- </a>
-</li>
-
-    
-</ul>
-      </div>
-      
-    </div>
-
-    <div id="navbar-end">
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Getting Started</a>
         </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../user_guide/index.html">User Guide</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../api/index.html">APIs</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../operator_reference.html">Operators</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../contributing.html">Contributing</a>
+        </li>
+        
+        
       </ul>
-      </div>
+
+
       
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/pyansys/DPF-Core" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square" style="font-size:24px"></i></span>
+            </a>
+          </li>
+        
+        
+        
+      </ul>
     </div>
-  </div>
 </div>
     </nav>
     
@@ -252,18 +224,18 @@
               
               <div>
                 
-  <section id="getting-started">
+  <div class="section" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<section id="architecture">
+<div class="section" id="architecture">
 <h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
 <p>DPF-Core is a Python gRPC client communicating with the <code class="docutils literal notranslate"><span class="pre">Ans.Dpf.Grpc</span></code>
 server. To use the native DPF server, you must have a local installation of
 Ansys 2021 R2.  For more information on getting a licensed copy of Ansys,
 visit the <a class="reference external" href="https://www.ansys.com/">Ansys website</a>.</p>
-</section>
-<section id="installation">
+</div>
+<div class="section" id="installation">
 <span id="basic-gallery"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<section id="installation-with-pip">
+<div class="section" id="installation-with-pip">
 <span id="id1"></span><h3>Installation with PIP<a class="headerlink" href="#installation-with-pip" title="Permalink to this headline">¶</a></h3>
 <p>Once Ansys 2021 R1 or later is installed, you can install the
 DPF-Core module with:</p>
@@ -276,8 +248,8 @@ dependencies.</p>
 network isolation, download the latest release wheel at <a class="reference external" href="https://https://github.com/pyansys/DPF-Core">DPF-Core
 GitHub</a> or from PyPi at
 <a class="reference external" href="https://pypi.org/project/ansys-dpf-core/">DPF-Core PyPi</a></p>
-</section>
-<section id="editable-installation-development-mode">
+</div>
+<div class="section" id="editable-installation-development-mode">
 <h3>Editable Installation (Development Mode)<a class="headerlink" href="#editable-installation-development-mode" title="Permalink to this headline">¶</a></h3>
 <p>If you want to edit and potentially contribute to the DPF-Core
 module, clone the repository and install it using pip with the <code class="docutils literal notranslate"><span class="pre">-e</span></code>
@@ -289,9 +261,9 @@ development flag:</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
-</section>
-</section>
-<section id="tryout-installation">
+</div>
+</div>
+<div class="section" id="tryout-installation">
 <h2>Tryout Installation<a class="headerlink" href="#tryout-installation" title="Permalink to this headline">¶</a></h2>
 <p>For a quick tryout installation, use:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">Model</span>
@@ -330,8 +302,8 @@ Cumulative     Time (s)       LoadStep       Substep
 1              1.000000       1              1
 </pre></div>
 </div>
-</section>
-<section id="dependencies">
+</div>
+<div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
 <p>DPF-Core dependencies are automatically checked when packages are
 installed. The package dependencies are:</p>
@@ -340,8 +312,8 @@ installed. The package dependencies are:</p>
 <li><p><a class="reference external" href="https://pypi.org/project/psutil/">psutil</a></p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/progressbar2/">progressbar2</a></p></li>
 </ul>
-</section>
-<section id="optional-dependencies">
+</div>
+<div class="section" id="optional-dependencies">
 <h2>Optional Dependencies<a class="headerlink" href="#optional-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>Optional package dependencies can be installed for specific usage:</p>
 <ul class="simple">
@@ -349,15 +321,15 @@ installed. The package dependencies are:</p>
 <li><p><a class="reference external" href="https://pypi.org/project/pyvista/">PyVista</a> for 3D plotting</p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/scooby//">Scooby</a> for dependency reports</p></li>
 </ul>
-</section>
-<section id="compatibility">
+</div>
+<div class="section" id="compatibility">
 <h2>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline">¶</a></h2>
 <p>DPF supports Windows 10 and CentOS 7 and later.  For
 more information, see <a class="reference external" href="https://www.ansys.com/solutions/solutions-by-role/it-professionals/platform-support">Ansys Platform Support</a>.</p>
 <p>Other platforms may be supported by using DPF within a
 containerization ecosystem such as Docker or Kubernetes.
 For more information, see <span class="xref std std-ref">docker</span>.</p>
-<section id="client-server-compatibility">
+<div class="section" id="client-server-compatibility">
 <h3>Client Server Compatibility<a class="headerlink" href="#client-server-compatibility" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://pypi.org/project/ansys-grpc-dpf/">ansys.grpc.dpf</a> module should be synchronized
 with the server version as shown here:</p>
@@ -388,9 +360,9 @@ with the server version as shown here:</p>
 <p>Future development will try to ensure backward compatibilty from the client to the server.</p>
 <p>To start a server with Ans.Dpf.Grpc.bat or Ans.Dpf.Grpc.sh (used in the <cite>start_local_server</cite>  function),
 please make sure that the environment variable <cite>AWP_ROOT{VER}</cite> with (VER=212, 221, …) is set.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>
@@ -402,19 +374,20 @@ please make sure that the environment variable <cite>AWP_ROOT{VER}</cite> with (
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright (c) 2021 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2021 ANSYS, Inc. All rights reserved.<br/>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
 </p>
     </div>
     

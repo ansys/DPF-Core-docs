@@ -206,10 +206,9 @@ Add solid elements (linear hexa with eight nodes):
 
 
 
-.. image-sg:: /examples/00-basic/images/sphx_glr_03-create_entities_001.png
-   :alt: 03 create entities
-   :srcset: /examples/00-basic/images/sphx_glr_03-create_entities_001.png
-   :class: sphx-glr-single-img
+.. image:: /examples/00-basic/images/sphx_glr_03-create_entities_001.png
+    :alt: 03 create entities
+    :class: sphx-glr-single-img
 
 
 
@@ -331,23 +330,20 @@ Plot the norm over time of the fields container:
 
     *
 
-      .. image-sg:: /examples/00-basic/images/sphx_glr_03-create_entities_002.png
+      .. image:: /examples/00-basic/images/sphx_glr_03-create_entities_002.png
           :alt: 03 create entities
-          :srcset: /examples/00-basic/images/sphx_glr_03-create_entities_002.png
           :class: sphx-glr-multi-img
 
     *
 
-      .. image-sg:: /examples/00-basic/images/sphx_glr_03-create_entities_003.png
+      .. image:: /examples/00-basic/images/sphx_glr_03-create_entities_003.png
           :alt: 03 create entities
-          :srcset: /examples/00-basic/images/sphx_glr_03-create_entities_003.png
           :class: sphx-glr-multi-img
 
     *
 
-      .. image-sg:: /examples/00-basic/images/sphx_glr_03-create_entities_004.png
+      .. image:: /examples/00-basic/images/sphx_glr_03-create_entities_004.png
           :alt: 03 create entities
-          :srcset: /examples/00-basic/images/sphx_glr_03-create_entities_004.png
           :class: sphx-glr-multi-img
 
 
@@ -357,7 +353,7 @@ Plot the norm over time of the fields container:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.444 seconds)
+   **Total running time of the script:** ( 0 minutes  5.684 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_03-create_entities.py:
