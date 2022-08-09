@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Concepts and Terminology &#8212; PyDPF-Core 0.5.2 documentation</title>
+    
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css\ansys_sphinx_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    
+        <link href="../_static/css/breadcrumbs.css" rel="stylesheet">
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ways of Using DPF" href="waysofusing.html" />
+    <link rel="prev" title="User Guide" href="index.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/pyansys-logo-black-cropped.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/pyansys-logo-black-cropped.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  APIs
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../operator_reference.html">
+  Operators
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../contributing.html">
+  Contributing
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+    
+        <div class="container-xl">
+    <div class="row">
+        <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
+        <div class="col-12 col-md-11 col-xl-9" id="breadcrumbs">
+          
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+    
+    
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.5.2 documentation</a> » </li>
+    
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">Concepts and Terminology</a></li> 
+      </ul>
+    </div>
+        </div>
+  </div>
+</div>
+    
+
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Concepts and Terminology
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="waysofusing.html">
+   Ways of Using DPF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stepbystep.html">
+   Using DPF: Step by Step
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="model.html">
+   DPF Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="operators.html">
+   Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fields_container.html">
+   Fields Container and Fields
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plotting.html">
+   Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="custom_operators.html">
+   Custom Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xmlfiles.html">
+   DPF XML Files
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+
+<nav id="bd-toc-nav">
+    
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="concepts-and-terminology">
+<span id="user-guide-concepts"></span><h1>Concepts and Terminology<a class="headerlink" href="#concepts-and-terminology" title="Permalink to this headline">#</a></h1>
+<p>DPF sees <code class="docutils literal notranslate"><span class="pre">fields</span> <span class="pre">of</span> <span class="pre">data</span></code>, not physical results, making it a very versatile
+tool that can be used in a variety of ways across teams, projects,
+and simulations.</p>
+<p>The <a class="reference internal" href="../api/ansys.dpf.core.data_sources.html#ref-data-sources"><span class="std std-ref">data source</span></a> is one or more files in which analysis results
+can be found.</p>
+<p>A <a class="reference internal" href="../api/ansys.dpf.core.field.html#ref-field"><span class="std std-ref">field</span></a> is the main simulation data container.
+For transient/harmonic/modal or multi-step static analyses,
+a <a class="reference internal" href="../api/ansys.dpf.core.fields_container.html#ref-fields-container"><span class="std std-ref">field container</span></a> is used to hold a set of fields
+(one field for each time step, each frequency).</p>
+<p>The physical entity with which the field is associated is called
+the <code class="docutils literal notranslate"><span class="pre">support</span></code>. For example, the support can be a mesh,
+geometrical entity, or <a class="reference internal" href="../api/ansys.dpf.core.time_freq_support.html#ref-timefreqsupport"><span class="std std-ref">time or frequency values</span></a>.</p>
+<p>In most cases you will not want to work with the entire set of data,
+but rather a subset of that data. To achieve this you define <a class="reference internal" href="../api/ansys.dpf.core.scoping.html#ref-scoping"><span class="std std-ref">scoping</span></a>.
+Scoping is a subset of the model’s support. Typically, scoping can
+represent node IDs, element IDs, time steps, frequencies, joints, and so on.
+Scoping describes a spatial and/or temporal subset on which the field is scoped.</p>
+<p>In DPF, field data is always associated with its scoping and support, making
+the field a self-describing piece of data. For example, in a field of nodal
+displacement, the <em>displacement</em> is the simulation data and the associated
+<em>nodes</em> are the scoping. A field can also be defined by its dimensionality,
+unit of data, and location.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">location</span></code> is the type of topology associated with the data container.
+DPF uses three different spatial locations for finite element data: Nodal,
+Elemental, and ElementalNodal. A <code class="docutils literal notranslate"><span class="pre">Nodal</span></code> location describes data computed
+on the nodes, while an <code class="docutils literal notranslate"><span class="pre">Elemental</span></code> location describes data computed on the
+element itself. These <a class="reference internal" href="../api/ansys.dpf.core.nodes.html#ref-nodes-apis"><span class="std std-ref">nodes</span></a> and <a class="reference internal" href="../api/ansys.dpf.core.elements.html#ref-elements-apis"><span class="std std-ref">elements</span></a> are identified by an ID — typically
+a node or element number. An <code class="docutils literal notranslate"><span class="pre">ElementalNodal</span></code> location describes data
+defined on the nodes of the elements, but you must use the Element ID to
+retrieve it. To achieve this you define <code class="docutils literal notranslate"><span class="pre">Elemental</span> <span class="pre">scoping</span></code> or <code class="docutils literal notranslate"><span class="pre">Nodal</span> <span class="pre">scoping</span></code>.</p>
+<p>The following example summarizes the concepts above:</p>
+<img alt="../_images/field-breakdown.png" src="../_images/field-breakdown.png" />
+<p><a class="reference internal" href="../api/ansys.dpf.core.dpf_operator.html#ref-operator"><span class="std std-ref">Operators</span></a> are the only object used to create and transform the data.
+An operator is composed of a “core” that handles the calculation, and input
+and output “pins” (think of an integrated circuit in electronics). These pins
+enable you to provide input data to each operator. When the operator is
+evaluated, it processes the input information to compute its output.</p>
+<img alt="../_images/OperatorPins.png" src="../_images/OperatorPins.png" />
+<p>Operators can be chained together to create <a class="reference internal" href="../api/ansys.dpf.core.workflow.html#ref-workflow-apis"><span class="std std-ref">workflows</span></a>. A workflow is a
+global entity that you use to evaluate the data produced by the operators.
+It needs input information and computes the requested output information.</p>
+<p>Think of a workflow as a black box in which some operators are chained,
+computing the information for which it is made:</p>
+<img alt="../_images/Workflow1.png" src="../_images/Workflow1.png" />
+<p>The following example shows operators that have been chained together
+to create a total deformation workflow:</p>
+<img alt="../_images/Workflow2.png" src="../_images/Workflow2.png" />
+<p>This workflow can be used in any simulation workflow using any
+data source as input.</p>
+</section>
+
+
+              </article>
+              
+
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
