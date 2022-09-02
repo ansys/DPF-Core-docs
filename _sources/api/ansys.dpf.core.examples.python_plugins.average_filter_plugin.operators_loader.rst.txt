@@ -1,0 +1,2 @@
+.. automodule:: ansys.dpf.core.examples.python_plugins.average_filter_plugin.operators_loader
+   :inherited-members:

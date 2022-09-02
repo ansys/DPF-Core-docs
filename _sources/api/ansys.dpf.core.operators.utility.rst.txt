@@ -7,6 +7,8 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
+   ansys.dpf.core.operators.utility.assemble_scalars_to_matrices
+   ansys.dpf.core.operators.utility.assemble_scalars_to_vectors
    ansys.dpf.core.operators.utility.bind_support
    ansys.dpf.core.operators.utility.bind_support_fc
    ansys.dpf.core.operators.utility.change_location
@@ -33,7 +35,11 @@ Submodules
    ansys.dpf.core.operators.utility.merge_scopings_containers
    ansys.dpf.core.operators.utility.merge_supports
    ansys.dpf.core.operators.utility.merge_time_freq_supports
+   ansys.dpf.core.operators.utility.merge_weighted_fields
+   ansys.dpf.core.operators.utility.merge_weighted_fields_containers
+   ansys.dpf.core.operators.utility.overlap_fields
    ansys.dpf.core.operators.utility.python_generator
+   ansys.dpf.core.operators.utility.python_script_exec
    ansys.dpf.core.operators.utility.remote_operator_instantiate
    ansys.dpf.core.operators.utility.remote_workflow_instantiate
    ansys.dpf.core.operators.utility.scalars_to_field

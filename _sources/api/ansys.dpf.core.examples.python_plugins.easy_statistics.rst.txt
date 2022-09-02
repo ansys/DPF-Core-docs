@@ -1,0 +1,2 @@
+.. automodule:: ansys.dpf.core.examples.python_plugins.easy_statistics
+   :inherited-members:

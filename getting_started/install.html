@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Installation with PIP &#8212; PyDPF-Core 0.5.2 documentation</title>
+    <title>Installation &#8212; PyDPF-Core 0.6.0 documentation</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css\ansys_sphinx_theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
@@ -52,6 +52,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dependencies" href="dependencies.html" />
+    <link rel="prev" title="Compatibility" href="compatibility.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="None">
   </head>
@@ -96,15 +98,15 @@
       
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
+    <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="index.html">
-  Getting Started
+  Getting started
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../user_guide/index.html">
-  User Guide
+  User guide
  </a>
 </li>
 
@@ -128,7 +130,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../contributing.html">
-  Contributing
+  Contribute
  </a>
 </li>
 
@@ -173,10 +175,11 @@
       <ul>
     
     
-        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.5.2 documentation</a> » </li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
     
 
-        <li class="nav-item nav-item-this"><a href="">Installation with PIP</a></li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Getting started</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">Installation</a></li> 
       </ul>
     </div>
         </div>
@@ -196,7 +199,29 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="compatibility.html">
+   Compatibility
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dependencies.html">
+   Dependencies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="docker.html">
+   DPF in Docker
+  </a>
+ </li>
+</ul>
+
   </div>
 </nav>
   </div>
@@ -219,14 +244,24 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Installation with PIP
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pip-installation">
+   PIP installation
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#editable-installation-development-mode">
-   Editable Installation (Development Mode)
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wheel-file-installation">
+   Wheel file installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tryout-installation">
+   Tryout installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#development-mode-installation">
+   Development mode installation
   </a>
  </li>
 </ul>
@@ -248,33 +283,79 @@
               
               <article class="bd-article" role="main">
                 
-  <section id="installation-with-pip">
-<span id="installation"></span><h1>Installation with PIP<a class="headerlink" href="#installation-with-pip" title="Permalink to this headline">#</a></h1>
-<p>Once Ansys 2021 R2 or later is installed, you can install PyDPF-Core with:</p>
+  <section id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
+<section id="pip-installation">
+<h2>PIP installation<a class="headerlink" href="#pip-installation" title="Permalink to this headline">#</a></h2>
+<p>To use PyDPF-Core with Ansys 2021 R2 or later, install the latest version
+of PyDPF-Core with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ansys</span><span class="o">-</span><span class="n">dpf</span><span class="o">-</span><span class="n">core</span>
 </pre></div>
 </div>
-<p>This installs the latest version of PyDPF-Core and all necessary
-dependencies.</p>
-<p>To use PyDPF-Core with Ansys 2021 R1, you must install PyDPF-Core with:</p>
+<p>To use PyDPF-Core with Ansys 2021 R1, install a 0.2.* PyDPF-Core version with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ansys</span><span class="o">-</span><span class="n">dpf</span><span class="o">-</span><span class="n">core</span><span class="o">&lt;</span><span class="mf">0.3.0</span>
 </pre></div>
 </div>
-<p>If you are unable to install this module on the host machine due to
-network isolation, download the latest or a specific release wheel at <a class="reference external" href="https://github.com/pyansys/pydpf-core/releases">PyDPF-Core
-GitHub</a> or from PyPi at
-<a class="reference external" href="https://pypi.org/project/ansys-dpf-core/">PyDPF-Core PyPi</a></p>
 </section>
-<section id="editable-installation-development-mode">
-<h1>Editable Installation (Development Mode)<a class="headerlink" href="#editable-installation-development-mode" title="Permalink to this headline">#</a></h1>
-<p>If you want to edit and potentially contribute to the DPF-Core
-module, clone the repository and install it using pip with the <code class="docutils literal notranslate"><span class="pre">-e</span></code>
+<section id="wheel-file-installation">
+<h2>Wheel file installation<a class="headerlink" href="#wheel-file-installation" title="Permalink to this headline">#</a></h2>
+<p>If you are unable to install PyDPF-Core on the host machine due to
+network isolation, download the latest wheel file or the wheel file
+for a specific release from <a class="reference external" href="https://github.com/pyansys/pydpf-core/releases">PyDPF-Core
+GitHub</a> or
+<a class="reference external" href="https://pypi.org/project/ansys-dpf-core/">PyDPF-Core PyPi</a>.</p>
+</section>
+<section id="tryout-installation">
+<h2>Tryout installation<a class="headerlink" href="#tryout-installation" title="Permalink to this headline">#</a></h2>
+<p>For a quick tryout installation, use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">simple_bar</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF Model
+------------------------------
+Static analysis
+Unit system: Metric (m, kg, N, s, V, A)
+Physics Type: Mechanical
+Available results:
+     -  displacement: Nodal Displacement
+     -  element_nodal_forces: ElementalNodal Element nodal Forces
+     -  elemental_volume: Elemental Volume
+     -  stiffness_matrix_energy: Elemental Energy-stiffness matrix
+     -  artificial_hourglass_energy: Elemental Hourglass Energy
+     -  thermal_dissipation_energy: Elemental thermal dissipation energy
+     -  kinetic_energy: Elemental Kinetic Energy
+     -  co_energy: Elemental co-energy
+     -  incremental_energy: Elemental incremental energy
+     -  structural_temperature: ElementalNodal Temperature
+------------------------------
+DPF  Meshed Region:
+  3751 nodes
+  3000 elements
+  Unit: m
+  With solid (3D) elements
+------------------------------
+DPF  Time/Freq Support:
+  Number of sets: 1
+Cumulative     Time (s)       LoadStep       Substep
+1              1.000000       1              1
+</pre></div>
+</div>
+</section>
+<section id="development-mode-installation">
+<h2>Development mode installation<a class="headerlink" href="#development-mode-installation" title="Permalink to this headline">#</a></h2>
+<p>If you want to edit and potentially contribute to PyDPF-Core,
+clone the repository and install it using pip with the <code class="docutils literal notranslate"><span class="pre">-e</span></code>
 development flag:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyansys</span><span class="o">/</span><span class="n">pydpf</span><span class="o">-</span><span class="n">core</span>
 <span class="n">cd</span> <span class="n">pydpf</span><span class="o">-</span><span class="n">core</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
 </pre></div>
 </div>
+</section>
 </section>
 
 

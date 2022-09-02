@@ -30,15 +30,68 @@ done on a third server.
 To help understand this example the following diagram is provided. It shows
 the operator chain used to compute the final result.
 
-.. image:: 03-operator-dep.svg
-   :align: center
-   :width: 800
+.. graphviz::
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-21
+    digraph foo {
+        graph [pad="0", nodesep="0.3", ranksep="0.3"]
+        node [shape=box, style=filled, fillcolor="#ffcc00", margin="0"];
+        rankdir=LR;
+        splines=line;
+
+        disp01 [label="displacement"];
+        disp02 [label="displacement"];
+        mesh01 [label="mesh"];
+        mesh02 [label="mesh"];
+
+        subgraph cluster_1 {
+            ds01 [label="data_src", shape=box, style=filled, fillcolor=cadetblue2];
+
+            disp01; mesh01;
+
+            ds01 -> disp01 [style=dashed];
+            ds01 -> mesh01 [style=dashed];
+
+            label="Server 1";
+            style=filled;
+            fillcolor=lightgrey;
+        }
+
+        subgraph cluster_2 {
+            ds02 [label="data_src", shape=box, style=filled, fillcolor=cadetblue2];
+
+            disp02; mesh02;
+
+            ds02 -> disp02 [style=dashed];
+            ds02 -> mesh02 [style=dashed];
+
+            label="Server 2";
+            style=filled;
+            fillcolor=lightgrey;
+        }
+
+        disp01 -> "merge_fields";
+        mesh01 -> "merge_mesh";
+        disp02 -> "merge_fields";
+        mesh02 -> "merge_mesh";
+
+        ds03 [label="data_src", shape=box, style=filled, fillcolor=cadetblue2];
+        ds03 -> "response2" [style=dashed];
+        ds04 [label="data_src", shape=box, style=filled, fillcolor=cadetblue2];
+        ds04 -> "response" [style=dashed];
+
+        "merge_mesh" -> "response";
+        "response" -> "merge_use_pass";
+        "response2" -> "merge_use_pass";
+        "merge_use_pass" -> "expansion";
+        "merge_fields" -> "expansion";
+        "expansion" -> "component";
+    }
+
+.. GENERATED FROM PYTHON SOURCE LINES 74-75
 
 Import dpf module and its examples files.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-27
+.. GENERATED FROM PYTHON SOURCE LINES 75-81
 
 .. code-block:: default
 
@@ -55,7 +108,7 @@ Import dpf module and its examples files.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-37
+.. GENERATED FROM PYTHON SOURCE LINES 82-91
 
 Configure the servers
 ~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +120,7 @@ we will consequently require 2 remote processes
 To make this example easier, we will start local servers here,
 but we could get connected to any existing servers on the network.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-52
+.. GENERATED FROM PYTHON SOURCE LINES 91-106
 
 .. code-block:: default
 
@@ -93,11 +146,11 @@ but we could get connected to any existing servers on the network.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-54
+.. GENERATED FROM PYTHON SOURCE LINES 107-108
 
 Print the ips and ports.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-57
+.. GENERATED FROM PYTHON SOURCE LINES 108-111
 
 .. code-block:: default
 
@@ -113,16 +166,16 @@ Print the ips and ports.
  .. code-block:: none
 
     ips: ['127.0.0.1', '127.0.0.1']
-    ports: [50054, 50055]
+    ports: [50058, 50059]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-59
+.. GENERATED FROM PYTHON SOURCE LINES 112-113
 
 Choose the file path.
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-64
+.. GENERATED FROM PYTHON SOURCE LINES 113-118
 
 .. code-block:: default
 
@@ -138,7 +191,7 @@ Choose the file path.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-70
+.. GENERATED FROM PYTHON SOURCE LINES 119-124
 
 Create the operators on the servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -146,7 +199,7 @@ On each server we create two new operators, one for 'displacement' computations
 and a 'mesh_provider' operator, and then define their data sources. The displacement
 and mesh_provider operators receive data from their respective data files on each server.
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-82
+.. GENERATED FROM PYTHON SOURCE LINES 124-136
 
 .. code-block:: default
 
@@ -169,14 +222,14 @@ and mesh_provider operators receive data from their respective data files on eac
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-87
+.. GENERATED FROM PYTHON SOURCE LINES 137-141
 
 Create a local operators chain for expansion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In the following series of operators we merge the modal basis, the meshes, read
 the modal response and expand the modal response with the modal basis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-114
+.. GENERATED FROM PYTHON SOURCE LINES 141-168
 
 .. code-block:: default
 
@@ -220,12 +273,12 @@ the modal response and expand the modal response with the modal basis.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 115-117
+.. GENERATED FROM PYTHON SOURCE LINES 169-171
 
 Connect the operator chains together and get the output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-127
+.. GENERATED FROM PYTHON SOURCE LINES 171-181
 
 .. code-block:: default
 
@@ -317,7 +370,7 @@ Connect the operator chains together and get the output
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.880 seconds)
+   **Total running time of the script:** ( 0 minutes  1.699 seconds)
 
 
 .. _sphx_glr_download_examples_06-distributed-post_03-distributed-msup_expansion_steps.py:

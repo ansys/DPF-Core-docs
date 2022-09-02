@@ -26,15 +26,50 @@ Post processing of displacement on distributed processes
 To help understand this example the following diagram is provided. It shows
 the operator chain used to compute the final result.
 
-.. image:: 00-operator-dep.svg
-   :align: center
-   :width: 400
+.. graphviz::
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-17
+    digraph foo {
+        graph [pad="0", nodesep="0.3", ranksep="0.3"]
+        node [shape=box, style=filled, fillcolor="#ffcc00", margin="0"];
+        rankdir=LR;
+        splines=line;
+
+        disp01 [label="displacement"];
+        disp02 [label="displacement"];
+        norm01 [label="norm"];
+        norm02 [label="norm"];
+
+        subgraph cluster_1 {
+            ds01 [label="data_src", shape=box, style=filled, fillcolor=cadetblue2];
+
+            ds01 -> disp01 [style=dashed];
+            disp01 -> norm01;
+
+            label="Server 1";
+            style=filled;
+            fillcolor=lightgrey;
+        }
+
+        subgraph cluster_2 {
+            ds02 [label="data_src", shape=box, style=filled, fillcolor=cadetblue2];
+
+            ds02 -> disp02 [style=dashed];
+            disp02 -> norm02;
+
+            label="Server 2";
+            style=filled;
+            fillcolor=lightgrey;
+        }
+
+        norm01 -> "merge";
+        norm02 -> "merge";
+    }
+
+.. GENERATED FROM PYTHON SOURCE LINES 51-52
 
 Import dpf module and its examples files
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-22
+.. GENERATED FROM PYTHON SOURCE LINES 52-57
 
 .. code-block:: default
 
@@ -50,7 +85,7 @@ Import dpf module and its examples files
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-32
+.. GENERATED FROM PYTHON SOURCE LINES 58-67
 
 Configure the servers
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -62,7 +97,7 @@ we will consequently require 2 remote processes.
 To make this example easier, we will start local servers here,
 but we could get connected to any existing servers on the network.
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-46
+.. GENERATED FROM PYTHON SOURCE LINES 67-81
 
 .. code-block:: default
 
@@ -87,11 +122,11 @@ but we could get connected to any existing servers on the network.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-48
+.. GENERATED FROM PYTHON SOURCE LINES 82-83
 
 Print the ips and ports
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-51
+.. GENERATED FROM PYTHON SOURCE LINES 83-86
 
 .. code-block:: default
 
@@ -107,17 +142,17 @@ Print the ips and ports
  .. code-block:: none
 
     ips: ['127.0.0.1', '127.0.0.1']
-    ports: [50054, 50055]
+    ports: [50058, 50059]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-54
+.. GENERATED FROM PYTHON SOURCE LINES 87-89
 
 Here we show how we could send files in temporary directory if we were not
 in shared memory
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-58
+.. GENERATED FROM PYTHON SOURCE LINES 89-93
 
 .. code-block:: default
 
@@ -132,7 +167,7 @@ in shared memory
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-66
+.. GENERATED FROM PYTHON SOURCE LINES 94-101
 
 Create the operators on the servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,7 +177,7 @@ receives data from the data file in its respective server. And the norm
 operator, being chained to the displacement operator, receives input from the
 output of this one.
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-74
+.. GENERATED FROM PYTHON SOURCE LINES 101-109
 
 .. code-block:: default
 
@@ -161,12 +196,12 @@ output of this one.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-77
+.. GENERATED FROM PYTHON SOURCE LINES 110-112
 
 Create a merge_fields_containers operator able to merge the results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-80
+.. GENERATED FROM PYTHON SOURCE LINES 112-115
 
 .. code-block:: default
 
@@ -180,12 +215,12 @@ Create a merge_fields_containers operator able to merge the results
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-83
+.. GENERATED FROM PYTHON SOURCE LINES 116-118
 
 Connect the operators together and get the output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-91
+.. GENERATED FROM PYTHON SOURCE LINES 118-126
 
 .. code-block:: default
 
@@ -221,7 +256,7 @@ Connect the operators together and get the output
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.523 seconds)
+   **Total running time of the script:** ( 0 minutes  0.949 seconds)
 
 
 .. _sphx_glr_download_examples_06-distributed-post_00-distributed_total_disp.py:

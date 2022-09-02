@@ -86,7 +86,7 @@ want to connect to an existing server (either local or remote), use
     ------------------------------
     Static analysis
     Unit system: MKS: m, kg, N, s, V, A, degC
-    Physics Type: Mecanic
+    Physics Type: Mechanical
     Available results:
          -  displacement: Nodal Displacement
          -  element_nodal_forces: ElementalNodal Element nodal Forces
@@ -140,7 +140,7 @@ model's ``metadata`` property.  For example, to print only the
 
     Static analysis
     Unit system: MKS: m, kg, N, s, V, A, degC
-    Physics Type: Mecanic
+    Physics Type: Mechanical
     Available results:
          -  displacement: Nodal Displacement
          -  element_nodal_forces: ElementalNodal Element nodal Forces
@@ -279,7 +279,7 @@ which for this static result is the only result.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.653 seconds)
+   **Total running time of the script:** ( 0 minutes  1.573 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_00-basic_example.py:

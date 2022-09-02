@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Examples &#8212; PyDPF-Core 0.5.2 documentation</title>
+    <title>Examples &#8212; PyDPF-Core 0.6.0 documentation</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css\ansys_sphinx_theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
@@ -100,13 +100,13 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../getting_started/index.html">
-  Getting Started
+  Getting started
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../user_guide/index.html">
-  User Guide
+  User guide
  </a>
 </li>
 
@@ -130,7 +130,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../contributing.html">
-  Contributing
+  Contribute
  </a>
 </li>
 
@@ -175,7 +175,7 @@
       <ul>
     
     
-        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.5.2 documentation</a> » </li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
     
 
         <li class="nav-item nav-item-this"><a href="">Examples</a></li> 
@@ -262,6 +262,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="00-basic/11-server_types.html">
      Communicate In Process or via gRPC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00-basic/12-get_material_properties.html">
+     Get material properties from the result file
     </a>
    </li>
   </ul>
@@ -476,6 +481,11 @@
      Distributed msup distributed modal response
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-distributed-post/06-distributed_stress_averaging.html">
+     Average Stress in distributed Workflows
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -518,6 +528,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="08-averaging/00-compute_and_average.html">
      Averaging order
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-averaging/01-average_across_bodies.html">
+     Average across bodies
     </a>
    </li>
   </ul>
@@ -649,6 +664,9 @@
 </div><div class="sphx-glr-thumbcontainer" tooltip="- ansys.dpf.core.server_types.InProcessServer loading DPF in Process."><img alt="Communicate In Process or via gRPC" src="../_images/sphx_glr_11-server_types_thumb.png" />
 <p><a class="reference internal" href="00-basic/11-server_types.html#sphx-glr-examples-00-basic-11-server-types-py"><span class="std std-ref">Communicate In Process or via gRPC</span></a></p>
   <div class="sphx-glr-thumbnail-title">Communicate In Process or via gRPC</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Import necessary modules:"><img alt="Get material properties from the result file" src="../_images/sphx_glr_12-get_material_properties_thumb.png" />
+<p><a class="reference internal" href="00-basic/12-get_material_properties.html#sphx-glr-examples-00-basic-12-get-material-properties-py"><span class="std std-ref">Get material properties from the result file</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Get material properties from the result file</div>
 </div></div></section>
 <section id="transient-analysis-examples">
 <h2>Transient Analysis Examples<a class="headerlink" href="#transient-analysis-examples" title="Permalink to this headline">#</a></h2>
@@ -750,7 +768,7 @@ results from harmonic or modal analyses.</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="To help understand this example the following diagram is provided. It shows the operator chain ..."><img alt="Post processing of displacement on distributed processes" src="../_images/sphx_glr_00-distributed_total_disp_thumb.png" />
 <p><a class="reference internal" href="06-distributed-post/00-distributed_total_disp.html#sphx-glr-examples-06-distributed-post-00-distributed-total-disp-py"><span class="std std-ref">Post processing of displacement on distributed processes</span></a></p>
   <div class="sphx-glr-thumbnail-title">Post processing of displacement on distributed processes</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Create custom workflow on distributed processes"><img alt="Create custom workflow on distributed processes" src="../_images/sphx_glr_01-distributed_workflows_on_remote_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="    digraph foo {         graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]         node [shape=box..."><img alt="Create custom workflow on distributed processes" src="../_images/sphx_glr_01-distributed_workflows_on_remote_thumb.png" />
 <p><a class="reference internal" href="06-distributed-post/01-distributed_workflows_on_remote.html#sphx-glr-examples-06-distributed-post-01-distributed-workflows-on-remote-py"><span class="std std-ref">Create custom workflow on distributed processes</span></a></p>
   <div class="sphx-glr-thumbnail-title">Create custom workflow on distributed processes</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="To help understand this example the following diagram is provided. It shows the operator chain ..."><img alt="Distributed modal superposition" src="../_images/sphx_glr_02-distributed-msup_expansion_thumb.png" />
@@ -759,6 +777,9 @@ results from harmonic or modal analyses.</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="To help understand this example the following diagram is provided. It shows the operator chain ..."><img alt="Distributed msup distributed modal response" src="../_images/sphx_glr_03-distributed-msup_expansion_steps_thumb.png" />
 <p><a class="reference internal" href="06-distributed-post/03-distributed-msup_expansion_steps.html#sphx-glr-examples-06-distributed-post-03-distributed-msup-expansion-steps-py"><span class="std std-ref">Distributed msup distributed modal response</span></a></p>
   <div class="sphx-glr-thumbnail-title">Distributed msup distributed modal response</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Average Stress in distributed Workflows"><img alt="Average Stress in distributed Workflows" src="../_images/sphx_glr_06-distributed_stress_averaging_thumb.png" />
+<p><a class="reference internal" href="06-distributed-post/06-distributed_stress_averaging.html#sphx-glr-examples-06-distributed-post-06-distributed-stress-averaging-py"><span class="std std-ref">Average Stress in distributed Workflows</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Average Stress in distributed Workflows</div>
 </div></div></section>
 <section id="examples-of-custom-python-plugins-of-operators">
 <h2>Examples of custom python plugins of Operators<a class="headerlink" href="#examples-of-custom-python-plugins-of-operators" title="Permalink to this headline">#</a></h2>
@@ -777,9 +798,12 @@ Operators enabling to wrap your custom capabilities and to use them as any nativ
 <section id="averaging-examples">
 <h2>Averaging Examples<a class="headerlink" href="#averaging-examples" title="Permalink to this headline">#</a></h2>
 <p>These demos showcase the use of some of the averaging operators of DPF.</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Averaging order"><img alt="Averaging order" src="../_images/sphx_glr_00-compute_and_average_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="    digraph foo {         graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]         node [shape=box..."><img alt="Averaging order" src="../_images/sphx_glr_00-compute_and_average_thumb.png" />
 <p><a class="reference internal" href="08-averaging/00-compute_and_average.html#sphx-glr-examples-08-averaging-00-compute-and-average-py"><span class="std std-ref">Averaging order</span></a></p>
   <div class="sphx-glr-thumbnail-title">Averaging order</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Average across bodies"><img alt="Average across bodies" src="../_images/sphx_glr_01-average_across_bodies_thumb.png" />
+<p><a class="reference internal" href="08-averaging/01-average_across_bodies.html#sphx-glr-examples-08-averaging-01-average-across-bodies-py"><span class="std std-ref">Average across bodies</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Average across bodies</div>
 </div></div><div class="toctree-wrapper compound">
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>

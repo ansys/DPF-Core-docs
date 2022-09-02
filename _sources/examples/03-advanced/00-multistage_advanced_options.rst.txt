@@ -65,7 +65,7 @@ Create the model and display the state of the result.
     ------------------------------
     Modal analysis
     Unit system: MKS: m, kg, N, s, V, A, degC
-    Physics Type: Mecanic
+    Physics Type: Mechanical
     Available results:
          -  displacement: Nodal Displacement
          -  stress: ElementalNodal Stress 
@@ -303,7 +303,7 @@ Check results precisely
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.505 seconds)
+   **Total running time of the script:** ( 0 minutes  1.396 seconds)
 
 
 .. _sphx_glr_download_examples_03-advanced_00-multistage_advanced_options.py:

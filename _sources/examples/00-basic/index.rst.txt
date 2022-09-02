@@ -204,6 +204,23 @@ These examples explain the basic concepts of DPF.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Import necessary modules:">
+
+.. only:: html
+
+  .. image:: /examples/00-basic/images/thumb/sphx_glr_12-get_material_properties_thumb.png
+    :alt: Get material properties from the result file
+
+  :ref:`sphx_glr_examples_00-basic_12-get_material_properties.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Get material properties from the result file</div>
+    </div>
+
+
+.. raw:: html
+
     </div>
 
 
@@ -221,4 +238,5 @@ These examples explain the basic concepts of DPF.
    /examples/00-basic/08-results_over_time_subset
    /examples/00-basic/09-results_over_space_subset
    /examples/00-basic/11-server_types
+   /examples/00-basic/12-get_material_properties
 

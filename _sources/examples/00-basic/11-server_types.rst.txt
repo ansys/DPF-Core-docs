@@ -145,19 +145,19 @@ Create Data on different servers
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.InProcessServer'> DPF Server: {'server_ip': '', 'server_port': None, 'server_process_id': 1580, 'server_version': '4.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.InProcessServer'> DPF Server: {'server_ip': '', 'server_port': None, 'server_process_id': 13756, 'server_version': '5.0', 'os': 'nt'}
     DPF  Field
       Location: Nodal
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.GrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50056, 'server_process_id': 820, 'server_version': '4.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.GrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50057, 'server_process_id': 26432, 'server_version': '5.0', 'os': 'nt'}
     DPF  Field
       Location: Nodal
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50054, 'server_process_id': 3120, 'server_version': '4.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50058, 'server_process_id': 26116, 'server_version': '5.0', 'os': 'nt'}
 
 
 
@@ -197,7 +197,7 @@ when a DPF object is created:
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50055, 'server_process_id': 1740, 'server_version': '4.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50056, 'server_process_id': 27524, 'server_version': '5.0', 'os': 'nt'}
 
 
 
@@ -205,7 +205,7 @@ when a DPF object is created:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.591 seconds)
+   **Total running time of the script:** ( 0 minutes  1.068 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_11-server_types.py:

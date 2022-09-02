@@ -94,6 +94,8 @@ Submodules
    ansys.dpf.core.operators.result.equivalent_mass
    ansys.dpf.core.operators.result.equivalent_radiated_power
    ansys.dpf.core.operators.result.eqv_stress_parameter
+   ansys.dpf.core.operators.result.erp_accumulate_results
+   ansys.dpf.core.operators.result.erp_radiation_efficiency
    ansys.dpf.core.operators.result.euler_load_buckling
    ansys.dpf.core.operators.result.euler_nodes
    ansys.dpf.core.operators.result.global_to_nodal
@@ -121,16 +123,6 @@ Submodules
    ansys.dpf.core.operators.result.migrate_to_h5dpf
    ansys.dpf.core.operators.result.modal_basis
    ansys.dpf.core.operators.result.nmisc
-   ansys.dpf.core.operators.result.nodal_averaged_creep_strains
-   ansys.dpf.core.operators.result.nodal_averaged_elastic_strains
-   ansys.dpf.core.operators.result.nodal_averaged_equivalent_creep_strain
-   ansys.dpf.core.operators.result.nodal_averaged_equivalent_elastic_strain
-   ansys.dpf.core.operators.result.nodal_averaged_equivalent_plastic_strain
-   ansys.dpf.core.operators.result.nodal_averaged_equivalent_thermal_strains
-   ansys.dpf.core.operators.result.nodal_averaged_plastic_strains
-   ansys.dpf.core.operators.result.nodal_averaged_stresses
-   ansys.dpf.core.operators.result.nodal_averaged_thermal_strains
-   ansys.dpf.core.operators.result.nodal_averaged_thermal_swelling_strains
    ansys.dpf.core.operators.result.nodal_force
    ansys.dpf.core.operators.result.nodal_moment
    ansys.dpf.core.operators.result.nodal_rotation_by_euler_nodes

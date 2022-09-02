@@ -74,7 +74,7 @@ example result file:
     ------------------------------
     Static analysis
     Unit system: MKS: m, kg, N, s, V, A, degC
-    Physics Type: Mecanic
+    Physics Type: Mechanical
     Available results:
          -  displacement: Nodal Displacement
          -  reaction_force: Nodal Force   
@@ -245,7 +245,7 @@ it is much easier to reference available operators by first running:
 
     Static analysis
     Unit system: MKS: m, kg, N, s, V, A, degC
-    Physics Type: Mecanic
+    Physics Type: Mechanical
     Available results:
          -  displacement: Nodal Displacement
          -  reaction_force: Nodal Force   
@@ -361,7 +361,7 @@ Instead of using a ``model`` class instance, use a
 
  .. code-block:: none
 
-    c:\hostedtoolcache\windows\python\3.8.10\x64\lib\site-packages\ansys\dpf\core\examples\static.rst
+    d:\ansysdev\pyansys\dpf-core\ansys\dpf\core\examples\static.rst
 
 
 
@@ -416,7 +416,7 @@ Get the output and print the result data:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.102 seconds)
+   **Total running time of the script:** ( 0 minutes  0.510 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_01-basic_operators.py:

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Post processing of displacement on distributed processes &#8212; PyDPF-Core 0.5.2 documentation</title>
+    <title>Post processing of displacement on distributed processes &#8212; PyDPF-Core 0.6.0 documentation</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
@@ -100,13 +100,13 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../getting_started/index.html">
-  Getting Started
+  Getting started
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../user_guide/index.html">
-  User Guide
+  User guide
  </a>
 </li>
 
@@ -130,7 +130,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../contributing.html">
-  Contributing
+  Contribute
  </a>
 </li>
 
@@ -175,7 +175,7 @@
       <ul>
     
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.5.2 documentation</a> » </li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Examples</a> » </li>
@@ -264,6 +264,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/11-server_types.html">
      Communicate In Process or via gRPC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-basic/12-get_material_properties.html">
+     Get material properties from the result file
     </a>
    </li>
   </ul>
@@ -478,6 +483,11 @@
      Distributed msup distributed modal response
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-distributed_stress_averaging.html">
+     Average Stress in distributed Workflows
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -520,6 +530,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../08-averaging/00-compute_and_average.html">
      Averaging order
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-averaging/01-average_across_bodies.html">
+     Average across bodies
     </a>
    </li>
   </ul>
@@ -601,7 +616,42 @@ to download the full example code</p>
 <span id="ref-distributed-total-disp"></span><span id="sphx-glr-examples-06-distributed-post-00-distributed-total-disp-py"></span><h1>Post processing of displacement on distributed processes<a class="headerlink" href="#post-processing-of-displacement-on-distributed-processes" title="Permalink to this headline">#</a></h1>
 <p>To help understand this example the following diagram is provided. It shows
 the operator chain used to compute the final result.</p>
-<a class="reference internal image-reference" href="../../_images/00-operator-dep.svg"><img alt="../../_images/00-operator-dep.svg" class="align-center" src="../../_images/00-operator-dep.svg" width="400" /></a>
+<div class="graphviz"><img src="../../_images/graphviz-8d94c747f5f6538919489c0e4ea91fbbab632cb0.png" alt="digraph foo {
+    graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]
+    node [shape=box, style=filled, fillcolor=&quot;#ffcc00&quot;, margin=&quot;0&quot;];
+    rankdir=LR;
+    splines=line;
+
+    disp01 [label=&quot;displacement&quot;];
+    disp02 [label=&quot;displacement&quot;];
+    norm01 [label=&quot;norm&quot;];
+    norm02 [label=&quot;norm&quot;];
+
+    subgraph cluster_1 {
+        ds01 [label=&quot;data_src&quot;, shape=box, style=filled, fillcolor=cadetblue2];
+
+        ds01 -&gt; disp01 [style=dashed];
+        disp01 -&gt; norm01;
+
+        label=&quot;Server 1&quot;;
+        style=filled;
+        fillcolor=lightgrey;
+    }
+
+    subgraph cluster_2 {
+        ds02 [label=&quot;data_src&quot;, shape=box, style=filled, fillcolor=cadetblue2];
+
+        ds02 -&gt; disp02 [style=dashed];
+        disp02 -&gt; norm02;
+
+        label=&quot;Server 2&quot;;
+        style=filled;
+        fillcolor=lightgrey;
+    }
+
+    norm01 -&gt; &quot;merge&quot;;
+    norm02 -&gt; &quot;merge&quot;;
+}" class="graphviz" /></div>
 <p>Import dpf module and its examples files</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
@@ -638,7 +688,7 @@ but we could get connected to any existing servers on the network.</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>ips: [&#39;127.0.0.1&#39;, &#39;127.0.0.1&#39;]
-ports: [50054, 50055]
+ports: [50058, 50059]
 </pre></div>
 </div>
 <p>Here we show how we could send files in temporary directory if we were not
@@ -694,7 +744,7 @@ output of this one.</p>
 [10.03242272]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.523 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.949 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-06-distributed-post-00-distributed-total-disp-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/826ce0606fdddd811ecdb74529998ad7/00-distributed_total_disp.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">00-distributed_total_disp.py</span></code></a></p>

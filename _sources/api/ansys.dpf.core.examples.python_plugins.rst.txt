@@ -1,0 +1,21 @@
+ansys.dpf.core.examples.python\_plugins namespace
+=================================================
+
+.. py:module:: ansys.dpf.core.examples.python_plugins
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   ansys.dpf.core.examples.python_plugins.average_filter_plugin
+   ansys.dpf.core.examples.python_plugins.gltf_plugin
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   ansys.dpf.core.examples.python_plugins.easy_statistics

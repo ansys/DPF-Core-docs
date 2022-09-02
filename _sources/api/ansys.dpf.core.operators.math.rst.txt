@@ -31,11 +31,14 @@ Submodules
    ansys.dpf.core.operators.math.cplx_divide
    ansys.dpf.core.operators.math.cplx_dot
    ansys.dpf.core.operators.math.cplx_multiply
+   ansys.dpf.core.operators.math.cross_product
+   ansys.dpf.core.operators.math.cross_product_fc
    ansys.dpf.core.operators.math.dot
    ansys.dpf.core.operators.math.dot_tensor
    ansys.dpf.core.operators.math.entity_extractor
    ansys.dpf.core.operators.math.exponential
    ansys.dpf.core.operators.math.exponential_fc
+   ansys.dpf.core.operators.math.fft_approx
    ansys.dpf.core.operators.math.fft_eval
    ansys.dpf.core.operators.math.fft_gradient_eval
    ansys.dpf.core.operators.math.fft_multi_harmonic_minmax
@@ -57,6 +60,7 @@ Submodules
    ansys.dpf.core.operators.math.modulus
    ansys.dpf.core.operators.math.norm
    ansys.dpf.core.operators.math.norm_fc
+   ansys.dpf.core.operators.math.outer_product
    ansys.dpf.core.operators.math.overall_dot
    ansys.dpf.core.operators.math.phase
    ansys.dpf.core.operators.math.phase_fc

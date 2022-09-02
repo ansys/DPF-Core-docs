@@ -68,7 +68,7 @@ Create a model object to establish a connection with an example result file:
     ------------------------------
     Static analysis
     Unit system: MKS: m, kg, N, s, V, A, degC
-    Physics Type: Mecanic
+    Physics Type: Mechanical
     Available results:
          -  displacement: Nodal Displacement
          -  reaction_force: Nodal Force   
@@ -488,7 +488,7 @@ Split results by element shapes
 
 Split results by bodies
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-148
+.. GENERATED FROM PYTHON SOURCE LINES 140-149
 
 .. code-block:: default
 
@@ -496,9 +496,10 @@ Split results by bodies
     print(stress)
 
     for body_id in stress.get_mat_scoping().ids:
-        field = stress.get_field_by_mat_id(body_id)
-        if field.elementary_data_count > 0:
-            model.metadata.meshed_region.plot(field)
+        fields = stress.get_fields_by_mat_id(body_id)
+        for field in fields:
+            if field.elementary_data_count > 0:
+                model.metadata.meshed_region.plot(field)
 
 
 
@@ -520,37 +521,36 @@ Split results by bodies
           :srcset: /examples/00-basic/images/sphx_glr_09-results_over_space_subset_007.png
           :class: sphx-glr-multi-img
 
+    *
+
+      .. image-sg:: /examples/00-basic/images/sphx_glr_09-results_over_space_subset_008.png
+          :alt: 09 results over space subset
+          :srcset: /examples/00-basic/images/sphx_glr_09-results_over_space_subset_008.png
+          :class: sphx-glr-multi-img
+
 
 .. rst-class:: sphx-glr-script-out
 
  .. code-block:: none
 
     DPF stress(s)Fields Container
-      with 11 field(s)
-      defined on labels: mat time 
+      with 3 field(s)
+      defined on labels: elshape mat time 
 
       with:
-      - field 0 {mat:  5, time:  1} with Nodal location, 6 components and 0 entities.
-      - field 1 {mat:  1, time:  1} with Nodal location, 6 components and 2096 entities.
-      - field 2 {mat:  10, time:  1} with Nodal location, 6 components and 0 entities.
-      - field 3 {mat:  4, time:  1} with Nodal location, 6 components and 0 entities.
-      - field 4 {mat:  13, time:  1} with Nodal location, 6 components and 0 entities.
-      - field 5 {mat:  2, time:  1} with Nodal location, 6 components and 12970 entities.
-      - field 6 {mat:  6, time:  1} with Nodal location, 6 components and 0 entities.
-      - field 7 {mat:  12, time:  1} with Nodal location, 6 components and 0 entities.
-      - field 8 {mat:  15, time:  1} with Nodal location, 6 components and 0 entities.
-      - field 9 {mat:  7, time:  1} with Nodal location, 6 components and 0 entities.
-      - field 10 {mat:  8, time:  1} with Nodal location, 6 components and 0 entities.
+      - field 0 {elshape:  2, mat:  1, time:  1} with Nodal location, 6 components and 1856 entities.
+      - field 1 {elshape:  1, mat:  1, time:  1} with Nodal location, 6 components and 240 entities.
+      - field 2 {elshape:  2, mat:  2, time:  1} with Nodal location, 6 components and 12970 entities.
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-150
+.. GENERATED FROM PYTHON SOURCE LINES 150-151
 
 Create a custom spatial split
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-161
+.. GENERATED FROM PYTHON SOURCE LINES 151-162
 
 .. code-block:: default
 
@@ -572,7 +572,7 @@ Create a custom spatial split
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 162-169
+.. GENERATED FROM PYTHON SOURCE LINES 163-170
 
 .. code-block:: default
 
@@ -591,16 +591,16 @@ Create a custom spatial split
 
     *
 
-      .. image-sg:: /examples/00-basic/images/sphx_glr_09-results_over_space_subset_008.png
+      .. image-sg:: /examples/00-basic/images/sphx_glr_09-results_over_space_subset_009.png
           :alt: 09 results over space subset
-          :srcset: /examples/00-basic/images/sphx_glr_09-results_over_space_subset_008.png
+          :srcset: /examples/00-basic/images/sphx_glr_09-results_over_space_subset_009.png
           :class: sphx-glr-multi-img
 
     *
 
-      .. image-sg:: /examples/00-basic/images/sphx_glr_09-results_over_space_subset_009.png
+      .. image-sg:: /examples/00-basic/images/sphx_glr_09-results_over_space_subset_010.png
           :alt: 09 results over space subset
-          :srcset: /examples/00-basic/images/sphx_glr_09-results_over_space_subset_009.png
+          :srcset: /examples/00-basic/images/sphx_glr_09-results_over_space_subset_010.png
           :class: sphx-glr-multi-img
 
 
@@ -623,7 +623,7 @@ Create a custom spatial split
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.526 seconds)
+   **Total running time of the script:** ( 0 minutes  4.994 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_09-results_over_space_subset.py:

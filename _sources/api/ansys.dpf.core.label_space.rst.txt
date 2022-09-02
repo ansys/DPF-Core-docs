@@ -1,0 +1,2 @@
+.. automodule:: ansys.dpf.core.label_space
+   :inherited-members:

@@ -34,7 +34,7 @@ These demos show how to create worflows on different processes (possibly on diff
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Create custom workflow on distributed processes">
+    <div class="sphx-glr-thumbcontainer" tooltip="    digraph foo {         graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]         node [shape=box...">
 
 .. only:: html
 
@@ -85,6 +85,23 @@ These demos show how to create worflows on different processes (possibly on diff
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Average Stress in distributed Workflows">
+
+.. only:: html
+
+  .. image:: /examples/06-distributed-post/images/thumb/sphx_glr_06-distributed_stress_averaging_thumb.png
+    :alt: Average Stress in distributed Workflows
+
+  :ref:`sphx_glr_examples_06-distributed-post_06-distributed_stress_averaging.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Average Stress in distributed Workflows</div>
+    </div>
+
+
+.. raw:: html
+
     </div>
 
 
@@ -95,4 +112,5 @@ These demos show how to create worflows on different processes (possibly on diff
    /examples/06-distributed-post/01-distributed_workflows_on_remote
    /examples/06-distributed-post/02-distributed-msup_expansion
    /examples/06-distributed-post/03-distributed-msup_expansion_steps
+   /examples/06-distributed-post/06-distributed_stress_averaging
 

@@ -1,6 +1,14 @@
 ansys.dpf.core.examples package
 ===============================
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   ansys.dpf.core.examples.python_plugins
+
 Submodules
 ----------
 

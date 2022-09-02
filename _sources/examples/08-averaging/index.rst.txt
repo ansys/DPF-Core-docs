@@ -16,7 +16,7 @@ These demos showcase the use of some of the averaging operators of DPF.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Averaging order">
+    <div class="sphx-glr-thumbcontainer" tooltip="    digraph foo {         graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]         node [shape=box...">
 
 .. only:: html
 
@@ -33,6 +33,23 @@ These demos showcase the use of some of the averaging operators of DPF.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Average across bodies">
+
+.. only:: html
+
+  .. image:: /examples/08-averaging/images/thumb/sphx_glr_01-average_across_bodies_thumb.png
+    :alt: Average across bodies
+
+  :ref:`sphx_glr_examples_08-averaging_01-average_across_bodies.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Average across bodies</div>
+    </div>
+
+
+.. raw:: html
+
     </div>
 
 
@@ -40,4 +57,5 @@ These demos showcase the use of some of the averaging operators of DPF.
    :hidden:
 
    /examples/08-averaging/00-compute_and_average
+   /examples/08-averaging/01-average_across_bodies
 

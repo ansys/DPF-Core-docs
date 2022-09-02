@@ -13,9 +13,11 @@ Submodules
    ansys.dpf.core.operators.filter.field_high_pass_fc
    ansys.dpf.core.operators.filter.field_low_pass
    ansys.dpf.core.operators.filter.field_low_pass_fc
+   ansys.dpf.core.operators.filter.field_signed_high_pass
    ansys.dpf.core.operators.filter.scoping_band_pass
    ansys.dpf.core.operators.filter.scoping_high_pass
    ansys.dpf.core.operators.filter.scoping_low_pass
+   ansys.dpf.core.operators.filter.signed_scoping_high_pass
 
 Module contents
 ---------------

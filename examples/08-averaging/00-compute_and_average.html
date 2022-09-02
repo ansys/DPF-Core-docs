@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Averaging order &#8212; PyDPF-Core 0.5.2 documentation</title>
+    <title>Averaging order &#8212; PyDPF-Core 0.6.0 documentation</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
@@ -52,7 +52,7 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Contributing" href="../../contributing.html" />
+    <link rel="next" title="Average across bodies" href="01-average_across_bodies.html" />
     <link rel="prev" title="Averaging Examples" href="index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="None">
@@ -100,13 +100,13 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../getting_started/index.html">
-  Getting Started
+  Getting started
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../user_guide/index.html">
-  User Guide
+  User guide
  </a>
 </li>
 
@@ -130,7 +130,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../contributing.html">
-  Contributing
+  Contribute
  </a>
 </li>
 
@@ -175,7 +175,7 @@
       <ul>
     
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.5.2 documentation</a> » </li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Examples</a> » </li>
@@ -264,6 +264,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/11-server_types.html">
      Communicate In Process or via gRPC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-basic/12-get_material_properties.html">
+     Get material properties from the result file
     </a>
    </li>
   </ul>
@@ -478,6 +483,11 @@
      Distributed msup distributed modal response
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-distributed-post/06-distributed_stress_averaging.html">
+     Average Stress in distributed Workflows
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -520,6 +530,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Averaging order
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-average_across_bodies.html">
+     Average across bodies
     </a>
    </li>
   </ul>
@@ -602,7 +617,42 @@ to a Nodal position. In the second case, however, we will firstly transpose the
 stresses that come from the results file to a Nodal position and only then calculate
 the Von Mises stresses.
 These workflows can be better visualized in the images below:</p>
-<a class="reference internal image-reference" href="examples/08-averaging/00-compute_and_average.svg"><img alt="examples/08-averaging/00-compute_and_average.svg" class="align-center" src="examples/08-averaging/00-compute_and_average.svg" width="800" /></a>
+<div class="graphviz"><img src="../../_images/graphviz-239d2d15b54c33d2cf7cc700486d51aeaab24f40.png" alt="digraph foo {
+    graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]
+    node [shape=box, style=filled, fillcolor=&quot;#ffcc0&quot;, margin=&quot;0&quot;];
+    rankdir=LR;
+    splines=line;
+    node [fixedsize=true,width=2.5]
+
+    stress01 [label=&quot;stress&quot;];
+    stress02 [label=&quot;stress&quot;];
+    vm01 [label=&quot;von_mises_eqv&quot;];
+    vm02 [label=&quot;von_mises_eqv&quot;];
+    avg01 [label=&quot;elemental_nodal_to_nodal&quot;, width=2.5];
+    avg02 [label=&quot;elemental_nodal_to_nodal&quot;, width=2.5];
+    subgraph cluster_1 {
+        ds01 [label=&quot;data_src&quot;, shape=box, style=filled, fillcolor=cadetblue2];
+
+        ds01 -&gt; stress01 [style=dashed];
+        stress01 -&gt; vm01;
+        vm01 -&gt; avg01
+
+        label=&quot;Compute Von Mises then average stresses&quot;;
+        style=filled;
+        fillcolor=lightgrey;
+    }
+    subgraph cluster_2 {
+        ds02 [label=&quot;data_src&quot;, shape=box, style=filled, fillcolor=cadetblue2];
+
+        ds02 -&gt; stress02 [style=dashed];
+        stress02 -&gt; avg02;
+        avg02 -&gt; vm02
+
+        label=&quot;Average stresses then compute Von Mises&quot;;
+        style=filled;
+        fillcolor=lightgrey;
+    }
+}" class="graphviz" /></div>
 <p>Let’s start by importing the necessary modules.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
@@ -716,7 +766,7 @@ The maximum Von Mises stress value is 5.35% higher when the averaging is done af
 </div>
 <p>As we can see, even though both workflows apply the same steps to the same initial data,
 their final results are different because of the order in which the operators are applied.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.611 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  23.323 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-08-averaging-00-compute-and-average-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/e602e0eb596d57767cea69704c44994c/00-compute_and_average.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">00-compute_and_average.py</span></code></a></p>

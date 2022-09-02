@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Scope results over custom space domains &#8212; PyDPF-Core 0.5.2 documentation</title>
+    <title>Scope results over custom space domains &#8212; PyDPF-Core 0.6.0 documentation</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
@@ -100,13 +100,13 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../getting_started/index.html">
-  Getting Started
+  Getting started
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../user_guide/index.html">
-  User Guide
+  User guide
  </a>
 </li>
 
@@ -130,7 +130,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../contributing.html">
-  Contributing
+  Contribute
  </a>
 </li>
 
@@ -175,7 +175,7 @@
       <ul>
     
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.5.2 documentation</a> » </li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Examples</a> » </li>
@@ -264,6 +264,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="11-server_types.html">
      Communicate In Process or via gRPC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-get_material_properties.html">
+     Get material properties from the result file
     </a>
    </li>
   </ul>
@@ -478,6 +483,11 @@
      Distributed msup distributed modal response
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06-distributed-post/06-distributed_stress_averaging.html">
+     Average Stress in distributed Workflows
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -520,6 +530,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../08-averaging/00-compute_and_average.html">
      Averaging order
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-averaging/01-average_across_bodies.html">
+     Average across bodies
     </a>
    </li>
   </ul>
@@ -618,7 +633,7 @@ evaluate a result are exposed</p>
 ------------------------------
 Static analysis
 Unit system: MKS: m, kg, N, s, V, A, degC
-Physics Type: Mecanic
+Physics Type: Mechanical
 Available results:
      -  displacement: Nodal Displacement
      -  reaction_force: Nodal Force
@@ -802,31 +817,25 @@ Customers might also require split by entirely custom spatial domains.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">stress</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">body_id</span> <span class="ow">in</span> <span class="n">stress</span><span class="o">.</span><span class="n">get_mat_scoping</span><span class="p">()</span><span class="o">.</span><span class="n">ids</span><span class="p">:</span>
-    <span class="n">field</span> <span class="o">=</span> <span class="n">stress</span><span class="o">.</span><span class="n">get_field_by_mat_id</span><span class="p">(</span><span class="n">body_id</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="n">elementary_data_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="n">stress</span><span class="o">.</span><span class="n">get_fields_by_mat_id</span><span class="p">(</span><span class="n">body_id</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="n">elementary_data_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
 <li><img src="../../_images/sphx_glr_09-results_over_space_subset_006.png" srcset="../../_images/sphx_glr_09-results_over_space_subset_006.png" alt="09 results over space subset" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_09-results_over_space_subset_007.png" srcset="../../_images/sphx_glr_09-results_over_space_subset_007.png" alt="09 results over space subset" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_09-results_over_space_subset_008.png" srcset="../../_images/sphx_glr_09-results_over_space_subset_008.png" alt="09 results over space subset" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF stress(s)Fields Container
-  with 11 field(s)
-  defined on labels: mat time
+  with 3 field(s)
+  defined on labels: elshape mat time
 
   with:
-  - field 0 {mat:  5, time:  1} with Nodal location, 6 components and 0 entities.
-  - field 1 {mat:  1, time:  1} with Nodal location, 6 components and 2096 entities.
-  - field 2 {mat:  10, time:  1} with Nodal location, 6 components and 0 entities.
-  - field 3 {mat:  4, time:  1} with Nodal location, 6 components and 0 entities.
-  - field 4 {mat:  13, time:  1} with Nodal location, 6 components and 0 entities.
-  - field 5 {mat:  2, time:  1} with Nodal location, 6 components and 12970 entities.
-  - field 6 {mat:  6, time:  1} with Nodal location, 6 components and 0 entities.
-  - field 7 {mat:  12, time:  1} with Nodal location, 6 components and 0 entities.
-  - field 8 {mat:  15, time:  1} with Nodal location, 6 components and 0 entities.
-  - field 9 {mat:  7, time:  1} with Nodal location, 6 components and 0 entities.
-  - field 10 {mat:  8, time:  1} with Nodal location, 6 components and 0 entities.
+  - field 0 {elshape:  2, mat:  1, time:  1} with Nodal location, 6 components and 1856 entities.
+  - field 1 {elshape:  1, mat:  1, time:  1} with Nodal location, 6 components and 240 entities.
+  - field 2 {elshape:  2, mat:  2, time:  1} with Nodal location, 6 components and 12970 entities.
 </pre></div>
 </div>
 <p>Create a custom spatial split</p>
@@ -852,8 +861,8 @@ Customers might also require split by entirely custom spatial domains.</p>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_09-results_over_space_subset_008.png" srcset="../../_images/sphx_glr_09-results_over_space_subset_008.png" alt="09 results over space subset" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_09-results_over_space_subset_009.png" srcset="../../_images/sphx_glr_09-results_over_space_subset_009.png" alt="09 results over space subset" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_09-results_over_space_subset_010.png" srcset="../../_images/sphx_glr_09-results_over_space_subset_010.png" alt="09 results over space subset" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF stress(s)Fields Container
   with 2 field(s)
@@ -864,7 +873,7 @@ Customers might also require split by entirely custom spatial domains.</p>
   - field 1 {custom_split:  2, time:  1} with Elemental location, 6 components and 4500 entities.
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.526 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.994 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-09-results-over-space-subset-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/3f5b339fabf8c4e578964e18e3ede332/09-results_over_space_subset.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">09-results_over_space_subset.py</span></code></a></p>

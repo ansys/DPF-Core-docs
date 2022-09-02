@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Using DPF Through Docker &#8212; PyDPF-Core 0.5.2 documentation</title>
+    <title>DPF in Docker &#8212; PyDPF-Core 0.6.0 documentation</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css\ansys_sphinx_theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
@@ -52,8 +52,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="User Guide" href="../user_guide/index.html" />
-    <link rel="prev" title="Getting Started" href="index.html" />
+    <link rel="next" title="User guide" href="../user_guide/index.html" />
+    <link rel="prev" title="Dependencies" href="dependencies.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="None">
   </head>
@@ -100,13 +100,13 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="index.html">
-  Getting Started
+  Getting started
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../user_guide/index.html">
-  User Guide
+  User guide
  </a>
 </li>
 
@@ -130,7 +130,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../contributing.html">
-  Contributing
+  Contribute
  </a>
 </li>
 
@@ -175,11 +175,11 @@
       <ul>
     
     
-        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.5.2 documentation</a> » </li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
     
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Getting Started</a> » </li>
-        <li class="nav-item nav-item-this"><a href="">Using DPF Through Docker</a></li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Getting started</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">DPF in Docker</a></li> 
       </ul>
     </div>
         </div>
@@ -200,9 +200,24 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="compatibility.html">
+   Compatibility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="install.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dependencies.html">
+   Dependencies
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Using DPF Through Docker
+   DPF in Docker
   </a>
  </li>
 </ul>
@@ -230,13 +245,13 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installing-the-dpf-image">
-   Installing the DPF Image
+  <a class="reference internal nav-link" href="#install-the-dpf-image">
+   Install the DPF image
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-the-dpf-container-from-python">
-     Using the DPF Container from Python
+    <a class="reference internal nav-link" href="#use-the-dpf-container-from-python">
+     Use the DPF container from Python
     </a>
    </li>
   </ul>
@@ -260,63 +275,70 @@
               
               <article class="bd-article" role="main">
                 
-  <section id="using-dpf-through-docker">
-<span id="ref-docker"></span><h1>Using DPF Through Docker<a class="headerlink" href="#using-dpf-through-docker" title="Permalink to this headline">#</a></h1>
-<p>You can run DPF within a container on any OS using <a class="reference external" href="https://www.docker.com/">Docker</a>.</p>
-<p>Advantages of running DPF in a containerized environment, such
-as Docker or <a class="reference external" href="https://singularity.hpcng.org/">Singularity</a>, include:</p>
+  <section id="dpf-in-docker">
+<span id="ref-docker"></span><h1>DPF in Docker<a class="headerlink" href="#dpf-in-docker" title="Permalink to this headline">#</a></h1>
+<p>On any operating system, you can run DPF in a containerized environment
+such as <a class="reference external" href="https://www.docker.com/">Docker</a> or <a class="reference external" href="https://singularity.hpcng.org/">Singularity</a>.</p>
+<p>Advantages of using a containerized environment include:</p>
 <ul class="simple">
 <li><p>Running in a consistent environment regardless of the host operating system</p></li>
 <li><p>Offering portability and ease of install</p></li>
 <li><p>Supporting large-scale cluster deployment using <a class="reference external" href="https://kubernetes.io/">Kubernetes</a></p></li>
 <li><p>Providing genuine application isolation through containerization</p></li>
 </ul>
-<section id="installing-the-dpf-image">
-<h2>Installing the DPF Image<a class="headerlink" href="#installing-the-dpf-image" title="Permalink to this headline">#</a></h2>
-<p>Using your GitHub credentials, you can download the Docker image in the
-<a class="reference external" href="https://https://github.com/pyansys/DPF-Core">DPF-Core GitHub</a> repository.</p>
-<p>If you have Docker installed, you can get started by authorizing Docker to
-access this repository using a GitHub personal access token with
-<code class="docutils literal notranslate"><span class="pre">packages</span> <span class="pre">read</span></code> permissions. For more information, see
-&lt;<a class="reference external" href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token</a>&gt;`_.</p>
-<p>Save the token to a file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span> <span class="o">&gt;</span> <span class="n">GH_TOKEN</span><span class="o">.</span><span class="n">txt</span>
+<p>The following sections assume that you are going to run DPF in Docker.</p>
+<section id="install-the-dpf-image">
+<h2>Install the DPF image<a class="headerlink" href="#install-the-dpf-image" title="Permalink to this headline">#</a></h2>
+<ol class="arabic">
+<li><p>Using your GitHub credentials, download the Docker image in the
+<a class="reference external" href="https://https://github.com/pyansys/DPF-Core">DPF-Core GitHub</a> repository.</p></li>
+<li><p>If you have Docker installed, use a GitHub personal access token (PAT) with
+<code class="docutils literal notranslate"><span class="pre">packages</span> <span class="pre">read</span></code> permission to authorize Docker to access this repository.
+For more information, see <a class="reference external" href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">Creating a personal access token</a>.</p></li>
+<li><p>Save the token to a file:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span> <span class="o">&gt;</span> <span class="n">GH_TOKEN</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
+</div></blockquote>
 <p>This lets you send the token to Docker without leaving the token value
 in your history.</p>
-<p>Next, authorize Docker to access the repository:</p>
+</li>
+<li><p>Authorize Docker to access the repository:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GH_USERNAME=&lt;my-github-username&gt;
 cat GH_TOKEN.txt | docker login docker.pkg.github.com -u $GH_USERNAME --password-stdin
 </pre></div>
 </div>
-<p>You can now launch DPF directly from Docker with a short script or
-directly from the command line.</p>
+</li>
+<li><p>Launch DPF directly from Docker with a short script or directly from the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker run -it --rm -v `pwd`:/dpf -p 50054:50054 docker.pkg.github.com/pyansys/dpf-core/dpf:v2021.1
 </pre></div>
 </div>
-<p>Note that this command shares the current directory to the <code class="docutils literal notranslate"><span class="pre">/dpf</span></code>
+</li>
+</ol>
+<p>Note that the preceding command shares the current directory to the <code class="docutils literal notranslate"><span class="pre">/dpf</span></code>
 directory contained within the image.  This is necessary as the DPF
 binary within the image must access the files within the image
-itself.  Any files that you want to have DPF read must be placed in
-the <code class="docutils literal notranslate"><span class="pre">pwd</span></code>.  You can map other directories as needed, but these
+itself. Any files that you want to have DPF read must be placed in
+<code class="docutils literal notranslate"><span class="pre">pwd</span></code>. You can map other directories as needed, but these
 directories must be mapped to the <code class="docutils literal notranslate"><span class="pre">/dpf</span></code> directory for the server to
-see the files you want it to read.</p>
-<section id="using-the-dpf-container-from-python">
-<h3>Using the DPF Container from Python<a class="headerlink" href="#using-the-dpf-container-from-python" title="Permalink to this headline">#</a></h3>
-<p>Normally <code class="docutils literal notranslate"><span class="pre">ansys.dpf.core</span></code> attempts to start the DPF server at the first
-usage of a DPF class.  If you do not have Ansys installed and simply want
+see the files that you want it to read.</p>
+<section id="use-the-dpf-container-from-python">
+<h3>Use the DPF container from Python<a class="headerlink" href="#use-the-dpf-container-from-python" title="Permalink to this headline">#</a></h3>
+<p>Normally PyDPF-Core attempts to start the DPF server on the first
+use of the <code class="docutils literal notranslate"><span class="pre">dpf</span></code> class. If you do not have Ansys installed and simply want
 to use the Docker image, you can override this behavior by connecting to the
-DPF server on the port you mapped:</p>
+DPF server on a specified port:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf_core</span>
 
 <span class="c1"># uses 127.0.0.1 and port 50054 by default</span>
 <span class="n">dpf_core</span><span class="o">.</span><span class="n">connect_to_server</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>If you want to avoid having to run <code class="docutils literal notranslate"><span class="pre">connect_to_server</span></code> at the start of
-every script, you can tell <code class="docutils literal notranslate"><span class="pre">ansys.dpf.core</span></code> to always attempt to
-connect to DPF running within the Docker image by setting environment variables:</p>
+<p>If you want to avoid having to run the <code class="docutils literal notranslate"><span class="pre">connect_to_server()</span></code> method
+at the start of every script, you can set environment variables to tell
+PyDPF-Core to always attempt to connect to DPF running within the Docker
+image:</p>
 <p>On Linux:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">DPF_START_SERVER</span><span class="o">=</span><span class="kc">False</span>
 <span class="n">export</span> <span class="n">DPF_PORT</span><span class="o">=</span><span class="mi">50054</span>
@@ -327,13 +349,16 @@ connect to DPF running within the Docker image by setting environment variables:
 <span class="nb">set</span> <span class="n">DPF_PORT</span><span class="o">=</span><span class="mi">50054</span>
 </pre></div>
 </div>
-<p>The environment variable <code class="docutils literal notranslate"><span class="pre">DPF_PORT</span></code> is the port exposed from the
-DPF container. It should match the first value within the <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">50054:50054</span></code> pair.</p>
-<p>The environment variable <code class="docutils literal notranslate"><span class="pre">DPF_START_SERVER</span></code> tells <code class="docutils literal notranslate"><span class="pre">ansys.dpf.core</span></code> not to start an
-instance but rather look for the service running at <code class="docutils literal notranslate"><span class="pre">DPF_IP</span></code> and
-<code class="docutils literal notranslate"><span class="pre">DPF_PORT</span></code>.  If these environment variables are undefined, they
-default to 127.0.0.1 and 50054 for <code class="docutils literal notranslate"><span class="pre">DPF_IP</span></code> and <code class="docutils literal notranslate"><span class="pre">DPF_PORT</span></code>
-respectively.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">DPF_PORT</span></code> environment variable is the port exposed from the
+DPF container. It should match the first value within the <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">50054:50054</span></code>
+pair.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">DPF_START_SERVER</span></code> environment variable tells PyDPF-core not to start
+an instance but rather use <code class="docutils literal notranslate"><span class="pre">DPF_IP</span></code> and <code class="docutils literal notranslate"><span class="pre">DPF_PORT</span></code> environment variables
+to look for a running instance of the service. If the <code class="docutils literal notranslate"><span class="pre">DPF_IP</span></code> and <code class="docutils literal notranslate"><span class="pre">DPF_PORT</span></code>
+environment variables are undefined, they default to <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> and <code class="docutils literal notranslate"><span class="pre">50054</span></code>
+respectively.</p></li>
+</ul>
 </section>
 </section>
 </section>

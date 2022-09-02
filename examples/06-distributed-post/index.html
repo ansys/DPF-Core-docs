@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Examples for post processing on distributed process &#8212; PyDPF-Core 0.5.2 documentation</title>
+    <title>Examples for post processing on distributed process &#8212; PyDPF-Core 0.6.0 documentation</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
@@ -100,13 +100,13 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../getting_started/index.html">
-  Getting Started
+  Getting started
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../user_guide/index.html">
-  User Guide
+  User guide
  </a>
 </li>
 
@@ -130,7 +130,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../contributing.html">
-  Contributing
+  Contribute
  </a>
 </li>
 
@@ -175,7 +175,7 @@
       <ul>
     
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.5.2 documentation</a> » </li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Examples</a> » </li>
@@ -263,6 +263,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/11-server_types.html">
      Communicate In Process or via gRPC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-basic/12-get_material_properties.html">
+     Get material properties from the result file
     </a>
    </li>
   </ul>
@@ -477,6 +482,11 @@
      Distributed msup distributed modal response
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-distributed_stress_averaging.html">
+     Average Stress in distributed Workflows
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -519,6 +529,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../08-averaging/00-compute_and_average.html">
      Averaging order
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-averaging/01-average_across_bodies.html">
+     Average across bodies
     </a>
    </li>
   </ul>
@@ -567,7 +582,7 @@
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="To help understand this example the following diagram is provided. It shows the operator chain ..."><img alt="Post processing of displacement on distributed processes" src="../../_images/sphx_glr_00-distributed_total_disp_thumb.png" />
 <p><a class="reference internal" href="00-distributed_total_disp.html#sphx-glr-examples-06-distributed-post-00-distributed-total-disp-py"><span class="std std-ref">Post processing of displacement on distributed processes</span></a></p>
   <div class="sphx-glr-thumbnail-title">Post processing of displacement on distributed processes</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Create custom workflow on distributed processes"><img alt="Create custom workflow on distributed processes" src="../../_images/sphx_glr_01-distributed_workflows_on_remote_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="    digraph foo {         graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]         node [shape=box..."><img alt="Create custom workflow on distributed processes" src="../../_images/sphx_glr_01-distributed_workflows_on_remote_thumb.png" />
 <p><a class="reference internal" href="01-distributed_workflows_on_remote.html#sphx-glr-examples-06-distributed-post-01-distributed-workflows-on-remote-py"><span class="std std-ref">Create custom workflow on distributed processes</span></a></p>
   <div class="sphx-glr-thumbnail-title">Create custom workflow on distributed processes</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="To help understand this example the following diagram is provided. It shows the operator chain ..."><img alt="Distributed modal superposition" src="../../_images/sphx_glr_02-distributed-msup_expansion_thumb.png" />
@@ -576,6 +591,9 @@
 </div><div class="sphx-glr-thumbcontainer" tooltip="To help understand this example the following diagram is provided. It shows the operator chain ..."><img alt="Distributed msup distributed modal response" src="../../_images/sphx_glr_03-distributed-msup_expansion_steps_thumb.png" />
 <p><a class="reference internal" href="03-distributed-msup_expansion_steps.html#sphx-glr-examples-06-distributed-post-03-distributed-msup-expansion-steps-py"><span class="std std-ref">Distributed msup distributed modal response</span></a></p>
   <div class="sphx-glr-thumbnail-title">Distributed msup distributed modal response</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Average Stress in distributed Workflows"><img alt="Average Stress in distributed Workflows" src="../../_images/sphx_glr_06-distributed_stress_averaging_thumb.png" />
+<p><a class="reference internal" href="06-distributed_stress_averaging.html#sphx-glr-examples-06-distributed-post-06-distributed-stress-averaging-py"><span class="std std-ref">Average Stress in distributed Workflows</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Average Stress in distributed Workflows</div>
 </div></div><div class="toctree-wrapper compound">
 </div>
 </section>

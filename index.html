@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>PyAnsys DPF-Core &#8212; PyDPF-Core 0.5.2 documentation</title>
+    <title>PyDPF-Core &#8212; PyDPF-Core 0.6.0 documentation</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/css\ansys_sphinx_theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css" />
@@ -52,7 +52,7 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting Started" href="getting_started/index.html" />
+    <link rel="next" title="Getting started" href="getting_started/index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="None">
   </head>
@@ -99,13 +99,13 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="getting_started/index.html">
-  Getting Started
+  Getting started
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="user_guide/index.html">
-  User Guide
+  User guide
  </a>
 </li>
 
@@ -129,7 +129,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="contributing.html">
-  Contributing
+  Contribute
  </a>
 </li>
 
@@ -175,7 +175,7 @@
     
     
 
-        <li class="nav-item nav-item-this"><a href="">PyAnsys DPF-Core</a></li> 
+        <li class="nav-item nav-item-this"><a href="">PyDPF-Core</a></li> 
       </ul>
     </div>
         </div>
@@ -220,12 +220,12 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#brief-demo">
-   Brief Demo
+   Brief demo
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#key-features">
-   Key Features
+   Key features
   </a>
  </li>
 </ul>
@@ -247,32 +247,31 @@
               
               <article class="bd-article" role="main">
                 
-  <section id="pyansys-dpf-core">
-<h1>PyAnsys DPF-Core<a class="headerlink" href="#pyansys-dpf-core" title="Permalink to this headline">#</a></h1>
+  <section id="pydpf-core">
+<h1>PyDPF-Core<a class="headerlink" href="#pydpf-core" title="Permalink to this headline">#</a></h1>
 <p>The Data Processing Framework (<strong>DPF</strong>) provides numerical simulation
-users/engineers with a toolbox for accessing and transforming simulation
-data. It is used to handle complex pre- or post-processing of simulation
-data within a simulation workflow.</p>
-<p>DPF is an independent, physics-agnostic tool that can be plugged into many
-applications for both data input and data output
-(result plots, visualization, and so on).</p>
-<p>DPF can access data from solver result files and other neutral formats
-(for example, CSV, HDF5, and VTK). Various operators are available,
-allowing you to manipulate and transform this data.
-You can chain operators together to create simple or complex data-processing
-workflows that can be reused for repeated or future evaluations.</p>
+users and engineers with a toolbox for accessing and transforming simulation
+data. With DPF, you can perform complex preprocessing or postprocessing of
+large amounts of simulation data within a simulation workflow.</p>
+<p>DPF is an independent, physics-agnostic tool that you can plug into many
+apps for both data input and data output, including visualization and
+result plots.It can access data from solver result files and other neutral
+formats, such as CSV, HDF5, and VTK files.</p>
+<p>Using the many DPF operators that are available, you can manipulate and
+transform this data. You can also chain operators together to create simple
+or complex data-processing workflows that you can reuse for repeated or
+future evaluations.</p>
 <p>The data in DPF is defined based on physics-agnostic mathematical quantities
-described in self-sufficient entities called fields. This allows DPF to be
-a modular and easy-to-use tool with a large range of capabilities.
-It is designed to handle large amounts of data.</p>
+described in self-sufficient entities called <em>fields</em>. This allows DPF to be
+a modular and easy-to-use tool with a large range of capabilities.</p>
 <a class="reference internal image-reference" href="_images/dpf-flow.png"><img alt="DPF FLow" src="_images/dpf-flow.png" style="width: 670px;" /></a>
-<p>The module <code class="docutils literal notranslate"><span class="pre">ansys.dpf.core</span></code> provides a Python interface to the powerful
-DPF framework, enabling rapid postprocessing of a variety of Ansys file
-formats and physics solutions without ever leaving the Python environment.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ansys.dpf.core</span></code> package provides a Python interface to DPF, enabling
+rapid postprocessing of a variety of Ansys file formats and physics solutions
+without ever leaving the Python environment.</p>
 <section id="brief-demo">
-<h2>Brief Demo<a class="headerlink" href="#brief-demo" title="Permalink to this headline">#</a></h2>
-<p>Opening a result file generated from MAPDL (or another ANSYS solver) and
-extracting results from it is easy:</p>
+<h2>Brief demo<a class="headerlink" href="#brief-demo" title="Permalink to this headline">#</a></h2>
+<p>Here’s how you would open a result file generated by MAPDL (or another ANSYS solver) and
+extract results:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">Model</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">simple_bar</span><span class="p">)</span>
@@ -284,7 +283,7 @@ extracting results from it is easy:</p>
 ------------------------------
 Static analysis
 Unit system: Metric (m, kg, N, s, V, A)
-Physics Type: Mecanic
+Physics Type: Mechanical
 Available results:
      -  displacement: Nodal Displacement
      -  element_nodal_forces: ElementalNodal Element nodal Forces
@@ -317,21 +316,21 @@ Cumulative     Time (s)       LoadStep       Substep
 <figure class="sphx-glr-script-out align-default">
 <img alt="_images/simple_example.png" src="_images/simple_example.png" />
 </figure>
-<p>See the <a class="reference internal" href="examples/index.html#gallery"><span class="std std-ref">Examples</span></a> for detailed examples.</p>
+<p>For comprehesive demos, see <a class="reference internal" href="examples/index.html#gallery"><span class="std std-ref">Examples</span></a>.</p>
 </section>
 <section id="key-features">
-<h2>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">#</a></h2>
-<p><strong>Computation Efficiency</strong></p>
+<h2>Key features<a class="headerlink" href="#key-features" title="Permalink to this headline">#</a></h2>
+<p><strong>Computation efficiency</strong></p>
 <p>DPF is a modern framework based on new hardware architectures.
 Thanks to continued development, new capabilities are frequently added.</p>
-<p><strong>Generic Interface</strong></p>
+<p><strong>Generic interface</strong></p>
 <p>DPF is physics-agnostic, which means that its use is not limited to a
 particular field, physics solution, or file format.</p>
-<p><strong>Extensibility and Customization</strong></p>
+<p><strong>Extensibility and customization</strong></p>
 <p>DPF is developed around two core entities:</p>
 <ul class="simple">
-<li><p>Data represented as a <code class="docutils literal notranslate"><span class="pre">field</span></code></p></li>
-<li><p>An <code class="docutils literal notranslate"><span class="pre">operator</span></code> to act upon this data</p></li>
+<li><p>Data represented as a <em>field</em></p></li>
+<li><p>An <em>operator</em> to act upon this data</p></li>
 </ul>
 <p>Each DPF capability is developed through operators that allow for
 componentization of the framework. Because DPF is plugin-based, new

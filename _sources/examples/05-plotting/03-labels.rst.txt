@@ -80,7 +80,7 @@ Printing the model displays:
     ------------------------------
     Transient analysis
     Unit system: MKS: m, kg, N, s, V, A, degC
-    Physics Type: Mecanic
+    Physics Type: Mechanical
     Available results:
          -  displacement: Nodal Displacement
          -  velocity: Nodal Velocity      
@@ -277,7 +277,7 @@ Plot the results on the mesh, show the minimum and maximum.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.218 seconds)
+   **Total running time of the script:** ( 0 minutes  0.506 seconds)
 
 
 .. _sphx_glr_download_examples_05-plotting_03-labels.py:
