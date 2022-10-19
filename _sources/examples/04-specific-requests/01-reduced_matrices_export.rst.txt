@@ -23,13 +23,14 @@
 Get reduced matrices and make export
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This example shows how to get reduced matrices and
-export them to hdf5 and csv format.
+export them to HDF5 and CSV files.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-13
+.. GENERATED FROM PYTHON SOURCE LINES 12-14
 
-Import dpf module and its examples files, and create a temporary directory
+Import the ``dpf-core`` module and its examples files, and then create a
+temporary directory.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-23
+.. GENERATED FROM PYTHON SOURCE LINES 14-24
 
 .. code-block:: default
 
@@ -50,11 +51,11 @@ Import dpf module and its examples files, and create a temporary directory
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-25
+.. GENERATED FROM PYTHON SOURCE LINES 25-26
 
-Create the operator and connect dataSources
+Create the operator and connect data sources.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-31
+.. GENERATED FROM PYTHON SOURCE LINES 26-32
 
 .. code-block:: default
 
@@ -71,11 +72,11 @@ Create the operator and connect dataSources
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-33
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
-Get result fields container that contains the reduced matrices
+Get result fields container that contains the reduced matrices.
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-40
+.. GENERATED FROM PYTHON SOURCE LINES 34-41
 
 .. code-block:: default
 
@@ -100,11 +101,11 @@ Get result fields container that contains the reduced matrices
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-42
+.. GENERATED FROM PYTHON SOURCE LINES 42-43
 
-Export the result fields container in hdf5 format
+Export the result fields container to an HDF5 file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-48
+.. GENERATED FROM PYTHON SOURCE LINES 43-49
 
 .. code-block:: default
 
@@ -121,11 +122,11 @@ Export the result fields container in hdf5 format
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-50
+.. GENERATED FROM PYTHON SOURCE LINES 50-51
 
-Export the result fields container in csv format
+Export the result fields container to a CSV file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-55
+.. GENERATED FROM PYTHON SOURCE LINES 51-56
 
 .. code-block:: default
 
@@ -144,7 +145,7 @@ Export the result fields container in csv format
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.070 seconds)
+   **Total running time of the script:** ( 0 minutes  0.454 seconds)
 
 
 .. _sphx_glr_download_examples_04-specific-requests_01-reduced_matrices_export.py:

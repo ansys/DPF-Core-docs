@@ -16,6 +16,7 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
+   ansys.dpf.core.animator
    ansys.dpf.core.available_result
    ansys.dpf.core.collection
    ansys.dpf.core.common
@@ -39,7 +40,6 @@ Submodules
    ansys.dpf.core.fields_factory
    ansys.dpf.core.generic_support
    ansys.dpf.core.inputs
-   ansys.dpf.core.label_space
    ansys.dpf.core.mesh_scoping_factory
    ansys.dpf.core.meshed_region
    ansys.dpf.core.meshes_container
@@ -60,6 +60,7 @@ Submodules
    ansys.dpf.core.server_types
    ansys.dpf.core.session
    ansys.dpf.core.settings
+   ansys.dpf.core.streams_container
    ansys.dpf.core.string_field
    ansys.dpf.core.support
    ansys.dpf.core.time_freq_scoping_factory

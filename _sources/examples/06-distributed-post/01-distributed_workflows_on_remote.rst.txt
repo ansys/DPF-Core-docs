@@ -20,13 +20,14 @@
 
 .. _ref_distributed_workflows_on_remote:
 
-Create custom workflow on distributed processes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This example shows how distributed files can be read and post processed
-on distributed processes. After remote post processing,
-results are merged on the local process. In this example, different operator
-sequences are directly created on different servers. These operators are then
-connected together without having to care that they are on remote processes.
+Create a custom workflow on distributed processes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This example shows how to read and postprocess distributed files on
+distributed processes. After remote postprocessing, results are merged
+on the local process. This example creates different operator
+sequences directly on different servers. These operators are then
+connected together so that you don't have to care that they are on
+remote processes.
 
 .. graphviz::
 
@@ -61,11 +62,11 @@ connected together without having to care that they are on remote processes.
         mul -> "merge";
     }
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-48
+.. GENERATED FROM PYTHON SOURCE LINES 48-49
 
-Import dpf module and its examples files
+Import the ``dpf-core`` module and its examples files.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-53
+.. GENERATED FROM PYTHON SOURCE LINES 49-54
 
 .. code-block:: default
 
@@ -81,12 +82,11 @@ Import dpf module and its examples files
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-58
+.. GENERATED FROM PYTHON SOURCE LINES 55-58
 
-Configure the servers
-~~~~~~~~~~~~~~~~~~~~~
-To make this example easier, we will start local servers here,
-but we could get connected to any existing servers on the network.
+Configure the servers.
+To make it easier, this example starts local servers. However, you can
+connect to any existing servers on your network.
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-70
 
@@ -111,12 +111,11 @@ but we could get connected to any existing servers on the network.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-73
+.. GENERATED FROM PYTHON SOURCE LINES 71-72
 
-Here we show how we could send files in temporary directory if we were not
-in shared memory
+Send files to the temporary directory if they are not in shared memory.
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-78
+.. GENERATED FROM PYTHON SOURCE LINES 72-77
 
 .. code-block:: default
 
@@ -132,11 +131,11 @@ in shared memory
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-80
+.. GENERATED FROM PYTHON SOURCE LINES 78-79
 
-First operator chain.
+Create the first operator chain.
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-88
+.. GENERATED FROM PYTHON SOURCE LINES 79-87
 
 .. code-block:: default
 
@@ -155,11 +154,11 @@ First operator chain.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-90
+.. GENERATED FROM PYTHON SOURCE LINES 88-89
 
-Second operator chain.
+Create the second operator chain.
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-97
+.. GENERATED FROM PYTHON SOURCE LINES 89-96
 
 .. code-block:: default
 
@@ -177,11 +176,11 @@ Second operator chain.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-99
+.. GENERATED FROM PYTHON SOURCE LINES 97-98
 
-Local merge operator.
+Create the local merge operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-102
+.. GENERATED FROM PYTHON SOURCE LINES 98-101
 
 .. code-block:: default
 
@@ -195,12 +194,11 @@ Local merge operator.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-105
+.. GENERATED FROM PYTHON SOURCE LINES 102-103
 
-Connect the operator chains together and get the output
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Connect the operator chains together and get the output.
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-114
+.. GENERATED FROM PYTHON SOURCE LINES 103-112
 
 .. code-block:: default
 
@@ -239,7 +237,7 @@ Connect the operator chains together and get the output
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.801 seconds)
+   **Total running time of the script:** ( 0 minutes  2.629 seconds)
 
 
 .. _sphx_glr_download_examples_06-distributed-post_01-distributed_workflows_on_remote.py:

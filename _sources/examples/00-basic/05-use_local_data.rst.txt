@@ -20,7 +20,7 @@
 
 .. _ref_use_local_data_example:
 
-Bring a Field's Data Locally to Improve Performance
+Bring a field's data locally to improve performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Reducing the number of calls to the server is key to improving
 performance. Using the ``as_local_field`` option brings the data
@@ -99,7 +99,7 @@ example result file and then extract:
 
 .. GENERATED FROM PYTHON SOURCE LINES 26-30
 
-Create the Workflow
+Create the workflow
 ~~~~~~~~~~~~~~~~~~~~
 Maximum principal stress usually occurs on the skin of the
 model. Computing results only on this skin reduces the data size.
@@ -146,7 +146,7 @@ Plot the mesh skin:
 
 .. GENERATED FROM PYTHON SOURCE LINES 42-43
 
-Compute the stress principal inveriants on the skin nodes only:
+Compute the stress principal invariants on the skin nodes only:
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-52
 
@@ -170,7 +170,7 @@ Compute the stress principal inveriants on the skin nodes only:
 
 .. GENERATED FROM PYTHON SOURCE LINES 53-55
 
-Manipulate Data Locally
+Manipulate data locally
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-61
@@ -212,7 +212,7 @@ Exploring data allows you to customize it to meet your needs.
 
 .. GENERATED FROM PYTHON SOURCE LINES 82-84
 
-Plot Result Field
+Plot result field
 ~~~~~~~~~~~~~~~~~
 
 .. GENERATED FROM PYTHON SOURCE LINES 87-88
@@ -239,7 +239,7 @@ Plot the result field on the skin mesh:
 
 .. GENERATED FROM PYTHON SOURCE LINES 91-93
 
-Plot Initial Invariants
+Plot initial invariants
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. GENERATED FROM PYTHON SOURCE LINES 96-97
@@ -288,7 +288,7 @@ Plot the initial invariants on the skin mesh:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.464 seconds)
+   **Total running time of the script:** ( 0 minutes  5.302 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_05-use_local_data.py:

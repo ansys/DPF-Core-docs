@@ -20,11 +20,11 @@
 
 .. _ref_basic_operators_example:
 
-Operators Overview
+Operators overview
 ~~~~~~~~~~~~~~~~~~
 
 In DPF, operators provide the primary method for interacting with and extracting
-results.  Within DPF-Core, operators are directly exposed with
+results. Within DPF-Core, operators are directly exposed with
 the ``Operators`` class as well as wrapped within several other
 convenience classes.
 
@@ -108,7 +108,7 @@ example result file:
 
 Next, create a raw displacement operator ``"U"``.  Each operator
 contains ``input`` and ``output`` pins that can be connected to
-various sources to include other operators.  This allows operators
+various sources to include other operators. This allows operators
 to be "chained" to allow for highly efficient operations.
 
 To print out the available inputs and outputs of the
@@ -172,7 +172,7 @@ displacement operator:
 
 .. GENERATED FROM PYTHON SOURCE LINES 42-47
 
-Compute the Maximum Normalized Displacement
+Compute the maximum normalized displacement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This example demonstrate how to chain various operators. It connects the input
 of the operator to the data sources contained within the ``model`` object and
@@ -222,10 +222,10 @@ then the maximum of the norm of the operator.
 
 .. GENERATED FROM PYTHON SOURCE LINES 67-73
 
-Wrapped Operators
+Wrapped operators
 ~~~~~~~~~~~~~~~~~
 The ``model.results`` property contains all the wrapped operators
-available for a given result.  This is provided out of convenience
+available for a given result. This is provided out of convenience
 because all operators may not be available for a given result. Consequently,
 it is much easier to reference available operators by first running:
 
@@ -334,7 +334,7 @@ Plot the displacement:
 
 .. GENERATED FROM PYTHON SOURCE LINES 95-101
 
-Scripting Operator Syntax
+Scripting operator syntax
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Because DPF provides a scripting syntax, knowing
 an operator's "string name" is not mandatory.
@@ -361,7 +361,7 @@ Instead of using a ``model`` class instance, use a
 
  .. code-block:: none
 
-    d:\ansysdev\pyansys\dpf-core\ansys\dpf\core\examples\static.rst
+    c:\hostedtoolcache\windows\python\3.8.10\x64\lib\site-packages\ansys\dpf\core\examples\static.rst
 
 
 
@@ -416,7 +416,7 @@ Get the output and print the result data:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.510 seconds)
+   **Total running time of the script:** ( 0 minutes  1.079 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_01-basic_operators.py:

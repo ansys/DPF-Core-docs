@@ -4,7 +4,7 @@
 
 .. _modal_harmonic_examples:
 
-Harmonic Analysis Examples
+Harmonic analysis examples
 ===========================
 These examples show how to use DPF to extract and manipulate,
 results from harmonic or modal analyses.
@@ -18,52 +18,52 @@ results from harmonic or modal analyses.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Multi-Harmonic Response Example">
+    <div class="sphx-glr-thumbcontainer" tooltip="Multi-harmonic response example">
 
 .. only:: html
 
   .. image:: /examples/02-modal-harmonic/images/thumb/sphx_glr_00-multi_harmonic_thumb.png
-    :alt: Multi-Harmonic Response Example
+    :alt: Multi-harmonic response example
 
   :ref:`sphx_glr_examples_02-modal-harmonic_00-multi_harmonic.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Multi-Harmonic Response Example</div>
+      <div class="sphx-glr-thumbnail-title">Multi-harmonic response example</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Modal Cyclic symmetry Example">
+    <div class="sphx-glr-thumbcontainer" tooltip="Modal cyclic symmetry example">
 
 .. only:: html
 
   .. image:: /examples/02-modal-harmonic/images/thumb/sphx_glr_01-modal_cyclic_thumb.png
-    :alt: Modal Cyclic symmetry Example
+    :alt: Modal cyclic symmetry example
 
   :ref:`sphx_glr_examples_02-modal-harmonic_01-modal_cyclic.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Modal Cyclic symmetry Example</div>
+      <div class="sphx-glr-thumbnail-title">Modal cyclic symmetry example</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Multi-stage Cyclic Symmetry Example">
+    <div class="sphx-glr-thumbcontainer" tooltip="Multi-stage cyclic symmetry example">
 
 .. only:: html
 
   .. image:: /examples/02-modal-harmonic/images/thumb/sphx_glr_02-cyclic_multi_stage_thumb.png
-    :alt: Multi-stage Cyclic Symmetry Example
+    :alt: Multi-stage cyclic symmetry example
 
   :ref:`sphx_glr_examples_02-modal-harmonic_02-cyclic_multi_stage.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Multi-stage Cyclic Symmetry Example</div>
+      <div class="sphx-glr-thumbnail-title">Multi-stage cyclic symmetry example</div>
     </div>
 
 
@@ -86,18 +86,18 @@ results from harmonic or modal analyses.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Expand Harmonic Modal Superposition with DPF">
+    <div class="sphx-glr-thumbcontainer" tooltip="Expand harmonic modal superposition with DPF">
 
 .. only:: html
 
   .. image:: /examples/02-modal-harmonic/images/thumb/sphx_glr_04-modal_superposition_thumb.png
-    :alt: Expand Harmonic Modal Superposition with DPF
+    :alt: Expand harmonic modal superposition with DPF
 
   :ref:`sphx_glr_examples_02-modal-harmonic_04-modal_superposition.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Expand Harmonic Modal Superposition with DPF</div>
+      <div class="sphx-glr-thumbnail-title">Expand harmonic modal superposition with DPF</div>
     </div>
 
 

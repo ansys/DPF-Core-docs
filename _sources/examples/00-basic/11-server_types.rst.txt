@@ -20,24 +20,24 @@
 
 .. _ref_server_types_example:
 
-Communicate In Process or via gRPC
+Communicate in process or via gRPC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Starting with Ansys 2022R2, pyDPF can communication either In Process or via gRPC
-with DPF C++ core server (Ans.Dpf.Grpc.exe). To choose which type of
+Starting with Ansys 2022 R2, PyDPF can communication either In Process or via gRPC
+with DPF C++ core server (``Ans.Dpf.Grpc.exe``). To choose which type of
 :class:`ansys.dpf.core.server_types.BaseServer` (object defining the type of communication
 and the server instance to communicate with) to use, a
-:class:`ansys.dpf.core.server_factory.ServerConfig` should be used.
+:class:`ansys.dpf.core.server_factory.ServerConfig` class should be used.
 Until Ansys 2022R1, only gRPC communication using python module ansys.grpc.dpf is supported
-(now called :class:`ansys.dpf.core.server_types.LegacyGrpcServer`), starting with Ansys 2022R2,
-3 types of servers are supported:
+(now called :class:`ansys.dpf.core.server_types.LegacyGrpcServer`), starting with Ansys 2022 R2,
+three types of servers are supported:
 
-- :class:`ansys.dpf.core.server_types.InProcessServer` loading DPF in Process.
+- :class:`ansys.dpf.core.server_types.InProcessServer` loading DPF in process.
 
-- :class:`ansys.dpf.core.server_types.GrpcServer` using gRPC communication through DPF
-  gRPC CLayer Ans.Dpf.GrpcClient.
+- :class:`ansys.dpf.core.server_types.GrpcServer` using gRPC communication through the DPF
+  gRPC CLayer ``Ans.Dpf.GrpcClient``.
 
-- :class:`ansys.dpf.core.server_types.LegacyGrpcServer` using gRPC communication through the python
-  module ansys.grpc.dpf.
+- :class:`ansys.dpf.core.server_types.LegacyGrpcServer` using gRPC communication through the
+  Python module ``ansys.grpc.dpf``.
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-27
 
@@ -55,8 +55,8 @@ Until Ansys 2022R1, only gRPC communication using python module ansys.grpc.dpf i
 
 .. GENERATED FROM PYTHON SOURCE LINES 28-30
 
-Start Servers with custom ServerConfig
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Start servers with custom server configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-39
 
@@ -110,7 +110,7 @@ Equivalent to:
 
 .. GENERATED FROM PYTHON SOURCE LINES 57-59
 
-Create Data on different servers
+Create data on different servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. GENERATED FROM PYTHON SOURCE LINES 59-74
@@ -145,19 +145,19 @@ Create Data on different servers
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.InProcessServer'> DPF Server: {'server_ip': '', 'server_port': None, 'server_process_id': 13756, 'server_version': '5.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.InProcessServer'> DPF Server: {'server_ip': '', 'server_port': None, 'server_process_id': 4692, 'server_version': '5.0', 'os': 'nt'}
     DPF  Field
       Location: Nodal
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.GrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50057, 'server_process_id': 26432, 'server_version': '5.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.GrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50056, 'server_process_id': 2792, 'server_version': '5.0', 'os': 'nt'}
     DPF  Field
       Location: Nodal
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50058, 'server_process_id': 26116, 'server_version': '5.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50057, 'server_process_id': 2340, 'server_version': '5.0', 'os': 'nt'}
 
 
 
@@ -166,8 +166,8 @@ Create Data on different servers
 
 Choose default configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Once a default configuration is chosen, a server of the chosen type is automatically started
-when a DPF object is created:
+Once a default configuration is chosen, a server of the chosen type is
+automatically started when a DPF object is created:
 
 .. GENERATED FROM PYTHON SOURCE LINES 79-90
 
@@ -197,7 +197,7 @@ when a DPF object is created:
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50056, 'server_process_id': 27524, 'server_version': '5.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50055, 'server_process_id': 4152, 'server_version': '5.0', 'os': 'nt'}
 
 
 
@@ -205,7 +205,7 @@ when a DPF object is created:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.068 seconds)
+   **Total running time of the script:** ( 0 minutes  0.688 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_11-server_types.py:

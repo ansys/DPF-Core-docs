@@ -20,13 +20,13 @@
 
 .. _extrapolation_test_strain_2Delement:
 
-Extrapolation Method for strain result of 2D-element
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Extrapolation method for strain result of a 2D element
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This example shows how to compute the nodal component elastic strain
-from Gaussian points (integration points) for 2D-element by using the
-method of extrapolation.
+from Gaussian points (integration points) for a 2D element by using the
+extrapolation method.
 
-Extrapolating results available at Gauss or quadrature points to nodal
+Extrapolate results available at Gaussian or quadrature points to nodal
 points for a field or fields container. The available elements are:
 
 * Linear quadrangle
@@ -36,18 +36,18 @@ points for a field or fields container. The available elements are:
 * Linear tetrahedral
 * Quadratic tetrahedral
 
-1st step : Get the values at the data source's of integration points (this result
-file was generated from MAPDL with ``EREXS, NO``).
+Here are the steps for extrapolation:
 
-2nd step: using operator of extrapolation to compute the nodal elastic strain.
+#. Get the data source's solution from the integration points. (This
+   result file was generated with the Ansys Mechanical APDL (MAPDL)
+   option ``EREXS, NO``).
+#. Use the extrapolation operator to compute the nodal elastic strain.
+#. Get the result for nodal elastic strain from the data source.
+   The analysis was computed by MAPDL.
+#. Compare the result for nodal elastic strain from the data source
+   and the nodal elastic strain computed by the extrapolation method.
 
-3rd step: Get the nodal elastic strain result from the data source.
-The analysis was computed by Ansys Mechanical APDL.
-
-4th step: Compare the results between nodal elastic strain from the data
-source and nodal strain computed by extrapolation method.
-
-.. GENERATED FROM PYTHON SOURCE LINES 32-36
+.. GENERATED FROM PYTHON SOURCE LINES 33-37
 
 .. code-block:: default
 
@@ -62,11 +62,11 @@ source and nodal strain computed by extrapolation method.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-38
+.. GENERATED FROM PYTHON SOURCE LINES 38-39
 
 Get the data source's analyse of integration points and data source's analyse reference
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-52
+.. GENERATED FROM PYTHON SOURCE LINES 39-53
 
 .. code-block:: default
 
@@ -91,13 +91,12 @@ Get the data source's analyse of integration points and data source's analyse re
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-58
+.. GENERATED FROM PYTHON SOURCE LINES 54-58
 
-Extrapolation from integration points for elastic strain result
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this example we compute nodal component elastic strain results from
-the elastic strain at the integration points  by using the ``gauss_to_node_fc``
-operator.
+Extrapolate from integration points for elastic strain result
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This example uses the ``gauss_to_node_fc`` operator to compute nodal component
+elastic strain results from the elastic strain at the integration points.
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-64
 
@@ -116,19 +115,21 @@ operator.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-74
+.. GENERATED FROM PYTHON SOURCE LINES 65-76
 
 Nodal elastic strain result of integration points:
 ##############################################################################
- The command ``ERESX,NO`` in Mechanical APDL is used to copy directly the
- gaussian (integration) points results to the nodes, instead of the results
- at nodes or elements (which are interpolation of results at a few gauss points).
- The following plot shows the nodal values which are the averaged values
+ The command ``ERESX,NO`` in MAPDL is used to copy directly the
+ Gaussian (integration) points results to the nodes, instead of the results
+ at nodes or elements (which are an interpolation of results at a few
+ Gaussian points).
+
+ The following plot shows the nodal values that are the averaged values
  of elastic strain at each node. The value shown at the node is the
- average of the elastic strains from the gaussian points of each element
+ average of the elastic strains from the Gaussian points of each element
  that it belongs to.
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-80
+.. GENERATED FROM PYTHON SOURCE LINES 76-82
 
 .. code-block:: default
 
@@ -150,12 +151,12 @@ Nodal elastic strain result of integration points:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-83
+.. GENERATED FROM PYTHON SOURCE LINES 83-85
 
 Create the ``gauss_to_node_fc`` operator and compute nodal component
 elastic strain by applying the extrapolation method.
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-92
+.. GENERATED FROM PYTHON SOURCE LINES 85-94
 
 .. code-block:: default
 
@@ -175,12 +176,12 @@ elastic strain by applying the extrapolation method.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-95
+.. GENERATED FROM PYTHON SOURCE LINES 95-97
 
-Elastic strain result of reference ANSYS Workbench
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Elastic strain result of reference Ansys Workbench
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-101
+.. GENERATED FROM PYTHON SOURCE LINES 97-103
 
 .. code-block:: default
 
@@ -197,13 +198,13 @@ Elastic strain result of reference ANSYS Workbench
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-105
+.. GENERATED FROM PYTHON SOURCE LINES 104-107
 
 Plot
-~~~~~~~~~~
-Showing plots of Extrapolation's elastic strain result and reference's elastic strain result
+~~~~
+Show plots of extrapolation's elastic strain result and reference's elastic strain result
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-115
+.. GENERATED FROM PYTHON SOURCE LINES 107-117
 
 .. code-block:: default
 
@@ -241,17 +242,17 @@ Showing plots of Extrapolation's elastic strain result and reference's elastic s
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-123
+.. GENERATED FROM PYTHON SOURCE LINES 118-125
 
 Comparison
 ~~~~~~~~~~~~
 Compare the elastic strain result computed by extrapolation and reference's result.
-Check if two fields container are identical.
-Maximum tolerance gap between to compared values: 1e-3.
-Smallest value which will be considered during the comparison
-step : all the ``abs(values)`` in the field less than 1e-14 are considered null
+Check if the two fields containers are identical.
+The maximum tolerance gap between two compared values is 1e-3.
+The smallest value that is to be considered during the comparison
+step : all the ``abs(values)`` in the field less than 1e-14 are considered null.
 
-.. GENERATED FROM PYTHON SOURCE LINES 123-131
+.. GENERATED FROM PYTHON SOURCE LINES 125-133
 
 .. code-block:: default
 
@@ -279,7 +280,7 @@ step : all the ``abs(values)`` in the field less than 1e-14 are considered null
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.464 seconds)
+   **Total running time of the script:** ( 0 minutes  3.533 seconds)
 
 
 .. _sphx_glr_download_examples_03-advanced_05-extrapolation_strain_2d.py:

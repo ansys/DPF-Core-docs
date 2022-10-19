@@ -4,7 +4,7 @@
 
 .. _static_transient_examples:
 
-Transient Analysis Examples
+Transient analysis examples
 ===========================
 These examples show how to use DPF to extract and plot displacements,
 stresses, and strains from a transient static analysis.
@@ -23,30 +23,30 @@ stresses, and strains from a transient static analysis.
 .. only:: html
 
   .. image:: /examples/01-static-transient/images/thumb/sphx_glr_00-basic_transient_thumb.png
-    :alt: Transient Analysis Result Example
+    :alt: Transient analysis result example
 
   :ref:`sphx_glr_examples_01-static-transient_00-basic_transient.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Transient Analysis Result Example</div>
+      <div class="sphx-glr-thumbnail-title">Transient analysis result example</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Choose a Time Scoping for a Transient Analysis">
+    <div class="sphx-glr-thumbcontainer" tooltip="Choose a time scoping for a transient analysis">
 
 .. only:: html
 
   .. image:: /examples/01-static-transient/images/thumb/sphx_glr_01-transient_easy_time_scoping_thumb.png
-    :alt: Choose a Time Scoping for a Transient Analysis
+    :alt: Choose a time scoping for a transient analysis
 
   :ref:`sphx_glr_examples_01-static-transient_01-transient_easy_time_scoping.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Choose a Time Scoping for a Transient Analysis</div>
+      <div class="sphx-glr-thumbnail-title">Choose a time scoping for a transient analysis</div>
     </div>
 
 

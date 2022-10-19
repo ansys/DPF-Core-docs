@@ -2,8 +2,8 @@
 @import "../basic.css";
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
-@import "../tabs.css";
 @import "../sg_gallery.css";
+@import "../design-style.4045f2051d55cab465a707391d5b2007.min.css";
 
 
 @font-face {
@@ -64,6 +64,7 @@ html[data-theme="light"] {
   --pst-color-text-muted: rgb(26, 24, 24);
   --pst-color-border: #c9c9c9;
   --pst-color-shadow: rgb(216, 216, 216);
+  --pst-color-info: var(--pst-color-link);
 
   /*****************************************************************************
   * depth colors
@@ -88,7 +89,7 @@ html[data-theme="light"] {
 
   --pst-color-link:#1E6DDC;
   --pst-color-link-hover:#32cfea;
-  --pst-color-inline-code: #CD186D;
+  --pst-color-inline-code: #000;
   --pst-color-target: rgb(255, 255, 255);
   /* color for sphinx-gallery-code output*/
   --pst-color-codeout: #fafae2;
@@ -110,6 +111,7 @@ html[data-theme="dark"] {
   --pst-color-on-background: rgb(0, 0, 0);
   --pst-color-surface: rgb(41, 41, 41);
   --pst-color-on-surface: rgb(55, 55, 55);
+  --pst-color-info: var(--pst-color-link);
 
   /*****************************************************************************
   * extensions
@@ -123,7 +125,7 @@ html[data-theme="dark"] {
 
   --pst-color-link: #0088CC;
   --pst-color-link-hover:#32cfea;
-  --pst-color-inline-code: rgb(221, 158, 194);
+  --pst-color-inline-code: #fff;
   --pst-color-target: rgb(71, 39, 0);
   /* color for sphinx-gallery-code output*/
   --pst-color-codeout: #6c757d;
@@ -135,11 +137,15 @@ h1, h2 {
 }
 
 .admonition, div.admonition{
-  background-color:var( --pst-color-on-surface);
+  background-color: var( --pst-color-on-surface);
 }
 
 .bd-header.navbar-light#navbar-main .navbar-nav li a.nav-link {
-  color: #a2a2a2;
+  color: #ddd;
+}
+
+dt:target, span.highlighted {
+  background-color: var(--pst-color-border)!important; 
 }
 
 .docutils {
@@ -161,11 +167,19 @@ code.literal {
 }
 
 .xref.std.std-ref {
-    color: #C89211;
+    color: var(--pst-color-inline-code);
     font-family: 'Inconsolata';
-    font-weight: bold;
+    font-weight: normal;
     font-style: italic;
-    font-size: 107%;
+    padding: .1rem .25rem;
+    padding-top: 0.1rem;
+    padding-right: 0.25rem;
+    padding-bottom: 0.1rem;
+    padding-left: 0.25rem;
+    font-size: 90%;
+    background-color: var(--pst-color-on-surface);
+    border: 1px solid var(--pst-color-border);
+    border-radius: .25rem;
 }
 
 .sig-prename {
@@ -202,15 +216,51 @@ p.rubric {
 
 
 /*
-###############
-   Sphinx-tab 
-###############
+#################
+   Sphinx-design 
+#################
 */
-.sphinx-tabs-panel p{
-  font-weight: 400;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1rem;
-  font-style: var(--pst-font-family-base-system);
+
+.sd-tab-set>input:not(.focus-visible)+label {
+    outline: none;
+    font-size: large;
+    -webkit-tap-highlight-color: transparent;
+    color: var(--pst-color-text-base);
+}
+
+
+.sd-tab-set>input:checked+label+.sd-tab-content {
+    display: block;
+    font-size: medium;
+}
+
+.sd-tab-set>input:checked+label+.sd-tab-content {
+    display: block;
+    font-size: .9rem;
+}
+
+.sd-tab-content {
+    font-family: var(--pst-font-family-base);
+}
+
+.bd-content .sd-tab-set>input:checked+label, .bd-content .sd-tab-set>input:not(:checked)+label:hover {
+    color: var(--pst-color-text-base);
+}
+
+.sd-row-cols-lg-4>* {
+    flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    width: 25%;
+}
+
+.sd-sphinx-override, .sd-sphinx-override * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: var(--pst-color-background)!important;
+    font-family: var(--pst-font-family-base)!important;
+    font-size: small;
+    color: var(--pst-color-text-base)!important;
 }
 
 
@@ -485,11 +535,6 @@ Side column size (first and second column from left)
     max-width: 20%;
 }
 
-.col-xl-7 {
-  flex: 0 0 63.33333%;
-  max-width: 63.33333%;
-}
-
 a.headerlink {
   color: #222;
 }
@@ -514,6 +559,7 @@ Right side toctree color and font
 
 .toc-h2 {
   font-size: 0.98rem;
+  padding: 0.05em;
 }
 
 .toc-h3 {
@@ -600,16 +646,64 @@ Left side toc-tree hovering
 
 nav.bd-links .active:hover>a {
   font-weight: bold;
-  color: var(--pst-color-link);
-  border-left: 2px solid var(--pst-color-link);
+  color: var(--pst-color-text-base);
+  border-left: 2px solid var(--pst-color-text-base);
 }
 
 nav.bd-links .active>a {
   font-weight: bold;
-  color: var(--pst-color-link);
+  color: var(--pst-color-text-muted);
+  border-left: 2px solid var(--pst-color-text-base);
 }
 
 nav.bd-links li>a:hover {
   font-weight: 900;
-  color: var(--pst-color-text-muted);
+  color: var(--pst-color-link);
+}
+
+/*
+######################
+Search bar button text 
+######################
+*/
+
+button, input, optgroup, select, textarea {
+  color: var(--pst-color-text-base)!important;
+}
+
+/*
+##############################
+image padding before and after 
+##############################
+*/
+
+img {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+img.logo__image {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+/*
+##########################
+Nav-bar entity right side. 
+##########################
+*/
+
+nav.bd-links li>a {
+  color: var(--pst-color-link);
+  font-size: .98rem;
+}
+
+html[data-theme="light"] .highlight pre {
+  line-height: 125%;
+  font-size: 0.98em;
+}
+
+html[data-theme="dark"] .highlight pre {
+  line-height: 125%;
+  font-size: 0.98em;
 }

@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Concepts and Terminology &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>Terms and concepts &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -52,10 +53,10 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ways of Using DPF" href="waysofusing.html" />
+    <link rel="next" title="DPF scripting languages" href="waysofusing.html" />
     <link rel="prev" title="User guide" href="index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,12 +169,14 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User guide</a> » </li>
-        <li class="nav-item nav-item-this"><a href="">Concepts and Terminology</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Terms and concepts</a></li> 
       </ul>
     </div>
         </div>
@@ -202,24 +199,24 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Concepts and Terminology
+   Terms and concepts
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="waysofusing.html">
-   Ways of Using DPF
+   DPF scripting languages
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="stepbystep.html">
-   Using DPF: Step by Step
+   DPF usage
   </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="model.html">
-   DPF Model
+   DPF model
   </a>
  </li>
  <li class="toctree-l1">
@@ -229,7 +226,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fields_container.html">
-   Fields Container and Fields
+   Fields container and fields
   </a>
  </li>
 </ul>
@@ -241,12 +238,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="custom_operators.html">
-   Custom Operators
+   Custom operators
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="xmlfiles.html">
-   DPF XML Files
+   DPF XML files
   </a>
  </li>
 </ul>
@@ -274,9 +271,49 @@
     
     <div class="toc-item">
       
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-terms">
+   Key terms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scoping">
+   Scoping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#field-data">
+   Field data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#location">
+   Location
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concept-summary">
+   Concept summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operators">
+   Operators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workflows">
+   Workflows
+  </a>
+ </li>
+</ul>
+
 </nav>
     </div>
     
@@ -294,57 +331,95 @@
               
               <article class="bd-article" role="main">
                 
-  <section id="concepts-and-terminology">
-<span id="user-guide-concepts"></span><h1>Concepts and Terminology<a class="headerlink" href="#concepts-and-terminology" title="Permalink to this headline">#</a></h1>
-<p>DPF sees <code class="docutils literal notranslate"><span class="pre">fields</span> <span class="pre">of</span> <span class="pre">data</span></code>, not physical results, making it a very versatile
-tool that can be used in a variety of ways across teams, projects,
-and simulations.</p>
-<p>The <a class="reference internal" href="../api/ansys.dpf.core.data_sources.html#ref-data-sources"><span class="std std-ref">data source</span></a> is one or more files in which analysis results
-can be found.</p>
-<p>A <a class="reference internal" href="../api/ansys.dpf.core.field.html#ref-field"><span class="std std-ref">field</span></a> is the main simulation data container.
-For transient/harmonic/modal or multi-step static analyses,
-a <a class="reference internal" href="../api/ansys.dpf.core.fields_container.html#ref-fields-container"><span class="std std-ref">field container</span></a> is used to hold a set of fields
-(one field for each time step, each frequency).</p>
-<p>The physical entity with which the field is associated is called
-the <code class="docutils literal notranslate"><span class="pre">support</span></code>. For example, the support can be a mesh,
-geometrical entity, or <a class="reference internal" href="../api/ansys.dpf.core.time_freq_support.html#ref-timefreqsupport"><span class="std std-ref">time or frequency values</span></a>.</p>
-<p>In most cases you will not want to work with the entire set of data,
-but rather a subset of that data. To achieve this you define <a class="reference internal" href="../api/ansys.dpf.core.scoping.html#ref-scoping"><span class="std std-ref">scoping</span></a>.
-Scoping is a subset of the model’s support. Typically, scoping can
-represent node IDs, element IDs, time steps, frequencies, joints, and so on.
-Scoping describes a spatial and/or temporal subset on which the field is scoped.</p>
+  <section id="terms-and-concepts">
+<span id="user-guide-concepts"></span><h1>Terms and concepts<a class="headerlink" href="#terms-and-concepts" title="Permalink to this heading">#</a></h1>
+<p>DPF sees <em>fields of data</em>, not physical results. This makes DPF a
+very versatile tool that can be used across teams, projects, and
+simulations.</p>
+<section id="key-terms">
+<h2>Key terms<a class="headerlink" href="#key-terms" title="Permalink to this heading">#</a></h2>
+<p>Here are descriptions for key DPF terms:</p>
+<ul class="simple">
+<li><p><strong>Data source:</strong> One or more files containing analysis results.</p></li>
+<li><p><strong>Field:</strong> Main simulation data container.</p></li>
+<li><p><strong>Field container:</strong> For a transient, harmonic, modal, or multi-step
+static analysis, a set of fields, with one field for each time step
+or frequency.</p></li>
+<li><p><strong>Location:</strong> Type of topology associated with the data container. DPF
+uses three different spatial locations for finite element data: <code class="docutils literal notranslate"><span class="pre">Nodal</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Elemental</span></code>, and <code class="docutils literal notranslate"><span class="pre">ElementalNodal</span></code>.</p></li>
+<li><p><strong>Operators:</strong> Objects that are used to create and transform the data.
+An operator is composed of a <em>core</em> and <em>pins</em>. The core handles the
+calculation, and the pins provide input data to and output data from
+the operator.</p></li>
+<li><p><strong>Scoping:</strong> Spatial and/or temporal subset of a model’s support.</p></li>
+<li><p><strong>Support:</strong> Physical entity that the field is associated with. For example,
+the support can be a mesh, geometrical entity, or time or frequency values.</p></li>
+<li><p><strong>Workflow:</strong> Global entity that is used to evaluate the data produced
+by chained operators.</p></li>
+</ul>
+</section>
+<section id="scoping">
+<h2>Scoping<a class="headerlink" href="#scoping" title="Permalink to this heading">#</a></h2>
+<p>In most cases, you do not want to work with an entire set of data
+but rather with a subset of this data. To achieve this, you define
+a <em>scoping</em>, which is a subset of the model’s support.
+Typically, scoping can represent node IDs, element IDs, time steps,
+frequencies, and joints. Scoping describes a spatial and/or temporal
+subset that the field is scoped on.</p>
+</section>
+<section id="field-data">
+<h2>Field data<a class="headerlink" href="#field-data" title="Permalink to this heading">#</a></h2>
 <p>In DPF, field data is always associated with its scoping and support, making
-the field a self-describing piece of data. For example, in a field of nodal
-displacement, the <em>displacement</em> is the simulation data and the associated
+the <em>field</em> a self-describing piece of data. For example, in a field of nodal
+displacement, the <em>displacement</em> is the simulation data, and the associated
 <em>nodes</em> are the scoping. A field can also be defined by its dimensionality,
-unit of data, and location.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">location</span></code> is the type of topology associated with the data container.
-DPF uses three different spatial locations for finite element data: Nodal,
-Elemental, and ElementalNodal. A <code class="docutils literal notranslate"><span class="pre">Nodal</span></code> location describes data computed
-on the nodes, while an <code class="docutils literal notranslate"><span class="pre">Elemental</span></code> location describes data computed on the
-element itself. These <a class="reference internal" href="../api/ansys.dpf.core.nodes.html#ref-nodes-apis"><span class="std std-ref">nodes</span></a> and <a class="reference internal" href="../api/ansys.dpf.core.elements.html#ref-elements-apis"><span class="std std-ref">elements</span></a> are identified by an ID — typically
-a node or element number. An <code class="docutils literal notranslate"><span class="pre">ElementalNodal</span></code> location describes data
-defined on the nodes of the elements, but you must use the Element ID to
-retrieve it. To achieve this you define <code class="docutils literal notranslate"><span class="pre">Elemental</span> <span class="pre">scoping</span></code> or <code class="docutils literal notranslate"><span class="pre">Nodal</span> <span class="pre">scoping</span></code>.</p>
-<p>The following example summarizes the concepts above:</p>
+unit of data, and <em>location</em>.</p>
+</section>
+<section id="location">
+<h2>Location<a class="headerlink" href="#location" title="Permalink to this heading">#</a></h2>
+<p>The location is the type of topology associated with the data container. For
+finite element data, the location is one of three spatial locations: <code class="docutils literal notranslate"><span class="pre">Nodal</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Elemental</span></code>, or <code class="docutils literal notranslate"><span class="pre">ElementalNodal</span></code>.</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">Nodal</span></code> location describes data computed on the nodes. A node is identified
+by an ID, which is typically a node number.</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">Elemental</span></code> location describes data computed on the element itself. An element
+is identified by an ID, which is typically an element number.</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">ElementalNodal</span></code> location describes data defined on the nodes of the elements.
+To retrieve an elemental node, you must use the ID for the element. To achieve
+this, you define an <em>elemental scoping</em> or <em>nodal scoping</em>.</p></li>
+</ul>
+</section>
+<section id="concept-summary">
+<h2>Concept summary<a class="headerlink" href="#concept-summary" title="Permalink to this heading">#</a></h2>
+<p>This image summarizes the preceding concepts:</p>
 <img alt="../_images/field-breakdown.png" src="../_images/field-breakdown.png" />
-<p><a class="reference internal" href="../api/ansys.dpf.core.dpf_operator.html#ref-operator"><span class="std std-ref">Operators</span></a> are the only object used to create and transform the data.
-An operator is composed of a “core” that handles the calculation, and input
-and output “pins” (think of an integrated circuit in electronics). These pins
-enable you to provide input data to each operator. When the operator is
-evaluated, it processes the input information to compute its output.</p>
+</section>
+<section id="operators">
+<h2>Operators<a class="headerlink" href="#operators" title="Permalink to this heading">#</a></h2>
+<p>You use <a class="reference internal" href="../operator_reference.html#ref-dpf-operators-reference"><span class="std std-ref">Operators</span></a> to create and transform the data. An
+<em>operator</em> is composed of a core and input and output pins.</p>
+<ul class="simple">
+<li><p>The core handles the calculation.</p></li>
+<li><p>The input and output pins, like those in an integrated circuit in electronics,
+submit data to the operator and output the computed result from the operator.</p></li>
+</ul>
 <img alt="../_images/OperatorPins.png" src="../_images/OperatorPins.png" />
-<p>Operators can be chained together to create <a class="reference internal" href="../api/ansys.dpf.core.workflow.html#ref-workflow-apis"><span class="std std-ref">workflows</span></a>. A workflow is a
-global entity that you use to evaluate the data produced by the operators.
-It needs input information and computes the requested output information.</p>
+</section>
+<section id="workflows">
+<h2>Workflows<a class="headerlink" href="#workflows" title="Permalink to this heading">#</a></h2>
+<p>You can chain operators together to create a <em>workflow</em>, which is a global entity
+that you use to evaluate data produced by operators. A workflow requires inputs
+to operators, which computes requested outputs.</p>
 <p>Think of a workflow as a black box in which some operators are chained,
-computing the information for which it is made:</p>
+computing the information for which the workflow is made:</p>
 <img alt="../_images/Workflow1.png" src="../_images/Workflow1.png" />
-<p>The following example shows operators that have been chained together
-to create a total deformation workflow:</p>
+<p>The following image shows operators that have been chained together to create a
+total deformation workflow. You can use this workflow in any simulation
+workflow with any data sources as inputs.</p>
 <img alt="../_images/Workflow2.png" src="../_images/Workflow2.png" />
-<p>This workflow can be used in any simulation workflow using any
-data source as input.</p>
+</section>
 </section>
 
 
@@ -372,7 +447,7 @@ data source as input.</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

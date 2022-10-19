@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Averaging order &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>Averaging order &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -53,9 +54,9 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Average across bodies" href="01-average_across_bodies.html" />
-    <link rel="prev" title="Averaging Examples" href="index.html" />
+    <link rel="prev" title="Averaging examples" href="index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,12 +169,14 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Examples</a> » </li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Averaging Examples</a> » </li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Averaging examples</a> » </li>
         <li class="nav-item nav-item-this"><a href="">Averaging order</a></li> 
       </ul>
     </div>
@@ -203,7 +200,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../00-basic/index.html">
-   Basic DPF Examples
+   Basic DPF examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -213,42 +210,42 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/00-basic_example.html">
-     Basic DPF-Core Usage
+     Basic DPF-Core usage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/01-basic_operators.html">
-     Operators Overview
+     Operators overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/02-basic_field_containers.html">
-     Field and Field Containers Overview
+     Field and field containers overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/03-create_entities.html">
-     Create Your Own Entities Use DPF Operators
+     Create your own entities using DPF operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/04-basic-load-file.html">
-     Write/Load and Upload/Download a Result File
+     Working with a result file
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/05-use_local_data.html">
-     Bring a Field’s Data Locally to Improve Performance
+     Bring a field’s data locally to improve performance
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/06-load_plugin.html">
-     Load Plugin
+     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/07-use_result_helpers.html">
-     Use Result Helpers to Load Custom Data
+     Use result helpers to load custom data
     </a>
    </li>
    <li class="toctree-l2">
@@ -263,7 +260,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/11-server_types.html">
-     Communicate In Process or via gRPC
+     Communicate in process or via gRPC
     </a>
    </li>
    <li class="toctree-l2">
@@ -271,11 +268,16 @@
      Get material properties from the result file
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-basic/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01-static-transient/index.html">
-   Transient Analysis Examples
+   Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -285,19 +287,19 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
-     Transient Analysis Result Example
+     Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
-     Choose a Time Scoping for a Transient Analysis
+     Choose a time scoping for a transient analysis
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-modal-harmonic/index.html">
-   Harmonic Analysis Examples
+   Harmonic analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -307,17 +309,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/00-multi_harmonic.html">
-     Multi-Harmonic Response Example
+     Multi-harmonic response example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/01-modal_cyclic.html">
-     Modal Cyclic symmetry Example
+     Modal cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/02-cyclic_multi_stage.html">
-     Multi-stage Cyclic Symmetry Example
+     Multi-stage cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
@@ -327,7 +329,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/04-modal_superposition.html">
-     Expand Harmonic Modal Superposition with DPF
+     Expand harmonic modal superposition with DPF
     </a>
    </li>
    <li class="toctree-l2">
@@ -339,7 +341,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-advanced/index.html">
-   Advanced and Miscellaneous Examples
+   Advanced and miscellaneous examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -349,49 +351,49 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/00-multistage_advanced_options.html">
-     Multi-stage Cyclic Symmetry Use Advanced Customization
+     Multi-stage cyclic symmetry using advanced customization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/01-solve_harmonic_problem.html">
-     Solve Harmonic Problem (with damping) Using Matrix Inverse
+     Solve harmonic problem (with damping) using matrix inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/02-volume_averaged_stress.html">
-     Average Elemental Stress on a given volume
+     Average elemental stress on a given volume
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/03-exchange_data_between_servers.html">
-     Exchange Data Between Servers
+     Exchange data between servers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/04-extrapolation_stress_3d.html">
-     Extrapolation Method for stress result of 3D-element
+     Extrapolation method for stress result of a 3D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/05-extrapolation_strain_2d.html">
-     Extrapolation Method for strain result of 2D-element
+     Extrapolation method for strain result of a 2D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/06-stress_gradient_path.html">
-     Stress gradient normal to a defined node.
+     Stress gradient normal to a defined node
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/10-asme_secviii_divtwo.html">
-     ASME Section VIII Division 2: pressure vessels
+     Pressure vessel analysis according to an ASME standard
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04-specific-requests/index.html">
-   Examples that targets specific requests
+   Target-specific request examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -401,7 +403,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
-     Hdf5 export and compare precision
+     HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
@@ -413,7 +415,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05-plotting/index.html">
-   Plotting Examples
+   Plotting examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -428,17 +430,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/01-compare_results.html">
-     Compare Results Using the Plotter
+     Compare results using the plotter
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/02-solution_combination.html">
-     Load Case Combination for Principal Stress
+     Load case combination for principal stress
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/03-labels.html">
-     Add Nodal Labels on Plots
+     Add nodal labels on plots
     </a>
    </li>
    <li class="toctree-l2">
@@ -451,11 +453,16 @@
      Warp the mesh by a field for plotting
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-plotting/06-animate_results.html">
+     Review of available animation commands
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../06-distributed-post/index.html">
-   Examples for post processing on distributed process
+   Examples for postprocessing on distributed processes
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -465,22 +472,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/00-distributed_total_disp.html">
-     Post processing of displacement on distributed processes
+     Postprocessing of displacement on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/01-distributed_workflows_on_remote.html">
-     Create custom workflow on distributed processes
+     Create a custom workflow on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/02-distributed-msup_expansion.html">
-     Distributed modal superposition
+     Distributed mode superposition (MSUP)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/03-distributed-msup_expansion_steps.html">
-     Distributed msup distributed modal response
+     Distributed MSUP distributed modal response
     </a>
    </li>
    <li class="toctree-l2">
@@ -492,7 +499,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../07-python-operators/index.html">
-   Examples of custom python plugins of Operators
+   Examples of creating custom operator plugins
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -502,24 +509,24 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/00-wrapping_numpy_capabilities.html">
-     Write user defined Operator
+     Create a basic operator plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/01-package_python_operators.html">
-     Write user defined Operators as a package
+     Create a plug-in package with multiple operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/02-python_operators_with_dependencies.html">
-     Write user defined Operators having third party dependencies
+     Create a plug-in package that has third-party dependencies
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
-   Averaging Examples
+   Averaging examples
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -569,18 +576,18 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#first-case-applying-the-averaging-operator-after-computing-the-equivalent-stresses">
-   First case: applying the averaging operator after computing the equivalent stresses
+  <a class="reference internal nav-link" href="#create-the-first-workflow">
+   Create the first workflow
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#second-case-computing-the-equivalent-stresses-after-applying-the-averaging-operator">
-   Second case: computing the equivalent stresses after applying the averaging operator
+  <a class="reference internal nav-link" href="#create-the-second-workflow">
+   Create the second workflow
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-the-results">
-   Plotting the results
+  <a class="reference internal nav-link" href="#plot-the-results">
+   Plot the results
   </a>
  </li>
 </ul>
@@ -608,15 +615,17 @@
 to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="averaging-order">
-<span id="ref-compute-and-average"></span><span id="sphx-glr-examples-08-averaging-00-compute-and-average-py"></span><h1>Averaging order<a class="headerlink" href="#averaging-order" title="Permalink to this headline">#</a></h1>
-<p>In this example, we compare two different workflows that accomplish the same task to see
-how the order of the operators can change the end result. In the first case, we will extract the
-stress field of a crankshaft under load from a results file, compute the equivalent (Von Mises)
-stresses and then apply an averaging operator to transpose them from an ElementalNodal
-to a Nodal position. In the second case, however, we will firstly transpose the
-stresses that come from the results file to a Nodal position and only then calculate
-the Von Mises stresses.
-These workflows can be better visualized in the images below:</p>
+<span id="ref-compute-and-average"></span><span id="sphx-glr-examples-08-averaging-00-compute-and-average-py"></span><h1>Averaging order<a class="headerlink" href="#averaging-order" title="Permalink to this heading">#</a></h1>
+<p>This example compares two different workflows that accomplish the same task to show
+how the order of the operators can change the end result.</p>
+<ul class="simple">
+<li><p>The first workflow extracts the stress field of a crankshaft under load from a
+result file, computes the equivalent (von Mises) stresses, and then applies an
+averaging operator to transpose them from <code class="docutils literal notranslate"><span class="pre">ElementalNodal</span></code> to <code class="docutils literal notranslate"><span class="pre">Nodal</span></code> positions.</p></li>
+<li><p>The second workflow first transposes the stresses that come from the result file
+to a <code class="docutils literal notranslate"><span class="pre">Nodal</span></code> position and then calculates the von Mises stresses.</p></li>
+</ul>
+<p>The following images shows these workflows:</p>
 <div class="graphviz"><img src="../../_images/graphviz-239d2d15b54c33d2cf7cc700486d51aeaab24f40.png" alt="digraph foo {
     graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]
     node [shape=box, style=filled, fillcolor=&quot;#ffcc0&quot;, margin=&quot;0&quot;];
@@ -653,42 +662,43 @@ These workflows can be better visualized in the images below:</p>
         fillcolor=lightgrey;
     }
 }" class="graphviz" /></div>
-<p>Let’s start by importing the necessary modules.</p>
+<p>Import the necessary modules.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
-<p>Then we can load the simulation results from a .rst file.</p>
+<p>Load the simulation results from an RST file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">analysis</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_crankshaft</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
-<section id="first-case-applying-the-averaging-operator-after-computing-the-equivalent-stresses">
-<h1>First case: applying the averaging operator after computing the equivalent stresses<a class="headerlink" href="#first-case-applying-the-averaging-operator-after-computing-the-equivalent-stresses" title="Permalink to this headline">#</a></h1>
-<p>Here we are going to define a function that computes the Von
-Mises stresses in the crankshaft and then applies the desired averaging operator.</p>
+<section id="create-the-first-workflow">
+<h1>Create the first workflow<a class="headerlink" href="#create-the-first-workflow" title="Permalink to this heading">#</a></h1>
+<p>The first workflow applies the averaging operator after computing the equivalent
+stresses. To create it, define a function that computes the von Mises stresses
+in the crankshaft and then apply the averaging operator.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_von_mises_then_average</span><span class="p">(</span><span class="n">analysis</span><span class="p">):</span>
 
-    <span class="c1"># First we create a model from the results of the simulation and retrieve its mesh</span>
+    <span class="c1"># Create a model from the results of the simulation and retrieve its mesh</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
     <span class="n">mesh</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span>
 
-    <span class="c1"># Then we apply the stress operator to obtain the stresses in the body</span>
+    <span class="c1"># Apply the stress operator to obtain the stresses in the body</span>
     <span class="n">stress_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">stress</span><span class="p">()</span>
     <span class="n">stress_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
     <span class="n">stresses</span> <span class="o">=</span> <span class="n">stress_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">fields_container</span><span class="p">()</span>
 
-    <span class="c1"># Here we compute the Von Mises stresses</span>
+    <span class="c1"># Compute the von Mises stresses</span>
     <span class="n">vm_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">invariant</span><span class="o">.</span><span class="n">von_mises_eqv</span><span class="p">()</span>
     <span class="n">vm_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">stresses</span><span class="p">)</span>
     <span class="n">von_mises</span> <span class="o">=</span> <span class="n">vm_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field</span><span class="p">()</span>
 
-    <span class="c1"># Finally, we apply the averaging operator to the Von Mises stresses</span>
+    <span class="c1"># Apply the averaging operator to the von Mises stresses</span>
     <span class="n">avg_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">averaging</span><span class="o">.</span><span class="n">elemental_nodal_to_nodal</span><span class="p">()</span>
     <span class="n">avg_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">von_mises</span><span class="p">)</span>
     <span class="n">avg_von_mises</span> <span class="o">=</span> <span class="n">avg_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field</span><span class="p">()</span>
 
-    <span class="c1"># Aditionally we find the maximum value of the Von Mises stress field</span>
+    <span class="c1"># Find the maximum value of the von Mises stress field</span>
     <span class="n">min_max</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">min_max</span><span class="o">.</span><span class="n">min_max</span><span class="p">()</span>
     <span class="n">min_max</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">avg_von_mises</span><span class="p">)</span>
     <span class="n">max_val</span> <span class="o">=</span> <span class="n">min_max</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field_max</span><span class="p">()</span>
@@ -699,11 +709,12 @@ Mises stresses in the crankshaft and then applies the desired averaging operator
 </pre></div>
 </div>
 </section>
-<section id="second-case-computing-the-equivalent-stresses-after-applying-the-averaging-operator">
-<h1>Second case: computing the equivalent stresses after applying the averaging operator<a class="headerlink" href="#second-case-computing-the-equivalent-stresses-after-applying-the-averaging-operator" title="Permalink to this headline">#</a></h1>
-<p>This time, the function we are going to create will firstly apply the averaging operator
-to the stress field in the crankshaft and only then calculate the Von Mises stresses, that
-will be already located on a Nodal position.</p>
+<section id="create-the-second-workflow">
+<h1>Create the second workflow<a class="headerlink" href="#create-the-second-workflow" title="Permalink to this heading">#</a></h1>
+<p>The second workflow computes the equivalent stresses after applying the averaging
+operator. To create this workflow, first apply the averaging operator to the
+stress field in the crankshaft and then calculate the von Mises stresses, which
+are already located on a <code class="docutils literal notranslate"><span class="pre">Nodal</span></code> position.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">average_then_compute_von_mises</span><span class="p">(</span><span class="n">analysis</span><span class="p">):</span>
 
     <span class="c1"># Creating the model from the results of the simulation</span>
@@ -736,13 +747,11 @@ will be already located on a Nodal position.</p>
 </pre></div>
 </div>
 </section>
-<section id="plotting-the-results">
-<h1>Plotting the results<a class="headerlink" href="#plotting-the-results" title="Permalink to this headline">#</a></h1>
-<p>Finally, we can plot both Von Mises stress fields side
-by side to see how they compare to each other. The first image
-displays the results when the equivalent stresses are calculated
-first, while the second one shows the case when the averaging is
-done first.</p>
+<section id="plot-the-results">
+<h1>Plot the results<a class="headerlink" href="#plot-the-results" title="Permalink to this heading">#</a></h1>
+<p>Plot both von Mises stress fields side by side to compare them.
+- The first plot displays the results when the equivalent stresses are calculated first.
+- The second plot shows the results when the averaging is done first.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">max1</span> <span class="o">=</span> <span class="n">compute_von_mises_then_average</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
 <span class="n">max2</span> <span class="o">=</span> <span class="n">average_then_compute_von_mises</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
 </pre></div>
@@ -764,9 +773,10 @@ Max stress when the stress averaging is done first: 11860260659.06 Pa
 The maximum Von Mises stress value is 5.35% higher when the averaging is done after the calculations.
 </pre></div>
 </div>
-<p>As we can see, even though both workflows apply the same steps to the same initial data,
-their final results are different because of the order in which the operators are applied.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  23.323 seconds)</p>
+<p>Even though both workflows apply the same steps to the same initial data,
+their final results are different because of the order in which the operators
+are applied.</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.559 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-08-averaging-00-compute-and-average-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/e602e0eb596d57767cea69704c44994c/00-compute_and_average.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">00-compute_and_average.py</span></code></a></p>
@@ -803,7 +813,7 @@ their final results are different because of the order in which the operators ar
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

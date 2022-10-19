@@ -1,8 +1,8 @@
 """
 .. _ref_create_entities_example:
 
-Create Your Own Entities Use DPF Operators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create your own entities using DPF operators
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You can create your field, fields container, or meshed region to use DPF operators
 with your own data. The ability to use scripting to create any DPF entity means
 that you are not dependent on result files and can connect the DPF environment
@@ -39,7 +39,7 @@ def search_sequence_numpy(arr, seq):
 
 ###############################################################################
 # Add nodes:
-id = 1
+n_id = 1
 for i, x in enumerate(
         [
             float(i) * length / float(num_nodes_in_length)
@@ -58,8 +58,8 @@ for i, x in enumerate(
                     for i in range(0, num_nodes_in_depth)
                 ]
         ):
-            mesh.nodes.add_node(id, [x, y, z])
-            id += 1
+            mesh.nodes.add_node(n_id, [x, y, z])
+            n_id += 1
 
 ###############################################################################
 # Get the nodes' coordinates field:
@@ -75,7 +75,7 @@ coordinates_scoping = coordinates.scoping
 
 ###############################################################################
 # Add solid elements (linear hexa with eight nodes):
-id = 1
+e_id = 1
 for i, x in enumerate(
         [
             float(i) * length / float(num_nodes_in_length)
@@ -111,16 +111,17 @@ for i, x in enumerate(
             tmp = connectivity[6]
             connectivity[6] = connectivity[7]
             connectivity[7] = tmp
-            mesh.elements.add_solid_element(id, connectivity)
+            mesh.elements.add_solid_element(e_id, connectivity)
+            e_id += 1
 mesh.plot()
 
 ###############################################################################
 # Create displacement fields over time with three time sets.
-# Here the displacement on each node will be the value of its x, y, and
+# Here the displacement on each node is the value of its x, y, and
 # z coordinates for time 1.
-# The displacement on each node will be two times the value of its x, y,
+# The displacement on each node is two times the value of its x, y,
 # and z coordinates for time 2.
-# The displacement on each node will be three times the value of its x,
+# The displacement on each node is three times the value of its x,
 # y, and z coordinates for time 3.
 num_nodes = mesh.nodes.n_nodes
 time1_array = coordinates_data

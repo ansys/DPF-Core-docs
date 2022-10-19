@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Distributed msup distributed modal response &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>Distributed MSUP distributed modal response &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -53,9 +54,9 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Average Stress in distributed Workflows" href="06-distributed_stress_averaging.html" />
-    <link rel="prev" title="Distributed modal superposition" href="02-distributed-msup_expansion.html" />
+    <link rel="prev" title="Distributed mode superposition (MSUP)" href="02-distributed-msup_expansion.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,13 +169,15 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Examples</a> » </li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Examples for post processing on distributed process</a> » </li>
-        <li class="nav-item nav-item-this"><a href="">Distributed msup distributed modal response</a></li> 
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Examples for postprocessing on distributed processes</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">Distributed MSUP distributed modal response</a></li> 
       </ul>
     </div>
         </div>
@@ -203,7 +200,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../00-basic/index.html">
-   Basic DPF Examples
+   Basic DPF examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -213,42 +210,42 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/00-basic_example.html">
-     Basic DPF-Core Usage
+     Basic DPF-Core usage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/01-basic_operators.html">
-     Operators Overview
+     Operators overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/02-basic_field_containers.html">
-     Field and Field Containers Overview
+     Field and field containers overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/03-create_entities.html">
-     Create Your Own Entities Use DPF Operators
+     Create your own entities using DPF operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/04-basic-load-file.html">
-     Write/Load and Upload/Download a Result File
+     Working with a result file
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/05-use_local_data.html">
-     Bring a Field’s Data Locally to Improve Performance
+     Bring a field’s data locally to improve performance
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/06-load_plugin.html">
-     Load Plugin
+     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/07-use_result_helpers.html">
-     Use Result Helpers to Load Custom Data
+     Use result helpers to load custom data
     </a>
    </li>
    <li class="toctree-l2">
@@ -263,7 +260,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/11-server_types.html">
-     Communicate In Process or via gRPC
+     Communicate in process or via gRPC
     </a>
    </li>
    <li class="toctree-l2">
@@ -271,11 +268,16 @@
      Get material properties from the result file
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-basic/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01-static-transient/index.html">
-   Transient Analysis Examples
+   Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -285,19 +287,19 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
-     Transient Analysis Result Example
+     Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
-     Choose a Time Scoping for a Transient Analysis
+     Choose a time scoping for a transient analysis
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-modal-harmonic/index.html">
-   Harmonic Analysis Examples
+   Harmonic analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -307,17 +309,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/00-multi_harmonic.html">
-     Multi-Harmonic Response Example
+     Multi-harmonic response example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/01-modal_cyclic.html">
-     Modal Cyclic symmetry Example
+     Modal cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/02-cyclic_multi_stage.html">
-     Multi-stage Cyclic Symmetry Example
+     Multi-stage cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
@@ -327,7 +329,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/04-modal_superposition.html">
-     Expand Harmonic Modal Superposition with DPF
+     Expand harmonic modal superposition with DPF
     </a>
    </li>
    <li class="toctree-l2">
@@ -339,7 +341,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-advanced/index.html">
-   Advanced and Miscellaneous Examples
+   Advanced and miscellaneous examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -349,49 +351,49 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/00-multistage_advanced_options.html">
-     Multi-stage Cyclic Symmetry Use Advanced Customization
+     Multi-stage cyclic symmetry using advanced customization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/01-solve_harmonic_problem.html">
-     Solve Harmonic Problem (with damping) Using Matrix Inverse
+     Solve harmonic problem (with damping) using matrix inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/02-volume_averaged_stress.html">
-     Average Elemental Stress on a given volume
+     Average elemental stress on a given volume
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/03-exchange_data_between_servers.html">
-     Exchange Data Between Servers
+     Exchange data between servers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/04-extrapolation_stress_3d.html">
-     Extrapolation Method for stress result of 3D-element
+     Extrapolation method for stress result of a 3D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/05-extrapolation_strain_2d.html">
-     Extrapolation Method for strain result of 2D-element
+     Extrapolation method for strain result of a 2D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/06-stress_gradient_path.html">
-     Stress gradient normal to a defined node.
+     Stress gradient normal to a defined node
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/10-asme_secviii_divtwo.html">
-     ASME Section VIII Division 2: pressure vessels
+     Pressure vessel analysis according to an ASME standard
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04-specific-requests/index.html">
-   Examples that targets specific requests
+   Target-specific request examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -401,7 +403,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
-     Hdf5 export and compare precision
+     HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
@@ -413,7 +415,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05-plotting/index.html">
-   Plotting Examples
+   Plotting examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -428,17 +430,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/01-compare_results.html">
-     Compare Results Using the Plotter
+     Compare results using the plotter
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/02-solution_combination.html">
-     Load Case Combination for Principal Stress
+     Load case combination for principal stress
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/03-labels.html">
-     Add Nodal Labels on Plots
+     Add nodal labels on plots
     </a>
    </li>
    <li class="toctree-l2">
@@ -451,11 +453,16 @@
      Warp the mesh by a field for plotting
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-plotting/06-animate_results.html">
+     Review of available animation commands
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
-   Examples for post processing on distributed process
+   Examples for postprocessing on distributed processes
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -465,22 +472,22 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="00-distributed_total_disp.html">
-     Post processing of displacement on distributed processes
+     Postprocessing of displacement on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="01-distributed_workflows_on_remote.html">
-     Create custom workflow on distributed processes
+     Create a custom workflow on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02-distributed-msup_expansion.html">
-     Distributed modal superposition
+     Distributed mode superposition (MSUP)
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Distributed msup distributed modal response
+     Distributed MSUP distributed modal response
     </a>
    </li>
    <li class="toctree-l2">
@@ -492,7 +499,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../07-python-operators/index.html">
-   Examples of custom python plugins of Operators
+   Examples of creating custom operator plugins
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -502,24 +509,24 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/00-wrapping_numpy_capabilities.html">
-     Write user defined Operator
+     Create a basic operator plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/01-package_python_operators.html">
-     Write user defined Operators as a package
+     Create a plug-in package with multiple operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/02-python_operators_with_dependencies.html">
-     Write user defined Operators having third party dependencies
+     Create a plug-in package that has third-party dependencies
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../08-averaging/index.html">
-   Averaging Examples
+   Averaging examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -565,7 +572,7 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Distributed msup distributed modal response
+   Distributed MSUP distributed modal response
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -574,13 +581,13 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-the-operators-on-the-servers">
-   Create the operators on the servers
+  <a class="reference internal nav-link" href="#create-operators-on-each-server">
+   Create operators on each server
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-local-operators-chain-for-expansion">
-   Create a local operators chain for expansion
+  <a class="reference internal nav-link" href="#create-a-local-operator-chain-for-expansion">
+   Create a local operator chain for expansion
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -613,13 +620,13 @@
 to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="distributed-msup-distributed-modal-response">
-<span id="ref-distributed-msup-steps"></span><span id="sphx-glr-examples-06-distributed-post-03-distributed-msup-expansion-steps-py"></span><h1>Distributed msup distributed modal response<a class="headerlink" href="#distributed-msup-distributed-modal-response" title="Permalink to this headline">#</a></h1>
-<p>This example shows how distributed files can be read and expanded
-on distributed processes. The modal basis (2 distributed files) is read
-on 2 remote servers and the modal response (2 distributed files) reading and the expansion is
-done on a third server.</p>
-<p>To help understand this example the following diagram is provided. It shows
-the operator chain used to compute the final result.</p>
+<span id="ref-distributed-msup-steps"></span><span id="sphx-glr-examples-06-distributed-post-03-distributed-msup-expansion-steps-py"></span><h1>Distributed MSUP distributed modal response<a class="headerlink" href="#distributed-msup-distributed-modal-response" title="Permalink to this heading">#</a></h1>
+<p>This example shows how to read and expand distributed files on distributed
+processes. The modal basis (two distributed files) is read on two remote
+servers. The modal response (two distributed files) is then read and expanded
+on a third server.</p>
+<p>The following diagram helps you to understand this example. It shows the operator
+chain that is used to compute the final result.</p>
 <div class="graphviz"><img src="../../_images/graphviz-702e5732cd77b2c1f50239684744f20480ea171b.png" alt="digraph foo {
     graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]
     node [shape=box, style=filled, fillcolor=&quot;#ffcc00&quot;, margin=&quot;0&quot;];
@@ -674,7 +681,7 @@ the operator chain used to compute the final result.</p>
     &quot;merge_fields&quot; -&gt; &quot;expansion&quot;;
     &quot;expansion&quot; -&gt; &quot;component&quot;;
 }" class="graphviz" /></div>
-<p>Import dpf module and its examples files.</p>
+<p>Import the <code class="docutils literal notranslate"><span class="pre">dpf-core</span></code> module and its examples files.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span>
 
 <span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
@@ -684,14 +691,14 @@ the operator chain used to compute the final result.</p>
 </div>
 </section>
 <section id="configure-the-servers">
-<h1>Configure the servers<a class="headerlink" href="#configure-the-servers" title="Permalink to this headline">#</a></h1>
-<p>Make a list of ip addresses and port numbers on which dpf servers are
-started. Operator instances will be created on each of those servers to
-address each a different result file.
-In this example, we will post process an analysis distributed in 2 files,
-we will consequently require 2 remote processes
-To make this example easier, we will start local servers here,
-but we could get connected to any existing servers on the network.</p>
+<h1>Configure the servers<a class="headerlink" href="#configure-the-servers" title="Permalink to this heading">#</a></h1>
+<p>Make a list of IP addresses and port numbers that DPF servers start and
+listen on. Operator instances are created on each of these servers so that
+each server can address a different result file.</p>
+<p>This example postprocesses an analysis distributed in two files.
+Consequently, it requires two remote processes.</p>
+<p>To make it easier, this example starts local servers. However, you can
+connect to any existing servers on your network.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">global_server</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">start_local_server</span><span class="p">(</span>
     <span class="n">as_global</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerConfigs</span><span class="o">.</span><span class="n">InProcessServer</span>
 <span class="p">)</span>
@@ -707,27 +714,28 @@ but we could get connected to any existing servers on the network.</p>
 <span class="n">ports</span> <span class="o">=</span> <span class="p">[</span><span class="n">remote_server</span><span class="o">.</span><span class="n">port</span> <span class="k">for</span> <span class="n">remote_server</span> <span class="ow">in</span> <span class="n">remote_servers</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Print the ips and ports.</p>
+<p>Print the IP addresses and ports.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ips:&quot;</span><span class="p">,</span> <span class="n">ips</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ports:&quot;</span><span class="p">,</span> <span class="n">ports</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>ips: [&#39;127.0.0.1&#39;, &#39;127.0.0.1&#39;]
-ports: [50058, 50059]
+ports: [50054, 50055]
 </pre></div>
 </div>
-<p>Choose the file path.</p>
+<p>Specify the file path.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">base_path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">distributed_msup_folder</span>
 <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="s2">&quot;file0.mode&quot;</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="s2">&quot;file1.mode&quot;</span><span class="p">)]</span>
 <span class="n">files_aux</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="s2">&quot;file0.rst&quot;</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="s2">&quot;file1.rst&quot;</span><span class="p">)]</span>
 </pre></div>
 </div>
 </section>
-<section id="create-the-operators-on-the-servers">
-<h1>Create the operators on the servers<a class="headerlink" href="#create-the-operators-on-the-servers" title="Permalink to this headline">#</a></h1>
-<p>On each server we create two new operators, one for ‘displacement’ computations
-and a ‘mesh_provider’ operator, and then define their data sources. The displacement
-and mesh_provider operators receive data from their respective data files on each server.</p>
+<section id="create-operators-on-each-server">
+<h1>Create operators on each server<a class="headerlink" href="#create-operators-on-each-server" title="Permalink to this heading">#</a></h1>
+<p>On each server, create two operators, one for displacement computations
+and one for providing the mesh. Then, define their data sources. Both the
+displacement operator and mesh provider operator receive data from their
+respective data files on each server.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote_displacement_operators</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">remote_mesh_operators</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">server</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">remote_servers</span><span class="p">):</span>
@@ -742,10 +750,10 @@ and mesh_provider operators receive data from their respective data files on eac
 </pre></div>
 </div>
 </section>
-<section id="create-a-local-operators-chain-for-expansion">
-<h1>Create a local operators chain for expansion<a class="headerlink" href="#create-a-local-operators-chain-for-expansion" title="Permalink to this headline">#</a></h1>
-<p>In the following series of operators we merge the modal basis, the meshes, read
-the modal response and expand the modal response with the modal basis.</p>
+<section id="create-a-local-operator-chain-for-expansion">
+<h1>Create a local operator chain for expansion<a class="headerlink" href="#create-a-local-operator-chain-for-expansion" title="Permalink to this heading">#</a></h1>
+<p>The following series of operators merge the modal basis and the meshes, read
+the modal response, and expand the modal response with the modal basis.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">merge_fields</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">merge_fields_containers</span><span class="p">()</span>
 <span class="n">merge_mesh</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">merge_meshes</span><span class="p">()</span>
 
@@ -778,7 +786,7 @@ the modal response and expand the modal response with the modal basis.</p>
 </div>
 </section>
 <section id="connect-the-operator-chains-together-and-get-the-output">
-<h1>Connect the operator chains together and get the output<a class="headerlink" href="#connect-the-operator-chains-together-and-get-the-output" title="Permalink to this headline">#</a></h1>
+<h1>Connect the operator chains together and get the output<a class="headerlink" href="#connect-the-operator-chains-together-and-get-the-output" title="Permalink to this heading">#</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">server</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">remote_servers</span><span class="p">):</span>
     <span class="n">merge_fields</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">remote_displacement_operators</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">merge_mesh</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">remote_mesh_operators</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
@@ -842,7 +850,7 @@ the modal response and expand the modal response with the modal basis.</p>
   - field 39 {complex:  1, time:  20} with Nodal location, 1 components and 1065 entities.
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.699 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.689 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-06-distributed-post-03-distributed-msup-expansion-steps-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/be72237589d6f1bed1e6d782e8bf3a2b/03-distributed-msup_expansion_steps.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">03-distributed-msup_expansion_steps.py</span></code></a></p>
@@ -879,7 +887,7 @@ the modal response and expand the modal response with the modal basis.</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

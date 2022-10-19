@@ -4,9 +4,9 @@
 
 .. _specific_requests:
 
-Examples that targets specific requests
-=======================================
-These demos show how to solve specific requests. 
+Target-specific request examples
+================================
+These examples show how to solve requests for specific targets. 
 
 
 
@@ -17,18 +17,18 @@ These demos show how to solve specific requests.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Hdf5 export and compare precision">
+    <div class="sphx-glr-thumbcontainer" tooltip="HDF5 export and compare precision">
 
 .. only:: html
 
   .. image:: /examples/04-specific-requests/images/thumb/sphx_glr_00-hdf5_double_float_comparison_thumb.png
-    :alt: Hdf5 export and compare precision
+    :alt: HDF5 export and compare precision
 
   :ref:`sphx_glr_examples_04-specific-requests_00-hdf5_double_float_comparison.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Hdf5 export and compare precision</div>
+      <div class="sphx-glr-thumbnail-title">HDF5 export and compare precision</div>
     </div>
 
 

@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Average Stress in distributed Workflows &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>Average Stress in distributed Workflows &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -52,10 +53,10 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Examples of custom python plugins of Operators" href="../07-python-operators/index.html" />
-    <link rel="prev" title="Distributed msup distributed modal response" href="03-distributed-msup_expansion_steps.html" />
+    <link rel="next" title="Examples of creating custom operator plugins" href="../07-python-operators/index.html" />
+    <link rel="prev" title="Distributed MSUP distributed modal response" href="03-distributed-msup_expansion_steps.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,12 +169,14 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Examples</a> » </li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Examples for post processing on distributed process</a> » </li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Examples for postprocessing on distributed processes</a> » </li>
         <li class="nav-item nav-item-this"><a href="">Average Stress in distributed Workflows</a></li> 
       </ul>
     </div>
@@ -203,7 +200,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../00-basic/index.html">
-   Basic DPF Examples
+   Basic DPF examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -213,42 +210,42 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/00-basic_example.html">
-     Basic DPF-Core Usage
+     Basic DPF-Core usage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/01-basic_operators.html">
-     Operators Overview
+     Operators overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/02-basic_field_containers.html">
-     Field and Field Containers Overview
+     Field and field containers overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/03-create_entities.html">
-     Create Your Own Entities Use DPF Operators
+     Create your own entities using DPF operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/04-basic-load-file.html">
-     Write/Load and Upload/Download a Result File
+     Working with a result file
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/05-use_local_data.html">
-     Bring a Field’s Data Locally to Improve Performance
+     Bring a field’s data locally to improve performance
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/06-load_plugin.html">
-     Load Plugin
+     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/07-use_result_helpers.html">
-     Use Result Helpers to Load Custom Data
+     Use result helpers to load custom data
     </a>
    </li>
    <li class="toctree-l2">
@@ -263,7 +260,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/11-server_types.html">
-     Communicate In Process or via gRPC
+     Communicate in process or via gRPC
     </a>
    </li>
    <li class="toctree-l2">
@@ -271,11 +268,16 @@
      Get material properties from the result file
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-basic/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01-static-transient/index.html">
-   Transient Analysis Examples
+   Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -285,19 +287,19 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
-     Transient Analysis Result Example
+     Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
-     Choose a Time Scoping for a Transient Analysis
+     Choose a time scoping for a transient analysis
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-modal-harmonic/index.html">
-   Harmonic Analysis Examples
+   Harmonic analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -307,17 +309,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/00-multi_harmonic.html">
-     Multi-Harmonic Response Example
+     Multi-harmonic response example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/01-modal_cyclic.html">
-     Modal Cyclic symmetry Example
+     Modal cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/02-cyclic_multi_stage.html">
-     Multi-stage Cyclic Symmetry Example
+     Multi-stage cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
@@ -327,7 +329,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/04-modal_superposition.html">
-     Expand Harmonic Modal Superposition with DPF
+     Expand harmonic modal superposition with DPF
     </a>
    </li>
    <li class="toctree-l2">
@@ -339,7 +341,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-advanced/index.html">
-   Advanced and Miscellaneous Examples
+   Advanced and miscellaneous examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -349,49 +351,49 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/00-multistage_advanced_options.html">
-     Multi-stage Cyclic Symmetry Use Advanced Customization
+     Multi-stage cyclic symmetry using advanced customization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/01-solve_harmonic_problem.html">
-     Solve Harmonic Problem (with damping) Using Matrix Inverse
+     Solve harmonic problem (with damping) using matrix inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/02-volume_averaged_stress.html">
-     Average Elemental Stress on a given volume
+     Average elemental stress on a given volume
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/03-exchange_data_between_servers.html">
-     Exchange Data Between Servers
+     Exchange data between servers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/04-extrapolation_stress_3d.html">
-     Extrapolation Method for stress result of 3D-element
+     Extrapolation method for stress result of a 3D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/05-extrapolation_strain_2d.html">
-     Extrapolation Method for strain result of 2D-element
+     Extrapolation method for strain result of a 2D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/06-stress_gradient_path.html">
-     Stress gradient normal to a defined node.
+     Stress gradient normal to a defined node
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/10-asme_secviii_divtwo.html">
-     ASME Section VIII Division 2: pressure vessels
+     Pressure vessel analysis according to an ASME standard
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04-specific-requests/index.html">
-   Examples that targets specific requests
+   Target-specific request examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -401,7 +403,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
-     Hdf5 export and compare precision
+     HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
@@ -413,7 +415,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05-plotting/index.html">
-   Plotting Examples
+   Plotting examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -428,17 +430,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/01-compare_results.html">
-     Compare Results Using the Plotter
+     Compare results using the plotter
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/02-solution_combination.html">
-     Load Case Combination for Principal Stress
+     Load case combination for principal stress
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/03-labels.html">
-     Add Nodal Labels on Plots
+     Add nodal labels on plots
     </a>
    </li>
    <li class="toctree-l2">
@@ -451,11 +453,16 @@
      Warp the mesh by a field for plotting
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-plotting/06-animate_results.html">
+     Review of available animation commands
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
-   Examples for post processing on distributed process
+   Examples for postprocessing on distributed processes
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -465,22 +472,22 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="00-distributed_total_disp.html">
-     Post processing of displacement on distributed processes
+     Postprocessing of displacement on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="01-distributed_workflows_on_remote.html">
-     Create custom workflow on distributed processes
+     Create a custom workflow on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02-distributed-msup_expansion.html">
-     Distributed modal superposition
+     Distributed mode superposition (MSUP)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03-distributed-msup_expansion_steps.html">
-     Distributed msup distributed modal response
+     Distributed MSUP distributed modal response
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -492,7 +499,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../07-python-operators/index.html">
-   Examples of custom python plugins of Operators
+   Examples of creating custom operator plugins
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -502,24 +509,24 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/00-wrapping_numpy_capabilities.html">
-     Write user defined Operator
+     Create a basic operator plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/01-package_python_operators.html">
-     Write user defined Operators as a package
+     Create a plug-in package with multiple operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/02-python_operators_with_dependencies.html">
-     Write user defined Operators having third party dependencies
+     Create a plug-in package that has third-party dependencies
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../08-averaging/index.html">
-   Averaging Examples
+   Averaging examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -618,7 +625,7 @@
 to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="average-stress-in-distributed-workflows">
-<span id="ref-distributed-stress-averaging"></span><span id="sphx-glr-examples-06-distributed-post-06-distributed-stress-averaging-py"></span><h1>Average Stress in distributed Workflows<a class="headerlink" href="#average-stress-in-distributed-workflows" title="Permalink to this headline">#</a></h1>
+<span id="ref-distributed-stress-averaging"></span><span id="sphx-glr-examples-06-distributed-post-06-distributed-stress-averaging-py"></span><h1>Average Stress in distributed Workflows<a class="headerlink" href="#average-stress-in-distributed-workflows" title="Permalink to this heading">#</a></h1>
 <p>This example shows how stress can be read from distributed files and
 averaged from elemental nodal to nodal in parallel with a distributed workflow.
 After remote post-processing, results are merged on the local process.</p>
@@ -630,7 +637,7 @@ After remote post-processing, results are merged on the local process.</p>
 </div>
 </section>
 <section id="configure-the-servers">
-<h1>Configure the servers<a class="headerlink" href="#configure-the-servers" title="Permalink to this headline">#</a></h1>
+<h1>Configure the servers<a class="headerlink" href="#configure-the-servers" title="Permalink to this heading">#</a></h1>
 <p>Make a list of ip addresses and port numbers on which dpf servers are
 started. Workflow instances will be created on each of these servers to
 address each a different result file.
@@ -652,12 +659,12 @@ but we could get connected to any existing servers on the network.</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>ips: [&#39;127.0.0.1&#39;, &#39;127.0.0.1&#39;]
-ports: [50058, 50059]
+ports: [50054, 50055]
 </pre></div>
 </div>
 </section>
 <section id="distributed-workflow">
-<h1>Distributed Workflow<a class="headerlink" href="#distributed-workflow" title="Permalink to this headline">#</a></h1>
+<h1>Distributed Workflow<a class="headerlink" href="#distributed-workflow" title="Permalink to this heading">#</a></h1>
 <div class="graphviz"><img src="../../_images/graphviz-4cdf9a1b110cb47d6af0b30c12e53f7e29149978.png" alt="digraph foo {
     graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]
     node [shape=box, style=filled, fillcolor=&quot;#ffcc00&quot;, margin=&quot;0&quot;];
@@ -704,7 +711,7 @@ ports: [50058, 50059]
 }" class="graphviz" /></div>
 </section>
 <section id="create-a-local-workflow-able-to-merge-the-results">
-<h1>Create a local workflow able to merge the results<a class="headerlink" href="#create-a-local-workflow-able-to-merge-the-results" title="Permalink to this headline">#</a></h1>
+<h1>Create a local workflow able to merge the results<a class="headerlink" href="#create-a-local-workflow-able-to-merge-the-results" title="Permalink to this heading">#</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">merge_weighted_fields_containers</span><span class="o">.</span><span class="n">default_config</span><span class="p">()</span>
 <span class="n">config</span><span class="o">.</span><span class="n">set_read_inputs_in_parallel_option</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">merge</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">merge_weighted_fields_containers</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
@@ -713,7 +720,7 @@ ports: [50058, 50059]
 </div>
 </section>
 <section id="send-workflows-on-servers">
-<h1>Send workflows on servers<a class="headerlink" href="#send-workflows-on-servers" title="Permalink to this headline">#</a></h1>
+<h1>Send workflows on servers<a class="headerlink" href="#send-workflows-on-servers" title="Permalink to this heading">#</a></h1>
 <p>Here we create new instances on the server by copies of the template workflow
 We also connect the data sources to those workflows</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote_workflows</span> <span class="o">=</span> <span class="p">[]</span>
@@ -749,7 +756,7 @@ We also connect the data sources to those workflows</p>
 </div>
 </section>
 <section id="compare-with-non-distributed-workflow">
-<h1>Compare with non distributed Workflow<a class="headerlink" href="#compare-with-non-distributed-workflow" title="Permalink to this headline">#</a></h1>
+<h1>Compare with non distributed Workflow<a class="headerlink" href="#compare-with-non-distributed-workflow" title="Permalink to this heading">#</a></h1>
 <p>Create DataSources with Domain id (one domain by distributed file).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">set_domain_result_file_path</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
@@ -770,7 +777,7 @@ We also connect the data sources to those workflows</p>
  9.38940668e+12 8.39338295e+11]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.305 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.283 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-06-distributed-post-06-distributed-stress-averaging-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/ee8cf8f62b8cd6fb9cb45cbc3456ead7/06-distributed_stress_averaging.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">06-distributed_stress_averaging.py</span></code></a></p>
@@ -807,7 +814,7 @@ We also connect the data sources to those workflows</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

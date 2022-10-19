@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Installation &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>Installation &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -55,7 +56,7 @@
     <link rel="next" title="Dependencies" href="dependencies.html" />
     <link rel="prev" title="Compatibility" href="compatibility.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,8 +169,10 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Getting started</a> » </li>
@@ -245,23 +242,28 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pip-installation">
-   PIP installation
+  <a class="reference internal nav-link" href="#install-using-pip">
+   Install using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pip
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wheel-file-installation">
-   Wheel file installation
+  <a class="reference internal nav-link" href="#install-using-a-wheel-file">
+   Install using a wheel file
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tryout-installation">
-   Tryout installation
+  <a class="reference internal nav-link" href="#install-for-a-quick-tryout">
+   Install for a quick tryout
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#development-mode-installation">
-   Development mode installation
+  <a class="reference internal nav-link" href="#install-in-development-mode">
+   Install in development mode
   </a>
  </li>
 </ul>
@@ -284,71 +286,42 @@
               <article class="bd-article" role="main">
                 
   <section id="installation">
-<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
-<section id="pip-installation">
-<h2>PIP installation<a class="headerlink" href="#pip-installation" title="Permalink to this headline">#</a></h2>
-<p>To use PyDPF-Core with Ansys 2021 R2 or later, install the latest version
-of PyDPF-Core with:</p>
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h1>
+<section id="install-using-pip">
+<h2>Install using <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#install-using-pip" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://pypi.org/project/pip/">pip</a> is the package installer for Python.</p>
+<p>To use PyDPF-Core with Ansys 2021 R2 or later, install teh latest version
+with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ansys</span><span class="o">-</span><span class="n">dpf</span><span class="o">-</span><span class="n">core</span>
 </pre></div>
 </div>
-<p>To use PyDPF-Core with Ansys 2021 R1, install a 0.2.* PyDPF-Core version with:</p>
+<p>To use PyDPF-Core with Ansys 2021 R1, install the latest version
+with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ansys</span><span class="o">-</span><span class="n">dpf</span><span class="o">-</span><span class="n">core</span><span class="o">&lt;</span><span class="mf">0.3.0</span>
 </pre></div>
 </div>
 </section>
-<section id="wheel-file-installation">
-<h2>Wheel file installation<a class="headerlink" href="#wheel-file-installation" title="Permalink to this headline">#</a></h2>
-<p>If you are unable to install PyDPF-Core on the host machine due to
-network isolation, download the latest wheel file or the wheel file
-for a specific release from <a class="reference external" href="https://github.com/pyansys/pydpf-core/releases">PyDPF-Core
+<section id="install-using-a-wheel-file">
+<h2>Install using a wheel file<a class="headerlink" href="#install-using-a-wheel-file" title="Permalink to this heading">#</a></h2>
+<p>If you are unable to install PyDPF-Post on the host machine due to
+network isolation, download the latest wheel file from <a class="reference external" href="https://github.com/pyansys/pydpf-post">PyDPF-Post
 GitHub</a> or
-<a class="reference external" href="https://pypi.org/project/ansys-dpf-core/">PyDPF-Core PyPi</a>.</p>
+<a class="reference external" href="https://pypi.org/project/ansys-dpf-post/">PyDPF-Post PyPi</a>.</p>
 </section>
-<section id="tryout-installation">
-<h2>Tryout installation<a class="headerlink" href="#tryout-installation" title="Permalink to this headline">#</a></h2>
-<p>For a quick tryout installation, use:</p>
+<section id="install-for-a-quick-tryout">
+<h2>Install for a quick tryout<a class="headerlink" href="#install-for-a-quick-tryout" title="Permalink to this heading">#</a></h2>
+<p>For a quick tryou, use:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">Model</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">simple_bar</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF Model
-------------------------------
-Static analysis
-Unit system: Metric (m, kg, N, s, V, A)
-Physics Type: Mechanical
-Available results:
-     -  displacement: Nodal Displacement
-     -  element_nodal_forces: ElementalNodal Element nodal Forces
-     -  elemental_volume: Elemental Volume
-     -  stiffness_matrix_energy: Elemental Energy-stiffness matrix
-     -  artificial_hourglass_energy: Elemental Hourglass Energy
-     -  thermal_dissipation_energy: Elemental thermal dissipation energy
-     -  kinetic_energy: Elemental Kinetic Energy
-     -  co_energy: Elemental co-energy
-     -  incremental_energy: Elemental incremental energy
-     -  structural_temperature: ElementalNodal Temperature
-------------------------------
-DPF  Meshed Region:
-  3751 nodes
-  3000 elements
-  Unit: m
-  With solid (3D) elements
-------------------------------
-DPF  Time/Freq Support:
-  Number of sets: 1
-Cumulative     Time (s)       LoadStep       Substep
-1              1.000000       1              1
-</pre></div>
-</div>
 </section>
-<section id="development-mode-installation">
-<h2>Development mode installation<a class="headerlink" href="#development-mode-installation" title="Permalink to this headline">#</a></h2>
+<section id="install-in-development-mode">
+<h2>Install in development mode<a class="headerlink" href="#install-in-development-mode" title="Permalink to this heading">#</a></h2>
 <p>If you want to edit and potentially contribute to PyDPF-Core,
-clone the repository and install it using pip with the <code class="docutils literal notranslate"><span class="pre">-e</span></code>
+clone the repository and install it using <code class="docutils literal notranslate"><span class="pre">pip</span></code> with the <code class="docutils literal notranslate"><span class="pre">-e</span></code>
 development flag:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyansys</span><span class="o">/</span><span class="n">pydpf</span><span class="o">-</span><span class="n">core</span>
 <span class="n">cd</span> <span class="n">pydpf</span><span class="o">-</span><span class="n">core</span>
@@ -383,7 +356,7 @@ development flag:</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

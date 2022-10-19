@@ -20,33 +20,33 @@
 
 .. _ref_python_plugin_package:
 
-Write user defined Operators as a package
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This example shows how more complex DPF python plugins of Operators can be
-created as standard python packages.
-The benefits of writing packages instead of simple scripts are:
-componentization (split the code in several
-python modules or files), distribution (with packages,
-standard python tools can be used to upload and
-download packages) and documentation (READMEs, docs, tests and
-examples can be added to the package).
+Create a plug-in package with multiple operators
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This example shows how to create a plug-in package with multiple operators.
+The benefits of writing packages rather than simple scripts are:
 
-This plugin will hold 2 different Operators:
-  - One returning all the scoping ids having data higher than the average
-  - One returning all the scoping ids having data lower than the average
+- **Componentization:** You can split the code into several Python modules or files.
+- **Distribution:** You can use standard Python tools to upload and download packages.
+- **Documentation:** You can add README files, documentation, tests, and examples to the package.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-29
+For this example, the plug-in package contains two different operators:
 
-Write Operator
---------------
-For this more advanced use case, a python package is created.
-Each Operator implementation derives from
-:class:`ansys.dpf.core.custom_operator.CustomOperatorBase`
-and a call to :py:func:`ansys.dpf.core.custom_operator.record_operator`
-records the Operators of the plugin.
-The python package `average_filter_plugin` is downloaded and displayed here:
+- One that returns all scoping ID having data higher than the average
+- One that returns all scoping IDs having data lower than the average
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-52
+.. GENERATED FROM PYTHON SOURCE LINES 21-30
+
+Create the plug-in package
+--------------------------
+Each operator implementation derives from the
+:class:`ansys.dpf.core.custom_operator.CustomOperatorBase` class
+and a call to the :py:func:`ansys.dpf.core.custom_operator.record_operator`
+method, which records the operators of the plug-in package.
+
+Download the ``average_filter_plugin`` plug-in package that has already been
+created for you.
+
+.. GENERATED FROM PYTHON SOURCE LINES 30-53
 
 .. code-block:: default
 
@@ -268,18 +268,21 @@ The python package `average_filter_plugin` is downloaded and displayed here:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-61
+.. GENERATED FROM PYTHON SOURCE LINES 54-65
 
-Load Plugin
------------
-Once a python plugin is written as a package, it can be loaded with the function
-:py:func:`ansys.dpf.core.core.load_library` taking as first argument the
-path to the directory of the plugin,
-as second argument ``py_`` + any name identifying the plugin,
-and as last argument the function's name exposed in the __init__ file
-and used to record operators.
+Load the plug-in package
+------------------------
+You use the function :py:func:`ansys.dpf.core.core.load_library` to load the
+plug-in package.
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-79
+- The first argument is the path to the directory where the plug-in package
+  is located.
+- The second argument is ``py_`` plus any name identifying the plug-in package.
+- The third argument is the name of the function exposed in the ``__init__ file``
+  for the plug-in package that is used to record operators.
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 65-83
 
 .. code-block:: default
 
@@ -288,7 +291,7 @@ and used to record operators.
     from ansys.dpf import core as dpf
     from ansys.dpf.core import examples
 
-    # python plugins are not supported in process
+    # Python plugins are not supported in process.
     dpf.start_local_server(config=dpf.AvailableServerConfigs.GrpcServer)
 
     tmp = dpf.make_tmp_dir_server()
@@ -314,11 +317,11 @@ and used to record operators.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-81
+.. GENERATED FROM PYTHON SOURCE LINES 84-85
 
-Once the Plugin loaded, Operators recorded in the plugin can be used with:
+Instantiate the operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-84
+.. GENERATED FROM PYTHON SOURCE LINES 85-88
 
 .. code-block:: default
 
@@ -332,14 +335,17 @@ Once the Plugin loaded, Operators recorded in the plugin can be used with:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-89
+.. GENERATED FROM PYTHON SOURCE LINES 89-96
 
-To use this new Operator, a workflow computing the norm of the displacement
-is connected to the "ids_with_data_lower_than_average" Operator.
-Methods of the class ``ids_with_data_lower_than_average`` are dynamically
-added thanks to the Operator's specification.
+Connect a workflow
+------------------
+Connect a workflow that computes the norm of the displacement
+to the ``ids_with_data_lower_than_average`` operator.
+Methods of the ``ids_with_data_lower_than_average`` class are dynamically
+added because specifications for the operator are defined in the plug-in
+package.
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-103
+.. GENERATED FROM PYTHON SOURCE LINES 98-110
 
 .. graphviz::
 
@@ -354,12 +360,12 @@ added thanks to the Operator's specification.
       norm -> ids_with_data_lower_than_average;
    }
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-107
+.. GENERATED FROM PYTHON SOURCE LINES 112-114
 
-Use the Custom Operator
------------------------
+Use the operator
+----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-118
+.. GENERATED FROM PYTHON SOURCE LINES 114-125
 
 .. code-block:: default
 
@@ -396,7 +402,7 @@ Use the Custom Operator
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.248 seconds)
+   **Total running time of the script:** ( 0 minutes  3.158 seconds)
 
 
 .. _sphx_glr_download_examples_07-python-operators_01-package_python_operators.py:

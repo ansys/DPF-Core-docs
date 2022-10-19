@@ -20,13 +20,12 @@
 
 .. _compare_results:
 
-Compare Results Using the Plotter
+Compare results using the plotter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This example shows how to plot several meshes/results combination
-over the same plotter, in order to compare them. The usecase will be
-to compare results at different time steps.
+This example shows how to plot several mesh/result combinations on the
+same plot so that you can compare results at different time steps.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-16
+.. GENERATED FROM PYTHON SOURCE LINES 10-15
 
 .. code-block:: default
 
@@ -42,14 +41,14 @@ to compare results at different time steps.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-21
+.. GENERATED FROM PYTHON SOURCE LINES 16-20
 
 Compare two results
 ~~~~~~~~~~~~~~~~~~~
-Now we will use an :class:`ansys.dpf.core.plotter.DpfPlotter` to plot two different
-results over the same mesh and make a comparison.
+Use the :class:`ansys.dpf.core.plotter.DpfPlotter` class to plot two different
+results over the same mesh and compare them.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-32
+.. GENERATED FROM PYTHON SOURCE LINES 20-31
 
 .. code-block:: default
 
@@ -71,19 +70,19 @@ results over the same mesh and make a comparison.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-35
+.. GENERATED FROM PYTHON SOURCE LINES 32-34
 
-Now we create an :class:`ansys.dpf.core.plotter.DpfPlotter` and add the
-first mesh and the first result
+Use the :class:`ansys.dpf.core.plotter.DpfPlotter` class to add plots for the
+first mesh and the first result.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-51
+.. GENERATED FROM PYTHON SOURCE LINES 34-50
 
 .. code-block:: default
 
     pl = DpfPlotter()
     pl.add_field(displacement_set2, mesh_set2)
 
-    # Then it is needed to create a new mesh and translate it along x axis
+    # Create a new mesh and translate it along the x axis.
     mesh_set15 = mesh_set2.deep_copy()
     overall_field = dpf.fields_factory.create_3d_vector_field(1, dpf.locations.overall)
     overall_field.append([0.2, 0.0, 0.0], 1)
@@ -92,8 +91,8 @@ first mesh and the first result
     coordinates_updated = add_operator.outputs.field()
     coordinates_to_update.data = coordinates_updated.data
 
-    # Finally we feed the DpfPlotter with the second mesh and the second result
-    # and we plot the result
+    # Use the :class:`ansys.dpf.core.plotter.DpfPlotter` class to add plots for the
+    # second mesh and the second result.
     pl.add_field(displacement_set15, mesh_set15)
     pl.show_figure(show_axes=True)
 
@@ -111,7 +110,7 @@ first mesh and the first result
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.486 seconds)
+   **Total running time of the script:** ( 0 minutes  0.969 seconds)
 
 
 .. _sphx_glr_download_examples_05-plotting_01-compare_results.py:

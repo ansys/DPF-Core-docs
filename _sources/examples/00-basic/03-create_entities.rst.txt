@@ -20,8 +20,8 @@
 
 .. _ref_create_entities_example:
 
-Create Your Own Entities Use DPF Operators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create your own entities using DPF operators
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You can create your field, fields container, or meshed region to use DPF operators
 with your own data. The ability to use scripting to create any DPF entity means
 that you are not dependent on result files and can connect the DPF environment
@@ -88,7 +88,7 @@ Add nodes:
 
 .. code-block:: default
 
-    id = 1
+    n_id = 1
     for i, x in enumerate(
             [
                 float(i) * length / float(num_nodes_in_length)
@@ -107,8 +107,8 @@ Add nodes:
                         for i in range(0, num_nodes_in_depth)
                     ]
             ):
-                mesh.nodes.add_node(id, [x, y, z])
-                id += 1
+                mesh.nodes.add_node(n_id, [x, y, z])
+                n_id += 1
 
 
 
@@ -159,11 +159,11 @@ Set the mesh unit:
 
 Add solid elements (linear hexa with eight nodes):
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-117
+.. GENERATED FROM PYTHON SOURCE LINES 78-118
 
 .. code-block:: default
 
-    id = 1
+    e_id = 1
     for i, x in enumerate(
             [
                 float(i) * length / float(num_nodes_in_length)
@@ -199,7 +199,8 @@ Add solid elements (linear hexa with eight nodes):
                 tmp = connectivity[6]
                 connectivity[6] = connectivity[7]
                 connectivity[7] = tmp
-                mesh.elements.add_solid_element(id, connectivity)
+                mesh.elements.add_solid_element(e_id, connectivity)
+                e_id += 1
     mesh.plot()
 
 
@@ -214,17 +215,17 @@ Add solid elements (linear hexa with eight nodes):
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 118-125
+.. GENERATED FROM PYTHON SOURCE LINES 119-126
 
 Create displacement fields over time with three time sets.
-Here the displacement on each node will be the value of its x, y, and
+Here the displacement on each node is the value of its x, y, and
 z coordinates for time 1.
-The displacement on each node will be two times the value of its x, y,
+The displacement on each node is two times the value of its x, y,
 and z coordinates for time 2.
-The displacement on each node will be three times the value of its x,
+The displacement on each node is three times the value of its x,
 y, and z coordinates for time 3.
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-146
+.. GENERATED FROM PYTHON SOURCE LINES 126-147
 
 .. code-block:: default
 
@@ -256,11 +257,11 @@ y, and z coordinates for time 3.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-148
+.. GENERATED FROM PYTHON SOURCE LINES 148-149
 
 Create results over times in a fields container with its time frequency support:
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-152
+.. GENERATED FROM PYTHON SOURCE LINES 149-153
 
 .. code-block:: default
 
@@ -275,11 +276,11 @@ Create results over times in a fields container with its time frequency support:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 153-154
+.. GENERATED FROM PYTHON SOURCE LINES 154-155
 
 Check that the time frequency support has been built:
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-156
+.. GENERATED FROM PYTHON SOURCE LINES 155-157
 
 .. code-block:: default
 
@@ -304,11 +305,11 @@ Check that the time frequency support has been built:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-158
+.. GENERATED FROM PYTHON SOURCE LINES 158-159
 
 Plot the norm over time of the fields container:
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-163
+.. GENERATED FROM PYTHON SOURCE LINES 159-164
 
 .. code-block:: default
 
@@ -351,7 +352,7 @@ Plot the norm over time of the fields container:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.498 seconds)
+   **Total running time of the script:** ( 0 minutes  7.116 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_03-create_entities.py:

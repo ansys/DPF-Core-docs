@@ -20,13 +20,13 @@
 
 .. _ref_volume_averaged_stress_advanced:
 
-Average Elemental Stress on a given volume
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Average elemental stress on a given volume
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This example shows how to find the minimum list of surrounding
 elements for a given node to get a minimum volume.
-For each list of elements, the elemental stress eqv are multiplied by the
+For each list of elements, the elemental stress equivalent is multiplied by the
 volume of each element. This result is then accumulated to divide it by the
-total volume
+total volume.
 
 .. GENERATED FROM PYTHON SOURCE LINES 12-16
 
@@ -45,9 +45,9 @@ total volume
 
 .. GENERATED FROM PYTHON SOURCE LINES 17-20
 
-Create a model targeting a given result file.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The model will give an easy access to the mesh, time_freq_support ...
+Create a model targeting a given result file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The model provides easy access to the mesh and time frequency support.
 
 .. GENERATED FROM PYTHON SOURCE LINES 20-37
 
@@ -60,8 +60,8 @@ The model will give an easy access to the mesh, time_freq_support ...
     # Volume size to check
     volume_check = 4.0e-11
 
-    # get the all the node ids in the model to find the minimum amount of
-    # surrounding elements to get a minimum volume
+    # Get all node IDs in the model to find the minimum amount of
+    # surrounding elements to get a minimum volume.
     nodes = mesh.nodes.scoping
     nodes_ids = nodes.ids
     nodes_ids_to_compute = []
@@ -80,7 +80,7 @@ The model will give an easy access to the mesh, time_freq_support ...
 .. GENERATED FROM PYTHON SOURCE LINES 38-40
 
 Read the volume by element
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. GENERATED FROM PYTHON SOURCE LINES 40-44
 
@@ -100,7 +100,7 @@ Read the volume by element
 .. GENERATED FROM PYTHON SOURCE LINES 45-47
 
 Find the minimum list of elements by node to get the volume check
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. GENERATED FROM PYTHON SOURCE LINES 47-89
 
@@ -155,17 +155,19 @@ Find the minimum list of elements by node to get the volume check
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-97
+.. GENERATED FROM PYTHON SOURCE LINES 90-99
 
 Create workflow
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 For each list of elements surrounding nodes:
-compute stress eqv averaged on elements
-apply dot product seqv.volume
-sum up those on the list of elements
-divide this sum by the total volume on those elements
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-131
+- Compute equivalent stress averaged on elements.
+- Apply dot product seqv.volume.
+- Sum up those on the list of elements.
+- Divide this sum by the total volume on these elements.
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 99-133
 
 .. code-block:: default
 
@@ -210,12 +212,12 @@ divide this sum by the total volume on those elements
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-134
+.. GENERATED FROM PYTHON SOURCE LINES 134-136
 
-Plot elemental seqv and volume averaged elemental seqv
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Plot equivalent elemental stress and volume averaged elemental equivalent stress
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-137
+.. GENERATED FROM PYTHON SOURCE LINES 136-139
 
 .. code-block:: default
 
@@ -246,13 +248,13 @@ Plot elemental seqv and volume averaged elemental seqv
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-141
+.. GENERATED FROM PYTHON SOURCE LINES 140-143
 
-Use the Operator instead
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Use the operator instead
+~~~~~~~~~~~~~~~~~~~~~~~~
 An operator with the same algorithm has been implemented
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-158
+.. GENERATED FROM PYTHON SOURCE LINES 143-160
 
 .. code-block:: default
 
@@ -288,7 +290,7 @@ An operator with the same algorithm has been implemented
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.653 seconds)
+   **Total running time of the script:** ( 0 minutes  3.049 seconds)
 
 
 .. _sphx_glr_download_examples_03-advanced_02-volume_averaged_stress.py:

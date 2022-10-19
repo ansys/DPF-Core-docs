@@ -22,14 +22,16 @@
 
 Averaging order
 ~~~~~~~~~~~~~~~
-In this example, we compare two different workflows that accomplish the same task to see
-how the order of the operators can change the end result. In the first case, we will extract the
-stress field of a crankshaft under load from a results file, compute the equivalent (Von Mises)
-stresses and then apply an averaging operator to transpose them from an ElementalNodal
-to a Nodal position. In the second case, however, we will firstly transpose the
-stresses that come from the results file to a Nodal position and only then calculate
-the Von Mises stresses.
-These workflows can be better visualized in the images below:
+This example compares two different workflows that accomplish the same task to show
+how the order of the operators can change the end result.
+
+- The first workflow extracts the stress field of a crankshaft under load from a
+  result file, computes the equivalent (von Mises) stresses, and then applies an
+  averaging operator to transpose them from ``ElementalNodal`` to ``Nodal`` positions.
+- The second workflow first transposes the stresses that come from the result file
+  to a ``Nodal`` position and then calculates the von Mises stresses.
+
+The following images shows these workflows:
 
 .. graphviz::
 
@@ -70,11 +72,11 @@ These workflows can be better visualized in the images below:
         }
     }
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-56
+.. GENERATED FROM PYTHON SOURCE LINES 57-58
 
-Let's start by importing the necessary modules.
+Import the necessary modules.
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-60
+.. GENERATED FROM PYTHON SOURCE LINES 58-62
 
 .. code-block:: default
 
@@ -89,11 +91,11 @@ Let's start by importing the necessary modules.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-62
+.. GENERATED FROM PYTHON SOURCE LINES 63-64
 
-Then we can load the simulation results from a .rst file.
+Load the simulation results from an RST file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-65
+.. GENERATED FROM PYTHON SOURCE LINES 64-67
 
 .. code-block:: default
 
@@ -107,41 +109,41 @@ Then we can load the simulation results from a .rst file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-70
+.. GENERATED FROM PYTHON SOURCE LINES 68-73
 
-First case: applying the averaging operator after computing the equivalent stresses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Here we are going to define a function that computes the Von
-Mises stresses in the crankshaft and then applies the desired averaging operator.
+Create the first workflow
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The first workflow applies the averaging operator after computing the equivalent
+stresses. To create it, define a function that computes the von Mises stresses
+in the crankshaft and then apply the averaging operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-103
+.. GENERATED FROM PYTHON SOURCE LINES 73-105
 
 .. code-block:: default
 
 
-
     def compute_von_mises_then_average(analysis):
 
-        # First we create a model from the results of the simulation and retrieve its mesh
+        # Create a model from the results of the simulation and retrieve its mesh
         model = dpf.Model(analysis)
         mesh = model.metadata.meshed_region
 
-        # Then we apply the stress operator to obtain the stresses in the body
+        # Apply the stress operator to obtain the stresses in the body
         stress_op = dpf.operators.result.stress()
         stress_op.inputs.connect(model)
         stresses = stress_op.outputs.fields_container()
 
-        # Here we compute the Von Mises stresses
+        # Compute the von Mises stresses
         vm_op = dpf.operators.invariant.von_mises_eqv()
         vm_op.inputs.field.connect(stresses)
         von_mises = vm_op.outputs.field()
 
-        # Finally, we apply the averaging operator to the Von Mises stresses
+        # Apply the averaging operator to the von Mises stresses
         avg_op = dpf.operators.averaging.elemental_nodal_to_nodal()
         avg_op.inputs.connect(von_mises)
         avg_von_mises = avg_op.outputs.field()
 
-        # Aditionally we find the maximum value of the Von Mises stress field
+        # Find the maximum value of the von Mises stress field
         min_max = dpf.operators.min_max.min_max()
         min_max.inputs.field.connect(avg_von_mises)
         max_val = min_max.outputs.field_max()
@@ -158,15 +160,16 @@ Mises stresses in the crankshaft and then applies the desired averaging operator
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-109
+.. GENERATED FROM PYTHON SOURCE LINES 106-112
 
-Second case: computing the equivalent stresses after applying the averaging operator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This time, the function we are going to create will firstly apply the averaging operator
-to the stress field in the crankshaft and only then calculate the Von Mises stresses, that
-will be already located on a Nodal position.
+Create the second workflow
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+The second workflow computes the equivalent stresses after applying the averaging
+operator. To create this workflow, first apply the averaging operator to the
+stress field in the crankshaft and then calculate the von Mises stresses, which
+are already located on a ``Nodal`` position.
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-142
+.. GENERATED FROM PYTHON SOURCE LINES 112-145
 
 .. code-block:: default
 
@@ -210,17 +213,16 @@ will be already located on a Nodal position.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 143-150
+.. GENERATED FROM PYTHON SOURCE LINES 146-152
 
-Plotting the results
-~~~~~~~~~~~~~~~~~~~~
-Finally, we can plot both Von Mises stress fields side
-by side to see how they compare to each other. The first image
-displays the results when the equivalent stresses are calculated
-first, while the second one shows the case when the averaging is
-done first.
+Plot the results
+~~~~~~~~~~~~~~~~
+Plot both von Mises stress fields side by side to compare them.
+- The first plot displays the results when the equivalent stresses are calculated first.
+- The second plot shows the results when the averaging is done first.
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-154
+
+.. GENERATED FROM PYTHON SOURCE LINES 152-156
 
 .. code-block:: default
 
@@ -252,7 +254,7 @@ done first.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-162
+.. GENERATED FROM PYTHON SOURCE LINES 157-164
 
 .. code-block:: default
 
@@ -278,15 +280,16 @@ done first.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 163-164
+.. GENERATED FROM PYTHON SOURCE LINES 165-167
 
-As we can see, even though both workflows apply the same steps to the same initial data,
-their final results are different because of the order in which the operators are applied.
+Even though both workflows apply the same steps to the same initial data,
+their final results are different because of the order in which the operators
+are applied.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.323 seconds)
+   **Total running time of the script:** ( 0 minutes  4.559 seconds)
 
 
 .. _sphx_glr_download_examples_08-averaging_00-compute_and_average.py:

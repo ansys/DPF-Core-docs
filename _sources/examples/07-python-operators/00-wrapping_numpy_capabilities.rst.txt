@@ -20,29 +20,34 @@
 
 .. _ref_wrapping_numpy_capabilities:
 
-Write user defined Operator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This example shows how to create a simple DPF python plugin holding a single Operator.
-This Operator called "easy_statistics" computes simple statistics quantities on a scalar Field with
-the help of numpy.
-It's a simple example displaying how routines can be wrapped in DPF python plugins.
+Create a basic operator plugin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This example shows how to create a basic operator plugin, which is for
+a single custom operator. This custom operator, ``easy_statistics``,
+computes simple statistics quantities on a scalar field with the help of
+the ``numpy`` package.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-25
+The objective of this simple example is to show how routines for DPF can
+be wrapped in Python plugins.
 
-Write Operator
---------------
-To write the simplest DPF python plugins, a single python script is necessary.
-An Operator implementation deriving from
-:class:`ansys.dpf.core.custom_operator.CustomOperatorBase`
-and a call to :py:func:`ansys.dpf.core.custom_operator.record_operator`
-are the 2 necessary steps to create a plugin.
-The "easy_statistics" Operator will take a Field in input and return
-the first quartile, the median,
-the third quartile and the variance. The python Operator and its recording seat in the
-file plugins/easy_statistics.py. This file `easy_statistics.py` is downloaded
-and displayed here:
+.. GENERATED FROM PYTHON SOURCE LINES 16-30
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-39
+Create the operator
+-------------------
+Creating a basic operator plugin consists of writing a single Python script.
+An operator implementation derives from the
+:class:`ansys.dpf.core.custom_operator.CustomOperatorBase` class
+and a call to the :py:func:`ansys.dpf.core.custom_operator.record_operator`
+method.
+
+The ``easy_statistics`` operator takes a field as an input and returns
+the first quartile, the median, the third quartile, and the variance.
+The Python operator and its recording are available in the
+``easy_statistics.py`` file.
+
+Download and display the Python script.
+
+.. GENERATED FROM PYTHON SOURCE LINES 30-44
 
 .. code-block:: default
 
@@ -160,26 +165,29 @@ and displayed here:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-47
+.. GENERATED FROM PYTHON SOURCE LINES 45-49
 
-Load Plugin
------------
-Once a python plugin is written, it can be loaded with the function
-:py:func:`ansys.dpf.core.core.load_library`
-taking as first argument the path to the directory of the plugin, as second argument
-``py_`` + the name of
-the python script, and as last argument the function's name used to record operators.
+Load the plugin
+---------------
+You use the :py:func:`ansys.dpf.core.core.load_library` method to load the
+plugin.
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-58
+.. GENERATED FROM PYTHON SOURCE LINES 49-66
 
 .. code-block:: default
 
+
+    # - The first argument is the path to the directory where the plugin
+    #   is located.
+    # - The second argument is ``py_`` plus the name of the Python script.
+    # - The third argument is the name of the function used to record operators.
+    #
 
     import os
     from ansys.dpf import core as dpf
     from ansys.dpf.core import examples
 
-    # python plugins are not supported in process
+    # Python plugins are not supported in process.
     dpf.start_local_server(config=dpf.AvailableServerConfigs.GrpcServer)
 
     operator_server_file_path = dpf.upload_file_in_tmp_folder(operator_file_path)
@@ -198,11 +206,11 @@ the python script, and as last argument the function's name used to record opera
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-60
+.. GENERATED FROM PYTHON SOURCE LINES 67-68
 
-Once the Operator loaded, it can be instantiated with:
+Instantiate the operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-63
+.. GENERATED FROM PYTHON SOURCE LINES 68-71
 
 .. code-block:: default
 
@@ -216,14 +224,16 @@ Once the Operator loaded, it can be instantiated with:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-68
+.. GENERATED FROM PYTHON SOURCE LINES 72-78
 
-To use this new Operator, a workflow computing the norm of the displacement
-is connected to the "easy_statistics" Operator.
-Methods of the class ``easy_statistics`` are dynamically added thanks to the Operator's
-specification defined in the plugin.
+Connect a workflow
+------------------
+Connect a workflow that computes the norm of the displacement to the
+``easy_statistics`` operator. Methods of the ``easy_statistics`` class
+are dynamically added because specifications for the operator are
+defined in the plugin.
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-82
+.. GENERATED FROM PYTHON SOURCE LINES 80-92
 
 .. graphviz::
 
@@ -238,12 +248,12 @@ specification defined in the plugin.
       norm -> easy_statistics;
    }
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-86
+.. GENERATED FROM PYTHON SOURCE LINES 94-96
 
-Use the Custom Operator
------------------------
+Use the operator
+----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-96
+.. GENERATED FROM PYTHON SOURCE LINES 96-106
 
 .. code-block:: default
 
@@ -276,7 +286,7 @@ Use the Custom Operator
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.376 seconds)
+   **Total running time of the script:** ( 0 minutes  3.535 seconds)
 
 
 .. _sphx_glr_download_examples_07-python-operators_00-wrapping_numpy_capabilities.py:

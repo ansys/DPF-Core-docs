@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Getting started &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>Getting started &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -55,7 +56,7 @@
     <link rel="next" title="Compatibility" href="compatibility.html" />
     <link rel="prev" title="PyDPF-Core" href="../index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,8 +169,10 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core</a> » </li>
     
 
         <li class="nav-item nav-item-this"><a href="">Getting started</a></li> 
@@ -258,12 +255,41 @@
               <article class="bd-article" role="main">
                 
   <section id="getting-started">
-<span id="ref-getting-started"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h1>
+<span id="ref-getting-started"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
 <p>DPF-Core is a Python gRPC client communicating with the <code class="docutils literal notranslate"><span class="pre">Ans.Dpf.Grpc</span></code>
 server. To use the native DPF server, you must have a local installation of
 Ansys 2021 R1 or later. For more information on getting a licensed copy of Ansys,
 visit the <a class="reference external" href="https://www.ansys.com/">Ansys website</a>.</p>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compatibility.html#operating-system">Operating system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compatibility.html#client-server">Client-server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compatibility.html#environment-variable">Environment variable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-using-pip">Install using <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-using-a-wheel-file">Install using a wheel file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-for-a-quick-tryout">Install for a quick tryout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-in-development-mode">Install in development mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dependencies.html#package-dependencies">Package dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dependencies.html#optional-dependencies">Optional dependencies</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">DPF in Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docker.html#install-the-dpf-image">Install the DPF image</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docker.html#use-the-dpf-container-from-python">Use the DPF container from Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 
@@ -292,7 +318,7 @@ visit the <a class="reference external" href="https://www.ansys.com/">Ansys webs
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

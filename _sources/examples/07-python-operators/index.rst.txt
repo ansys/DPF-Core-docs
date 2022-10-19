@@ -4,10 +4,11 @@
 
 .. _python_operators:
 
-Examples of custom python plugins of Operators
-==============================================
-These demos show how to create your own DPF plugin using pyDPF API. These plugins hold custom
-Operators enabling to wrap your custom capabilities and to use them as any native DPF's Operator.
+Examples of creating custom operator plugins
+============================================
+These examples show how to create a basic operator plugin or plug-in
+packages with multiple operators. Plugins wrap your custom operators
+so that you can use them like native DPF operators.
 
 
 
@@ -18,52 +19,52 @@ Operators enabling to wrap your custom capabilities and to use them as any nativ
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Write user defined Operator">
+    <div class="sphx-glr-thumbcontainer" tooltip="The objective of this simple example is to show how routines for DPF can be wrapped in Python p...">
 
 .. only:: html
 
   .. image:: /examples/07-python-operators/images/thumb/sphx_glr_00-wrapping_numpy_capabilities_thumb.png
-    :alt: Write user defined Operator
+    :alt: Create a basic operator plugin
 
   :ref:`sphx_glr_examples_07-python-operators_00-wrapping_numpy_capabilities.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Write user defined Operator</div>
+      <div class="sphx-glr-thumbnail-title">Create a basic operator plugin</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This plugin will hold 2 different Operators:   - One returning all the scoping ids having data ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="- **Componentization:** You can split the code into several Python modules or files. - **Distri...">
 
 .. only:: html
 
   .. image:: /examples/07-python-operators/images/thumb/sphx_glr_01-package_python_operators_thumb.png
-    :alt: Write user defined Operators as a package
+    :alt: Create a plug-in package with multiple operators
 
   :ref:`sphx_glr_examples_07-python-operators_01-package_python_operators.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Write user defined Operators as a package</div>
+      <div class="sphx-glr-thumbnail-title">Create a plug-in package with multiple operators</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This plugin will hold an Operator which implementation depends on a third party python module n...">
+    <div class="sphx-glr-thumbcontainer" tooltip="- ref_wrapping_numpy_capabilities - ref_python_plugin_package">
 
 .. only:: html
 
   .. image:: /examples/07-python-operators/images/thumb/sphx_glr_02-python_operators_with_dependencies_thumb.png
-    :alt: Write user defined Operators having third party dependencies
+    :alt: Create a plug-in package that has third-party dependencies
 
   :ref:`sphx_glr_examples_07-python-operators_02-python_operators_with_dependencies.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Write user defined Operators having third party dependencies</div>
+      <div class="sphx-glr-thumbnail-title">Create a plug-in package that has third-party dependencies</div>
     </div>
 
 

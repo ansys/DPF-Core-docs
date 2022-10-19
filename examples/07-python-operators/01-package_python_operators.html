@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Write user defined Operators as a package &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>Create a plug-in package with multiple operators &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -52,10 +53,10 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Write user defined Operators having third party dependencies" href="02-python_operators_with_dependencies.html" />
-    <link rel="prev" title="Write user defined Operator" href="00-wrapping_numpy_capabilities.html" />
+    <link rel="next" title="Create a plug-in package that has third-party dependencies" href="02-python_operators_with_dependencies.html" />
+    <link rel="prev" title="Create a basic operator plugin" href="00-wrapping_numpy_capabilities.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,13 +169,15 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Examples</a> » </li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Examples of custom python plugins of Operators</a> » </li>
-        <li class="nav-item nav-item-this"><a href="">Write user defined Operators as a package</a></li> 
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Examples of creating custom operator plugins</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">Create a plug-in package with multiple operators</a></li> 
       </ul>
     </div>
         </div>
@@ -203,7 +200,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../00-basic/index.html">
-   Basic DPF Examples
+   Basic DPF examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -213,42 +210,42 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/00-basic_example.html">
-     Basic DPF-Core Usage
+     Basic DPF-Core usage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/01-basic_operators.html">
-     Operators Overview
+     Operators overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/02-basic_field_containers.html">
-     Field and Field Containers Overview
+     Field and field containers overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/03-create_entities.html">
-     Create Your Own Entities Use DPF Operators
+     Create your own entities using DPF operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/04-basic-load-file.html">
-     Write/Load and Upload/Download a Result File
+     Working with a result file
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/05-use_local_data.html">
-     Bring a Field’s Data Locally to Improve Performance
+     Bring a field’s data locally to improve performance
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/06-load_plugin.html">
-     Load Plugin
+     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/07-use_result_helpers.html">
-     Use Result Helpers to Load Custom Data
+     Use result helpers to load custom data
     </a>
    </li>
    <li class="toctree-l2">
@@ -263,7 +260,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/11-server_types.html">
-     Communicate In Process or via gRPC
+     Communicate in process or via gRPC
     </a>
    </li>
    <li class="toctree-l2">
@@ -271,11 +268,16 @@
      Get material properties from the result file
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-basic/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01-static-transient/index.html">
-   Transient Analysis Examples
+   Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -285,19 +287,19 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
-     Transient Analysis Result Example
+     Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
-     Choose a Time Scoping for a Transient Analysis
+     Choose a time scoping for a transient analysis
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-modal-harmonic/index.html">
-   Harmonic Analysis Examples
+   Harmonic analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -307,17 +309,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/00-multi_harmonic.html">
-     Multi-Harmonic Response Example
+     Multi-harmonic response example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/01-modal_cyclic.html">
-     Modal Cyclic symmetry Example
+     Modal cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/02-cyclic_multi_stage.html">
-     Multi-stage Cyclic Symmetry Example
+     Multi-stage cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
@@ -327,7 +329,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/04-modal_superposition.html">
-     Expand Harmonic Modal Superposition with DPF
+     Expand harmonic modal superposition with DPF
     </a>
    </li>
    <li class="toctree-l2">
@@ -339,7 +341,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-advanced/index.html">
-   Advanced and Miscellaneous Examples
+   Advanced and miscellaneous examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -349,49 +351,49 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/00-multistage_advanced_options.html">
-     Multi-stage Cyclic Symmetry Use Advanced Customization
+     Multi-stage cyclic symmetry using advanced customization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/01-solve_harmonic_problem.html">
-     Solve Harmonic Problem (with damping) Using Matrix Inverse
+     Solve harmonic problem (with damping) using matrix inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/02-volume_averaged_stress.html">
-     Average Elemental Stress on a given volume
+     Average elemental stress on a given volume
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/03-exchange_data_between_servers.html">
-     Exchange Data Between Servers
+     Exchange data between servers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/04-extrapolation_stress_3d.html">
-     Extrapolation Method for stress result of 3D-element
+     Extrapolation method for stress result of a 3D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/05-extrapolation_strain_2d.html">
-     Extrapolation Method for strain result of 2D-element
+     Extrapolation method for strain result of a 2D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/06-stress_gradient_path.html">
-     Stress gradient normal to a defined node.
+     Stress gradient normal to a defined node
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/10-asme_secviii_divtwo.html">
-     ASME Section VIII Division 2: pressure vessels
+     Pressure vessel analysis according to an ASME standard
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04-specific-requests/index.html">
-   Examples that targets specific requests
+   Target-specific request examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -401,7 +403,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
-     Hdf5 export and compare precision
+     HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
@@ -413,7 +415,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05-plotting/index.html">
-   Plotting Examples
+   Plotting examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -428,17 +430,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/01-compare_results.html">
-     Compare Results Using the Plotter
+     Compare results using the plotter
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/02-solution_combination.html">
-     Load Case Combination for Principal Stress
+     Load case combination for principal stress
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/03-labels.html">
-     Add Nodal Labels on Plots
+     Add nodal labels on plots
     </a>
    </li>
    <li class="toctree-l2">
@@ -451,11 +453,16 @@
      Warp the mesh by a field for plotting
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-plotting/06-animate_results.html">
+     Review of available animation commands
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../06-distributed-post/index.html">
-   Examples for post processing on distributed process
+   Examples for postprocessing on distributed processes
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -465,22 +472,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/00-distributed_total_disp.html">
-     Post processing of displacement on distributed processes
+     Postprocessing of displacement on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/01-distributed_workflows_on_remote.html">
-     Create custom workflow on distributed processes
+     Create a custom workflow on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/02-distributed-msup_expansion.html">
-     Distributed modal superposition
+     Distributed mode superposition (MSUP)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/03-distributed-msup_expansion_steps.html">
-     Distributed msup distributed modal response
+     Distributed MSUP distributed modal response
     </a>
    </li>
    <li class="toctree-l2">
@@ -492,7 +499,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
-   Examples of custom python plugins of Operators
+   Examples of creating custom operator plugins
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -502,24 +509,24 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="00-wrapping_numpy_capabilities.html">
-     Write user defined Operator
+     Create a basic operator plugin
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Write user defined Operators as a package
+     Create a plug-in package with multiple operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02-python_operators_with_dependencies.html">
-     Write user defined Operators having third party dependencies
+     Create a plug-in package that has third-party dependencies
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../08-averaging/index.html">
-   Averaging Examples
+   Averaging examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -564,18 +571,23 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-operator">
-   Write Operator
+  <a class="reference internal nav-link" href="#create-the-plug-in-package">
+   Create the plug-in package
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-plugin">
-   Load Plugin
+  <a class="reference internal nav-link" href="#load-the-plug-in-package">
+   Load the plug-in package
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#use-the-custom-operator">
-   Use the Custom Operator
+  <a class="reference internal nav-link" href="#connect-a-workflow">
+   Connect a workflow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-the-operator">
+   Use the operator
   </a>
  </li>
 </ul>
@@ -602,31 +614,28 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-07-python-operators-01-package-python-operators-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="write-user-defined-operators-as-a-package">
-<span id="ref-python-plugin-package"></span><span id="sphx-glr-examples-07-python-operators-01-package-python-operators-py"></span><h1>Write user defined Operators as a package<a class="headerlink" href="#write-user-defined-operators-as-a-package" title="Permalink to this headline">#</a></h1>
-<p>This example shows how more complex DPF python plugins of Operators can be
-created as standard python packages.
-The benefits of writing packages instead of simple scripts are:
-componentization (split the code in several
-python modules or files), distribution (with packages,
-standard python tools can be used to upload and
-download packages) and documentation (READMEs, docs, tests and
-examples can be added to the package).</p>
-<dl class="simple">
-<dt>This plugin will hold 2 different Operators:</dt><dd><ul class="simple">
-<li><p>One returning all the scoping ids having data higher than the average</p></li>
-<li><p>One returning all the scoping ids having data lower than the average</p></li>
+<section class="sphx-glr-example-title" id="create-a-plug-in-package-with-multiple-operators">
+<span id="ref-python-plugin-package"></span><span id="sphx-glr-examples-07-python-operators-01-package-python-operators-py"></span><h1>Create a plug-in package with multiple operators<a class="headerlink" href="#create-a-plug-in-package-with-multiple-operators" title="Permalink to this heading">#</a></h1>
+<p>This example shows how to create a plug-in package with multiple operators.
+The benefits of writing packages rather than simple scripts are:</p>
+<ul class="simple">
+<li><p><strong>Componentization:</strong> You can split the code into several Python modules or files.</p></li>
+<li><p><strong>Distribution:</strong> You can use standard Python tools to upload and download packages.</p></li>
+<li><p><strong>Documentation:</strong> You can add README files, documentation, tests, and examples to the package.</p></li>
 </ul>
-</dd>
-</dl>
-<section id="write-operator">
-<h2>Write Operator<a class="headerlink" href="#write-operator" title="Permalink to this headline">#</a></h2>
-<p>For this more advanced use case, a python package is created.
-Each Operator implementation derives from
-<a class="reference internal" href="../../api/ansys.dpf.core.custom_operator.html#ansys.dpf.core.custom_operator.CustomOperatorBase" title="ansys.dpf.core.custom_operator.CustomOperatorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.custom_operator.CustomOperatorBase</span></code></a>
-and a call to <a class="reference internal" href="../../api/ansys.dpf.core.custom_operator.html#ansys.dpf.core.custom_operator.record_operator" title="ansys.dpf.core.custom_operator.record_operator"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.custom_operator.record_operator()</span></code></a>
-records the Operators of the plugin.
-The python package <cite>average_filter_plugin</cite> is downloaded and displayed here:</p>
+<p>For this example, the plug-in package contains two different operators:</p>
+<ul class="simple">
+<li><p>One that returns all scoping ID having data higher than the average</p></li>
+<li><p>One that returns all scoping IDs having data lower than the average</p></li>
+</ul>
+<section id="create-the-plug-in-package">
+<h2>Create the plug-in package<a class="headerlink" href="#create-the-plug-in-package" title="Permalink to this heading">#</a></h2>
+<p>Each operator implementation derives from the
+<a class="reference internal" href="../../api/ansys.dpf.core.custom_operator.html#ansys.dpf.core.custom_operator.CustomOperatorBase" title="ansys.dpf.core.custom_operator.CustomOperatorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.custom_operator.CustomOperatorBase</span></code></a> class
+and a call to the <a class="reference internal" href="../../api/ansys.dpf.core.custom_operator.html#ansys.dpf.core.custom_operator.record_operator" title="ansys.dpf.core.custom_operator.record_operator"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.custom_operator.record_operator()</span></code></a>
+method, which records the operators of the plug-in package.</p>
+<p>Download the <code class="docutils literal notranslate"><span class="pre">average_filter_plugin</span></code> plug-in package that has already been
+created for you.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 
@@ -831,19 +840,22 @@ common.py:
 </pre></div>
 </div>
 </section>
-<section id="load-plugin">
-<h2>Load Plugin<a class="headerlink" href="#load-plugin" title="Permalink to this headline">#</a></h2>
-<p>Once a python plugin is written as a package, it can be loaded with the function
-<a class="reference internal" href="../../api/ansys.dpf.core.core.html#ansys.dpf.core.core.load_library" title="ansys.dpf.core.core.load_library"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.core.load_library()</span></code></a> taking as first argument the
-path to the directory of the plugin,
-as second argument <code class="docutils literal notranslate"><span class="pre">py_</span></code> + any name identifying the plugin,
-and as last argument the function’s name exposed in the __init__ file
-and used to record operators.</p>
+<section id="load-the-plug-in-package">
+<h2>Load the plug-in package<a class="headerlink" href="#load-the-plug-in-package" title="Permalink to this heading">#</a></h2>
+<p>You use the function <a class="reference internal" href="../../api/ansys.dpf.core.core.html#ansys.dpf.core.core.load_library" title="ansys.dpf.core.core.load_library"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.core.load_library()</span></code></a> to load the
+plug-in package.</p>
+<ul class="simple">
+<li><p>The first argument is the path to the directory where the plug-in package
+is located.</p></li>
+<li><p>The second argument is <code class="docutils literal notranslate"><span class="pre">py_</span></code> plus any name identifying the plug-in package.</p></li>
+<li><p>The third argument is the name of the function exposed in the <code class="docutils literal notranslate"><span class="pre">__init__</span> <span class="pre">file</span></code>
+for the plug-in package that is used to record operators.</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 
-<span class="c1"># python plugins are not supported in process</span>
+<span class="c1"># Python plugins are not supported in process.</span>
 <span class="n">dpf</span><span class="o">.</span><span class="n">start_local_server</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerConfigs</span><span class="o">.</span><span class="n">GrpcServer</span><span class="p">)</span>
 
 <span class="n">tmp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">make_tmp_dir_server</span><span class="p">()</span>
@@ -860,14 +872,18 @@ and used to record operators.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;py_average_filter successfully loaded&#39;
 </pre></div>
 </div>
-<p>Once the Plugin loaded, Operators recorded in the plugin can be used with:</p>
+<p>Instantiate the operator.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">new_operator</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;ids_with_data_lower_than_average&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>To use this new Operator, a workflow computing the norm of the displacement
-is connected to the “ids_with_data_lower_than_average” Operator.
-Methods of the class <code class="docutils literal notranslate"><span class="pre">ids_with_data_lower_than_average</span></code> are dynamically
-added thanks to the Operator’s specification.</p>
+</section>
+<section id="connect-a-workflow">
+<h2>Connect a workflow<a class="headerlink" href="#connect-a-workflow" title="Permalink to this heading">#</a></h2>
+<p>Connect a workflow that computes the norm of the displacement
+to the <code class="docutils literal notranslate"><span class="pre">ids_with_data_lower_than_average</span></code> operator.
+Methods of the <code class="docutils literal notranslate"><span class="pre">ids_with_data_lower_than_average</span></code> class are dynamically
+added because specifications for the operator are defined in the plug-in
+package.</p>
 <div class="graphviz"><img src="../../_images/graphviz-e5cb5ec13bdaf9990f486d0b8f1b4a438243a61a.png" alt="digraph foo {
    graph [pad=&quot;0.5&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]
    node [shape=box, style=filled, fillcolor=&quot;#ffcc00&quot;, margin=&quot;0&quot;];
@@ -879,8 +895,8 @@ added thanks to the Operator’s specification.</p>
    norm -&gt; ids_with_data_lower_than_average;
 }" class="graphviz" /></div>
 </section>
-<section id="use-the-custom-operator">
-<h2>Use the Custom Operator<a class="headerlink" href="#use-the-custom-operator" title="Permalink to this headline">#</a></h2>
+<section id="use-the-operator">
+<h2>Use the operator<a class="headerlink" href="#use-the-operator" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">upload_file_in_tmp_folder</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">static_rst</span><span class="p">))</span>
 <span class="n">displacement</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">displacement</span><span class="p">(</span><span class="n">data_sources</span><span class="o">=</span><span class="n">ds</span><span class="p">)</span>
 <span class="n">norm</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">displacement</span><span class="p">)</span>
@@ -901,7 +917,7 @@ scoping out is: DPF  Scoping:
   with Nodal location and 35 entities
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.248 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.158 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-07-python-operators-01-package-python-operators-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/a509d520cc7e8df99837074c955c911c/01-package_python_operators.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-package_python_operators.py</span></code></a></p>
@@ -939,7 +955,7 @@ scoping out is: DPF  Scoping:
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

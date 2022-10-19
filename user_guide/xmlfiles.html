@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>DPF XML Files &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>DPF XML files &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -53,9 +54,9 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
-    <link rel="prev" title="Custom Operators" href="custom_operators.html" />
+    <link rel="prev" title="Custom operators" href="custom_operators.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,12 +169,14 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User guide</a> » </li>
-        <li class="nav-item nav-item-this"><a href="">DPF XML Files</a></li> 
+        <li class="nav-item nav-item-this"><a href="">DPF XML files</a></li> 
       </ul>
     </div>
         </div>
@@ -202,24 +199,24 @@
     <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="concepts.html">
-   Concepts and Terminology
+   Terms and concepts
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="waysofusing.html">
-   Ways of Using DPF
+   DPF scripting languages
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="stepbystep.html">
-   Using DPF: Step by Step
+   DPF usage
   </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="model.html">
-   DPF Model
+   DPF model
   </a>
  </li>
  <li class="toctree-l1">
@@ -229,7 +226,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fields_container.html">
-   Fields Container and Fields
+   Fields container and fields
   </a>
  </li>
 </ul>
@@ -241,12 +238,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="custom_operators.html">
-   Custom Operators
+   Custom operators
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   DPF XML Files
+   DPF XML files
   </a>
  </li>
 </ul>
@@ -281,13 +278,45 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataprocessingcore-file">
-   DataProcessingCore File
+  <a class="reference internal nav-link" href="#dataprocessingcore-xml-file">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     DataProcessingCore.xml
+    </span>
+   </code>
+   file
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#environment-element">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       &lt;Environment&gt;
+      </span>
+     </code>
+     element
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defaultplugin-element">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       &lt;DefaultPlugin&gt;
+      </span>
+     </code>
+     element
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plugin-xml-file">
-   PLUGIN.XML File
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Plugin.xml
+    </span>
+   </code>
+   file
   </a>
  </li>
 </ul>
@@ -310,15 +339,16 @@
               <article class="bd-article" role="main">
                 
   <section id="dpf-xml-files">
-<span id="user-guide-xmlfiles"></span><h1>DPF XML Files<a class="headerlink" href="#dpf-xml-files" title="Permalink to this headline">#</a></h1>
-<p>This section describes the XML files associated with DataProcessingCore
-and DPF plugins. These DPF files work on both Windows and Linux
-operating systems. The files can contain content for both operating systems.</p>
-<p>The XML files must be located alongside the plugin DLL files on Windows,
-or SO files on Linux.</p>
-<section id="dataprocessingcore-file">
-<h2>DataProcessingCore File<a class="headerlink" href="#dataprocessingcore-file" title="Permalink to this headline">#</a></h2>
-<p>The content and format of the DataProcessingCore.xml file is as follows:</p>
+<span id="user-guide-xmlfiles"></span><h1>DPF XML files<a class="headerlink" href="#dpf-xml-files" title="Permalink to this heading">#</a></h1>
+<p>This page describes the <code class="docutils literal notranslate"><span class="pre">DataProcessingCore.xml``and</span> <span class="pre">``Plugin.xml</span></code> XML files
+provided with the DPF software. These XML files work on both Linux and Windows
+because they contain content for both of these operating systems.</p>
+<p>These XML files must be located alongside the plugin DLL files on Windows or
+SO files on Linux.</p>
+<section id="dataprocessingcore-xml-file">
+<h2><code class="docutils literal notranslate"><span class="pre">DataProcessingCore.xml</span></code> file<a class="headerlink" href="#dataprocessingcore-xml-file" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">DataProcessingCore.xml</span></code> file provides for configuring the plugins to load.</p>
+<p>Here is the content of this XML file:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="p">&lt;</span><span class="nt">DPF</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.0&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">Environment</span><span class="p">&gt;</span>
@@ -360,65 +390,81 @@ or SO files on Linux.</p>
 <span class="p">&lt;/</span><span class="nt">DPF</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>The DataProcessingCore.xml file is provided with the DPF software.
-Modify the file carefully to ensure that the DPF software operates correctly.</p>
-<p>Some of the sections in the file are optional, and many of the sections
-have Windows and Linux specific subsections.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">&lt;Environment&gt;</span></code> section is used only for defining the ROOT folder
-of the Ansys software. This is done with an <code class="docutils literal notranslate"><span class="pre">&lt;ANSYS_ROOT_FOLDER&gt;</span></code> tag.
-The root folder of the Ansys software ends with the v### folder.
-It could be something like <code class="docutils literal notranslate"><span class="pre">C:\ansys_inc\v222</span></code>. The ANSYS_ROOT_FOLDER tag
-defines a variable like an environment variable that can be used in the other
-XML files. You might use it to find required third party software.</p>
-<p>If the ANSYS_ROOT_FOLDER tag is not defined within the DataProcessing.xml file,
-the root folder is determined by reading the AWP_ROOT### environment
-variable specific to the version of the DPF code. For example, if you are
-using V222 DPF code, it looks for AWP_ROOT222 to find the root folder.</p>
-<p>If the ANSYS_ROOT_FOLDER tag is still not defined, the code attempts to find the
-root folder relative to the DataProcessingCore DLL/SO file. This only works
-if DataProcessingCore is located in its default location.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">&lt;LoadOperators&gt;</span></code> section is used for loading the default plugins.
-The further subdividing of the plugins into <code class="docutils literal notranslate"><span class="pre">&lt;Debug&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;Release&gt;</span></code>
-sections is optional. The <code class="docutils literal notranslate"><span class="pre">&lt;Debug&gt;</span></code> section would only be used with a
-debug version of the DataProcessingCore DLL/SO file.</p>
-<p>The plugins to load are defined within their own section that is named
-by a tag like <code class="docutils literal notranslate"><span class="pre">&lt;native&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;fem_utils&gt;</span></code>. This tag is used as
-the <code class="docutils literal notranslate"><span class="pre">Key</span></code> when loading the plugin. Each plugin must have a unique key.</p>
-<p>Within the Key section are two tags that define the location of the plugin
-and the method of loading. The location is defined by the <code class="docutils literal notranslate"><span class="pre">&lt;Path&gt;</span></code> tag
-and the loading method is defined by the <code class="docutils literal notranslate"><span class="pre">&lt;Loader&gt;</span></code> tag.
-These are used as arguments to the loading plugin mechanism.</p>
-<p>Currently, only <code class="docutils literal notranslate"><span class="pre">LoadOperators</span></code> is supported for the <code class="docutils literal notranslate"><span class="pre">&lt;Loader&gt;</span></code> tag.
-This loads all operators within the plugin.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">&lt;Path&gt;</span></code> tag contains the location of the plugin to load.
-The normal mechanism that the OS uses to find a DLL/SO is used.
-The DLL could be in the Windows path, or the SO could be within
-the Linux LD_LIBRARY_PATH.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">&lt;UsePluginXml&gt;</span></code> tag contains a value that must be set to
-<code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. It defines if the PLUGIN.XML file
-(defined in next section) will be used to load the plugin or not.
-This tag is optional. The default value is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
-<p>Any path specified with the XML file must adhere to the path conventions
-of the OS. “\” for Windows and “/” for Linux.</p>
-<p>Two pre-defined variables can be used to provide an absolute path to
-the plugin:</p>
+<p>In this XML file, some of the elements are optional, and many of the
+elements have Linux-specific versus Windows-specific child elements.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>To ensure that the DPF software operates correctly, modify this XML file
+carefully. All paths specified in this XML file must adhere to the path
+conventions of the respective operating system. For Linux paths, use
+forward slashes (/). For Windows paths, use backward slashes (\).</p>
+</div>
+<section id="environment-element">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;Environment&gt;</span></code> element<a class="headerlink" href="#environment-element" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;Environment&gt;</span></code> element is used only for defining the root folder
+of the Ansys software. Its child <code class="docutils literal notranslate"><span class="pre">&lt;ANSYS_ROOT_FOLDER&gt;</span></code> elements can
+define the root folders for Ansys software installed on Linux and on Windows.</p>
+<p>The path for the root folder ends with Ansys version information, <code class="docutils literal notranslate"><span class="pre">v###</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">###</span></code> is the three-digit format for the installed version. For example,
+on Windows, the path for the root folder for Ansys 2022 R2likely looks something
+like <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\ANSYS</span> <span class="pre">Inc\v222</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ANSYS_ROOT_FOLDER</span></code> element is like an environment variable. You can use
+this element in other XML files. For example, you might use it to find required
+third-party software.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">ANSYS_ROOT_FOLDER</span></code> element is not defined in the <code class="docutils literal notranslate"><span class="pre">DataProcessing.xml</span></code>
+file, the root folder is determined by reading the <code class="docutils literal notranslate"><span class="pre">AWP_ROOT###</span></code> environment
+variable specific to your installed Ansys version. For example, if you are
+using Ansys 2022 R2, it looks for <code class="docutils literal notranslate"><span class="pre">AWP_ROOT222</span></code> to find the root folder.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">ANSYS_ROOT_FOLDER</span></code> element is still not defined, an attempt is made to
+find the root folder relative to the <code class="docutils literal notranslate"><span class="pre">DataProcessingCore</span></code> DLL or SO file. This
+works only if the <code class="docutils literal notranslate"><span class="pre">DataProcessingCore.xml</span></code> file is located in its default
+location.</p>
+</section>
+<section id="defaultplugin-element">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;DefaultPlugin&gt;</span></code> element<a class="headerlink" href="#defaultplugin-element" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;DefaultPlugin&gt;</span></code> element defines the plugins to load. The <code class="docutils literal notranslate"><span class="pre">&lt;Linux&gt;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">Windows</span></code> child element contains the operating system for plugins defined
+in child elements.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">native</span></code> element defines DPF native operators. The further subdividing of
+plugins into <code class="docutils literal notranslate"><span class="pre">&lt;Debug&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;Release&gt;</span></code> elements is optional. The <code class="docutils literal notranslate"><span class="pre">&lt;Debug&gt;</span></code>
+element, for example, would only be used with a debug version of the
+<code class="docutils literal notranslate"><span class="pre">DataProcessingCore</span> <span class="pre">DLL/SO</span></code> file.</p>
+<p>The element names for plugins, such as <code class="docutils literal notranslate"><span class="pre">&lt;native&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;fem_utils&gt;</span></code>, are used as
+<em>keys</em> when loading plugins. Each plugin must have a unique key.</p>
+<p>The element for each plug-in has child elements:</p>
 <ul class="simple">
-<li><p>ANSYS_ROOT_FOLDER as defined above.</p></li>
-<li><p>THIS_XML_FOLDER defining the location of where the current XML file is located. In this case DataProcessingCore.xml.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;Path&gt;</span></code>: Contains the location of the plugin to load. The normal mechanism
+that the operating system uses to find a DLL or SO file is used. The DLL
+file could be in the Windows path, or the SO file could be in the Linux
+<code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> system environment variable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;Loader&gt;</span></code>: Contains how the plugin is loaded. Only <code class="docutils literal notranslate"><span class="pre">LoadOperators</span></code> is
+supported. It loads all operators within the plugin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;UsePluginXml&gt;</span></code>: Contains a <code class="docutils literal notranslate"><span class="pre">true</span></code> or  <code class="docutils literal notranslate"><span class="pre">false</span></code> value that indicates
+whether to use the <code class="docutils literal notranslate"><span class="pre">PLUGIN.XML</span></code> file defined in the next element to load
+the plugin. This element is optional. The default value is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
 </ul>
-<p>Any other environment variable could be used. If you always had your plugins
-in a folder defined by the environment variable MY_PLUGINS,
-you could use that in the XML file.</p>
-<p>The environment variables are specified the same way as ANSYS_ROOT_FOLDER
-or THIS_XML_FOLDER. They are defined as $(…).</p>
-<p>In the Ansys installation, the default DataProcessingCore.xml file is located
-next to the DataProcessingCore DLL/SO file.
-If you want to use a different one, you can initialize DPF using a
-specific DataProcessingCore.xml file.</p>
+<p>To provide an absolute path to a plugin, you can use these predefined variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ANSYS_ROOT_FOLDER</span></code>, which is described in the preceding section.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">THIS_XML_FOLDER</span></code>, which defines the location of where the current XML file
+is located. In this case, it defines the location of the <code class="docutils literal notranslate"><span class="pre">DataProcessingCore.xml</span></code>
+file.</p></li>
+</ul>
+<p>You can also use any other environment variable. For example, if you always have your
+plugins in a folder defined by a <code class="docutils literal notranslate"><span class="pre">MY_PLUGINS</span></code> environment variable, you could use
+it in the XML file.</p>
+<p>You specify environment variables in the same way as the <code class="docutils literal notranslate"><span class="pre">ANSYS_ROOT_FOLDER</span></code>
+or <code class="docutils literal notranslate"><span class="pre">THIS_XML_FOLDER</span></code> variable. They are defined as $(…).</p>
+<p>In the Ansys installation, the default <code class="docutils literal notranslate"><span class="pre">DataProcessingCore.xml</span></code> file is located
+next to the <code class="docutils literal notranslate"><span class="pre">DataProcessingCore</span></code> DLL or SO file. If you want to use a different
+one, you can initialize DPF using a specific <code class="docutils literal notranslate"><span class="pre">DataProcessingCore.xml</span></code> file.</p>
+</section>
 </section>
 <section id="plugin-xml-file">
-<h2>PLUGIN.XML File<a class="headerlink" href="#plugin-xml-file" title="Permalink to this headline">#</a></h2>
-<p>The content and format of the Plugin.xml file is as follows:</p>
+<h2><code class="docutils literal notranslate"><span class="pre">Plugin.xml</span></code> file<a class="headerlink" href="#plugin-xml-file" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Plugin.xml</span></code> file allows you to configure a specific environment for loading a
+plugin.</p>
+<p>Here is the content of this XML file:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="p">&lt;</span><span class="nt">DPF</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.0&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">Environment</span><span class="p">&gt;</span>
@@ -433,11 +479,10 @@ specific DataProcessingCore.xml file.</p>
 <span class="p">&lt;/</span><span class="nt">DPF</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>This file allows for a specific environment to be configured for loading a plugin.
-The <code class="docutils literal notranslate"><span class="pre">&lt;Environment&gt;</span></code> section within the plugin-specific XML file is defined
-the same way as the DataProcessingCore.xml file.</p>
-<p>Any environment variables defined or used have the values at the time they are
-defined or used. You can effectively define a variable multiple times
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;Environment&gt;</span></code> element within this XML file is defined the same way
+as the <code class="docutils literal notranslate"><span class="pre">DataProcessingCore.xml</span></code> file.</p>
+<p>Any environment variables that are defined or used have the values at the time
+that they are defined or used. You can effectively define a variable multiple times
 and keep appending it.</p>
 </section>
 </section>
@@ -467,7 +512,7 @@ and keep appending it.</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Average across bodies &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>Average across bodies &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -55,7 +56,7 @@
     <link rel="next" title="Contribute" href="../../contributing.html" />
     <link rel="prev" title="Averaging order" href="00-compute_and_average.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,12 +169,14 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Examples</a> » </li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Averaging Examples</a> » </li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Averaging examples</a> » </li>
         <li class="nav-item nav-item-this"><a href="">Average across bodies</a></li> 
       </ul>
     </div>
@@ -203,7 +200,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../00-basic/index.html">
-   Basic DPF Examples
+   Basic DPF examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -213,42 +210,42 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/00-basic_example.html">
-     Basic DPF-Core Usage
+     Basic DPF-Core usage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/01-basic_operators.html">
-     Operators Overview
+     Operators overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/02-basic_field_containers.html">
-     Field and Field Containers Overview
+     Field and field containers overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/03-create_entities.html">
-     Create Your Own Entities Use DPF Operators
+     Create your own entities using DPF operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/04-basic-load-file.html">
-     Write/Load and Upload/Download a Result File
+     Working with a result file
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/05-use_local_data.html">
-     Bring a Field’s Data Locally to Improve Performance
+     Bring a field’s data locally to improve performance
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/06-load_plugin.html">
-     Load Plugin
+     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/07-use_result_helpers.html">
-     Use Result Helpers to Load Custom Data
+     Use result helpers to load custom data
     </a>
    </li>
    <li class="toctree-l2">
@@ -263,7 +260,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/11-server_types.html">
-     Communicate In Process or via gRPC
+     Communicate in process or via gRPC
     </a>
    </li>
    <li class="toctree-l2">
@@ -271,11 +268,16 @@
      Get material properties from the result file
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-basic/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01-static-transient/index.html">
-   Transient Analysis Examples
+   Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -285,19 +287,19 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
-     Transient Analysis Result Example
+     Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
-     Choose a Time Scoping for a Transient Analysis
+     Choose a time scoping for a transient analysis
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-modal-harmonic/index.html">
-   Harmonic Analysis Examples
+   Harmonic analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -307,17 +309,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/00-multi_harmonic.html">
-     Multi-Harmonic Response Example
+     Multi-harmonic response example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/01-modal_cyclic.html">
-     Modal Cyclic symmetry Example
+     Modal cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/02-cyclic_multi_stage.html">
-     Multi-stage Cyclic Symmetry Example
+     Multi-stage cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
@@ -327,7 +329,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/04-modal_superposition.html">
-     Expand Harmonic Modal Superposition with DPF
+     Expand harmonic modal superposition with DPF
     </a>
    </li>
    <li class="toctree-l2">
@@ -339,7 +341,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03-advanced/index.html">
-   Advanced and Miscellaneous Examples
+   Advanced and miscellaneous examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -349,49 +351,49 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/00-multistage_advanced_options.html">
-     Multi-stage Cyclic Symmetry Use Advanced Customization
+     Multi-stage cyclic symmetry using advanced customization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/01-solve_harmonic_problem.html">
-     Solve Harmonic Problem (with damping) Using Matrix Inverse
+     Solve harmonic problem (with damping) using matrix inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/02-volume_averaged_stress.html">
-     Average Elemental Stress on a given volume
+     Average elemental stress on a given volume
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/03-exchange_data_between_servers.html">
-     Exchange Data Between Servers
+     Exchange data between servers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/04-extrapolation_stress_3d.html">
-     Extrapolation Method for stress result of 3D-element
+     Extrapolation method for stress result of a 3D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/05-extrapolation_strain_2d.html">
-     Extrapolation Method for strain result of 2D-element
+     Extrapolation method for strain result of a 2D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/06-stress_gradient_path.html">
-     Stress gradient normal to a defined node.
+     Stress gradient normal to a defined node
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/10-asme_secviii_divtwo.html">
-     ASME Section VIII Division 2: pressure vessels
+     Pressure vessel analysis according to an ASME standard
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04-specific-requests/index.html">
-   Examples that targets specific requests
+   Target-specific request examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -401,7 +403,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
-     Hdf5 export and compare precision
+     HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
@@ -413,7 +415,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05-plotting/index.html">
-   Plotting Examples
+   Plotting examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -428,17 +430,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/01-compare_results.html">
-     Compare Results Using the Plotter
+     Compare results using the plotter
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/02-solution_combination.html">
-     Load Case Combination for Principal Stress
+     Load case combination for principal stress
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/03-labels.html">
-     Add Nodal Labels on Plots
+     Add nodal labels on plots
     </a>
    </li>
    <li class="toctree-l2">
@@ -451,11 +453,16 @@
      Warp the mesh by a field for plotting
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-plotting/06-animate_results.html">
+     Review of available animation commands
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../06-distributed-post/index.html">
-   Examples for post processing on distributed process
+   Examples for postprocessing on distributed processes
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -465,22 +472,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/00-distributed_total_disp.html">
-     Post processing of displacement on distributed processes
+     Postprocessing of displacement on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/01-distributed_workflows_on_remote.html">
-     Create custom workflow on distributed processes
+     Create a custom workflow on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/02-distributed-msup_expansion.html">
-     Distributed modal superposition
+     Distributed mode superposition (MSUP)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/03-distributed-msup_expansion_steps.html">
-     Distributed msup distributed modal response
+     Distributed MSUP distributed modal response
     </a>
    </li>
    <li class="toctree-l2">
@@ -492,7 +499,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../07-python-operators/index.html">
-   Examples of custom python plugins of Operators
+   Examples of creating custom operator plugins
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -502,24 +509,24 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/00-wrapping_numpy_capabilities.html">
-     Write user defined Operator
+     Create a basic operator plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/01-package_python_operators.html">
-     Write user defined Operators as a package
+     Create a plug-in package with multiple operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/02-python_operators_with_dependencies.html">
-     Write user defined Operators having third party dependencies
+     Create a plug-in package that has third-party dependencies
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
-   Averaging Examples
+   Averaging examples
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -586,8 +593,8 @@
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-the-results">
-   Plotting the results
+  <a class="reference internal nav-link" href="#plot-and-compare-the-results">
+   Plot and compare the results
   </a>
  </li>
 </ul>
@@ -615,20 +622,19 @@
 to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="average-across-bodies">
-<span id="ref-average-across-bodies"></span><span id="sphx-glr-examples-08-averaging-01-average-across-bodies-py"></span><h1>Average across bodies<a class="headerlink" href="#average-across-bodies" title="Permalink to this headline">#</a></h1>
-<p>This example is aimed towards explaining how to activate or deactivate the averaging
-across bodies option in DPF. When we have a multibody simulation that involves the
-calculation of ElementalNodal fields, like stresses or strains, we can either
-activate or deactivate the option of averaging theses fields across the different
-bodies when they share common nodes. This will likely change the end results that are
-displayed after the post processing of the simulation, as we will see below.</p>
-<p>Let’s start by importing the necessary modules.</p>
+<span id="ref-average-across-bodies"></span><span id="sphx-glr-examples-08-averaging-01-average-across-bodies-py"></span><h1>Average across bodies<a class="headerlink" href="#average-across-bodies" title="Permalink to this heading">#</a></h1>
+<p>This example shows how to activate and deactivate the DPF option for averaging
+across bodies. When a multi-body simulation calculates <code class="docutils literal notranslate"><span class="pre">ElementalNodal</span></code> fields,
+like stresses or strains, you can either activate or deactivate the averaging
+of theses fields across the different bodies when they share common nodes. This
+likely changes the end results that are shown after postprocessing of the simulation.</p>
+<p>Perform the required imports.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">operators</span> <span class="k">as</span> <span class="n">ops</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
-<p>Then we can load the simulation results from a .rst file and create a model of it.</p>
+<p>Load the simulation results from an RST file and create a model of it.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">analysis</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_piston_rod</span><span class="p">()</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
@@ -667,9 +673,9 @@ Cumulative     Time (s)       LoadStep       Substep
 3              3.000000       3              1
 </pre></div>
 </div>
-<p>Now, let’s take a look at our system to see how our bodies are connected to
-each other. First, we extract the mesh of our model and then we divide it into
-different meshes using the split_mesh operator.</p>
+<p>To take a look at the system to see how bodies are connected to each other,
+extract the mesh of the model and then divide it into different meshes
+using the <code class="docutils literal notranslate"><span class="pre">split_mesh</span></code> operator.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span>
 <span class="n">split_mesh_op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">split_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="o">=</span><span class="n">mesh</span><span class="p">,</span> <span class="nb">property</span><span class="o">=</span><span class="s2">&quot;mat&quot;</span><span class="p">)</span>
 <span class="n">meshes</span> <span class="o">=</span> <span class="n">split_mesh_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">meshes</span><span class="p">()</span>
@@ -677,17 +683,16 @@ different meshes using the split_mesh operator.</p>
 <span class="n">meshes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Body meshes&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_01-average_across_bodies_001.png" srcset="../../_images/sphx_glr_01-average_across_bodies_001.png" alt="01 average across bodies" class = "sphx-glr-single-img"/><p>As we can see in the image above, even though the piston rod is one single part,
-it’s composed of two different bodies. Additionally, we can observe that the region
+<img src="../../_images/sphx_glr_01-average_across_bodies_001.png" srcset="../../_images/sphx_glr_01-average_across_bodies_001.png" alt="01 average across bodies" class = "sphx-glr-single-img"/><p>As you can see in the preceding image, even though the piston rod is one single part,
+it is composed of two different bodies. Additionally, you can see that the region
 where the two bodies are bonded together contains nodes that are common between them.</p>
-<p>Now, let’s take a look into how the averaging across bodies option alters the
-results of a simulation.</p>
 </section>
 <section id="averaging-across-bodies-with-dpf">
-<h1>Averaging across bodies with DPF<a class="headerlink" href="#averaging-across-bodies-with-dpf" title="Permalink to this headline">#</a></h1>
-<p>Let’s define two workflows. The first one does averaging across bodies, while the
-second one doesn’t. The variable of interest here is the stress in the Z direction,
-which will be obtained using the “stress_Z” operator.</p>
+<h1>Averaging across bodies with DPF<a class="headerlink" href="#averaging-across-bodies-with-dpf" title="Permalink to this heading">#</a></h1>
+<p>To take a look at how the option for averaging across bodies alters the results
+of the simulation, define two workflows. The first workflow does averaging across
+bodies, while the second workflow does not. The variable of interest is the stress
+in the Z direction, which is obtained using the “stress_Z” operator.</p>
 <div class="graphviz"><img src="../../_images/graphviz-f9b2ff0f61f7f8ab5e13bab492015c7a21d63a54.png" alt="digraph foo {
     graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]
     node [shape=box, style=filled, fillcolor=&quot;#ffcc0&quot;, margin=&quot;0&quot;];
@@ -716,22 +721,21 @@ which will be obtained using the “stress_Z” operator.</p>
     }
 }" class="graphviz" /></div>
 <section id="averaging-across-bodies-activated">
-<h2>Averaging across bodies activated<a class="headerlink" href="#averaging-across-bodies-activated" title="Permalink to this headline">#</a></h2>
-<p>The extraction of the stresses in the Z direction in DPF applies by default averaging
-across bodies. Therefore, a simple workflow like the one shown below can be used
-in this case.</p>
+<h2>Averaging across bodies activated<a class="headerlink" href="#averaging-across-bodies-activated" title="Permalink to this heading">#</a></h2>
+<p>The extraction of the stresses in the Z direction applies averaging
+across bodies by default. Thus, you can use a simple workflow.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">average_across_bodies</span><span class="p">(</span><span class="n">analysis</span><span class="p">):</span>
-    <span class="c1"># This function will extract the stresses in the Z direction (with the average</span>
+    <span class="c1"># Extract the stresses in the Z direction (with the average</span>
     <span class="c1"># across bodies property activated) and plot them.</span>
 
     <span class="c1"># Create a model from the simulation results.</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
     <span class="n">mesh</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span>
 
-    <span class="c1"># We&#39;re interested in the last time set, so:</span>
+    <span class="c1"># Set the time set of interest to the last time set.</span>
     <span class="n">time_set</span> <span class="o">=</span> <span class="mi">3</span>
 
-    <span class="c1"># Extracting the stresses in the Z direction. By default, DPF already applies</span>
+    <span class="c1"># Extract the stresses in the Z direction. By default, DPF already applies</span>
     <span class="c1"># averaging across bodies when extracting the stresses.</span>
     <span class="n">stress_op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">stress_Z</span><span class="p">()</span>
     <span class="n">stress_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
@@ -739,7 +743,7 @@ in this case.</p>
     <span class="n">stress_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">requested_location</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">locations</span><span class="o">.</span><span class="n">nodal</span><span class="p">)</span>
     <span class="n">stresses</span> <span class="o">=</span> <span class="n">stress_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">fields_container</span><span class="p">()</span>
 
-    <span class="c1"># Finding the maximum stress value</span>
+    <span class="c1"># Find the maximum stress value.</span>
     <span class="n">min_max</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">min_max</span><span class="o">.</span><span class="n">min_max_fc</span><span class="p">()</span>
     <span class="n">min_max</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_container</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">stresses</span><span class="p">)</span>
     <span class="n">max_val</span> <span class="o">=</span> <span class="n">min_max</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field_max</span><span class="p">()</span>
@@ -751,27 +755,28 @@ in this case.</p>
 </div>
 </section>
 <section id="averaging-across-bodies-deactivated">
-<h2>Averaging across bodies deactivated<a class="headerlink" href="#averaging-across-bodies-deactivated" title="Permalink to this headline">#</a></h2>
-<p>To extract the stresses without averaging across the bodies of the simulated
-part, the workflow is a bit more complicated. So, instead of being presented
-as a function, it will be broken into various parts with explanations of what
-is being done.</p>
-<p>First, we create a model from the simulation results and extract its mesh and
-step informations.</p>
+<h2>Averaging across bodies deactivated<a class="headerlink" href="#averaging-across-bodies-deactivated" title="Permalink to this heading">#</a></h2>
+<p>The workflow is more complicated for extracting the stresses without
+averaging across the bodies of the simulated part. Instead of presenting
+the workflow as a function, it is broken into various parts with explanations
+of what is being done.</p>
+<p>Create a model from the simulation results and extract its mesh and
+step information.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
 <span class="n">mesh</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span>
 <span class="n">time_freq</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">time_freq_support</span>
 <span class="n">time_sets</span> <span class="o">=</span> <span class="n">time_freq</span><span class="o">.</span><span class="n">time_frequencies</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>We need to split the meshes of the two bodies so we can then create separate
-scopings for each one of them. The ‘mat’ label is used to split the mesh by bodies.</p>
+<p>Split the meshes of the two bodies so that separate scopings can be
+created for each one of them. The <cite>‘mat’`</cite> label is used to split the mesh
+by bodies.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh_scop_op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">scoping</span><span class="o">.</span><span class="n">split_on_property_type</span><span class="p">(</span><span class="n">mesh</span><span class="o">=</span><span class="n">mesh</span><span class="p">,</span> <span class="n">label1</span><span class="o">=</span><span class="s2">&quot;mat&quot;</span><span class="p">)</span>
 <span class="n">mesh_scop_cont</span> <span class="o">=</span> <span class="n">mesh_scop_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">mesh_scoping</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Then, as we have 3 different time steps, we need to create a ScopingsContainer
-that contains the meshes of each one of these steps. We do so as follows:</p>
+<p>Given that there are three different time steps, create a scopings container
+that contains the meshes of each of these time steps.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scop_cont</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">ScopingsContainer</span><span class="p">()</span>
 <span class="n">scop_cont</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">)</span>
 <span class="n">scop_cont</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
@@ -790,15 +795,15 @@ that contains the meshes of each one of these steps. We do so as follows:</p>
         defined on labels [&#39;body&#39;, &#39;time&#39;]
 </pre></div>
 </div>
-<p>As we can see, we’ve got 6 different Scopings inside our ScopingsContainer, one for
-each body over each one of the three time steps. Let’s now focus our analysis on the
-last time set:</p>
+<p>The scopings container has six different scopings, one for each body over
+each of the three time steps.</p>
+<p>Set the time set of interest to the last time set.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time_set</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<p>Then, to retrieve the Z stresses without averaging across the two bodies, we can pass
-a ScopingsContainer that contains their respective meshes as a parameter to the
-stress_Z operator. To be able to do that, we need a new ScopingsContainer that contains
+<p>To retrieve the Z stresses without averaging across the two bodies, you must
+pass a scopings container that contains their respective meshes as a parameter
+to the <code class="docutils literal notranslate"><span class="pre">stress_Z</span></code> operator. To do this, create a scopings container that contains
 the meshes of the two bodies in the desired time step.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scop_list</span> <span class="o">=</span> <span class="n">scop_cont</span><span class="o">.</span><span class="n">get_scopings</span><span class="p">(</span><span class="n">label_space</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">time_set</span><span class="p">})</span>
 <span class="n">scopings</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">ScopingsContainer</span><span class="p">()</span>
@@ -815,9 +820,8 @@ the meshes of the two bodies in the desired time step.</p>
         defined on labels [&#39;body&#39;]
 </pre></div>
 </div>
-<p>We can see that, in this container, we only have two Scopings, one for each body
-in the last time step, as desired.</p>
-<p>Finally, we can extract the stresses in the Z direction.</p>
+<p>This contain has only two scopings, one for each body in the last time step.</p>
+<p>Extract the stresses in the Z direction.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stress_op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">stress_Z</span><span class="p">()</span>
 <span class="n">stress_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 <span class="n">stress_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">time_set</span><span class="p">)</span>
@@ -838,15 +842,15 @@ in the last time step, as desired.</p>
   - field 1 {body:  2, time:  3} with Nodal location, 1 components and 17610 entities.
 </pre></div>
 </div>
-<p>Additionally, we can find the maximum value of the stress field for comparison purposes.</p>
+<p>Find the maximum value of the stress field for comparison purposes.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">min_max</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">min_max</span><span class="o">.</span><span class="n">min_max_fc</span><span class="p">()</span>
 <span class="n">min_max</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_container</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">stresses</span><span class="p">)</span>
 <span class="n">max_val</span> <span class="o">=</span> <span class="n">min_max</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field_max</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>We can also define the workflow presented above as a function:</p>
+<p>Define the preceding workflow as a function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">not_average_across_bodies</span><span class="p">(</span><span class="n">analysis</span><span class="p">):</span>
-    <span class="c1"># This function will extract the stresses in the Z direction (with the average</span>
+    <span class="c1"># This function extracts the stresses in the Z direction (with the average</span>
     <span class="c1"># across bodies option deactivated) and plot them.</span>
 
     <span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
@@ -897,11 +901,11 @@ in the last time step, as desired.</p>
 </div>
 </section>
 </section>
-<section id="plotting-the-results">
-<h1>Plotting the results<a class="headerlink" href="#plotting-the-results" title="Permalink to this headline">#</a></h1>
-<p>Finally, let’s plot the results to see how they compare. In the first image, we have
-the stress distribution when the averaging across bodies options is activated, while
-in the second one it’s deactivated.</p>
+<section id="plot-and-compare-the-results">
+<h1>Plot and compare the results<a class="headerlink" href="#plot-and-compare-the-results" title="Permalink to this heading">#</a></h1>
+<p>Plot and compare the results. The first plot shows the stress distribution
+when averaging across bodies is activated. The second plot shows the stress
+distribution when averaging across bodies is deactivated.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">max_avg_on</span> <span class="o">=</span> <span class="n">average_across_bodies</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
 <span class="n">max_avg_off</span> <span class="o">=</span> <span class="n">not_average_across_bodies</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
 </pre></div>
@@ -932,7 +936,7 @@ Max stress when averaging across bodies is deactivated: 6988756864.00 Pa
 The maximum stress value when averaging across bodies is ACTIVATED is 0.44% LOWER than when it is DEACTIVATED
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  14.961 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.504 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-08-averaging-01-average-across-bodies-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2e83048bea6393f9b6a5eeb1dada3999/01-average_across_bodies.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-average_across_bodies.py</span></code></a></p>
@@ -969,7 +973,7 @@ The maximum stress value when averaging across bodies is ACTIVATED is 0.44% LOWE
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

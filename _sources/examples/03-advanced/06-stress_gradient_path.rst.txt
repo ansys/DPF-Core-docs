@@ -20,17 +20,17 @@
 
 .. _stress_gradient_path:
 
-Stress gradient normal to a defined node.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Stress gradient normal to a defined node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This example shows how to plot a stress gradient normal to a selected node.
-As the example is based on creating a path along the normal, the selected node
+Because the example is based on creating a path along the normal, the selected node
 must be on the surface of the geometry.
 A path is created of a defined length.
 
 .. GENERATED FROM PYTHON SOURCE LINES 14-17
 
-First, import the DPF-Core module as ``dpf`` and import the
-included examples file and ``DpfPlotter``
+Import the DPF-Core module as ``dpf`` and import the
+included examples file and ``DpfPlotter``.
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 17-23
@@ -52,7 +52,7 @@ included examples file and ``DpfPlotter``
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-37
 
-Next, open an example and print out the ``model`` object.  The
+Open an example and print out the ``Model`` object. The
 :class:`Model <ansys.dpf.core.model.Model>` class helps to organize access
 methods for the result by keeping track of the operators and data sources
 used by the result file.
@@ -117,7 +117,7 @@ Printing the model displays:
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-43
 
-Define the `node_id` normal to which a stress gradient should be plotted.
+Define the node ID normal to plot the a stress gradient to.
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-44
@@ -134,7 +134,7 @@ Define the `node_id` normal to which a stress gradient should be plotted.
 
 .. GENERATED FROM PYTHON SOURCE LINES 45-47
 
-The following command prints the mesh unit
+Print the mesh unit
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 47-49
@@ -158,7 +158,7 @@ The following command prints the mesh unit
 
 .. GENERATED FROM PYTHON SOURCE LINES 50-53
 
-`depth` defines the path length / depth to which the path will penetrate.
+`depth` defines the length/depth that the path penetrates to.
 While defining `depth` make sure you use the correct mesh unit.
 `delta` defines distance between consecutive points on the path.
 
@@ -269,7 +269,7 @@ Get normal at a node using `normals` operator.
 
 .. GENERATED FROM PYTHON SOURCE LINES 83-87
 
-Normal vector is along the surface normal. We need to invert the vector
+The normal vector is along the surface normal. You need to invert the vector
 using `math.scale` operator inwards in the geometry, to get the path
 direction.
 
@@ -290,7 +290,7 @@ direction.
 
 .. GENERATED FROM PYTHON SOURCE LINES 91-93
 
-Get Nodal coordinates, they serve as the first point on the line.
+Get nodal coordinates, they serve as the first point on the line.
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 93-95
@@ -346,7 +346,7 @@ Create coordinates using 3D line equation.
 
 .. GENERATED FROM PYTHON SOURCE LINES 108-110
 
-Create Field for coordinates of the path.
+Create field for coordinates of the path.
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 110-113
@@ -365,7 +365,7 @@ Create Field for coordinates of the path.
 
 .. GENERATED FROM PYTHON SOURCE LINES 114-115
 
-Let's now map results on the path.
+Map results on the path.
 
 .. GENERATED FROM PYTHON SOURCE LINES 115-121
 
@@ -386,7 +386,7 @@ Let's now map results on the path.
 
 .. GENERATED FROM PYTHON SOURCE LINES 122-123
 
-Here, we request the mapped field data and its mesh
+Request the mapped field data and its mesh.
 
 .. GENERATED FROM PYTHON SOURCE LINES 123-125
 
@@ -430,9 +430,9 @@ Create stress vs length chart.
 
 .. GENERATED FROM PYTHON SOURCE LINES 135-138
 
-To create a plot we need to add both the meshes
-`mesh_m` - mapped mesh
-`mesh` - original mesh
+Create a plot to add both meshes to.
+``mesh_m`` - mapped mesh
+``mesh`` - original mesh
 
 .. GENERATED FROM PYTHON SOURCE LINES 138-146
 
@@ -461,7 +461,7 @@ To create a plot we need to add both the meshes
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.895 seconds)
+   **Total running time of the script:** ( 0 minutes  1.440 seconds)
 
 
 .. _sphx_glr_download_examples_03-advanced_06-stress_gradient_path.py:

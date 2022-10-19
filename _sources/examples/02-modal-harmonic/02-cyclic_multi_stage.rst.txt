@@ -20,7 +20,7 @@
 
 .. _ref_multi_stage_cyclic:
 
-Multi-stage Cyclic Symmetry Example
+Multi-stage cyclic symmetry example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This example shows how to expand the mesh and results from a
 multi-stage cyclic analysis.
@@ -94,7 +94,7 @@ Create the model and display the state of the result.
 
 Expand displacement results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this example we expand displacement results, by default on all
+This example expands displacement results, by default on all
 nodes and the first time step.
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-42
@@ -174,7 +174,7 @@ Expand stresses at a given time step
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.462 seconds)
+   **Total running time of the script:** ( 0 minutes  2.219 seconds)
 
 
 .. _sphx_glr_download_examples_02-modal-harmonic_02-cyclic_multi_stage.py:

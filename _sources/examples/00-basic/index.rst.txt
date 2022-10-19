@@ -4,7 +4,7 @@
 
 .. _basic-gallery:
 
-Basic DPF Examples
+Basic DPF examples
 ==================
 These examples explain the basic concepts of DPF.
 
@@ -22,30 +22,30 @@ These examples explain the basic concepts of DPF.
 .. only:: html
 
   .. image:: /examples/00-basic/images/thumb/sphx_glr_00-basic_example_thumb.png
-    :alt: Basic DPF-Core Usage
+    :alt: Basic DPF-Core usage
 
   :ref:`sphx_glr_examples_00-basic_00-basic_example.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Basic DPF-Core Usage</div>
+      <div class="sphx-glr-thumbnail-title">Basic DPF-Core usage</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="In DPF, operators provide the primary method for interacting with and extracting results.  With...">
+    <div class="sphx-glr-thumbcontainer" tooltip="In DPF, operators provide the primary method for interacting with and extracting results. Withi...">
 
 .. only:: html
 
   .. image:: /examples/00-basic/images/thumb/sphx_glr_01-basic_operators_thumb.png
-    :alt: Operators Overview
+    :alt: Operators overview
 
   :ref:`sphx_glr_examples_00-basic_01-basic_operators.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Operators Overview</div>
+      <div class="sphx-glr-thumbnail-title">Operators overview</div>
     </div>
 
 
@@ -56,13 +56,13 @@ These examples explain the basic concepts of DPF.
 .. only:: html
 
   .. image:: /examples/00-basic/images/thumb/sphx_glr_02-basic_field_containers_thumb.png
-    :alt: Field and Field Containers Overview
+    :alt: Field and field containers overview
 
   :ref:`sphx_glr_examples_00-basic_02-basic_field_containers.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Field and Field Containers Overview</div>
+      <div class="sphx-glr-thumbnail-title">Field and field containers overview</div>
     </div>
 
 
@@ -73,13 +73,13 @@ These examples explain the basic concepts of DPF.
 .. only:: html
 
   .. image:: /examples/00-basic/images/thumb/sphx_glr_03-create_entities_thumb.png
-    :alt: Create Your Own Entities Use DPF Operators
+    :alt: Create your own entities using DPF operators
 
   :ref:`sphx_glr_examples_00-basic_03-create_entities.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Create Your Own Entities Use DPF Operators</div>
+      <div class="sphx-glr-thumbnail-title">Create your own entities using DPF operators</div>
     </div>
 
 
@@ -90,13 +90,13 @@ These examples explain the basic concepts of DPF.
 .. only:: html
 
   .. image:: /examples/00-basic/images/thumb/sphx_glr_04-basic-load-file_thumb.png
-    :alt: Write/Load and Upload/Download a Result File
+    :alt: Working with a result file
 
   :ref:`sphx_glr_examples_00-basic_04-basic-load-file.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Write/Load and Upload/Download a Result File</div>
+      <div class="sphx-glr-thumbnail-title">Working with a result file</div>
     </div>
 
 
@@ -107,30 +107,30 @@ These examples explain the basic concepts of DPF.
 .. only:: html
 
   .. image:: /examples/00-basic/images/thumb/sphx_glr_05-use_local_data_thumb.png
-    :alt: Bring a Field's Data Locally to Improve Performance
+    :alt: Bring a field's data locally to improve performance
 
   :ref:`sphx_glr_examples_00-basic_05-use_local_data.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Bring a Field's Data Locally to Improve Performance</div>
+      <div class="sphx-glr-thumbnail-title">Bring a field's data locally to improve performance</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Load Plugin">
+    <div class="sphx-glr-thumbcontainer" tooltip="Load plugin">
 
 .. only:: html
 
   .. image:: /examples/00-basic/images/thumb/sphx_glr_06-load_plugin_thumb.png
-    :alt: Load Plugin
+    :alt: Load plugin
 
   :ref:`sphx_glr_examples_00-basic_06-load_plugin.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Load Plugin</div>
+      <div class="sphx-glr-thumbnail-title">Load plugin</div>
     </div>
 
 
@@ -141,13 +141,13 @@ These examples explain the basic concepts of DPF.
 .. only:: html
 
   .. image:: /examples/00-basic/images/thumb/sphx_glr_07-use_result_helpers_thumb.png
-    :alt: Use Result Helpers to Load Custom Data
+    :alt: Use result helpers to load custom data
 
   :ref:`sphx_glr_examples_00-basic_07-use_result_helpers.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Use Result Helpers to Load Custom Data</div>
+      <div class="sphx-glr-thumbnail-title">Use result helpers to load custom data</div>
     </div>
 
 
@@ -187,18 +187,18 @@ These examples explain the basic concepts of DPF.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="- ansys.dpf.core.server_types.InProcessServer loading DPF in Process.">
+    <div class="sphx-glr-thumbcontainer" tooltip="- ansys.dpf.core.server_types.InProcessServer loading DPF in process.">
 
 .. only:: html
 
   .. image:: /examples/00-basic/images/thumb/sphx_glr_11-server_types_thumb.png
-    :alt: Communicate In Process or via gRPC
+    :alt: Communicate in process or via gRPC
 
   :ref:`sphx_glr_examples_00-basic_11-server_types.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Communicate In Process or via gRPC</div>
+      <div class="sphx-glr-thumbnail-title">Communicate in process or via gRPC</div>
     </div>
 
 
@@ -216,6 +216,23 @@ These examples explain the basic concepts of DPF.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Get material properties from the result file</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The script below demonstrates the methodology using PyDPF.">
+
+.. only:: html
+
+  .. image:: /examples/00-basic/images/thumb/sphx_glr_13-nodes_in_local_coordinate_system_thumb.png
+    :alt: Convert nodal coordinates field to local coordinate system
+
+  :ref:`sphx_glr_examples_00-basic_13-nodes_in_local_coordinate_system.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Convert nodal coordinates field to local coordinate system</div>
     </div>
 
 
@@ -239,4 +256,5 @@ These examples explain the basic concepts of DPF.
    /examples/00-basic/09-results_over_space_subset
    /examples/00-basic/11-server_types
    /examples/00-basic/12-get_material_properties
+   /examples/00-basic/13-nodes_in_local_coordinate_system
 

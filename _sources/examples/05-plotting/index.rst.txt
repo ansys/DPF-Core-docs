@@ -4,9 +4,9 @@
 
 .. _plotting_examples:
 
-Plotting Examples
+Plotting examples
 =================
-These demos show how to use the DpfPlotter.
+These examples show how to use the ``DpfPlotter`` module.
 
 
 .. raw:: html
@@ -33,52 +33,52 @@ These demos show how to use the DpfPlotter.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Compare Results Using the Plotter">
+    <div class="sphx-glr-thumbcontainer" tooltip="Compare results using the plotter">
 
 .. only:: html
 
   .. image:: /examples/05-plotting/images/thumb/sphx_glr_01-compare_results_thumb.png
-    :alt: Compare Results Using the Plotter
+    :alt: Compare results using the plotter
 
   :ref:`sphx_glr_examples_05-plotting_01-compare_results.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Compare Results Using the Plotter</div>
+      <div class="sphx-glr-thumbnail-title">Compare results using the plotter</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Load Case Combination for Principal Stress">
+    <div class="sphx-glr-thumbcontainer" tooltip="Load case combination for principal stress">
 
 .. only:: html
 
   .. image:: /examples/05-plotting/images/thumb/sphx_glr_02-solution_combination_thumb.png
-    :alt: Load Case Combination for Principal Stress
+    :alt: Load case combination for principal stress
 
   :ref:`sphx_glr_examples_05-plotting_02-solution_combination.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Load Case Combination for Principal Stress</div>
+      <div class="sphx-glr-thumbnail-title">Load case combination for principal stress</div>
     </div>
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Add Nodal Labels on Plots">
+    <div class="sphx-glr-thumbcontainer" tooltip="Add nodal labels on plots">
 
 .. only:: html
 
   .. image:: /examples/05-plotting/images/thumb/sphx_glr_03-labels_thumb.png
-    :alt: Add Nodal Labels on Plots
+    :alt: Add nodal labels on plots
 
   :ref:`sphx_glr_examples_05-plotting_03-labels.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Add Nodal Labels on Plots</div>
+      <div class="sphx-glr-thumbnail-title">Add nodal labels on plots</div>
     </div>
 
 
@@ -118,6 +118,23 @@ These demos show how to use the DpfPlotter.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Review of available animation commands">
+
+.. only:: html
+
+  .. image:: /examples/05-plotting/images/thumb/sphx_glr_06-animate_results_thumb.png
+    :alt: Review of available animation commands
+
+  :ref:`sphx_glr_examples_05-plotting_06-animate_results.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Review of available animation commands</div>
+    </div>
+
+
+.. raw:: html
+
     </div>
 
 
@@ -130,4 +147,5 @@ These demos show how to use the DpfPlotter.
    /examples/05-plotting/03-labels
    /examples/05-plotting/04-plot_on_path
    /examples/05-plotting/05-plot_on_warped_mesh
+   /examples/05-plotting/06-animate_results
 

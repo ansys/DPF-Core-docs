@@ -20,11 +20,11 @@
 
 .. _ref_multi_stage_cyclic_advanced:
 
-Multi-stage Cyclic Symmetry Use Advanced Customization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This example shows how to expand on selected sectors the mesh and results from a
-multi-stage cyclic analysis.
-It also shows how to use the cyclic support for advanced post processing
+Multi-stage cyclic symmetry using advanced customization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This example shows how to expand on selected sectors the mesh and results
+from a multi-stage cyclic analysis. It also shows how to use the cyclic support
+for advanced postprocessing
 
 .. GENERATED FROM PYTHON SOURCE LINES 10-14
 
@@ -94,7 +94,7 @@ Create the model and display the state of the result.
 
 .. GENERATED FROM PYTHON SOURCE LINES 21-22
 
-Check the result info to verify that it's a multistage model
+Check the result info to verify that it's a multi-stage model
 
 .. GENERATED FROM PYTHON SOURCE LINES 22-26
 
@@ -155,7 +155,7 @@ Go over the cyclic support
 
 Expand displacement results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this example we expand displacement results, on chosen sectors
+This example expands displacement results on chosen sectors.
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-65
 
@@ -194,7 +194,7 @@ In this example we expand displacement results, on chosen sectors
 
 .. GENERATED FROM PYTHON SOURCE LINES 66-68
 
-plot the expanded result on the expanded mesh
+Plot the expanded result on the expanded mesh
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. GENERATED FROM PYTHON SOURCE LINES 68-70
@@ -249,27 +249,27 @@ Choose to expand only some sectors for the mesh
 .. GENERATED FROM PYTHON SOURCE LINES 84-86
 
 Check results precisely
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. GENERATED FROM PYTHON SOURCE LINES 86-103
 
 .. code-block:: default
 
 
-    # print the time_freq_support to see the harmonic index
+    # Print the time_freq_support to see the harmonic index
     print(model.metadata.time_freq_support)
     print(model.metadata.time_freq_support.get_harmonic_indices(stage_num=1).data)
 
-    # harmonic index 0 means that the results are symmetric sectors by sector
+    # Harmonic index 0 means that the results are symmetric sectors by sector
     # taking a node in the base sector of the first stage
     node_id = cyc_support.base_nodes_scoping(0)[18]
     print(node_id)
 
-    # check what are the expanded ids of this node
+    # Check what are the expanded ids of this node
     expanded_ids = cyc_support.expand_node_id(node_id, [0, 1, 2], 0)
     print(expanded_ids.ids)
 
-    # verify that the displacement values are the same on all those nodes
+    # Verify that the displacement values are the same on all those nodes
     for node in expanded_ids.ids:
         print(fields[0].get_entity_data_by_id(node))
 
@@ -303,7 +303,7 @@ Check results precisely
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.396 seconds)
+   **Total running time of the script:** ( 0 minutes  2.080 seconds)
 
 
 .. _sphx_glr_download_examples_03-advanced_00-multistage_advanced_options.py:

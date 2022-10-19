@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Custom Operators &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>Custom operators &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -52,10 +53,10 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="DPF XML Files" href="xmlfiles.html" />
+    <link rel="next" title="DPF XML files" href="xmlfiles.html" />
     <link rel="prev" title="Plot" href="plotting.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,12 +169,14 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User guide</a> » </li>
-        <li class="nav-item nav-item-this"><a href="">Custom Operators</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Custom operators</a></li> 
       </ul>
     </div>
         </div>
@@ -202,24 +199,24 @@
     <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="concepts.html">
-   Concepts and Terminology
+   Terms and concepts
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="waysofusing.html">
-   Ways of Using DPF
+   DPF scripting languages
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="stepbystep.html">
-   Using DPF: Step by Step
+   DPF usage
   </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="model.html">
-   DPF Model
+   DPF model
   </a>
  </li>
  <li class="toctree-l1">
@@ -229,7 +226,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fields_container.html">
-   Fields Container and Fields
+   Fields container and fields
   </a>
  </li>
 </ul>
@@ -241,12 +238,12 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Custom Operators
+   Custom operators
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="xmlfiles.html">
-   DPF XML Files
+   DPF XML files
   </a>
  </li>
 </ul>
@@ -281,35 +278,37 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installation">
-   Installation
+  <a class="reference internal nav-link" href="#install-module">
+   Install module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#writing-the-operator">
-   Writing the Operator
+  <a class="reference internal nav-link" href="#create-operators">
+   Create operators
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-implementation">
-     Basic Implementation
+    <a class="reference internal nav-link" href="#basic-operator-plugin">
+     Basic operator plugin
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#package-custom-operators">
-     Package Custom Operators
+    <a class="reference internal nav-link" href="#plug-in-package-with-multiple-operators">
+     Plug-in package with multiple operators
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#add-third-party-dependencies">
-     Add Third Party Dependencies
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#third-party-dependencies">
+       Third-party dependencies
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#use-the-custom-operators">
-   Use the Custom Operators
+  <a class="reference internal nav-link" href="#use-custom-operators">
+   Use custom operators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -337,45 +336,69 @@
               <article class="bd-article" role="main">
                 
   <section id="custom-operators">
-<span id="user-guide-custom-operators"></span><h1>Custom Operators<a class="headerlink" href="#custom-operators" title="Permalink to this headline">#</a></h1>
-<p>Starting with Ansys 2022 R2, DPF offers the capability to create user-defined Operators in CPython.
-Writing Operators allows to wrap python routines in a DPF compliant way so that it can be accessed
-the same way as a native <a class="reference internal" href="../api/ansys.dpf.core.dpf_operator.html#ansys.dpf.core.dpf_operator.Operator" title="ansys.dpf.core.dpf_operator.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.dpf_operator.Operator</span></code></a> in pyDPF or in any supported
-client API.
-With this feature, DPF can be used as a development tool offering:</p>
+<span id="user-guide-custom-operators"></span><h1>Custom operators<a class="headerlink" href="#custom-operators" title="Permalink to this heading">#</a></h1>
+<p>In Ansys 2022 R2 and later, you can create custom operators in CPython. Creating custom operators
+consists of wrapping Python routines in a DPF-compliant way so that you can them in the same way
+as you access the native operators in the <a class="reference internal" href="../api/ansys.dpf.core.dpf_operator.html#ansys.dpf.core.dpf_operator.Operator" title="ansys.dpf.core.dpf_operator.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.dpf_operator.Operator</span></code></a> class in
+PyDPF-Core or in any supported client API.</p>
+<p>With support for custom operators, PyDPF-Core becomes a development tool offering:</p>
 <ul class="simple">
-<li><p>Accessibility: a single script defines an Operator and its documentation.</p></li>
-<li><p>Componentization: Operators with similar applications can be grouped in python packages named <code class="docutils literal notranslate"><span class="pre">Plugins</span></code>.</p></li>
-<li><p>Easy Distribution: standard python tools can be used to package, upload and download the user-defined operators.</p></li>
-<li><p>Dependencies management: third party python modules can be added to the python package.</p></li>
-<li><p>Reusability: a documented and packaged Operator can be reused in an infinite number of workflows.</p></li>
-<li><p>Remotable and parallel computing: native DPF’s capabilities are inherited by the user-defined Operators.</p></li>
+<li><p><strong>Accessibility:</strong> A simple script can define a basic operator plugin.</p></li>
+<li><p><strong>Componentization:</strong> Operators with similar applications can be grouped in Python plug-in packages.</p></li>
+<li><p><strong>Easy distribution:</strong> Standard Python tools can be used to package, upload, and download custom operators.</p></li>
+<li><p><strong>Dependency management:</strong> Third-party Python modules can be added to the Python package.</p></li>
+<li><p><strong>Reusability:</strong> A documented and packaged operator can be reused in an infinite number of workflows.</p></li>
+<li><p><strong>Remotable and parallel computing:</strong> Native DPF capabilities are inherited by custom operators.</p></li>
 </ul>
-<p>A prerequisite to writing user-defined Operators is to be comfortable with the concept of Operator (<a class="reference internal" href="operators.html#ref-user-guide-operators"><span class="std std-ref">Operators</span></a>).</p>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
-<p>Once Ansys unified installation completed, ansys-dpf-core module needs to be installed in the Ansys installer’s Python
-interpreter. Run this <a class="reference download internal" download="" href="../_downloads/f2a946bd7f90d3d33515a361c428380f/install_ansys_dpf_core_in_ansys.ps1"><code class="xref download docutils literal notranslate"><span class="pre">powershell</span> <span class="pre">script</span></code></a> for windows
-or this <a class="reference download internal" download="" href="../_downloads/552872e543c3c85d749d2cb67e00c0af/install_ansys_dpf_core_in_ansys.sh"><code class="xref download docutils literal notranslate"><span class="pre">shell</span> <span class="pre">script</span></code></a> for linux with the optional
-arguments:</p>
+<p>The only prerequisite for creating custom operators is to be familiar with native operators.
+For more information, see (<a class="reference internal" href="operators.html#ref-user-guide-operators"><span class="std std-ref">Operators</span></a>).</p>
+<section id="install-module">
+<h2>Install module<a class="headerlink" href="#install-module" title="Permalink to this heading">#</a></h2>
+<p>Once an Ansys-unified installation is complete, you must install the <code class="docutils literal notranslate"><span class="pre">ansys-dpf-core</span></code> module in the Ansys
+installer’s Python interpreter.</p>
+<ol class="arabic simple">
+<li><p>Download the script for you operating system:</p>
 <ul class="simple">
-<li><p>-awp_root : path to Ansys root installation path (usually ending with Ansys Inc/v222), defaults to environment variable AWP_ROOT222</p></li>
-<li><p>-pip_args : optional arguments that add to pip command (ie. –extra-index-url, –trusted-host,…)</p></li>
+<li><p>For Windows, download this <a class="reference download internal" download="" href="../_downloads/f2a946bd7f90d3d33515a361c428380f/install_ansys_dpf_core_in_ansys.ps1"><code class="xref download docutils literal notranslate"><span class="pre">powershell</span> <span class="pre">script</span></code></a>.</p></li>
+<li><p>For Linux, download this <a class="reference download internal" download="" href="../_downloads/552872e543c3c85d749d2cb67e00c0af/install_ansys_dpf_core_in_ansys.sh"><code class="xref download docutils literal notranslate"><span class="pre">shell</span> <span class="pre">script</span></code></a></p></li>
 </ul>
-<p>If you wish to uninstall ansys-dpf-core module of the Ansys installation, run this <a class="reference download internal" download="" href="../_downloads/9179bc817b36fb88f232383ca181865e/uninstall_ansys_dpf_core_in_ansys.ps1"><code class="xref download docutils literal notranslate"><span class="pre">powershell</span> <span class="pre">script</span></code></a> for windows
-or this <a class="reference download internal" download="" href="../_downloads/d5bf8cd92339935409e6aea9baf587a0/uninstall_ansys_dpf_core_in_ansys.sh"><code class="xref download docutils literal notranslate"><span class="pre">shell</span> <span class="pre">script</span></code></a> for linux with the optional
-argument:</p>
+</li>
+<li><p>Run the downloaded script for installing with optional arguments:</p>
 <ul class="simple">
-<li><p>-awp_root : path to Ansys root installation path (usually ending with Ansys Inc/v222), defaults to environment variable AWP_ROOT222</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-awp_root</span></code>: Path to the Ansys root installation folder. For example, the 2022 R2 installation folder ends
+with <code class="docutils literal notranslate"><span class="pre">Ansys</span> <span class="pre">Inc/v222</span></code>, and the default environment variable is <code class="docutils literal notranslate"><span class="pre">AWP_ROOT222</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-pip_args</span></code>: Optional arguments to add to the <code class="docutils literal notranslate"><span class="pre">pip</span></code> command. For example, <code class="docutils literal notranslate"><span class="pre">--extra-index-url</span></code> or
+<code class="docutils literal notranslate"><span class="pre">--trusted-host</span></code>.</p></li>
 </ul>
+</li>
+</ol>
+<p>If you ever want to uninstall the <code class="docutils literal notranslate"><span class="pre">ansys-dpf-core</span></code> module from the Ansys installation, you can do so.</p>
+<ol class="arabic simple">
+<li><p>Download the script for your operating system:</p>
+<ul class="simple">
+<li><p>For Windows, download this <a class="reference download internal" download="" href="../_downloads/9179bc817b36fb88f232383ca181865e/uninstall_ansys_dpf_core_in_ansys.ps1"><code class="xref download docutils literal notranslate"><span class="pre">powershell</span> <span class="pre">script</span></code></a>.</p></li>
+<li><p>For Linux, download this <a class="reference download internal" download="" href="../_downloads/d5bf8cd92339935409e6aea9baf587a0/uninstall_ansys_dpf_core_in_ansys.sh"><code class="xref download docutils literal notranslate"><span class="pre">shell</span> <span class="pre">script</span></code></a>.</p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Run the downloaded script for uninstalling with the optional argument:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-awp_root</span></code>: Path to the Ansys root installation folder.  For example, the 2022 R2 installation folder ends
+with <code class="docutils literal notranslate"><span class="pre">Ansys</span> <span class="pre">Inc/v222</span></code>, and the default environment variable is <code class="docutils literal notranslate"><span class="pre">AWP_ROOT222</span></code>.</p></li>
+</ul>
+</li>
+</ol>
 </section>
-<section id="writing-the-operator">
-<h2>Writing the Operator<a class="headerlink" href="#writing-the-operator" title="Permalink to this headline">#</a></h2>
-<section id="basic-implementation">
-<h3>Basic Implementation<a class="headerlink" href="#basic-implementation" title="Permalink to this headline">#</a></h3>
-<p>To write the simplest DPF python plugins, a single python script is necessary.
-An Operator implementation deriving from <a class="reference internal" href="../api/ansys.dpf.core.custom_operator.html#ansys.dpf.core.custom_operator.CustomOperatorBase" title="ansys.dpf.core.custom_operator.CustomOperatorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.custom_operator.CustomOperatorBase</span></code></a>
-and a call to <a class="reference internal" href="../api/ansys.dpf.core.custom_operator.html#ansys.dpf.core.custom_operator.record_operator" title="ansys.dpf.core.custom_operator.record_operator"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.custom_operator.record_operator()</span></code></a> are the 2 necessary steps to create a plugin.</p>
+<section id="create-operators">
+<h2>Create operators<a class="headerlink" href="#create-operators" title="Permalink to this heading">#</a></h2>
+<p>You can create a basic operator plugin or a plug-in package with multiple operators.</p>
+<section id="basic-operator-plugin">
+<h3>Basic operator plugin<a class="headerlink" href="#basic-operator-plugin" title="Permalink to this heading">#</a></h3>
+<p>To create a basic operator plugin, you write a simple Python script. An operator implementation
+derives from the <a class="reference internal" href="../api/ansys.dpf.core.custom_operator.html#ansys.dpf.core.custom_operator.CustomOperatorBase" title="ansys.dpf.core.custom_operator.CustomOperatorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.custom_operator.CustomOperatorBase</span></code></a> class and a call to
+the <a class="reference internal" href="../api/ansys.dpf.core.custom_operator.html#ansys.dpf.core.custom_operator.record_operator" title="ansys.dpf.core.custom_operator.record_operator"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.custom_operator.record_operator()</span></code></a> method.</p>
+<p>This example script shows how you create a basic operator plugin:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core.custom_operator</span> <span class="kn">import</span> <span class="n">CustomOperatorBase</span><span class="p">,</span> <span class="n">record_operator</span>  <span class="c1"># noqa: F401</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core.operator_specification</span> <span class="kn">import</span> <span class="n">CustomSpecification</span><span class="p">,</span> <span class="n">SpecificationProperties</span><span class="p">,</span> \
@@ -414,47 +437,43 @@ and a call to <a class="reference internal" href="../api/ansys.dpf.core.custom_o
     <span class="n">record_operator</span><span class="p">(</span><span class="n">CustomOperator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Input and output pins descriptions take a dictionary mapping pin numbers to their
-<a class="reference internal" href="../api/ansys.dpf.core.operator_specification.html#ansys.dpf.core.operator_specification.PinSpecification" title="ansys.dpf.core.operator_specification.PinSpecification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.operator_specification.PinSpecification</span></code></a>. PinSpecification takes a name (used in the documentation,
-and in the code generation), a list of supported types, a document, whether the pin is optional and/or ellipsis (meaning
-the pin specification is valid for pins going from pin number to infinity).
-<a class="reference internal" href="../api/ansys.dpf.core.operator_specification.html#ansys.dpf.core.operator_specification.SpecificationProperties" title="ansys.dpf.core.operator_specification.SpecificationProperties"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.operator_specification.SpecificationProperties</span></code></a> allows to specify other properties of the
-Operator like its user name (mandatory) or its category (used in the documentation,
-and in the code generation).</p>
-<p>See example of Custom Operators implementations in the Examples section <a class="reference internal" href="../examples/07-python-operators/index.html#python-operators"><span class="std std-ref">Examples of custom python plugins of Operators</span></a>.</p>
-</section>
-<section id="package-custom-operators">
-<h3>Package Custom Operators<a class="headerlink" href="#package-custom-operators" title="Permalink to this headline">#</a></h3>
-<p>To create a DPF plugin with several Operators or with complex routines, python packages of Operators can be created.
-The benefits of writing packages instead of simple scripts are:</p>
+<p>In the various properties for the class, you specify the following:</p>
 <ul class="simple">
-<li><p>componentization (split the code in several python modules or files).</p></li>
-<li><p>distribution (with packages, standard python tools can be used to upload and download packages).</p></li>
-<li><p>documentation (READMEs, docs, tests and examples can be added to the package).</p></li>
+<li><p>Name for the custom operator</p></li>
+<li><p>Description of what the operator does</p></li>
+<li><p>Dictionary for each input and output pin, which includes the name, a list of supported types, a description,
+and whether it is optional and/or ellipsis (meaning that the specification is valid for pins going from pin
+number <em>x</em> to infinity)</p></li>
+<li><p>List for operator properties, including name to use in the documentation and code generation and the
+operator category</p></li>
 </ul>
-<p>A plugin as a package can be a folder with a structure like:</p>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-custom_plugin</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-__init__.py<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p>For comprehensive examples on writing operator plugins, see <a class="reference internal" href="../examples/07-python-operators/index.html#python-operators"><span class="std std-ref">Examples of creating custom operator plugins</span></a>.</p>
+</section>
+<section id="plug-in-package-with-multiple-operators">
+<h3>Plug-in package with multiple operators<a class="headerlink" href="#plug-in-package-with-multiple-operators" title="Permalink to this heading">#</a></h3>
+<p>To create a plug-in package with multiple operators or with complex routines, you write a
+Python package. The benefits of writing packages rather than simple scripts are:</p>
+<ul class="simple">
+<li><p><strong>Componentization:</strong> You can split the code into several Python modules or files.</p></li>
+<li><p><strong>Distribution:</strong> You can use standard Python tools to upload and download packages.</p></li>
+<li><p><strong>Documentation:</strong> You can add README files, documentation, tests, and examples to the package.</p></li>
+</ul>
+<p>A plug-in package with dependencies consists of a folder with the necessary files. Assume
+that the name of your plug-in package is <code class="docutils literal notranslate"><span class="pre">custom_plugin</span></code>. A folder with this name would
+contain four files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operators.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operators_loader.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">common.py</span></code></p></li>
+</ul>
+<p><strong>__init__.py file</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file contains this code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">operators_loader</span> <span class="kn">import</span> <span class="n">load_operators</span>
 </pre></div>
 </div>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-operators.py<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p><strong>operators.py file</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">operators.py</span></code> file contains code like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core.custom_operator</span> <span class="kn">import</span> <span class="n">CustomOperatorBase</span><span class="p">,</span> <span class="n">record_operator</span>  <span class="c1"># noqa: F401</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core.operator_specification</span> <span class="kn">import</span> <span class="n">CustomSpecification</span><span class="p">,</span> <span class="n">SpecificationProperties</span><span class="p">,</span> \
@@ -489,14 +508,8 @@ operators.py<div class="sd-summary-down docutils">
         <span class="bp">self</span><span class="o">.</span><span class="n">set_succeeded</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-operators_loader.py<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p><strong>operators_loader.py file</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">operators_loader.py</span></code> file contains code like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">custom_plugin</span> <span class="kn">import</span> <span class="n">operators</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core.custom_operator</span> <span class="kn">import</span> <span class="n">record_operator</span>
 
@@ -505,89 +518,86 @@ operators_loader.py<div class="sd-summary-down docutils">
     <span class="n">record_operator</span><span class="p">(</span><span class="n">operators</span><span class="o">.</span><span class="n">CustomOperator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-common.py<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p><strong>common.py file</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">common.py</span></code> file contains the Python routines as classes and functions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#write needed python routines as classes and functions here.</span>
 </pre></div>
 </div>
-</div>
-</details></div>
-</div>
-</section>
-<section id="add-third-party-dependencies">
-<h3>Add Third Party Dependencies<a class="headerlink" href="#add-third-party-dependencies" title="Permalink to this headline">#</a></h3>
-<p>To add third party modules as dependencies to a custom DPF python plugin, a folder or zip file
-with the sites of the dependencies needs to be created and referenced in an xml located next to the plugin’s folder
-and having the same name as the plugin plus the <code class="docutils literal notranslate"><span class="pre">.xml</span></code> extension. The <code class="docutils literal notranslate"><span class="pre">site</span></code> python module is used by DPF when
-calling <a class="reference internal" href="../api/ansys.dpf.core.core.html#ansys.dpf.core.core.load_library" title="ansys.dpf.core.core.load_library"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.core.load_library()</span></code></a> function to add these custom sites to the python interpreter path.
-To create these custom sites, the requirements of the custom plugin should be installed in a python virtual
-environment, the site-packages (with unnecessary folders removed) should be zipped and put with the plugin. The
-path to this zip should be referenced in the xml as done above.</p>
-<p>To simplify this step, a requirements file can be added in the plugin, like:</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-requirements.txt<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<section id="third-party-dependencies">
+<h4>Third-party dependencies<a class="headerlink" href="#third-party-dependencies" title="Permalink to this heading">#</a></h4>
+<p>To add third-party modules as dependencies to a plug-in package, you should create
+and reference a folder or ZIP file with the sites of the dependencies in an XML file
+located next to the folder for the plug-in package. The XML file must have the same
+name as the plug-in package plus an <code class="docutils literal notranslate"><span class="pre">.xml</span></code> extension.</p>
+<p>When the <a class="reference internal" href="../api/ansys.dpf.core.core.html#ansys.dpf.core.core.load_library" title="ansys.dpf.core.core.load_library"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.core.load_library()</span></code></a> method is called, PDF-Core uses the
+<code class="docutils literal notranslate"><span class="pre">site</span></code> Python module to add custom sites to the path for the Python interpreter.</p>
+<p>To create these custom sites, do the following:</p>
+<ol class="arabic simple">
+<li><p>Install the requirements of the plug-in package in a Python virtual environment.</p></li>
+<li><p>Remove unnecessary folders from the site packages and compress them to a ZIP file.</p></li>
+<li><p>Place the ZIP file in the plug-in package.</p></li>
+<li><p>Reference the path to the ZIP file in the XML file as indicated above.</p></li>
+</ol>
+<p>To simplify this step, you can add a requirements file in the plug-in package:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pygltflib</span>
 </pre></div>
 </div>
-</div>
-</details><p>And this <a class="reference download internal" download="" href="../_downloads/be1092fa007e10f40b7f9ea7fdfa881a/create_sites_for_python_operators.ps1"><code class="xref download docutils literal notranslate"><span class="pre">powershell</span> <span class="pre">script</span></code></a> for windows or
-this <a class="reference download internal" download="" href="../_downloads/865325386e9f426c0639d8c3be57bb75/create_sites_for_python_operators.sh"><code class="xref download docutils literal notranslate"><span class="pre">shell</span> <span class="pre">script</span></code></a> can be ran with the mandatory arguments:</p>
+<p>For this approach, do the following:</p>
+<ol class="arabic simple">
+<li><p>Download the script for your operating system:</p>
 <ul class="simple">
-<li><p>-pluginpath : path to the folder of the plugin.</p></li>
-<li><p>-zippath : output zip file name.</p></li>
+<li><p>For Windows, download this <a class="reference download internal" download="" href="../_downloads/be1092fa007e10f40b7f9ea7fdfa881a/create_sites_for_python_operators.ps1"><code class="xref download docutils literal notranslate"><span class="pre">PowerShell</span> <span class="pre">script</span></code></a>.</p></li>
+<li><p>For Linux, download this <a class="reference download internal" download="" href="../_downloads/865325386e9f426c0639d8c3be57bb75/create_sites_for_python_operators.sh"><code class="xref download docutils literal notranslate"><span class="pre">Shell</span> <span class="pre">script</span></code></a>.</p></li>
 </ul>
-<p>optional arguments are:</p>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p>Run the downloaded script with the mandatory arguments:</p>
 <ul class="simple">
-<li><p>-pythonexe : path to a python executable of your choice.</p></li>
-<li><p>-tempfolder : path to a temporary folder to work on, default is the environment variable <code class="docutils literal notranslate"><span class="pre">TEMP</span></code> on Windows and /tmp/ on Linux.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-pluginpath</span></code>: Path to the folder with the plug-in package.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-zippath</span></code>: Path and name for ZIP file.</p></li>
 </ul>
-<p>For windows powershell, call:</p>
+<p>Optional arguments are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-pythonexe</span></code>: Path to a Python executable of your choice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-tempfolder</span></code>: Path to a temporary folder to work in. The default is the environment variable
+<code class="docutils literal notranslate"><span class="pre">TEMP</span></code> on Windows and <code class="docutils literal notranslate"><span class="pre">/tmp/</span></code> on Linux.</p></li>
+</ul>
+</li>
+<li><p>Run the command for your operating system.</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>From Windows PowerShell, run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create_sites_for_python_operators</span><span class="o">.</span><span class="n">ps1</span> <span class="o">-</span><span class="n">pluginpath</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">plugin</span> <span class="o">-</span><span class="n">zippath</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">plugin</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">winx64</span><span class="o">.</span><span class="n">zip</span>
 </pre></div>
 </div>
-<p>For linux shell, call:</p>
+</li>
+<li><p>From Linux Shell, run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create_sites_for_python_operators</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">pluginpath</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">plugin</span> <span class="o">-</span><span class="n">zippath</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">plugin</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">linx64</span><span class="o">.</span><span class="n">zip</span>
 </pre></div>
 </div>
-<p>A plugin as a package with dependencies can be a folder with a structure like:</p>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-plugins</div>
-<blockquote>
-<div><div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-custom_plugin</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-__init__.py<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+</li>
+</ul>
+</div></blockquote>
+<p>Assume once again that the name of your plug-in package is <code class="docutils literal notranslate"><span class="pre">custom_plugin</span></code>.
+A folder with this name would contain these files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operators.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operators_loader.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">common.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">winx64.zip</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linx64.zip</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">custom_plugin.xml</span></code></p></li>
+</ul>
+<p><strong>__init__.py file</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file contains this code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">operators_loader</span> <span class="kn">import</span> <span class="n">load_operators</span>
 </pre></div>
 </div>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-operators.py<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p><strong>operators.py file</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">operators.py</span></code> file contains code like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core.custom_operator</span> <span class="kn">import</span> <span class="n">CustomOperatorBase</span><span class="p">,</span> <span class="n">record_operator</span>  <span class="c1"># noqa: F401</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core.operator_specification</span> <span class="kn">import</span> <span class="n">CustomSpecification</span><span class="p">,</span> <span class="n">SpecificationProperties</span><span class="p">,</span> \
@@ -622,67 +632,37 @@ operators.py<div class="sd-summary-down docutils">
         <span class="bp">self</span><span class="o">.</span><span class="n">set_succeeded</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-operators_loader.py<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p><strong>operators_loader.py file</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">operators_loader.py</span></code> file contains code like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">custom_plugin</span> <span class="kn">import</span> <span class="n">operators</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core.custom_operator</span> <span class="kn">import</span> <span class="n">record_operator</span>
 
 
 <span class="k">def</span> <span class="nf">load_operators</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="n">record_operator</span><span class="p">(</span><span class="n">operators</span><span class="o">.</span><span class="n">CustomOperator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">load_operators</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+            <span class="n">record_operator</span><span class="p">(</span><span class="n">operators</span><span class="o">.</span><span class="n">CustomOperator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-common.py<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p><strong>common.py file</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">common.py</span></code> file contains the Python routines as classes and functions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#write needed python routines as classes and functions here.</span>
 </pre></div>
 </div>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-requirements.txt<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p><strong>requirements.txt file</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file contains code like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pygltflib</span>
 </pre></div>
 </div>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-assets<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p>The ZIP files for Windows and Linux are included as assets:</p>
 <ul class="simple">
-<li><p class="sd-card-text">winx64.zip</p></li>
-<li><p class="sd-card-text">linx64.zip</p></li>
+<li><p>winx64.zip</p></li>
+<li><p>linx64.zip</p></li>
 </ul>
-</div>
-</details></div>
-</div>
-</div></blockquote>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-custom_plugin.xml<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<p><strong>custom_plugin.xml file</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">custom_plugin.xml</span></code> file contains code like this:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="nt">&lt;Environment&gt;</span>
 	<span class="nt">&lt;Windows&gt;</span>
@@ -696,38 +676,36 @@ custom_plugin.xml<div class="sd-summary-down docutils">
 <span class="nt">&lt;/Environment&gt;</span>
 </pre></div>
 </div>
-</div>
-</details></div>
-</div>
 </section>
 </section>
-<section id="use-the-custom-operators">
-<h2>Use the Custom Operators<a class="headerlink" href="#use-the-custom-operators" title="Permalink to this headline">#</a></h2>
-<p>Once a python plugin is written, it can be loaded with the function <a class="reference internal" href="../api/ansys.dpf.core.core.html#ansys.dpf.core.core.load_library" title="ansys.dpf.core.core.load_library"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.core.load_library()</span></code></a>
-taking as first argument the path to the directory of the plugin, as second argument <code class="docutils literal notranslate"><span class="pre">py_</span></code> + any name identifying the plugin,
-and as last argument the function’s name used to record operators.</p>
-<p>If a single script has been used to create the plugin, then the second argument should be <code class="docutils literal notranslate"><span class="pre">py_</span></code> + name of the python file:</p>
+</section>
+<section id="use-custom-operators">
+<h2>Use custom operators<a class="headerlink" href="#use-custom-operators" title="Permalink to this heading">#</a></h2>
+<p>Once a custom operator is created, you can use the <a class="reference internal" href="../api/ansys.dpf.core.core.html#ansys.dpf.core.core.load_library" title="ansys.dpf.core.core.load_library"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.core.load_library()</span></code></a> method to load it.
+The first argument is the path to the directory with the plugin. The second argument is <code class="docutils literal notranslate"><span class="pre">py_</span></code> plus any name
+identifying the plugin. The last argument is the function name for recording operators.</p>
+<p>For a plugin that is a single script, the second argument should be <code class="docutils literal notranslate"><span class="pre">py_</span></code> plus the name of the Python file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dpf</span><span class="o">.</span><span class="n">load_library</span><span class="p">(</span>
 <span class="sa">r</span><span class="s2">&quot;path/to/plugins&quot;</span><span class="p">,</span>
 <span class="s2">&quot;py_custom_plugin&quot;</span><span class="p">,</span> <span class="c1">#if the load_operators function is defined in path/to/plugins/custom_plugin.py</span>
 <span class="s2">&quot;load_operators&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If a python package was written, then the second argument should be <code class="docutils literal notranslate"><span class="pre">_py</span></code> + any name:</p>
+<p>For a plug-in package, the second argument should be <code class="docutils literal notranslate"><span class="pre">py_</span></code> plus any name:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dpf</span><span class="o">.</span><span class="n">load_library</span><span class="p">(</span>
 <span class="sa">r</span><span class="s2">&quot;path/to/plugins/custom_plugin&quot;</span><span class="p">,</span>
 <span class="s2">&quot;py_my_custom_plugin&quot;</span><span class="p">,</span> <span class="c1">#if the load_operators function is defined in path/to/plugins/custom_plugin/__init__.py</span>
 <span class="s2">&quot;load_operators&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Once the plugin loaded, the Operator can be instantiated with:</p>
+<p>Once the plugin is loaded, you can instantiate the custom operator:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">new_operator</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;custom_operator&quot;</span><span class="p">)</span> <span class="c1"># if &quot;custom_operator&quot; is what is returned by the ``name`` property</span>
 </pre></div>
 </div>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
-<p>See the API reference at <a class="reference internal" href="../api/ansys.dpf.core.custom_operator.html#ref-custom-operator"><span class="std std-ref">Custom Operator Base</span></a> and examples of Custom Operators implementations in <a class="reference internal" href="../examples/07-python-operators/index.html#python-operators"><span class="std std-ref">Examples of custom python plugins of Operators</span></a>.</p>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<p>See the API reference at <a class="reference internal" href="../api/ansys.dpf.core.custom_operator.html#ref-custom-operator"><span class="std std-ref">Custom Operator Base</span></a> and examples of Custom Operators implementations in <a class="reference internal" href="../examples/07-python-operators/index.html#python-operators"><span class="std std-ref">Examples of creating custom operator plugins</span></a>.</p>
 </section>
 </section>
 
@@ -756,7 +734,7 @@ and as last argument the function’s name used to record operators.</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

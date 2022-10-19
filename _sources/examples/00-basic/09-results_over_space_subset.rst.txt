@@ -424,8 +424,8 @@ of the model. The ``ScopingsContainer`` entity contains different ``Scopings``
 and can be connected to any result provider to get results split with the
 same partition as the input ``ScopingsContainer``.
 For example, some application require to get results split by body, by material,
-by element types. It might also be necessary to get results by element shape types
-(shell, solid, beam) to average data properly...
+by element types. It might also be necessary to get results by element shape
+types, such as shell, solid, or beam, to average data properly.
 Customers might also require split by entirely custom spatial domains.
 
 .. GENERATED FROM PYTHON SOURCE LINES 128-129
@@ -623,7 +623,7 @@ Create a custom spatial split
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.994 seconds)
+   **Total running time of the script:** ( 0 minutes  11.366 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_09-results_over_space_subset.py:

@@ -2,11 +2,11 @@
 
 .. _sphx_glr_examples_08-averaging:
 
-.. _averaging_examples
+.. _averaging_examples:
 
-Averaging Examples
+Averaging examples
 ==================
-These demos showcase the use of some of the averaging operators of DPF.
+These examples show how to use some of DPF's averaging operators.
 
 
 .. raw:: html
@@ -16,7 +16,7 @@ These demos showcase the use of some of the averaging operators of DPF.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="    digraph foo {         graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]         node [shape=box...">
+    <div class="sphx-glr-thumbcontainer" tooltip="- The first workflow extracts the stress field of a crankshaft under load from a   result file,...">
 
 .. only:: html
 

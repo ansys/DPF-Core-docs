@@ -23,8 +23,8 @@
 Get material properties from the result file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Material properties are assigned to each element in APDL and by default they
-are written out in the APDL result file. This example shows how we can extract
-material properties of each element using PyDPF.
+are written out in the APDL result file. This example shows how you can extract
+material properties of each element using PyDPF-Core.
 
 Import necessary modules:
 
@@ -45,7 +45,7 @@ Import necessary modules:
 
 .. GENERATED FROM PYTHON SOURCE LINES 17-18
 
-Create a model object to establish a connection with an example result file:
+Create a model object to establish a connection with an example result file.
 
 .. GENERATED FROM PYTHON SOURCE LINES 18-20
 
@@ -92,7 +92,7 @@ from model's metadata.
 .. GENERATED FROM PYTHON SOURCE LINES 27-29
 
 See available properties in the :class:`meshed_region
-<ansys.dpf.core.meshed_region.MeshedRegion>`
+<ansys.dpf.core.meshed_region.MeshedRegion>`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 29-31
 
@@ -115,7 +115,7 @@ See available properties in the :class:`meshed_region
 
 .. GENERATED FROM PYTHON SOURCE LINES 32-33
 
-Get all the material properties
+Get all material properties.
 
 .. GENERATED FROM PYTHON SOURCE LINES 33-35
 
@@ -135,7 +135,7 @@ Get all the material properties
 Use the DPF operator :class:`mapdl_material_properties
 <ansys.dpf.core.operators.result.mapdl_material_properties.mapdl_material_properties>`
 to extract data for the # materials - `mats`. For the input
-`properties_name`, you need the correct material property string. To see
+``properties_name``, you need the correct material property string. To see
 which strings are supported, you can print the operator help.
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-44
@@ -154,7 +154,7 @@ which strings are supported, you can print the operator help.
 
 .. GENERATED FROM PYTHON SOURCE LINES 45-48
 
-For the input pin `properties_name`, you need the correct
+For the input pin ``properties_name``, you need the correct
 material property string. To see which strings are supported, you can
 print the operator help.
 
@@ -188,7 +188,7 @@ print the operator help.
 
 .. GENERATED FROM PYTHON SOURCE LINES 51-52
 
-Let us extract the Young's modulus for element ID 1
+Extract the Young's modulus for element ID ``1``.
 
 .. GENERATED FROM PYTHON SOURCE LINES 52-56
 
@@ -213,7 +213,7 @@ Let us extract the Young's modulus for element ID 1
 
 .. GENERATED FROM PYTHON SOURCE LINES 57-58
 
-Extract Poisson's ratio for element ID 1
+Extract Poisson's ratio for element ID ``1``.
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-61
 
@@ -238,7 +238,7 @@ Extract Poisson's ratio for element ID 1
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.056 seconds)
+   **Total running time of the script:** ( 0 minutes  0.016 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_12-get_material_properties.py:

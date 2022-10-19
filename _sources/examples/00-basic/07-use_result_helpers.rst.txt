@@ -20,7 +20,7 @@
 
 .. _ref_use_result_helpers:
 
-Use Result Helpers to Load Custom Data
+Use result helpers to load custom data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The ``Result`` class, which is an instance created by the ``Model``, gives
 access to helpers for requesting results on specific mesh and time scopings.
@@ -96,7 +96,7 @@ Create a model object to establish a connection with an example result file:
 
 .. GENERATED FROM PYTHON SOURCE LINES 23-26
 
-Visualize Specific Mode Shapes
+Visualize specific mode shapes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Choose the modes to visualize:
 
@@ -117,7 +117,7 @@ Choose the modes to visualize:
 
 .. GENERATED FROM PYTHON SOURCE LINES 31-34
 
-Choose a Spatial Subset
+Choose a spatial subset
 ~~~~~~~~~~~~~~~~~~~~~~~
 Work on only a named selection (or component).
 
@@ -243,7 +243,7 @@ Specify to the result that you want to work on specific nodes:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.015 seconds)
+   **Total running time of the script:** ( 0 minutes  6.301 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_07-use_result_helpers.py:

@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>ASME Section VIII Division 2: pressure vessels &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>Pressure vessel analysis according to an ASME standard &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -52,10 +53,10 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Examples that targets specific requests" href="../04-specific-requests/index.html" />
-    <link rel="prev" title="Stress gradient normal to a defined node." href="06-stress_gradient_path.html" />
+    <link rel="next" title="Target-specific request examples" href="../04-specific-requests/index.html" />
+    <link rel="prev" title="Stress gradient normal to a defined node" href="06-stress_gradient_path.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,13 +169,15 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Examples</a> » </li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Advanced and Miscellaneous Examples</a> » </li>
-        <li class="nav-item nav-item-this"><a href="">ASME Section VIII Division 2: pressure vessels</a></li> 
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Advanced and miscellaneous examples</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">Pressure vessel analysis according to an ASME standard</a></li> 
       </ul>
     </div>
         </div>
@@ -203,7 +200,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../00-basic/index.html">
-   Basic DPF Examples
+   Basic DPF examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -213,42 +210,42 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/00-basic_example.html">
-     Basic DPF-Core Usage
+     Basic DPF-Core usage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/01-basic_operators.html">
-     Operators Overview
+     Operators overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/02-basic_field_containers.html">
-     Field and Field Containers Overview
+     Field and field containers overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/03-create_entities.html">
-     Create Your Own Entities Use DPF Operators
+     Create your own entities using DPF operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/04-basic-load-file.html">
-     Write/Load and Upload/Download a Result File
+     Working with a result file
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/05-use_local_data.html">
-     Bring a Field’s Data Locally to Improve Performance
+     Bring a field’s data locally to improve performance
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/06-load_plugin.html">
-     Load Plugin
+     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/07-use_result_helpers.html">
-     Use Result Helpers to Load Custom Data
+     Use result helpers to load custom data
     </a>
    </li>
    <li class="toctree-l2">
@@ -263,7 +260,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/11-server_types.html">
-     Communicate In Process or via gRPC
+     Communicate in process or via gRPC
     </a>
    </li>
    <li class="toctree-l2">
@@ -271,11 +268,16 @@
      Get material properties from the result file
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-basic/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01-static-transient/index.html">
-   Transient Analysis Examples
+   Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -285,19 +287,19 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
-     Transient Analysis Result Example
+     Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
-     Choose a Time Scoping for a Transient Analysis
+     Choose a time scoping for a transient analysis
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-modal-harmonic/index.html">
-   Harmonic Analysis Examples
+   Harmonic analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -307,17 +309,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/00-multi_harmonic.html">
-     Multi-Harmonic Response Example
+     Multi-harmonic response example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/01-modal_cyclic.html">
-     Modal Cyclic symmetry Example
+     Modal cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/02-cyclic_multi_stage.html">
-     Multi-stage Cyclic Symmetry Example
+     Multi-stage cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
@@ -327,7 +329,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/04-modal_superposition.html">
-     Expand Harmonic Modal Superposition with DPF
+     Expand harmonic modal superposition with DPF
     </a>
    </li>
    <li class="toctree-l2">
@@ -339,7 +341,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
-   Advanced and Miscellaneous Examples
+   Advanced and miscellaneous examples
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -349,49 +351,49 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="00-multistage_advanced_options.html">
-     Multi-stage Cyclic Symmetry Use Advanced Customization
+     Multi-stage cyclic symmetry using advanced customization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="01-solve_harmonic_problem.html">
-     Solve Harmonic Problem (with damping) Using Matrix Inverse
+     Solve harmonic problem (with damping) using matrix inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02-volume_averaged_stress.html">
-     Average Elemental Stress on a given volume
+     Average elemental stress on a given volume
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03-exchange_data_between_servers.html">
-     Exchange Data Between Servers
+     Exchange data between servers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04-extrapolation_stress_3d.html">
-     Extrapolation Method for stress result of 3D-element
+     Extrapolation method for stress result of a 3D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-extrapolation_strain_2d.html">
-     Extrapolation Method for strain result of 2D-element
+     Extrapolation method for strain result of a 2D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-stress_gradient_path.html">
-     Stress gradient normal to a defined node.
+     Stress gradient normal to a defined node
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     ASME Section VIII Division 2: pressure vessels
+     Pressure vessel analysis according to an ASME standard
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04-specific-requests/index.html">
-   Examples that targets specific requests
+   Target-specific request examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -401,7 +403,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
-     Hdf5 export and compare precision
+     HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
@@ -413,7 +415,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05-plotting/index.html">
-   Plotting Examples
+   Plotting examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -428,17 +430,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/01-compare_results.html">
-     Compare Results Using the Plotter
+     Compare results using the plotter
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/02-solution_combination.html">
-     Load Case Combination for Principal Stress
+     Load case combination for principal stress
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/03-labels.html">
-     Add Nodal Labels on Plots
+     Add nodal labels on plots
     </a>
    </li>
    <li class="toctree-l2">
@@ -451,11 +453,16 @@
      Warp the mesh by a field for plotting
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-plotting/06-animate_results.html">
+     Review of available animation commands
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../06-distributed-post/index.html">
-   Examples for post processing on distributed process
+   Examples for postprocessing on distributed processes
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -465,22 +472,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/00-distributed_total_disp.html">
-     Post processing of displacement on distributed processes
+     Postprocessing of displacement on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/01-distributed_workflows_on_remote.html">
-     Create custom workflow on distributed processes
+     Create a custom workflow on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/02-distributed-msup_expansion.html">
-     Distributed modal superposition
+     Distributed mode superposition (MSUP)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/03-distributed-msup_expansion_steps.html">
-     Distributed msup distributed modal response
+     Distributed MSUP distributed modal response
     </a>
    </li>
    <li class="toctree-l2">
@@ -492,7 +499,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../07-python-operators/index.html">
-   Examples of custom python plugins of Operators
+   Examples of creating custom operator plugins
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -502,24 +509,24 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/00-wrapping_numpy_capabilities.html">
-     Write user defined Operator
+     Create a basic operator plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/01-package_python_operators.html">
-     Write user defined Operators as a package
+     Create a plug-in package with multiple operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/02-python_operators_with_dependencies.html">
-     Write user defined Operators having third party dependencies
+     Create a plug-in package that has third-party dependencies
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../08-averaging/index.html">
-   Averaging Examples
+   Averaging examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -569,8 +576,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stresses-strains">
-   Stresses &amp; strains
+  <a class="reference internal nav-link" href="#stresses-and-strains">
+   Stresses and strains
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -612,21 +619,20 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-03-advanced-10-asme-secviii-divtwo-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="asme-section-viii-division-2-pressure-vessels">
-<span id="ref-asme-secviii-div2"></span><span id="sphx-glr-examples-03-advanced-10-asme-secviii-divtwo-py"></span><h1>ASME Section VIII Division 2: pressure vessels<a class="headerlink" href="#asme-section-viii-division-2-pressure-vessels" title="Permalink to this headline">#</a></h1>
-<p>This example demonstrates how PyDPF might be used to postprocess a Mechanical
-model according to an international standard.</p>
-<p>The standard chosen for this example is the well-known ASME Section VIII Division
-2 used for pressure vessels design.</p>
+<section class="sphx-glr-example-title" id="pressure-vessel-analysis-according-to-an-asme-standard">
+<span id="ref-asme-secviii-div2"></span><span id="sphx-glr-examples-03-advanced-10-asme-secviii-divtwo-py"></span><h1>Pressure vessel analysis according to an ASME standard<a class="headerlink" href="#pressure-vessel-analysis-according-to-an-asme-standard" title="Permalink to this heading">#</a></h1>
+<p>This example demonstrates how you can use PyDPF to postprocess a Mechanical
+model according to the ASME Section VIII Division 2 standard for pressure
+vessel designs.</p>
 <p>This example is taken from Workshop 02.1 from Ansys Mechanical Advanced Topics.
 Instead of using several user defined results as it is done in the workshop,
 DPF is able to calculate the triaxial strain limit and compare it with the
 equivalent plastic strain, as specified in Equation 5.7 assuming 0 forming strain.</p>
 <p>Please be aware that this is just an example, so it is the user’s duty to verify
 that calculation is made according to latest ASME standard.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here we import rst file from Workshop 02.1</span>
-<span class="c1"># Since it is a elastic-plastic analysis, there are several substeps. We focus</span>
-<span class="c1"># on the latest substep (number 4)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the result file from Workshop 02.1.</span>
+<span class="c1"># Because it is a elastic-plastic analysis, there are several substeps. The focus</span>
+<span class="c1"># here is on the latest substep (number 4)</span>
 
 <span class="kn">import</span> <span class="nn">ansys.dpf.core</span> <span class="k">as</span> <span class="nn">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
@@ -641,25 +647,29 @@ that calculation is made according to latest ASME standard.</p>
 </pre></div>
 </div>
 <section id="parameters-input">
-<h2>Parameters input<a class="headerlink" href="#parameters-input" title="Permalink to this headline">#</a></h2>
-<p>User must go to ASME Section III Division 2 and get parameters alfasl &amp; m2
-Below the code if user is going to introduce these parameters manually
-alfasl = input(“Please introduce alfasl parameter from ASMEn”)
-alfasl = float(alfasl)
-m2 = input(“Please introduce m2 parameter from ASMEn”)
-m2 = float(m2)
-Values for this exercise: alfasl = 2.2 &amp; m2 = .288, same as original</p>
+<h2>Parameters input<a class="headerlink" href="#parameters-input" title="Permalink to this heading">#</a></h2>
+<p>You must go to ASME Section III Division 2 to get values for the parameters
+<code class="docutils literal notranslate"><span class="pre">alfasl</span></code> and <code class="docutils literal notranslate"><span class="pre">m2</span></code>. This is the code for introducing these parameters
+manually:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">alfasl</span></code> = input(“Introduce <code class="docutils literal notranslate"><span class="pre">alfasl</span></code> parameter from ASMEn”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alfasl</span></code> = float(alfasl)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m2</span></code> = input(“Introduce <code class="docutils literal notranslate"><span class="pre">m2</span></code> parameter from ASMEn”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m2</span></code> = float(m2)</p></li>
+</ul>
+<p>For this exercise, <code class="docutils literal notranslate"><span class="pre">alfasl</span></code> = 2.2 and <code class="docutils literal notranslate"><span class="pre">m2</span></code> = .288, which is the same
+as the original.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alfasl</span> <span class="o">=</span> <span class="mf">2.2</span>
 <span class="n">m2</span> <span class="o">=</span> <span class="mf">.288</span>
 </pre></div>
 </div>
 </section>
-<section id="stresses-strains">
-<h2>Stresses &amp; strains<a class="headerlink" href="#stresses-strains" title="Permalink to this headline">#</a></h2>
-<p>Stresses and strains are read. For getting same results as Mechanical, we read
-Elemental Nodal strains and apply Von Mises invariant. Currently this operator
-does not have the option to define effective Poisson’s ratio. Due to this,
-a correction factor is applied.</p>
+<section id="stresses-and-strains">
+<h2>Stresses and strains<a class="headerlink" href="#stresses-and-strains" title="Permalink to this heading">#</a></h2>
+<p>Stresses and strains are read. To get the same results as Mechanical, read
+elemental nodal strains and apply von Mises invariant. This operator
+does not have an option for defining the effective Poisson’s ratio.
+Consequently, a correction factor is applied.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seqv_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">stress_von_mises</span><span class="p">(</span><span class="n">time_scoping</span> <span class="o">=</span> <span class="n">timeScoping</span><span class="p">,</span>
                                                 <span class="n">data_sources</span> <span class="o">=</span> <span class="n">dataSource</span><span class="p">,</span>
                                                 <span class="n">requested_location</span> <span class="o">=</span> <span class="s1">&#39;Nodal&#39;</span><span class="p">)</span>
@@ -700,7 +710,7 @@ a correction factor is applied.</p>
 </div>
 </section>
 <section id="triaxial-strain-limit-calculation">
-<h2>Triaxial strain limit calculation<a class="headerlink" href="#triaxial-strain-limit-calculation" title="Permalink to this headline">#</a></h2>
+<h2>Triaxial strain limit calculation<a class="headerlink" href="#triaxial-strain-limit-calculation" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># S12=S1+S2</span>
 <span class="n">s12_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">add_fc</span><span class="p">(</span><span class="n">fields_container1</span> <span class="o">=</span> <span class="n">s1</span><span class="p">,</span>
                                    <span class="n">fields_container2</span> <span class="o">=</span> <span class="n">s2</span><span class="p">)</span>
@@ -738,7 +748,7 @@ a correction factor is applied.</p>
 </div>
 </section>
 <section id="strain-limit-condition-less-than-1-pass-the-criteria">
-<h2>Strain limit condition (less than 1 pass the criteria)<a class="headerlink" href="#strain-limit-condition-less-than-1-pass-the-criteria" title="Permalink to this headline">#</a></h2>
+<h2>Strain limit condition (less than 1 pass the criteria)<a class="headerlink" href="#strain-limit-condition-less-than-1-pass-the-criteria" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strainratio</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">component_wise_divide</span><span class="p">(</span><span class="n">fieldA</span> <span class="o">=</span> <span class="n">eppleqvave</span><span class="p">,</span>
                                                        <span class="n">fieldB</span> <span class="o">=</span> <span class="n">strainlimit</span><span class="p">)</span>
 <span class="n">strainratio</span> <span class="o">=</span> <span class="n">strainratio</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field</span><span class="p">()</span>
@@ -746,12 +756,12 @@ a correction factor is applied.</p>
 </div>
 </section>
 <section id="strain-limit-condition-is-plot">
-<h2>Strain limit condition is plot<a class="headerlink" href="#strain-limit-condition-is-plot" title="Permalink to this headline">#</a></h2>
+<h2>Strain limit condition is plot<a class="headerlink" href="#strain-limit-condition-is-plot" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">strainratio</span><span class="p">)</span>
 <span class="n">dpf</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">shutdown_all_session_servers</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_10-asme_secviii_divtwo_001.png" srcset="../../_images/sphx_glr_10-asme_secviii_divtwo_001.png" alt="10 asme secviii divtwo" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.837 seconds)</p>
+<img src="../../_images/sphx_glr_10-asme_secviii_divtwo_001.png" srcset="../../_images/sphx_glr_10-asme_secviii_divtwo_001.png" alt="10 asme secviii divtwo" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.470 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-03-advanced-10-asme-secviii-divtwo-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/7246bf3f5a4da6631b207f22d4af1460/10-asme_secviii_divtwo.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">10-asme_secviii_divtwo.py</span></code></a></p>
@@ -789,7 +799,7 @@ a correction factor is applied.</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

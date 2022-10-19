@@ -20,16 +20,17 @@
 
 .. _ref_basic_hdf5:
 
-Hdf5 export and compare precision
+HDF5 export and compare precision
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This example shows how to use hdf5 format to export and
-make a comparison between simple/double precision.
+This example shows how to use HDF5 format to export and
+compare simple precision versus double precision.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-13
+.. GENERATED FROM PYTHON SOURCE LINES 12-14
 
-Import dpf module and its examples files, and create a temporary directory
+Import the ``dpf-core`` module and its examples files, and then create a
+temporary directory.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-23
+.. GENERATED FROM PYTHON SOURCE LINES 14-24
 
 .. code-block:: default
 
@@ -50,11 +51,11 @@ Import dpf module and its examples files, and create a temporary directory
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-25
+.. GENERATED FROM PYTHON SOURCE LINES 25-26
 
-Create the model and get stresses, displacements and mesh.
+Create the model and get the stresses, displacements, and mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-33
+.. GENERATED FROM PYTHON SOURCE LINES 26-34
 
 .. code-block:: default
 
@@ -73,11 +74,11 @@ Create the model and get stresses, displacements and mesh.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-35
+.. GENERATED FROM PYTHON SOURCE LINES 35-36
 
-Create the hdf5 export operator. Hdf5 module should already be loaded.
+Create the HDF5 export operator. The HDF5 module should already be loaded.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-39
+.. GENERATED FROM PYTHON SOURCE LINES 36-40
 
 .. code-block:: default
 
@@ -106,12 +107,12 @@ Create the hdf5 export operator. Hdf5 module should already be loaded.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-42
+.. GENERATED FROM PYTHON SOURCE LINES 41-43
 
 Connect the correct time scoping to the results operators (stress
 and displacement).
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-49
+.. GENERATED FROM PYTHON SOURCE LINES 43-50
 
 .. code-block:: default
 
@@ -129,11 +130,11 @@ and displacement).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-51
+.. GENERATED FROM PYTHON SOURCE LINES 51-52
 
-Connect inputs of the hdf5 export operator.
+Connect inputs of the HDF5 export operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-56
+.. GENERATED FROM PYTHON SOURCE LINES 52-57
 
 .. code-block:: default
 
@@ -149,11 +150,11 @@ Connect inputs of the hdf5 export operator.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-58
+.. GENERATED FROM PYTHON SOURCE LINES 58-59
 
-Export with simple precision
+Export with simple precision.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-66
+.. GENERATED FROM PYTHON SOURCE LINES 59-67
 
 .. code-block:: default
 
@@ -172,11 +173,11 @@ Export with simple precision
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-68
+.. GENERATED FROM PYTHON SOURCE LINES 68-69
 
-Export with simple precision
+Export with double precision.
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-73
+.. GENERATED FROM PYTHON SOURCE LINES 69-74
 
 .. code-block:: default
 
@@ -192,11 +193,11 @@ Export with simple precision
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-75
+.. GENERATED FROM PYTHON SOURCE LINES 75-76
 
-Comparison
+Compare simple precision versus double precision.
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-81
+.. GENERATED FROM PYTHON SOURCE LINES 76-82
 
 .. code-block:: default
 
@@ -223,7 +224,7 @@ Comparison
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.200 seconds)
+   **Total running time of the script:** ( 0 minutes  0.204 seconds)
 
 
 .. _sphx_glr_download_examples_04-specific-requests_00-hdf5_double_float_comparison.py:

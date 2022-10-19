@@ -22,11 +22,11 @@
 
 Read results from distributed files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Solvers usually solve analysis with distributed architecture. In that
-case one file is written by spatial or temporal domains. The capability of
-reading one result in distributed files has been implemented in DPF. This
-allows to skip the merging of files solver side which is time consuming and often
-duplicates the memory used.
+Solvers usually solve analysis with distributed architecture. In this
+case, one file is written by spatial or temporal domains. DPF is capable
+of reading one result in distributed files. This allows it to skip the
+merging of files on the solver side, which is time-consuming and
+often doubles the memory used.
 
 .. GENERATED FROM PYTHON SOURCE LINES 12-16
 
@@ -46,7 +46,7 @@ duplicates the memory used.
 .. GENERATED FROM PYTHON SOURCE LINES 17-20
 
 Create the data sources
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 First create a data sources with one result file by domain
 
 .. GENERATED FROM PYTHON SOURCE LINES 20-26
@@ -69,12 +69,12 @@ First create a data sources with one result file by domain
 .. GENERATED FROM PYTHON SOURCE LINES 27-34
 
 Compute displacements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 Once the file architecture is put in the data sources,
 computing displacements with or without domain has the exact same syntax.
-DPF reads parts of the result on each domain and remerge the results in
-the outputs fields. The output will have no difference when using combined
-or distributed files
+DPF reads parts of the result on each domain and merges these results in
+the outputs fields. The output is no different than when using combined
+or distributed files.
 
 .. GENERATED FROM PYTHON SOURCE LINES 34-42
 
@@ -142,8 +142,8 @@ or distributed files
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-45
 
-Compute stress eqv
-~~~~~~~~~~~~~~~~~~~
+Compute equivalent stress
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. GENERATED FROM PYTHON SOURCE LINES 45-52
 
@@ -211,7 +211,7 @@ Compute stress eqv
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.161 seconds)
+   **Total running time of the script:** ( 0 minutes  11.695 seconds)
 
 
 .. _sphx_glr_download_examples_02-modal-harmonic_05-read_distributed_files.py:

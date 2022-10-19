@@ -22,7 +22,7 @@
 
 Plot results on a specific path
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This example shows how to get a result mapped over a specific path,
+This example shows how to get a result mapped over a specific path
 and how to plot it.
 
 .. GENERATED FROM PYTHON SOURCE LINES 10-16
@@ -44,18 +44,17 @@ and how to plot it.
 
 .. GENERATED FROM PYTHON SOURCE LINES 17-21
 
-Path plotting
-~~~~~~~~~~~~~
-We will use an :class:`ansys.dpf.core.plotter.DpfPlotter` to plot a mapped result over
-a defined path of coordinates.
+Plot path
+~~~~~~~~~
+Use the :class:`ansys.dpf.core.plotter.DpfPlotter` class to plot a mapped
+result over a defined path of coordinates.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-28
+.. GENERATED FROM PYTHON SOURCE LINES 21-27
 
 .. code-block:: default
 
 
-    # First, we need to create the model, request its mesh and its
-    # displacement data
+    # Create the model and request its mesh and displacement data.
     model = dpf.Model(examples.static_rst)
     mesh = model.metadata.meshed_region
     stress_fc = model.results.stress().eqv().eval()
@@ -67,11 +66,11 @@ a defined path of coordinates.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-30
+.. GENERATED FROM PYTHON SOURCE LINES 28-29
 
-Then, we create a coordinates field to map on
+Create a coordinates field to map on.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-39
+.. GENERATED FROM PYTHON SOURCE LINES 29-38
 
 .. code-block:: default
 
@@ -91,11 +90,11 @@ Then, we create a coordinates field to map on
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-41
+.. GENERATED FROM PYTHON SOURCE LINES 39-40
 
-Let's now compute the mapped data using the mapping operator
+Compute the mapped data using the mapping operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-48
+.. GENERATED FROM PYTHON SOURCE LINES 40-47
 
 .. code-block:: default
 
@@ -113,11 +112,11 @@ Let's now compute the mapped data using the mapping operator
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-50
+.. GENERATED FROM PYTHON SOURCE LINES 48-49
 
-Here, we request the mapped field data and its mesh
+Request the mapped field data and its mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-53
+.. GENERATED FROM PYTHON SOURCE LINES 49-52
 
 .. code-block:: default
 
@@ -131,11 +130,11 @@ Here, we request the mapped field data and its mesh
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-55
+.. GENERATED FROM PYTHON SOURCE LINES 53-54
 
-Now we create the plotter and add fields and meshes
+Create the plotter and add fields and meshes.
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-63
+.. GENERATED FROM PYTHON SOURCE LINES 54-62
 
 .. code-block:: default
 
@@ -145,7 +144,7 @@ Now we create the plotter and add fields and meshes
     pl.add_mesh(mesh, style="surface", show_edges=True,
                 color="w", opacity=0.3)
 
-    # Finally we plot the result
+    # Plot the result.
     pl.show_figure(show_axes=True)
 
 
@@ -162,7 +161,7 @@ Now we create the plotter and add fields and meshes
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.460 seconds)
+   **Total running time of the script:** ( 0 minutes  1.251 seconds)
 
 
 .. _sphx_glr_download_examples_05-plotting_04-plot_on_path.py:

@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Extrapolation Method for strain result of 2D-element &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>Extrapolation method for strain result of a 2D element &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -52,10 +53,10 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Stress gradient normal to a defined node." href="06-stress_gradient_path.html" />
-    <link rel="prev" title="Extrapolation Method for stress result of 3D-element" href="04-extrapolation_stress_3d.html" />
+    <link rel="next" title="Stress gradient normal to a defined node" href="06-stress_gradient_path.html" />
+    <link rel="prev" title="Extrapolation method for stress result of a 3D element" href="04-extrapolation_stress_3d.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -112,13 +113,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -153,7 +148,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -174,13 +169,15 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDPF-Core</a> » </li>
     
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Examples</a> » </li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Advanced and Miscellaneous Examples</a> » </li>
-        <li class="nav-item nav-item-this"><a href="">Extrapolation Method for strain result of 2D-element</a></li> 
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Advanced and miscellaneous examples</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">Extrapolation method for strain result of a 2D element</a></li> 
       </ul>
     </div>
         </div>
@@ -203,7 +200,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../00-basic/index.html">
-   Basic DPF Examples
+   Basic DPF examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -213,42 +210,42 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/00-basic_example.html">
-     Basic DPF-Core Usage
+     Basic DPF-Core usage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/01-basic_operators.html">
-     Operators Overview
+     Operators overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/02-basic_field_containers.html">
-     Field and Field Containers Overview
+     Field and field containers overview
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/03-create_entities.html">
-     Create Your Own Entities Use DPF Operators
+     Create your own entities using DPF operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/04-basic-load-file.html">
-     Write/Load and Upload/Download a Result File
+     Working with a result file
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/05-use_local_data.html">
-     Bring a Field’s Data Locally to Improve Performance
+     Bring a field’s data locally to improve performance
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/06-load_plugin.html">
-     Load Plugin
+     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/07-use_result_helpers.html">
-     Use Result Helpers to Load Custom Data
+     Use result helpers to load custom data
     </a>
    </li>
    <li class="toctree-l2">
@@ -263,7 +260,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/11-server_types.html">
-     Communicate In Process or via gRPC
+     Communicate in process or via gRPC
     </a>
    </li>
    <li class="toctree-l2">
@@ -271,11 +268,16 @@
      Get material properties from the result file
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00-basic/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01-static-transient/index.html">
-   Transient Analysis Examples
+   Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -285,19 +287,19 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
-     Transient Analysis Result Example
+     Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
-     Choose a Time Scoping for a Transient Analysis
+     Choose a time scoping for a transient analysis
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../02-modal-harmonic/index.html">
-   Harmonic Analysis Examples
+   Harmonic analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -307,17 +309,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/00-multi_harmonic.html">
-     Multi-Harmonic Response Example
+     Multi-harmonic response example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/01-modal_cyclic.html">
-     Modal Cyclic symmetry Example
+     Modal cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/02-cyclic_multi_stage.html">
-     Multi-stage Cyclic Symmetry Example
+     Multi-stage cyclic symmetry example
     </a>
    </li>
    <li class="toctree-l2">
@@ -327,7 +329,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/04-modal_superposition.html">
-     Expand Harmonic Modal Superposition with DPF
+     Expand harmonic modal superposition with DPF
     </a>
    </li>
    <li class="toctree-l2">
@@ -339,7 +341,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
-   Advanced and Miscellaneous Examples
+   Advanced and miscellaneous examples
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -349,49 +351,49 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="00-multistage_advanced_options.html">
-     Multi-stage Cyclic Symmetry Use Advanced Customization
+     Multi-stage cyclic symmetry using advanced customization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="01-solve_harmonic_problem.html">
-     Solve Harmonic Problem (with damping) Using Matrix Inverse
+     Solve harmonic problem (with damping) using matrix inverse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02-volume_averaged_stress.html">
-     Average Elemental Stress on a given volume
+     Average elemental stress on a given volume
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03-exchange_data_between_servers.html">
-     Exchange Data Between Servers
+     Exchange data between servers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04-extrapolation_stress_3d.html">
-     Extrapolation Method for stress result of 3D-element
+     Extrapolation method for stress result of a 3D element
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Extrapolation Method for strain result of 2D-element
+     Extrapolation method for strain result of a 2D element
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-stress_gradient_path.html">
-     Stress gradient normal to a defined node.
+     Stress gradient normal to a defined node
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-asme_secviii_divtwo.html">
-     ASME Section VIII Division 2: pressure vessels
+     Pressure vessel analysis according to an ASME standard
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../04-specific-requests/index.html">
-   Examples that targets specific requests
+   Target-specific request examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -401,7 +403,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
-     Hdf5 export and compare precision
+     HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
@@ -413,7 +415,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05-plotting/index.html">
-   Plotting Examples
+   Plotting examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -428,17 +430,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/01-compare_results.html">
-     Compare Results Using the Plotter
+     Compare results using the plotter
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/02-solution_combination.html">
-     Load Case Combination for Principal Stress
+     Load case combination for principal stress
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05-plotting/03-labels.html">
-     Add Nodal Labels on Plots
+     Add nodal labels on plots
     </a>
    </li>
    <li class="toctree-l2">
@@ -451,11 +453,16 @@
      Warp the mesh by a field for plotting
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-plotting/06-animate_results.html">
+     Review of available animation commands
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../06-distributed-post/index.html">
-   Examples for post processing on distributed process
+   Examples for postprocessing on distributed processes
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -465,22 +472,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/00-distributed_total_disp.html">
-     Post processing of displacement on distributed processes
+     Postprocessing of displacement on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/01-distributed_workflows_on_remote.html">
-     Create custom workflow on distributed processes
+     Create a custom workflow on distributed processes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/02-distributed-msup_expansion.html">
-     Distributed modal superposition
+     Distributed mode superposition (MSUP)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06-distributed-post/03-distributed-msup_expansion_steps.html">
-     Distributed msup distributed modal response
+     Distributed MSUP distributed modal response
     </a>
    </li>
    <li class="toctree-l2">
@@ -492,7 +499,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../07-python-operators/index.html">
-   Examples of custom python plugins of Operators
+   Examples of creating custom operator plugins
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -502,24 +509,24 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/00-wrapping_numpy_capabilities.html">
-     Write user defined Operator
+     Create a basic operator plugin
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/01-package_python_operators.html">
-     Write user defined Operators as a package
+     Create a plug-in package with multiple operators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07-python-operators/02-python_operators_with_dependencies.html">
-     Write user defined Operators having third party dependencies
+     Create a plug-in package that has third-party dependencies
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../08-averaging/index.html">
-   Averaging Examples
+   Averaging examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -565,12 +572,12 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Extrapolation Method for strain result of 2D-element
+   Extrapolation method for strain result of a 2D element
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extrapolation-from-integration-points-for-elastic-strain-result">
-   Extrapolation from integration points for elastic strain result
+  <a class="reference internal nav-link" href="#extrapolate-from-integration-points-for-elastic-strain-result">
+   Extrapolate from integration points for elastic strain result
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -582,7 +589,7 @@
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#elastic-strain-result-of-reference-ansys-workbench">
-   Elastic strain result of reference ANSYS Workbench
+   Elastic strain result of reference Ansys Workbench
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -619,12 +626,12 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-examples-03-advanced-05-extrapolation-strain-2d-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="extrapolation-method-for-strain-result-of-2d-element">
-<span id="extrapolation-test-strain-2delement"></span><span id="sphx-glr-examples-03-advanced-05-extrapolation-strain-2d-py"></span><h1>Extrapolation Method for strain result of 2D-element<a class="headerlink" href="#extrapolation-method-for-strain-result-of-2d-element" title="Permalink to this headline">#</a></h1>
+<section class="sphx-glr-example-title" id="extrapolation-method-for-strain-result-of-a-2d-element">
+<span id="extrapolation-test-strain-2delement"></span><span id="sphx-glr-examples-03-advanced-05-extrapolation-strain-2d-py"></span><h1>Extrapolation method for strain result of a 2D element<a class="headerlink" href="#extrapolation-method-for-strain-result-of-a-2d-element" title="Permalink to this heading">#</a></h1>
 <p>This example shows how to compute the nodal component elastic strain
-from Gaussian points (integration points) for 2D-element by using the
-method of extrapolation.</p>
-<p>Extrapolating results available at Gauss or quadrature points to nodal
+from Gaussian points (integration points) for a 2D element by using the
+extrapolation method.</p>
+<p>Extrapolate results available at Gaussian or quadrature points to nodal
 points for a field or fields container. The available elements are:</p>
 <ul class="simple">
 <li><p>Linear quadrangle</p></li>
@@ -634,13 +641,17 @@ points for a field or fields container. The available elements are:</p>
 <li><p>Linear tetrahedral</p></li>
 <li><p>Quadratic tetrahedral</p></li>
 </ul>
-<p>1st step : Get the values at the data source’s of integration points (this result
-file was generated from MAPDL with <code class="docutils literal notranslate"><span class="pre">EREXS,</span> <span class="pre">NO</span></code>).</p>
-<p>2nd step: using operator of extrapolation to compute the nodal elastic strain.</p>
-<p>3rd step: Get the nodal elastic strain result from the data source.
-The analysis was computed by Ansys Mechanical APDL.</p>
-<p>4th step: Compare the results between nodal elastic strain from the data
-source and nodal strain computed by extrapolation method.</p>
+<p>Here are the steps for extrapolation:</p>
+<ol class="arabic simple">
+<li><p>Get the data source’s solution from the integration points. (This
+result file was generated with the Ansys Mechanical APDL (MAPDL)
+option <code class="docutils literal notranslate"><span class="pre">EREXS,</span> <span class="pre">NO</span></code>).</p></li>
+<li><p>Use the extrapolation operator to compute the nodal elastic strain.</p></li>
+<li><p>Get the result for nodal elastic strain from the data source.
+The analysis was computed by MAPDL.</p></li>
+<li><p>Compare the result for nodal elastic strain from the data source
+and the nodal elastic strain computed by the extrapolation method.</p></li>
+</ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
@@ -662,11 +673,10 @@ source and nodal strain computed by extrapolation method.</p>
 </pre></div>
 </div>
 </section>
-<section id="extrapolation-from-integration-points-for-elastic-strain-result">
-<h1>Extrapolation from integration points for elastic strain result<a class="headerlink" href="#extrapolation-from-integration-points-for-elastic-strain-result" title="Permalink to this headline">#</a></h1>
-<p>In this example we compute nodal component elastic strain results from
-the elastic strain at the integration points  by using the <code class="docutils literal notranslate"><span class="pre">gauss_to_node_fc</span></code>
-operator.</p>
+<section id="extrapolate-from-integration-points-for-elastic-strain-result">
+<h1>Extrapolate from integration points for elastic strain result<a class="headerlink" href="#extrapolate-from-integration-points-for-elastic-strain-result" title="Permalink to this heading">#</a></h1>
+<p>This example uses the <code class="docutils literal notranslate"><span class="pre">gauss_to_node_fc</span></code> operator to compute nodal component
+elastic strain results from the elastic strain at the integration points.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create elastic strain operator to get strain result of integration points</span>
 <span class="n">strainop</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">elastic_strain</span><span class="p">()</span>
 <span class="n">strainop</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">data_sources_integration_points</span><span class="p">)</span>
@@ -674,14 +684,15 @@ operator.</p>
 </pre></div>
 </div>
 <section id="nodal-elastic-strain-result-of-integration-points">
-<h2>Nodal elastic strain result of integration points:<a class="headerlink" href="#nodal-elastic-strain-result-of-integration-points" title="Permalink to this headline">#</a></h2>
+<h2>Nodal elastic strain result of integration points:<a class="headerlink" href="#nodal-elastic-strain-result-of-integration-points" title="Permalink to this heading">#</a></h2>
 <blockquote>
-<div><p>The command <code class="docutils literal notranslate"><span class="pre">ERESX,NO</span></code> in Mechanical APDL is used to copy directly the
-gaussian (integration) points results to the nodes, instead of the results
-at nodes or elements (which are interpolation of results at a few gauss points).
-The following plot shows the nodal values which are the averaged values
+<div><p>The command <code class="docutils literal notranslate"><span class="pre">ERESX,NO</span></code> in MAPDL is used to copy directly the
+Gaussian (integration) points results to the nodes, instead of the results
+at nodes or elements (which are an interpolation of results at a few
+Gaussian points).</p>
+<p>The following plot shows the nodal values that are the averaged values
 of elastic strain at each node. The value shown at the node is the
-average of the elastic strains from the gaussian points of each element
+average of the elastic strains from the Gaussian points of each element
 that it belongs to.</p>
 </div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot</span>
@@ -704,7 +715,7 @@ elastic strain by applying the extrapolation method.</p>
 </section>
 </section>
 <section id="elastic-strain-result-of-reference-ansys-workbench">
-<h1>Elastic strain result of reference ANSYS Workbench<a class="headerlink" href="#elastic-strain-result-of-reference-ansys-workbench" title="Permalink to this headline">#</a></h1>
+<h1>Elastic strain result of reference Ansys Workbench<a class="headerlink" href="#elastic-strain-result-of-reference-ansys-workbench" title="Permalink to this heading">#</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strain from file dataSourceref</span>
 <span class="n">strainop_ref</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">elastic_strain</span><span class="p">()</span>
 <span class="n">strainop_ref</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">data_sources_ref</span><span class="p">)</span>
@@ -713,8 +724,8 @@ elastic strain by applying the extrapolation method.</p>
 </div>
 </section>
 <section id="plot">
-<h1>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">#</a></h1>
-<p>Showing plots of Extrapolation’s elastic strain result and reference’s elastic strain result</p>
+<h1>Plot<a class="headerlink" href="#plot" title="Permalink to this heading">#</a></h1>
+<p>Show plots of extrapolation’s elastic strain result and reference’s elastic strain result</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># extrapolation</span>
 <span class="n">fex_nodal_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">averaging</span><span class="o">.</span><span class="n">elemental_nodal_to_nodal_fc</span><span class="p">()</span>
 <span class="n">fex_nodal_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_container</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">fex</span><span class="p">)</span>
@@ -731,12 +742,12 @@ elastic strain by applying the extrapolation method.</p>
 </ul>
 </section>
 <section id="comparison">
-<h1>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">#</a></h1>
+<h1>Comparison<a class="headerlink" href="#comparison" title="Permalink to this heading">#</a></h1>
 <p>Compare the elastic strain result computed by extrapolation and reference’s result.
-Check if two fields container are identical.
-Maximum tolerance gap between to compared values: 1e-3.
-Smallest value which will be considered during the comparison
-step : all the <code class="docutils literal notranslate"><span class="pre">abs(values)</span></code> in the field less than 1e-14 are considered null</p>
+Check if the two fields containers are identical.
+The maximum tolerance gap between two compared values is 1e-3.
+The smallest value that is to be considered during the comparison
+step : all the <code class="docutils literal notranslate"><span class="pre">abs(values)</span></code> in the field less than 1e-14 are considered null.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># operator AreFieldsIdentical_fc</span>
 <span class="n">op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">logic</span><span class="o">.</span><span class="n">identical_fc</span><span class="p">()</span>
 <span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_containerA</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">fex</span><span class="p">)</span>
@@ -749,7 +760,7 @@ step : all the <code class="docutils literal notranslate"><span class="pre">abs(
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.464 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.533 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-03-advanced-05-extrapolation-strain-2d-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d5b7a76ff8906cb82b31d4ace4b1dae2/05-extrapolation_strain_2d.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">05-extrapolation_strain_2d.py</span></code></a></p>
@@ -786,7 +797,7 @@ step : all the <code class="docutils literal notranslate"><span class="pre">abs(
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

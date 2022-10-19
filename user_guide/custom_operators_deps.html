@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; PyDPF-Core 0.6.0 documentation</title>
+    <title>&lt;no title&gt; &#8212; PyDPF-Core</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -45,6 +45,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -53,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -110,13 +111,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../api/index.html">
-  APIs
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../operator_reference.html">
-  Operators
+  API reference
  </a>
 </li>
 
@@ -151,7 +146,7 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyansys/DPF-Core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
       </ul>
@@ -172,8 +167,10 @@
       <h3>Navigation</h3>
       <ul>
     
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
-        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core 0.6.0 documentation</a> » </li>
+    
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core</a> » </li>
     
 
         <li class="nav-item nav-item-this"><a href="">&lt;no title&gt;</a></li> 
@@ -238,44 +235,61 @@
               
               <article class="bd-article" role="main">
                 
-  <p>To add third party modules as dependencies to a custom DPF python plugin, a folder or zip file
-with the sites of the dependencies needs to be created and referenced in an xml located next to the plugin’s folder
-and having the same name as the plugin plus the <code class="docutils literal notranslate"><span class="pre">.xml</span></code> extension. The <code class="docutils literal notranslate"><span class="pre">site</span></code> python module is used by DPF when
-calling <a class="reference internal" href="../api/ansys.dpf.core.core.html#ansys.dpf.core.core.load_library" title="ansys.dpf.core.core.load_library"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.core.load_library()</span></code></a> function to add these custom sites to the python interpreter path.
-To create these custom sites, the requirements of the custom plugin should be installed in a python virtual
-environment, the site-packages (with unnecessary folders removed) should be zipped and put with the plugin. The
-path to this zip should be referenced in the xml as done above.</p>
-<p>To simplify this step, a requirements file can be added in the plugin, like:</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-requirements.txt<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+  <p>To add third-party modules as dependencies to a plug-in package, you should create
+and reference a folder or ZIP file with the sites of the dependencies in an XML file
+located next to the folder for the plug-in package. The XML file must have the same
+name as the plug-in package plus an <code class="docutils literal notranslate"><span class="pre">.xml</span></code> extension.</p>
+<p>When the <a class="reference internal" href="../api/ansys.dpf.core.core.html#ansys.dpf.core.core.load_library" title="ansys.dpf.core.core.load_library"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.core.load_library()</span></code></a> method is called, PDF-Core uses the
+<code class="docutils literal notranslate"><span class="pre">site</span></code> Python module to add custom sites to the path for the Python interpreter.</p>
+<p>To create these custom sites, do the following:</p>
+<ol class="arabic simple">
+<li><p>Install the requirements of the plug-in package in a Python virtual environment.</p></li>
+<li><p>Remove unnecessary folders from the site packages and compress them to a ZIP file.</p></li>
+<li><p>Place the ZIP file in the plug-in package.</p></li>
+<li><p>Reference the path to the ZIP file in the XML file as indicated above.</p></li>
+</ol>
+<p>To simplify this step, you can add a requirements file in the plug-in package:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pygltflib</span>
 </pre></div>
 </div>
-</div>
-</details><p>And this <a class="reference download internal" download="" href="../_downloads/be1092fa007e10f40b7f9ea7fdfa881a/create_sites_for_python_operators.ps1"><code class="xref download docutils literal notranslate"><span class="pre">powershell</span> <span class="pre">script</span></code></a> for windows or
-this <a class="reference download internal" download="" href="../_downloads/865325386e9f426c0639d8c3be57bb75/create_sites_for_python_operators.sh"><code class="xref download docutils literal notranslate"><span class="pre">shell</span> <span class="pre">script</span></code></a> can be ran with the mandatory arguments:</p>
+<p>For this approach, do the following:</p>
+<ol class="arabic simple">
+<li><p>Download the script for your operating system:</p>
 <ul class="simple">
-<li><p>-pluginpath : path to the folder of the plugin.</p></li>
-<li><p>-zippath : output zip file name.</p></li>
+<li><p>For Windows, download this <a class="reference download internal" download="" href="../_downloads/be1092fa007e10f40b7f9ea7fdfa881a/create_sites_for_python_operators.ps1"><code class="xref download docutils literal notranslate"><span class="pre">PowerShell</span> <span class="pre">script</span></code></a>.</p></li>
+<li><p>For Linux, download this <a class="reference download internal" download="" href="../_downloads/865325386e9f426c0639d8c3be57bb75/create_sites_for_python_operators.sh"><code class="xref download docutils literal notranslate"><span class="pre">Shell</span> <span class="pre">script</span></code></a>.</p></li>
 </ul>
-<p>optional arguments are:</p>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p>Run the downloaded script with the mandatory arguments:</p>
 <ul class="simple">
-<li><p>-pythonexe : path to a python executable of your choice.</p></li>
-<li><p>-tempfolder : path to a temporary folder to work on, default is the environment variable <code class="docutils literal notranslate"><span class="pre">TEMP</span></code> on Windows and /tmp/ on Linux.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-pluginpath</span></code>: Path to the folder with the plug-in package.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-zippath</span></code>: Path and name for ZIP file.</p></li>
 </ul>
-<p>For windows powershell, call:</p>
+<p>Optional arguments are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-pythonexe</span></code>: Path to a Python executable of your choice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-tempfolder</span></code>: Path to a temporary folder to work in. The default is the environment variable
+<code class="docutils literal notranslate"><span class="pre">TEMP</span></code> on Windows and <code class="docutils literal notranslate"><span class="pre">/tmp/</span></code> on Linux.</p></li>
+</ul>
+</li>
+<li><p>Run the command for your operating system.</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>From Windows PowerShell, run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create_sites_for_python_operators</span><span class="o">.</span><span class="n">ps1</span> <span class="o">-</span><span class="n">pluginpath</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">plugin</span> <span class="o">-</span><span class="n">zippath</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">plugin</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">winx64</span><span class="o">.</span><span class="n">zip</span>
 </pre></div>
 </div>
-<p>For linux shell, call:</p>
+</li>
+<li><p>From Linux Shell, run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create_sites_for_python_operators</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">pluginpath</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">plugin</span> <span class="o">-</span><span class="n">zippath</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">plugin</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">linx64</span><span class="o">.</span><span class="n">zip</span>
 </pre></div>
 </div>
+</li>
+</ul>
+</div></blockquote>
 
 
               </article>
@@ -302,7 +316,7 @@ this <a class="reference download internal" download="" href="../_downloads/8653
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   
