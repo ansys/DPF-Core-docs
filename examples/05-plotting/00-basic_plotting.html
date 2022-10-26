@@ -617,7 +617,7 @@ shown with the arguments available.</p>
 
 
 <span class="c1"># Plot the bare mesh of a model</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">multishells_rst</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">find_multishells_rst</span><span class="p">())</span>
 <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Model&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Model plot&#39;</span><span class="p">)</span>
 <span class="c1"># # Additional PyVista kwargs are supported, such as:</span>
 <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">off_screen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">notebook</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">screenshot</span><span class="o">=</span><span class="s1">&#39;model_plot.png&#39;</span><span class="p">,</span>
@@ -658,7 +658,7 @@ shown with the arguments available.</p>
 <span class="c1"># A fields_container can be given as input, with results on each part of our split mesh.</span>
 <span class="n">disp_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;U&quot;</span><span class="p">)</span>
 <span class="n">disp_op</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">meshes_cont</span><span class="p">)</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">multishells_rst</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">find_multishells_rst</span><span class="p">())</span>
 <span class="n">disp_op</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">ds</span><span class="p">)</span>
 <span class="n">disp_fc</span> <span class="o">=</span> <span class="n">disp_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">fields_container</span><span class="p">()</span>
 <span class="n">meshes_cont</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">disp_fc</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Meshes Container disp_fc&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Meshes Container disp_fc plot&#39;</span><span class="p">)</span>
@@ -667,7 +667,7 @@ shown with the arguments available.</p>
                  <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Meshes Container&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Meshes Container plot&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  12.430 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  12.508 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-05-plotting-00-basic-plotting-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/4588d5df967c76beb9366e09b55b0940/00-basic_plotting.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">00-basic_plotting.py</span></code></a></p>

@@ -64,7 +64,7 @@ Printing the model displays this metadata:
 
 .. code-block:: default
 
-    model = dpf.Model(examples.msup_transient)
+    model = dpf.Model(examples.find_msup_transient())
     print(model)
 
 
@@ -392,7 +392,7 @@ size of the label.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.938 seconds)
+   **Total running time of the script:** ( 0 minutes  0.985 seconds)
 
 
 .. _sphx_glr_download_examples_05-plotting_02-solution_combination.py:

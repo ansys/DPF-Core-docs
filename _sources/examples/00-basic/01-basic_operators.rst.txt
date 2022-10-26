@@ -59,7 +59,7 @@ example result file:
 
 .. code-block:: default
 
-    model = dpf.Model(examples.static_rst)
+    model = dpf.Model(examples.find_static_rst())
     print(model)
 
 
@@ -350,8 +350,8 @@ Instead of using a ``model`` class instance, use a
 
 .. code-block:: default
 
-    ds = dpf.DataSources(examples.static_rst)
-    print(examples.static_rst)
+    ds = dpf.DataSources(examples.find_static_rst())
+    print(examples.find_static_rst())
 
 
 
@@ -416,7 +416,7 @@ Get the output and print the result data:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.079 seconds)
+   **Total running time of the script:** ( 0 minutes  1.016 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_01-basic_operators.py:

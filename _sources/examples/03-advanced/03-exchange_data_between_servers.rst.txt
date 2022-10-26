@@ -86,12 +86,11 @@ The result file is sent to the temporary directory of the first server.
 This file upload is useless in this case because the two servers are local
 machines.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-41
+.. GENERATED FROM PYTHON SOURCE LINES 38-40
 
 .. code-block:: default
 
-    file = examples.complex_rst
-    file_path_in_tmp = dpf.upload_file_in_tmp_folder(file)
+    file_path_in_tmp = examples.find_complex_rst(server=server1)
 
 
 
@@ -100,13 +99,13 @@ machines.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-45
+.. GENERATED FROM PYTHON SOURCE LINES 41-44
 
 Create a workflow on the first server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Create the model
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-51
+.. GENERATED FROM PYTHON SOURCE LINES 44-50
 
 .. code-block:: default
 
@@ -123,12 +122,12 @@ Create the model
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-54
+.. GENERATED FROM PYTHON SOURCE LINES 51-53
 
 Create a workflow on the second server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-67
+.. GENERATED FROM PYTHON SOURCE LINES 53-66
 
 .. code-block:: default
 
@@ -152,12 +151,12 @@ Create a workflow on the second server
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-70
+.. GENERATED FROM PYTHON SOURCE LINES 67-69
 
 Pass data from one server to another
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-80
+.. GENERATED FROM PYTHON SOURCE LINES 69-79
 
 .. code-block:: default
 
@@ -178,12 +177,12 @@ Pass data from one server to another
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-83
+.. GENERATED FROM PYTHON SOURCE LINES 80-82
 
 Plot the output
 ~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-90
+.. GENERATED FROM PYTHON SOURCE LINES 82-89
 
 .. code-block:: default
 
@@ -221,7 +220,7 @@ Plot the output
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.129 seconds)
+   **Total running time of the script:** ( 0 minutes  6.256 seconds)
 
 
 .. _sphx_glr_download_examples_03-advanced_03-exchange_data_between_servers.py:

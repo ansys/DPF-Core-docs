@@ -47,7 +47,7 @@ Create the model and display the state of the result.
 
 .. code-block:: default
 
-    model = dpf.Model(examples.simple_cyclic)
+    model = dpf.Model(examples.find_simple_cyclic())
     print(model)
 
 
@@ -292,7 +292,7 @@ Expand stresses and average to elemental location
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.908 seconds)
+   **Total running time of the script:** ( 0 minutes  1.938 seconds)
 
 
 .. _sphx_glr_download_examples_02-modal-harmonic_01-modal_cyclic.py:

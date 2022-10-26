@@ -2850,6 +2850,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="ansys.dpf.core.custom_type_field.html">
+     CustomTypeField
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="ansys.dpf.core.cyclic_support.html">
      Cyclic Support
     </a>
@@ -3110,22 +3115,34 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_transient_result">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_transient_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_transient_result" title="Permalink to this definition">#</a></dt>
-<dd><p>Download an example transient result file and return the download path.</p>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_transient_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_transient_result" title="Permalink to this definition">#</a></dt>
+<dd><p>Download an example transient result file and return the download path
+available server side.
+If the server is remote (or doesn’t share the memory), the file is uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Path to the example file.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the example file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
 <p>Download an example result file and return the path of the file</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">transient_result</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_transient_result</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">path</span>
 <span class="go">&#39;C:/Users/user/AppData/local/temp/transient.rst&#39;</span>
 </pre></div>
@@ -3134,22 +3151,34 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_all_kinds_of_complexity">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_all_kinds_of_complexity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_all_kinds_of_complexity" title="Permalink to this definition">#</a></dt>
-<dd><p>Download an example static result and return the download path.</p>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_all_kinds_of_complexity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_all_kinds_of_complexity" title="Permalink to this definition">#</a></dt>
+<dd><p>Download an example static result and return the download path
+available server side.
+If the server is remote (or doesn’t share the memory), the file is uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Path to the example file.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the example file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
 <p>Download an example result file and return the path of the file</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_all_kinds_of_complexity</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_all_kinds_of_complexity</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">path</span>
 <span class="go">&#39;C:/Users/user/AppData/local/temp/allKindOfComplexity.rst&#39;</span>
 </pre></div>
@@ -3158,17 +3187,28 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_all_kinds_of_complexity_modal">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_all_kinds_of_complexity_modal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_all_kinds_of_complexity_modal" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_all_kinds_of_complexity_modal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_all_kinds_of_complexity_modal" title="Permalink to this definition">#</a></dt>
 <dd><p>Download an example result file from a static modal analysis and
-return the download path.</p>
+return the download path available server side.
+If the server is remote (or doesn’t share the memory), the file is uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Path to the example file.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the example file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -3183,17 +3223,28 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_pontoon">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_pontoon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_pontoon" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_pontoon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_pontoon" title="Permalink to this definition">#</a></dt>
 <dd><p>Download an example result file from a static modal analsys and
-return the download path.</p>
+return the download path available server side.
+If the server is remote (or doesn’t share the memory), the file is uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Path to the example file.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the example file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -3208,17 +3259,28 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_multi_harmonic_result">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_multi_harmonic_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_multi_harmonic_result" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_multi_harmonic_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_multi_harmonic_result" title="Permalink to this definition">#</a></dt>
 <dd><p>Download an example multi-harmonic result file and return the
-download path.</p>
+download path available server side.
+If the server is remote (or doesn’t share the memory), the file is uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Path to the example file.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the example file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -3233,17 +3295,28 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_multi_stage_cyclic_result">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_multi_stage_cyclic_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_multi_stage_cyclic_result" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_multi_stage_cyclic_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_multi_stage_cyclic_result" title="Permalink to this definition">#</a></dt>
 <dd><p>Download an example multi stage result file and return the
-download path.</p>
+download path available server side.
+If the server is remote (or doesn’t share the memory), the file is uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Path to the example file.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the example file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -3258,17 +3331,28 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_sub_file">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_sub_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_sub_file" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_sub_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_sub_file" title="Permalink to this definition">#</a></dt>
 <dd><p>Download an example .sub result file containing matrices and return the
-download path.</p>
+download path available server side.
+If the server is remote (or doesn’t share the memory), the file is uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Path to the example file.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the example file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -3283,17 +3367,28 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_msup_files_to_dict">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_msup_files_to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_msup_files_to_dict" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_msup_files_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_msup_files_to_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Download all the files necessary for a msup expansion and return the
-download paths into a dictionary extension-&gt;path.</p>
+download paths available server side into a dictionary extension-&gt;path.
+If the server is remote (or doesn’t share the memory), the files are uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dict[str</strong> – Path to the example files.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str]</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>dict[str</strong> – Path to the example files.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str]</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -3310,17 +3405,28 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_distributed_files">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_distributed_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_distributed_files" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_distributed_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_distributed_files" title="Permalink to this definition">#</a></dt>
 <dd><p>Download distributed rst files and return the
-download paths into a dictionary domain id-&gt;path.</p>
+download paths into a dictionary domain id-&gt;path.
+If the server is remote (or doesn’t share the memory), the files are uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dict[int</strong> – Path to the example files.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str]</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>dict[int</strong> – Path to the example files.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str]</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -3336,17 +3442,28 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_fluent_files">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_fluent_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_fluent_files" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_fluent_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_fluent_files" title="Permalink to this definition">#</a></dt>
 <dd><p>Download the cas and dat file of a fluent analysis and return the
-download paths into a dictionary extension-&gt;path.</p>
+download paths into a dictionary extension-&gt;path.
+If the server is remote (or doesn’t share the memory), the files are uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dict[str</strong> – Path to the example files.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str]</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>dict[str</strong> – Path to the example files.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str]</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -3362,25 +3479,36 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_extrapolation_3d_result">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_extrapolation_3d_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_extrapolation_3d_result" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_extrapolation_3d_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_extrapolation_3d_result" title="Permalink to this definition">#</a></dt>
 <dd><p>Download example static results of reference and integrated points
-for extrapolation of 3d-element and return return the dictionary of 2 download paths.</p>
+for extrapolation of 3d-element and return return the dictionary of 2 download paths.
+If the server is remote (or doesn’t share the memory), the files are uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>containing path to the example file of ref and path to the example
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>containing path to the example file of ref and path to the example
 file of integrated points.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>dict</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
 <p>Download 2 example result files and return the dictionary containing 2 files</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_extrapolation_ref_result</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path_dict</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_extrapolation_ref_result</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path_dict</span>
 <span class="go">{</span>
 <span class="go">    &#39;file_ref&#39;: &#39;C:/Users/user/AppData/local/temp/file_ref.rst&#39;,</span>
 <span class="go">    &#39;file_integrated&#39;: &#39;C:/Users/user/AppData/local/temp/file.rst&#39;</span>
@@ -3391,25 +3519,36 @@ file of integrated points.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_extrapolation_2d_result">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_extrapolation_2d_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_extrapolation_2d_result" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_extrapolation_2d_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_extrapolation_2d_result" title="Permalink to this definition">#</a></dt>
 <dd><p>Download example static results of reference and integrated points
-for extrapolation of 2d-element and return the dictionary of 2 download paths.</p>
+for extrapolation of 2d-element and return the dictionary of 2 download paths.
+If the server is remote (or doesn’t share the memory), the files are uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Contains path to the example file of ref and path to the example
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Contains path to the example file of ref and path to the example
 file of integrated points.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>dict</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
 <p>Download 2 example result files and return the dictionary containing 2 files</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_extrapolation_ref_result</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path_dict</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_extrapolation_ref_result</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path_dict</span>
 <span class="go">{</span>
 <span class="go">    &#39;file_ref&#39;: &#39;C:/Users/user/AppData/local/temp/extrapolate_2d_ref.rst&#39;,</span>
 <span class="go">    &#39;file_integrated&#39;: &#39;C:/Users/user/AppData/local/temp/extrapolate_2d.rst&#39;</span>
@@ -3420,17 +3559,28 @@ file of integrated points.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_hemisphere">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_hemisphere</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_hemisphere" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_hemisphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_hemisphere" title="Permalink to this definition">#</a></dt>
 <dd><p>Download an example result file from a static analysis and
-return the download path.</p>
+return the download path available server side.
+If the server is remote (or doesn’t share the memory), the file is uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Path to the example file.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the example file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -3445,13 +3595,30 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_example_asme_result">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_example_asme_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_example_asme_result" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_example_asme_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_example_asme_result" title="Permalink to this definition">#</a></dt>
 <dd><p>Download an example result file from a static analysis and
-return the download path.
-Examples files are downloaded to a persistent cache to avoid
-re-downloading the same file twice.
-:returns: Path to the example file.
-:rtype: str</p>
+return the download path available server side.
+If the server is remote (or doesn’t share the memory), the file is uploaded or made available
+server side.</p>
+<p>Examples files are downloaded to a persistent cache to avoid
+re-downloading the same file twice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the example file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>Download an example result file and return the path of the file
 &gt;&gt;&gt; from ansys.dpf.core import examples
@@ -3462,23 +3629,34 @@ re-downloading the same file twice.
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_crankshaft">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_crankshaft</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_crankshaft" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_crankshaft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_crankshaft" title="Permalink to this definition">#</a></dt>
 <dd><p>Download the result file of an example of a crankshaft
-under load and return the download path.</p>
+under load and return the download path available server side.
+If the server is remote (or doesn’t share the memory), the file is uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Path to the example file.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the example file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
 <p>Download an example result file and return the path of the file</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">crankshaft</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_crankshaft</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">path</span>
 <span class="go">&#39;C:/Users/user/AppData/local/temp/crankshaft.rst&#39;</span>
 </pre></div>
@@ -3487,23 +3665,34 @@ re-downloading the same file twice.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.examples.downloads.download_piston_rod">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_piston_rod</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_piston_rod" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.examples.downloads.</span></span><span class="sig-name descname"><span class="pre">download_piston_rod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_local_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.examples.downloads.download_piston_rod" title="Permalink to this definition">#</a></dt>
 <dd><p>Download the result file of an example of a piston rod
-under load and return the download path.</p>
+under load and return the download path available server side.
+If the server is remote (or doesn’t share the memory), the file is uploaded or made available
+server side.</p>
 <p>Examples files are downloaded to a persistent cache to avoid
 re-downloading the same file twice.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Path to the example file.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>should_upload</strong> (<em>bool</em><em>, </em><em>optional</em><em> (</em><em>default True</em><em>)</em>) – Whether the file should be uploaded server side when the server is remote.</p></li>
+<li><p><strong>server</strong> (<em>server.DPFServer</em><em>, </em><em>optional</em>) – Server with channel connected to the remote or local instance. When
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, attempts to use the global server.</p></li>
+<li><p><strong>return_local_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the local path is returned as is, without uploading, nor searching
+for mounted volumes.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the example file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
 <p>Download an example result file and return the path of the file</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">piston_rod</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_piston_rod</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">path</span>
 <span class="go">&#39;C:/Users/user/AppData/local/temp/piston_rod.rst&#39;</span>
 </pre></div>

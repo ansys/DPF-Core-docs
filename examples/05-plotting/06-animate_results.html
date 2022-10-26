@@ -597,7 +597,7 @@ to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="review-of-available-animation-commands">
 <span id="animate-results"></span><span id="sphx-glr-examples-05-plotting-06-animate-results-py"></span><h1>Review of available animation commands<a class="headerlink" href="#review-of-available-animation-commands" title="Permalink to this heading">#</a></h1>
-<p>This example lists the different commands available for creating animations of results,
+<p>This example lists the different commands available for creating animations of transient results,
 shown with the arguments available.</p>
 <img src="../../_images/sphx_glr_06-animate_results_001.png" srcset="../../_images/sphx_glr_06-animate_results_001.png" alt="06 animate results" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF Model
 ------------------------------
@@ -648,8 +648,6 @@ Cumulative     Time (s)       LoadStep       Substep
 18             0.180000       1              18
 19             0.190000       1              19
 20             0.200000       1              20
-
-Orient the view, then press &quot;q&quot; to close the window and produce an animation
 </pre></div>
 </div>
 <div class="line-block">
@@ -660,7 +658,7 @@ Orient the view, then press &quot;q&quot; to close the window and produce an ani
 
 
 <span class="c1"># Load the model</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">msup_transient</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">find_msup_transient</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 
 <span class="c1"># Use Scoping instances to adjust the region and the steps involved.</span>
@@ -740,8 +738,8 @@ Orient the view, then press &quot;q&quot; to close the window and produce an ani
 
 <span class="c1"># import copy</span>
 <span class="c1"># camera_pos_list = []</span>
-<span class="c1"># init_pos = [(2.341999327925363, 2.2535751881950388, 3.241992870018055),</span>
-<span class="c1">#             (0.10000000000000725, 0.01157586026968312, 0.9999935420927001),</span>
+<span class="c1"># init_pos = [(1.1710286191854873, 1.1276044794551632, 1.62102216127818),</span>
+<span class="c1">#             (0.05000000000000724, 0.006575860269683119, 0.4999935420927001),</span>
 <span class="c1">#             (0.0, 0.0, 1.0)]</span>
 <span class="c1"># camera_pos_list.append(init_pos)</span>
 <span class="c1"># for i in range(1, len(displacement_fields)):</span>
@@ -759,7 +757,7 @@ Orient the view, then press &quot;q&quot; to close the window and produce an ani
 <span class="c1">#                             show_axes=True)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  15.524 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.975 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-05-plotting-06-animate-results-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/5a8d4599b176c00c508660273d747b36/06-animate_results.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">06-animate_results.py</span></code></a></p>

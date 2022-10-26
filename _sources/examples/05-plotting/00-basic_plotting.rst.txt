@@ -121,7 +121,7 @@ shown with the arguments available.
 
 
     # Plot the bare mesh of a model
-    model = dpf.Model(examples.multishells_rst)
+    model = dpf.Model(examples.find_multishells_rst())
     model.plot(color="w", show_edges=True, title='Model', text='Model plot')
     # # Additional PyVista kwargs are supported, such as:
     model.plot(off_screen=True, notebook=False, screenshot='model_plot.png',
@@ -162,7 +162,7 @@ shown with the arguments available.
     # A fields_container can be given as input, with results on each part of our split mesh.
     disp_op = dpf.Operator("U")
     disp_op.connect(7, meshes_cont)
-    ds = dpf.DataSources(examples.multishells_rst)
+    ds = dpf.DataSources(examples.find_multishells_rst())
     disp_op.connect(4, ds)
     disp_fc = disp_op.outputs.fields_container()
     meshes_cont.plot(disp_fc, title='Meshes Container disp_fc', text='Meshes Container disp_fc plot')
@@ -173,7 +173,7 @@ shown with the arguments available.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  12.430 seconds)
+   **Total running time of the script:** ( 0 minutes  12.508 seconds)
 
 
 .. _sphx_glr_download_examples_05-plotting_00-basic_plotting.py:

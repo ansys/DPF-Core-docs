@@ -51,7 +51,7 @@ Create a model object to establish a connection with an example result file.
 
 .. code-block:: default
 
-    model = dpf.Model(examples.simple_bar)
+    model = dpf.Model(examples.find_simple_bar())
 
 
 

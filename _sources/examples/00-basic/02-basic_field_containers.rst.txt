@@ -74,7 +74,7 @@ example result file and then extract:
 
 .. code-block:: default
 
-    model = dpf.Model(examples.static_rst)
+    model = dpf.Model(examples.find_static_rst())
     print(model)
 
 

@@ -51,7 +51,7 @@ file contains several individual results, each at a different times.
 .. code-block:: default
 
 
-    transient = examples.msup_transient
+    transient = examples.find_msup_transient()
     model = dpf.Model(transient)
     print(model)
 

@@ -306,7 +306,7 @@ vector of fields.</p>
 <p>This example uses the <code class="docutils literal notranslate"><span class="pre">elastic_strain</span></code> operator to access a fields container:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">msup_transient</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">find_msup_transient</span><span class="p">())</span>
 <span class="n">epel</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">elastic_strain</span><span class="o">.</span><span class="n">on_all_time_freqs</span>
 <span class="n">fields</span> <span class="o">=</span> <span class="n">epel</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
@@ -404,7 +404,7 @@ DPF elastic_strain_1.s_elshape:1 Field
 </div>
 <p>The following example references the available time frequency support to determine which
 time complex IDs are available in the fields container:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">msup_transient</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">find_msup_transient</span><span class="p">())</span>
 <span class="n">epel</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">elastic_strain</span><span class="o">.</span><span class="n">on_all_time_freqs</span>
 <span class="n">fields</span> <span class="o">=</span> <span class="n">epel</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fields</span><span class="o">.</span><span class="n">time_freq_support</span><span class="p">)</span>

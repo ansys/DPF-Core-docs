@@ -2849,6 +2849,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="ansys.dpf.core.custom_type_field.html">
+     CustomTypeField
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="ansys.dpf.core.cyclic_support.html">
      Cyclic Support
     </a>
@@ -3111,7 +3116,7 @@ servers available for the factory.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_types.launch_dpf">
-<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_types.</span></span><span class="sig-name descname"><span class="pre">launch_dpf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ansys_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50054</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_types.launch_dpf" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_types.</span></span><span class="sig-name descname"><span class="pre">launch_dpf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ansys_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50054</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_types.launch_dpf" title="Permalink to this definition">#</a></dt>
 <dd><p>Launch Ansys DPF.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -3125,14 +3130,35 @@ default is <code class="docutils literal notranslate"><span class="pre">&quot;LO
 <li><p><strong>timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum number of seconds for the initialization attempt.
 The default is <code class="docutils literal notranslate"><span class="pre">10</span></code>. Once the specified number of seconds
 passes, the connection fails.</p></li>
-<li><p><strong>docker_name</strong> (<em>str</em><em>, </em><em>optional</em>) – To start DPF server as a docker, specify the docker name here.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_types.launch_dpf_on_docker">
+<span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_types.</span></span><span class="sig-name descname"><span class="pre">launch_dpf_on_docker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">docker_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ansys_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50054</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_types.launch_dpf_on_docker" title="Permalink to this definition">#</a></dt>
+<dd><p>Launch Ansys DPF.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ansys_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Root path for the Ansys installation directory. For example, <code class="docutils literal notranslate"><span class="pre">&quot;/ansys_inc/v212/&quot;</span></code>.
+The default is the latest Ansys installation.</p></li>
+<li><p><strong>ip</strong> (<em>str</em><em>, </em><em>optional</em>) – IP address of the remote or local instance to connect to. The
+default is <code class="docutils literal notranslate"><span class="pre">&quot;LOCALHOST&quot;</span></code>.</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – Port to connect to the remote instance on. The default is
+<code class="docutils literal notranslate"><span class="pre">&quot;DPF_DEFAULT_PORT&quot;</span></code>, which is 50054.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum number of seconds for the initialization attempt.
+The default is <code class="docutils literal notranslate"><span class="pre">10</span></code>. Once the specified number of seconds
+passes, the connection fails.</p></li>
+<li><p><strong>docker_config</strong> (<a class="reference internal" href="ansys.dpf.core.server_factory.html#ansys.dpf.core.server_factory.DockerConfig" title="ansys.dpf.core.server_factory.DockerConfig"><em>server_factory.DockerConfig</em></a><em>, </em><em>optional</em>) – To start DPF server as a docker, specify the docker configurations here.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>process</strong> – DPF Process.</p>
+<dd class="field-even"><p><strong>running_docker_config</strong></p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>subprocess.Popen</p>
+<dd class="field-odd"><p><a class="reference internal" href="ansys.dpf.core.server_factory.html#ansys.dpf.core.server_factory.RunningDockerConfig" title="ansys.dpf.core.server_factory.RunningDockerConfig">server_factory.RunningDockerConfig</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3317,7 +3343,7 @@ use this IP and port. The default is <code class="docutils literal notranslate">
 
 <dl class="py class">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_types.GrpcServer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_types.</span></span><span class="sig-name descname"><span class="pre">GrpcServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ansys_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50054</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_operators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">launch_server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pypim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_connection_tryouts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_types.GrpcServer" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_types.</span></span><span class="sig-name descname"><span class="pre">GrpcServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ansys_path=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip='127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port=50054</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout=10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_global=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_operators=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">launch_server=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_config=&lt;ansys.dpf.core.server_factory.DockerConfig</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pypim=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_connection_tryouts=3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_types.GrpcServer" title="Permalink to this definition">#</a></dt>
 <dd><p>Server using the gRPC communication protocol</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_types.GrpcServer.os">
@@ -3365,6 +3391,46 @@ use this IP and port. The default is <code class="docutils literal notranslate">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_types.GrpcServer.port">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">port</span></span><a class="headerlink" href="#ansys.dpf.core.server_types.GrpcServer.port" title="Permalink to this definition">#</a></dt>
 <dd><p>Port of the server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_types.GrpcServer.external_ip">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">external_ip</span></span><a class="headerlink" href="#ansys.dpf.core.server_types.GrpcServer.external_ip" title="Permalink to this definition">#</a></dt>
+<dd><p>Public IP address of the server.
+Is the same as  <code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.ip()</span></code> in all cases except
+for servers using a gateway:
+for example, servers running in Docker Images might have an internal
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.ip()</span></code> different from the public
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.external_ip()</span></code>, the latter should be used to get
+connected to the server from outside the Docker Image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>external_ip</strong></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_types.GrpcServer.external_port">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">external_port</span></span><a class="headerlink" href="#ansys.dpf.core.server_types.GrpcServer.external_port" title="Permalink to this definition">#</a></dt>
+<dd><p>Public Port of the server.
+Is the same as  <code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.port()</span></code> in all cases except
+for servers using a gateway:
+for example, servers running in Docker Images might have an internal
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.port()</span></code> different from the public
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.external_port()</span></code>, the latter should be used to get
+connected to the server from outside the Docker Image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>port</strong></p>
@@ -3448,7 +3514,7 @@ use this IP and port. The default is <code class="docutils literal notranslate">
 
 <dl class="py class">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_types.InProcessServer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_types.</span></span><span class="sig-name descname"><span class="pre">InProcessServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ansys_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_operators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_types.InProcessServer" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_types.</span></span><span class="sig-name descname"><span class="pre">InProcessServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ansys_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_operators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_types.InProcessServer" title="Permalink to this definition">#</a></dt>
 <dd><p>Server using the InProcess communication protocol</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_types.InProcessServer.os">
@@ -3537,7 +3603,7 @@ use this IP and port. The default is <code class="docutils literal notranslate">
 
 <dl class="py class">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_types.LegacyGrpcServer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_types.</span></span><span class="sig-name descname"><span class="pre">LegacyGrpcServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ansys_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50054</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_global</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_operators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">launch_server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pypim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_types.LegacyGrpcServer" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_types.</span></span><span class="sig-name descname"><span class="pre">LegacyGrpcServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ansys_path=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip='127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port=50054</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout=10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_global=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_operators=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">launch_server=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_config=&lt;ansys.dpf.core.server_factory.DockerConfig</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pypim=True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_types.LegacyGrpcServer" title="Permalink to this definition">#</a></dt>
 <dd><p>Provides an instance of the DPF server using InProcess gRPC.
 Kept for backward-compatibility with dpf servers &lt;0.5.0.</p>
 <dl class="field-list simple">
@@ -3557,7 +3623,7 @@ use this IP and port. The default is <code class="docutils literal notranslate">
 <li><p><strong>load_operators</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to automatically load the math operators. The default
 is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p><strong>launch_server</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to launch the server on Windows.</p></li>
-<li><p><strong>docker_name</strong> (<em>str</em><em>, </em><em>optional</em>) – To start DPF server as a docker, specify the docker name here.</p></li>
+<li><p><strong>docker_config</strong> (<a class="reference internal" href="ansys.dpf.core.server_factory.html#ansys.dpf.core.server_factory.DockerConfig" title="ansys.dpf.core.server_factory.DockerConfig"><em>server_factory.DockerConfig</em></a><em>, </em><em>optional</em>) – To start DPF server as a docker, specify the docker name here.</p></li>
 <li><p><strong>use_pypim</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to use PyPIM functionalities by default when a PyPIM environment is detected.
 Defaults to True.</p></li>
 </ul>
@@ -3592,12 +3658,18 @@ Defaults to True.</p></li>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_types.LegacyGrpcServer.version">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#ansys.dpf.core.server_types.LegacyGrpcServer.version" title="Permalink to this definition">#</a></dt>
-<dd><p>Version of the server.</p>
+<dt class="sig sig-object py" id="ansys.dpf.core.server_types.LegacyGrpcServer.external_ip">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">external_ip</span></span><a class="headerlink" href="#ansys.dpf.core.server_types.LegacyGrpcServer.external_ip" title="Permalink to this definition">#</a></dt>
+<dd><p>Public IP address of the server.
+Is the same as  <code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.ip()</span></code> in all cases except
+for servers using a gateway:
+for example, servers running in Docker Images might have an internal
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.ip()</span></code> different from the public
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.external_ip()</span></code>, the latter should be used to get
+connected to the server from outside the Docker Image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>version</strong></p>
+<dd class="field-odd"><p><strong>external_ip</strong></p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
@@ -3606,31 +3678,21 @@ Defaults to True.</p></li>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_types.LegacyGrpcServer.os">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">os</span></span><a class="headerlink" href="#ansys.dpf.core.server_types.LegacyGrpcServer.os" title="Permalink to this definition">#</a></dt>
-<dd><p>Get the operating system of the server</p>
+<dt class="sig sig-object py" id="ansys.dpf.core.server_types.LegacyGrpcServer.external_port">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">external_port</span></span><a class="headerlink" href="#ansys.dpf.core.server_types.LegacyGrpcServer.external_port" title="Permalink to this definition">#</a></dt>
+<dd><p>Public Port of the server.
+Is the same as  <code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.port()</span></code> in all cases except
+for servers using a gateway:
+for example, servers running in Docker Images might have an internal
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.port()</span></code> different from the public
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.LegacyGrpcServer.external_port()</span></code>, the latter should be used to get
+connected to the server from outside the Docker Image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>os</strong> – “nt” or “posix”</p>
+<dd class="field-odd"><p><strong>port</strong></p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_types.LegacyGrpcServer.info">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">info</span></span><a class="headerlink" href="#ansys.dpf.core.server_types.LegacyGrpcServer.info" title="Permalink to this definition">#</a></dt>
-<dd><p>Server information.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>info</strong> – Dictionary with server information, including <code class="docutils literal notranslate"><span class="pre">&quot;server_ip&quot;</span></code>,
-<code class="docutils literal notranslate"><span class="pre">&quot;server_port&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;server_process_id&quot;</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">&quot;server_version&quot;</span></code> keys.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>dictionary</p>
+<dd class="field-even"><p>int</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3684,6 +3746,50 @@ Defaults to True.</p></li>
 <dd class="field-odd"><p><strong>as_global</strong> (<em>bool</em><em>, </em><em>optional</em>) – Global variable that stores the IP address and port for the DPF
 module. All DPF objects created in this Python session will
 use this IP and port. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_types.LegacyGrpcServer.version">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#ansys.dpf.core.server_types.LegacyGrpcServer.version" title="Permalink to this definition">#</a></dt>
+<dd><p>Version of the server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>version</strong></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_types.LegacyGrpcServer.os">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">os</span></span><a class="headerlink" href="#ansys.dpf.core.server_types.LegacyGrpcServer.os" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the operating system of the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>os</strong> – “nt” or “posix”</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_types.LegacyGrpcServer.info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">info</span></span><a class="headerlink" href="#ansys.dpf.core.server_types.LegacyGrpcServer.info" title="Permalink to this definition">#</a></dt>
+<dd><p>Server information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>info</strong> – Dictionary with server information, including <code class="docutils literal notranslate"><span class="pre">&quot;server_ip&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;server_port&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;server_process_id&quot;</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">&quot;server_version&quot;</span></code> keys.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary</p>
 </dd>
 </dl>
 </dd></dl>

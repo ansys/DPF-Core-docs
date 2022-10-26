@@ -3,7 +3,7 @@
 
 Review of available animation commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This example lists the different commands available for creating animations of results,
+This example lists the different commands available for creating animations of transient results,
 shown with the arguments available.
 
 """
@@ -12,7 +12,7 @@ from ansys.dpf.core import examples
 
 
 # Load the model
-model = dpf.Model(examples.msup_transient)
+model = dpf.Model(examples.find_msup_transient())
 print(model)
 
 # Use Scoping instances to adjust the region and the steps involved.
@@ -92,8 +92,8 @@ camera_pos = displacement_fields.animate(scale_factor=10.,
 
 # import copy
 # camera_pos_list = []
-# init_pos = [(2.341999327925363, 2.2535751881950388, 3.241992870018055),
-#             (0.10000000000000725, 0.01157586026968312, 0.9999935420927001),
+# init_pos = [(1.1710286191854873, 1.1276044794551632, 1.62102216127818),
+#             (0.05000000000000724, 0.006575860269683119, 0.4999935420927001),
 #             (0.0, 0.0, 1.0)]
 # camera_pos_list.append(init_pos)
 # for i in range(1, len(displacement_fields)):

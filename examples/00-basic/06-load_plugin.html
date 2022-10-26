@@ -598,14 +598,14 @@ to download the full example code</p>
 <section class="sphx-glr-example-title" id="load-plugin">
 <span id="ref-load-plugin"></span><span id="sphx-glr-examples-00-basic-06-load-plugin-py"></span><h1>Load plugin<a class="headerlink" href="#load-plugin" title="Permalink to this heading">#</a></h1>
 <p>This example shows how to load a plugin that is not loaded automatically.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<p>Import DPF-Core:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 
-<span class="c1"># Import DPF-Core:</span>
-<span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">global_server</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Create a base service for loading a plugin:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;posix&quot;</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">server</span><span class="o">.</span><span class="n">os</span> <span class="o">==</span> <span class="s2">&quot;posix&quot;</span><span class="p">:</span>
     <span class="n">dpf</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">load_library</span><span class="p">(</span><span class="s2">&quot;libAns.Dpf.Math.so&quot;</span><span class="p">,</span> <span class="s2">&quot;math_operators&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">dpf</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">load_library</span><span class="p">(</span><span class="s2">&quot;Ans.Dpf.Math.dll&quot;</span><span class="p">,</span> <span class="s2">&quot;math_operators&quot;</span><span class="p">)</span>
@@ -617,7 +617,7 @@ to download the full example code</p>
 <span class="n">math_op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">fft_eval</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.047 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.063 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-06-load-plugin-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/7fa034f10609088c6853141b8a9c69f4/06-load_plugin.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">06-load_plugin.py</span></code></a></p>

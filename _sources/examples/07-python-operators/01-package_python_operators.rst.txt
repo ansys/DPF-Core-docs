@@ -370,7 +370,7 @@ Use the operator
 .. code-block:: default
 
 
-    ds = dpf.DataSources(dpf.upload_file_in_tmp_folder(examples.static_rst))
+    ds = dpf.DataSources(dpf.upload_file_in_tmp_folder(examples.find_static_rst()))
     displacement = dpf.operators.result.displacement(data_sources=ds)
     norm = dpf.operators.math.norm(displacement)
     new_operator.inputs.connect(norm)
@@ -402,7 +402,7 @@ Use the operator
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.158 seconds)
+   **Total running time of the script:** ( 0 minutes  3.193 seconds)
 
 
 .. _sphx_glr_download_examples_07-python-operators_01-package_python_operators.py:

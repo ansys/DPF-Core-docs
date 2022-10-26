@@ -39,7 +39,13 @@ three types of servers are supported:
 - :class:`ansys.dpf.core.server_types.LegacyGrpcServer` using gRPC communication through the
   Python module ``ansys.grpc.dpf``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-27
+To change the default type of server's configuration used by DPF change:
+
+- the global variable ``SERVER_CONFIGURATION`` at the beginning of the python script.
+- the environment variable ``DPF_SERVER_TYPE`` before running the python executable, see
+  :class:`ansys.dpf.core.server_factory.ServerConfig` for more information.
+
+.. GENERATED FROM PYTHON SOURCE LINES 30-33
 
 .. code-block:: default
 
@@ -53,12 +59,12 @@ three types of servers are supported:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-30
+.. GENERATED FROM PYTHON SOURCE LINES 34-36
 
 Start servers with custom server configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-39
+.. GENERATED FROM PYTHON SOURCE LINES 36-45
 
 .. code-block:: default
 
@@ -78,11 +84,11 @@ Start servers with custom server configuration
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-41
+.. GENERATED FROM PYTHON SOURCE LINES 46-47
 
 Equivalent to:
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-56
+.. GENERATED FROM PYTHON SOURCE LINES 47-62
 
 .. code-block:: default
 
@@ -108,12 +114,12 @@ Equivalent to:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-59
+.. GENERATED FROM PYTHON SOURCE LINES 63-65
 
 Create data on different servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-74
+.. GENERATED FROM PYTHON SOURCE LINES 65-80
 
 .. code-block:: default
 
@@ -145,31 +151,31 @@ Create data on different servers
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.InProcessServer'> DPF Server: {'server_ip': '', 'server_port': None, 'server_process_id': 4692, 'server_version': '5.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.InProcessServer'> DPF Server: {'server_ip': '', 'server_port': None, 'server_process_id': 5064, 'server_version': '5.0', 'os': 'nt'}
     DPF  Field
       Location: Nodal
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.GrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50056, 'server_process_id': 2792, 'server_version': '5.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.GrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50056, 'server_process_id': 4772, 'server_version': '5.0', 'os': 'nt'}
     DPF  Field
       Location: Nodal
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50057, 'server_process_id': 2340, 'server_version': '5.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50054, 'server_process_id': 5932, 'server_version': '5.0', 'os': 'nt'}
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-79
+.. GENERATED FROM PYTHON SOURCE LINES 81-85
 
 Choose default configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Once a default configuration is chosen, a server of the chosen type is
 automatically started when a DPF object is created:
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-90
+.. GENERATED FROM PYTHON SOURCE LINES 85-96
 
 .. code-block:: default
 
@@ -197,7 +203,7 @@ automatically started when a DPF object is created:
       Unit: 
       2 entities 
       Data:1 components and 2 elementary data 
-     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50055, 'server_process_id': 4152, 'server_version': '5.0', 'os': 'nt'}
+     <class 'ansys.dpf.core.server_types.LegacyGrpcServer'> DPF Server: {'server_ip': '127.0.0.1', 'server_port': 50055, 'server_process_id': 1396, 'server_version': '5.0', 'os': 'nt'}
 
 
 
@@ -205,7 +211,7 @@ automatically started when a DPF object is created:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.688 seconds)
+   **Total running time of the script:** ( 0 minutes  0.734 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_11-server_types.py:

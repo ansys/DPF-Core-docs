@@ -182,7 +182,7 @@ Specify the file path.
 .. code-block:: default
 
 
-    base_path = examples.distributed_msup_folder
+    base_path = examples.find_distributed_msup_folder()
     files = [os.path.join(base_path, "file0.mode"), os.path.join(base_path, "file1.mode")]
     files_aux = [os.path.join(base_path, "file0.rst"), os.path.join(base_path, "file1.rst")]
 
@@ -374,7 +374,7 @@ Connect the operator chains together and get the output
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.689 seconds)
+   **Total running time of the script:** ( 0 minutes  2.877 seconds)
 
 
 .. _sphx_glr_download_examples_06-distributed-post_03-distributed-msup_expansion_steps.py:
