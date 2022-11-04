@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Getting Started with DPF Server &#8212; PyDPF-Core</title>
+    
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css\ansys_sphinx_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    
+        <link href="../_static/css/breadcrumbs.css" rel="stylesheet">
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User guide" href="../user_guide/index.html" />
+    <link rel="prev" title="DPF in Docker" href="docker.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/pyansys-logo-black-cropped.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/pyansys-logo-black-cropped.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Getting started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../user_guide/index.html">
+  User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/index.html">
+  API reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../operator_reference.html">
+  Operators
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../contributing.html">
+  Contribute
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pydpf-core" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+    
+        <div class="container-xl">
+    <div class="row">
+        <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
+        <div class="col-12 col-md-11 col-xl-9" id="breadcrumbs">
+          
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+    
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
+    
+    
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDPF-Core</a> » </li>
+    
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Getting started</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">Getting Started with DPF Server</a></li> 
+      </ul>
+    </div>
+        </div>
+  </div>
+</div>
+    
+
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="compatibility.html">
+   Compatibility
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="install.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dependencies.html">
+   Dependencies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="docker.html">
+   DPF in Docker
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Getting Started with DPF Server
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-dpf-server">
+   What is DPF Server
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-dpf-server">
+   Installing DPF Server
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-dpf-server">
+   Using DPF Server
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-pydpf-core-and-pydpf-post-clients-with-dpf-server">
+     Using PyDPF-Core and PyDPF-Post clients with DPF Server
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-dpf-server">
+     Running the DPF Server
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-dpf-server-in-a-docker-container">
+     Running the DPF Server in a Docker container
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license-terms">
+   License terms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dpf-user-license-agreement">
+     DPF User License Agreement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ansys-licensing">
+     Ansys licensing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <span class="target" id="ref-getting-started-with-dpf-server"></span><section id="getting-started-with-dpf-server">
+<h1>Getting Started with DPF Server<a class="headerlink" href="#getting-started-with-dpf-server" title="Permalink to this heading">#</a></h1>
+<section id="what-is-dpf-server">
+<h2>What is DPF Server<a class="headerlink" href="#what-is-dpf-server" title="Permalink to this heading">#</a></h2>
+<p>The Data Processing Framework (DPF) provides numerical simulation users and engineers with a toolbox for accessing and transforming
+simulation data. With DPF, you can perform complex preprocessing or postprocessing of large amounts of simulation data within a
+simulation workflow.</p>
+<p>DPF Server is a package that contains all the necessary files to run the DPF Server, enabling DPF capabilities. It is available
+on the Ansys Customer Portal.</p>
+<p>For more information about DPF and its use, see <a class="reference external" href="https://dpf.docs.pyansys.com/">https://dpf.docs.pyansys.com/</a>.</p>
+</section>
+<section id="installing-dpf-server">
+<h2>Installing DPF Server<a class="headerlink" href="#installing-dpf-server" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" id="target-to-installing-server">
+<li><p>Download the ansys_dpf_server_win_v2023.2.pre0.zip or ansys_dpf_server_lin_v2023.2.pre0.zip file as appropriate.</p></li>
+<li><p>Unzip the package.</p></li>
+</ol>
+</section>
+<section id="using-dpf-server">
+<h2>Using DPF Server<a class="headerlink" href="#using-dpf-server" title="Permalink to this heading">#</a></h2>
+<section id="using-pydpf-core-and-pydpf-post-clients-with-dpf-server">
+<h3>Using PyDPF-Core and PyDPF-Post clients with DPF Server<a class="headerlink" href="#using-pydpf-core-and-pydpf-post-clients-with-dpf-server" title="Permalink to this heading">#</a></h3>
+<p>PyDPF-Core and PyDPF-Post are python clients relying on a DPF Server.
+The instructions to install and get started with PyDPF-Core (ansys-dpf-core module) can be found
+at <a class="reference external" href="https://dpf.docs.pyansys.com/getting_started/install.html">https://dpf.docs.pyansys.com/getting_started/install.html</a>.</p>
+<p>Starting Python environment, set AWP_ROOT232 environment variable to use DPF Server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;AWP_ROOT232&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;D:\ansys_dpf_server\v232&quot;</span> <span class="c1"># path to DPF Server root</span>
+</pre></div>
+</div>
+<p>PyDPF-Core and PyDPF-Post python modules can now be used.</p>
+</section>
+<section id="running-the-dpf-server">
+<h3>Running the DPF Server<a class="headerlink" href="#running-the-dpf-server" title="Permalink to this heading">#</a></h3>
+<p>On Windows, start the DPF Server by running the Ans.Dpf.Grpc.bat file in the unzipped package.
+On Linux, start the DPF Server by running the Ans.Dpf.Grpc.sh file in the unzipped package.</p>
+</section>
+<section id="running-the-dpf-server-in-a-docker-container">
+<h3>Running the DPF Server in a Docker container<a class="headerlink" href="#running-the-dpf-server-in-a-docker-container" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Along with the ansys_dpf_server_lin_v2023.2.pre0.zip archive mentioned in <a class="reference internal" href="#target-to-installing-server"><span class="std std-ref">Installing DPF Server</span></a>, download the Dockerfile.</p></li>
+<li><p>Copy both the archive and Dockerfile in a folder and navigate into that folder.</p></li>
+<li><p>To build the DPF Docker container, run the following commands:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">build</span> <span class="o">.</span> <span class="o">-</span><span class="n">t</span> <span class="n">dpf</span><span class="o">-</span><span class="n">core</span><span class="p">:</span><span class="n">v2023</span><span class="mf">.2</span><span class="o">.</span><span class="n">pre0</span> <span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">arg</span> <span class="n">DPF_VERSION</span><span class="o">=</span><span class="mi">232</span> <span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">arg</span> <span class="n">DPF_SERVER_FILE</span><span class="o">=</span><span class="n">ansys_dpf_server_lin_v2023</span><span class="mf">.2</span><span class="o">.</span><span class="n">pre0</span><span class="o">.</span><span class="n">zip</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>To run the DPF Docker container, see the <a class="reference internal" href="#target-to-license-terms"><span class="std std-ref">License terms</span></a> section.</p></li>
+</ol>
+</section>
+</section>
+<section id="license-terms">
+<h2>License terms<a class="headerlink" href="#license-terms" title="Permalink to this heading">#</a></h2>
+<section id="dpf-user-license-agreement">
+<h3>DPF User License Agreement<a class="headerlink" href="#dpf-user-license-agreement" title="Permalink to this heading">#</a></h3>
+<p id="target-to-license-terms">DPF Server is protected using license terms specified in the DPFUserLicensingAgreement.txt file that
+can be found on the Ansys Customer Portal, along with this file.</p>
+<p>To accept the DPF User Licensing Agreement terms, the following environment flag must be set:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ANSYS_DPF_ACCEPT_LA=Y&quot;</span>
+</pre></div>
+</div>
+<p>ANSYS_DPF_ACCEPT_LA confirms your acceptance of the DPF User Licensing Agreement. By passing the value “Y” to the environment variable
+“ANSYS_DPF_ACCEPT_LA”, you are expressing that you have a valid and existing license for the edition and version of DPF server you intend to use.</p>
+<p>For a DPF Docker container usage, it can be set using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;ANSYS_DPF_ACCEPT_LA=Y&quot;</span> <span class="o">-</span><span class="n">p</span> <span class="mi">50052</span><span class="p">:</span><span class="mi">50052</span> <span class="o">-</span><span class="n">e</span> <span class="n">DOCKER_SERVER_PORT</span><span class="o">=</span><span class="mi">50052</span> <span class="o">--</span><span class="n">expose</span><span class="o">=</span><span class="mi">50052</span> <span class="n">dpf</span><span class="o">-</span><span class="n">core</span><span class="p">:</span><span class="n">v2023</span><span class="mf">.2</span><span class="o">.</span><span class="n">pre0</span>
+</pre></div>
+</div>
+<p>For any other case, set “ANSYS_DPF_ACCEPT_LA” as an environment variable with “Y” value.</p>
+</section>
+<section id="ansys-licensing">
+<h3>Ansys licensing<a class="headerlink" href="#ansys-licensing" title="Permalink to this heading">#</a></h3>
+<p>DPF Server is protected by Ansys licensing mechanism.
+Setting ANSYSLMD_LICENSE_FILE environment variable might also be needed.</p>
+</section>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
