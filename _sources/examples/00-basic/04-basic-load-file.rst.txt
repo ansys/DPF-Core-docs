@@ -28,18 +28,25 @@ This example shows how to write and upload files on the server machine and then
 download them back on the client side. The resulting fields container is then
 exported to a CSV file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-16
+.. note::
+    This example requires the Premium ServerContext.
+    For more information, see :ref:`_ref_getting_started_contexts`.
+
+.. GENERATED FROM PYTHON SOURCE LINES 20-22
 
 Load a model from the DPF-Core examples:
 ``ansys.dpf.core`` module.
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-23
+.. GENERATED FROM PYTHON SOURCE LINES 22-32
 
 .. code-block:: default
 
 
     from ansys.dpf import core as dpf
     from ansys.dpf.core import examples
+
+
+    dpf.set_default_server_context(dpf.AvailableServerContexts.premium)
 
     model = dpf.Model(examples.find_simple_bar())
     mesh = model.metadata.meshed_region
@@ -51,13 +58,13 @@ Load a model from the DPF-Core examples:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-27
+.. GENERATED FROM PYTHON SOURCE LINES 33-36
 
 Get and plot the fields container for the result
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Get the fields container for the result and plot it so you can compare it later:
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-32
+.. GENERATED FROM PYTHON SOURCE LINES 36-41
 
 .. code-block:: default
 
@@ -78,13 +85,13 @@ Get the fields container for the result and plot it so you can compare it later:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-36
+.. GENERATED FROM PYTHON SOURCE LINES 42-45
 
 Export result
 ~~~~~~~~~~~~~
 Get the fields container for the result and export it in the CSV format:
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-46
+.. GENERATED FROM PYTHON SOURCE LINES 45-55
 
 .. code-block:: default
 
@@ -105,7 +112,7 @@ Get the fields container for the result and export it in the CSV format:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-54
+.. GENERATED FROM PYTHON SOURCE LINES 56-63
 
 Upload CSV result file
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -115,7 +122,7 @@ it is assumed that the server machine architecture is unknown.
 However, when the server file path is known, :func:`upload_file`
 can be used.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-62
+.. GENERATED FROM PYTHON SOURCE LINES 63-71
 
 .. code-block:: default
 
@@ -134,13 +141,13 @@ can be used.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-66
+.. GENERATED FROM PYTHON SOURCE LINES 72-75
 
 Download CSV result file
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Download the file ``simple_bar_fc.csv``:
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-73
+.. GENERATED FROM PYTHON SOURCE LINES 75-82
 
 .. code-block:: default
 
@@ -158,13 +165,13 @@ Download the file ``simple_bar_fc.csv``:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-77
+.. GENERATED FROM PYTHON SOURCE LINES 83-86
 
 Load CSV result file as operator input
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Load the fields container contained in the CSV file as an operator input:
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-87
+.. GENERATED FROM PYTHON SOURCE LINES 86-96
 
 .. code-block:: default
 
@@ -190,13 +197,13 @@ Load the fields container contained in the CSV file as an operator input:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-91
+.. GENERATED FROM PYTHON SOURCE LINES 97-100
 
 Make operations over the imported fields container
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Use this fields container:
+Use this fields container to get the minimum displacement:
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-96
+.. GENERATED FROM PYTHON SOURCE LINES 100-106
 
 .. code-block:: default
 
@@ -205,6 +212,7 @@ Use this fields container:
     min_max_op.inputs.fields_container.connect(downloaded_fc_out)
     min_field = min_max_op.outputs.field_min()
     min_field.data
+
 
 
 
@@ -218,10 +226,78 @@ Use this fields container:
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 107-110
+
+Compare the original and the downloaded fields container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Subtract the two fields and plot an error map:
+
+.. GENERATED FROM PYTHON SOURCE LINES 110-120
+
+.. code-block:: default
+
+    abs_error = (fc_out - downloaded_fc_out).eval()
+
+    divide = dpf.operators.math.component_wise_divide()
+    divide.inputs.fieldA.connect(fc_out - downloaded_fc_out)
+    divide.inputs.fieldB.connect(fc_out)
+    scale = dpf.operators.math.scale()
+    scale.inputs.field.connect(divide)
+    scale.inputs.ponderation.connect(100.)
+    rel_error = scale.eval()
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 121-129
+
+Plot both absolute and relative error fields
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Note that the absolute error is bigger where the displacements are
+bigger, at the tip of the geometry.
+Instead, the relative error is similar accross the geometry since we
+are dividing by the displacements ``fc_out``.
+Both plots show errors that can be understood as zero due to machine precision
+(1e-12 mm for the absolute error and 1e-5% for the relative error).
+
+.. GENERATED FROM PYTHON SOURCE LINES 129-131
+
+.. code-block:: default
+
+    mesh.plot(abs_error, scalar_bar_args={'title': "Absolute error [mm]"})
+    mesh.plot(rel_error, scalar_bar_args={'title': "Relative error [%]"})
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /examples/00-basic/images/sphx_glr_04-basic-load-file_003.png
+          :alt: 04 basic load file
+          :srcset: /examples/00-basic/images/sphx_glr_04-basic-load-file_003.png
+          :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /examples/00-basic/images/sphx_glr_04-basic-load-file_004.png
+          :alt: 04 basic load file
+          :srcset: /examples/00-basic/images/sphx_glr_04-basic-load-file_004.png
+          :class: sphx-glr-multi-img
+
+
+
+
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.095 seconds)
+   **Total running time of the script:** ( 0 minutes  4.987 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_04-basic-load-file.py:

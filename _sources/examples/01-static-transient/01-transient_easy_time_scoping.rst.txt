@@ -22,9 +22,9 @@
 
 Choose a time scoping for a transient analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This example shows how to use a model's results to choose a time scoping.
+This example shows how to use a model's result to choose a time scoping.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-15
+.. GENERATED FROM PYTHON SOURCE LINES 10-16
 
 .. code-block:: default
 
@@ -41,12 +41,12 @@ This example shows how to use a model's results to choose a time scoping.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-18
+.. GENERATED FROM PYTHON SOURCE LINES 17-19
 
 Create the model and display the state of the result. This transient result
 file contains several individual results, each at a different times.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-23
+.. GENERATED FROM PYTHON SOURCE LINES 19-24
 
 .. code-block:: default
 
@@ -117,14 +117,14 @@ file contains several individual results, each at a different times.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-28
+.. GENERATED FROM PYTHON SOURCE LINES 25-29
 
 Obtain minimum and maximum displacements at all times
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Create a displacement operator and set its time scoping request to
 the entire time frequency support:
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-38
+.. GENERATED FROM PYTHON SOURCE LINES 29-39
 
 .. code-block:: default
 
@@ -154,11 +154,11 @@ the entire time frequency support:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-40
+.. GENERATED FROM PYTHON SOURCE LINES 40-41
 
 Plot the minimum and maximum displacements over time:
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-49
+.. GENERATED FROM PYTHON SOURCE LINES 41-50
 
 .. code-block:: default
 
@@ -183,7 +183,7 @@ Plot the minimum and maximum displacements over time:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-55
+.. GENERATED FROM PYTHON SOURCE LINES 51-56
 
 Use time extrapolation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -191,7 +191,7 @@ A local maximum can be seen on the plot between 0.05 and 0.075 seconds.
 Displacement is evaluated every 0.0005 seconds in this range
 to draw a nicer plot on this range.
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-60
+.. GENERATED FROM PYTHON SOURCE LINES 56-61
 
 .. code-block:: default
 
@@ -213,11 +213,11 @@ to draw a nicer plot on this range.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-62
+.. GENERATED FROM PYTHON SOURCE LINES 62-63
 
 Create a displacement operator and set its time scoping request:
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-72
+.. GENERATED FROM PYTHON SOURCE LINES 63-73
 
 .. code-block:: default
 
@@ -253,11 +253,11 @@ Create a displacement operator and set its time scoping request:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-74
+.. GENERATED FROM PYTHON SOURCE LINES 74-75
 
 Plot the minimum and maximum displacements over time:
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-80
+.. GENERATED FROM PYTHON SOURCE LINES 75-81
 
 .. code-block:: default
 
@@ -282,7 +282,7 @@ Plot the minimum and maximum displacements over time:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.219 seconds)
+   **Total running time of the script:** ( 0 minutes  0.281 seconds)
 
 
 .. _sphx_glr_download_examples_01-static-transient_01-transient_easy_time_scoping.py:

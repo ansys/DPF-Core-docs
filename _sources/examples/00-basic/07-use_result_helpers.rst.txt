@@ -22,14 +22,15 @@
 
 Use result helpers to load custom data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The ``Result`` class, which is an instance created by the ``Model``, gives
+The :class:`Result <ansys.dpf.core.results.Result>` class, which is an instance
+created by the :class:`Model <ansys.dpf.core.model.Model>`, gives
 access to helpers for requesting results on specific mesh and time scopings.
 With these helpers, working on a custom spatial and temporal subset of the
 model is straightforward.
 
 Import necessary modules:
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-17
+.. GENERATED FROM PYTHON SOURCE LINES 15-19
 
 .. code-block:: default
 
@@ -44,11 +45,11 @@ Import necessary modules:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-19
+.. GENERATED FROM PYTHON SOURCE LINES 20-21
 
 Create a model object to establish a connection with an example result file:
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-22
+.. GENERATED FROM PYTHON SOURCE LINES 21-24
 
 .. code-block:: default
 
@@ -94,13 +95,13 @@ Create a model object to establish a connection with an example result file:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-26
+.. GENERATED FROM PYTHON SOURCE LINES 25-28
 
 Visualize specific mode shapes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Choose the modes to visualize:
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-30
+.. GENERATED FROM PYTHON SOURCE LINES 28-32
 
 .. code-block:: default
 
@@ -115,17 +116,17 @@ Choose the modes to visualize:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-34
+.. GENERATED FROM PYTHON SOURCE LINES 33-36
 
 Choose a spatial subset
 ~~~~~~~~~~~~~~~~~~~~~~~
 Work on only a named selection (or component).
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-37
+.. GENERATED FROM PYTHON SOURCE LINES 38-39
 
 Print the available named selection:
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-39
+.. GENERATED FROM PYTHON SOURCE LINES 39-41
 
 .. code-block:: default
 
@@ -144,11 +145,11 @@ Print the available named selection:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-41
+.. GENERATED FROM PYTHON SOURCE LINES 42-43
 
 Specify to the result that you want to work on a specific named selection:
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-50
+.. GENERATED FROM PYTHON SOURCE LINES 43-52
 
 .. code-block:: default
 
@@ -192,11 +193,11 @@ Specify to the result that you want to work on a specific named selection:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-52
+.. GENERATED FROM PYTHON SOURCE LINES 53-54
 
 Specify to the result that you want to work on specific nodes:
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-61
+.. GENERATED FROM PYTHON SOURCE LINES 54-63
 
 .. code-block:: default
 
@@ -243,7 +244,7 @@ Specify to the result that you want to work on specific nodes:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.457 seconds)
+   **Total running time of the script:** ( 0 minutes  7.208 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_07-use_result_helpers.py:

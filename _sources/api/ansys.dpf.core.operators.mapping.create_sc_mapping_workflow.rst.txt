@@ -1,2 +1,0 @@
-.. automodule:: ansys.dpf.core.operators.mapping.create_sc_mapping_workflow
-   :inherited-members:

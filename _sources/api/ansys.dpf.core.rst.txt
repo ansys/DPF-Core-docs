@@ -57,6 +57,7 @@ Submodules
    ansys.dpf.core.scoping
    ansys.dpf.core.scopings_container
    ansys.dpf.core.server
+   ansys.dpf.core.server_context
    ansys.dpf.core.server_factory
    ansys.dpf.core.server_types
    ansys.dpf.core.session

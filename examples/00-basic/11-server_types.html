@@ -622,12 +622,12 @@ to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="communicate-in-process-or-via-grpc">
 <span id="ref-server-types-example"></span><span id="sphx-glr-examples-00-basic-11-server-types-py"></span><h1>Communicate in process or via gRPC<a class="headerlink" href="#communicate-in-process-or-via-grpc" title="Permalink to this heading">#</a></h1>
-<p>Starting with Ansys 2022 R2, PyDPF can communication either In Process or via gRPC
+<p>Starting with Ansys 2022 R2, PyDPF can communicate either via In Process or via gRPC
 with DPF C++ core server (<code class="docutils literal notranslate"><span class="pre">Ans.Dpf.Grpc.exe</span></code>). To choose which type of
 <a class="reference internal" href="../../api/ansys.dpf.core.server_types.html#ansys.dpf.core.server_types.BaseServer" title="ansys.dpf.core.server_types.BaseServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.server_types.BaseServer</span></code></a> (object defining the type of communication
 and the server instance to communicate with) to use, a
 <a class="reference internal" href="../../api/ansys.dpf.core.server_factory.html#ansys.dpf.core.server_factory.ServerConfig" title="ansys.dpf.core.server_factory.ServerConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.server_factory.ServerConfig</span></code></a> class should be used.
-Until Ansys 2022R1, only gRPC communication using python module ansys.grpc.dpf is supported
+Until Ansys 2022R1, only gRPC communication using python module <code class="docutils literal notranslate"><span class="pre">ansys.grpc.dpf</span></code> is supported
 (now called <a class="reference internal" href="../../api/ansys.dpf.core.server_types.html#ansys.dpf.core.server_types.LegacyGrpcServer" title="ansys.dpf.core.server_types.LegacyGrpcServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.server_types.LegacyGrpcServer</span></code></a>), starting with Ansys 2022 R2,
 three types of servers are supported:</p>
 <ul class="simple">
@@ -659,9 +659,7 @@ Python module <code class="docutils literal notranslate"><span class="pre">ansys
 </pre></div>
 </div>
 <p>Equivalent to:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">in_process_config</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">ServerConfig</span><span class="p">(</span>
-    <span class="n">protocol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">legacy</span><span class="o">=</span><span class="kc">False</span>
-<span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">in_process_config</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">ServerConfig</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">legacy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">grpc_config</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">ServerConfig</span><span class="p">(</span>
     <span class="n">protocol</span><span class="o">=</span><span class="n">dpf</span><span class="o">.</span><span class="n">server_factory</span><span class="o">.</span><span class="n">CommunicationProtocols</span><span class="o">.</span><span class="n">gRPC</span><span class="p">,</span> <span class="n">legacy</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
@@ -678,14 +676,14 @@ Python module <code class="docutils literal notranslate"><span class="pre">ansys
 <section id="create-data-on-different-servers">
 <h1>Create data on different servers<a class="headerlink" href="#create-data-on-different-servers" title="Permalink to this heading">#</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">in_process_field</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">fields_factory</span><span class="o">.</span><span class="n">create_scalar_field</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="n">in_process_server</span><span class="p">)</span>
-<span class="n">in_process_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">1.</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">in_process_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">2.</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">in_process_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">1.0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">in_process_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">2.0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">grpc_field</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">fields_factory</span><span class="o">.</span><span class="n">create_scalar_field</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="n">grpc_server</span><span class="p">)</span>
-<span class="n">grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">1.</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">2.</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">1.0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">2.0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">legacy_grpc_field</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">fields_factory</span><span class="o">.</span><span class="n">create_scalar_field</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="n">legacy_grpc_server</span><span class="p">)</span>
-<span class="n">legacy_grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">1.</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">legacy_grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">2.</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">legacy_grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">1.0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">legacy_grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">2.0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">in_process_field</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">in_process_field</span><span class="o">.</span><span class="n">_server</span><span class="p">),</span> <span class="n">in_process_field</span><span class="o">.</span><span class="n">_server</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grpc_field</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">grpc_field</span><span class="o">.</span><span class="n">_server</span><span class="p">),</span> <span class="n">grpc_field</span><span class="o">.</span><span class="n">_server</span><span class="p">)</span>
@@ -697,19 +695,19 @@ Python module <code class="docutils literal notranslate"><span class="pre">ansys
   Unit:
   2 entities
   Data:1 components and 2 elementary data
- &lt;class &#39;ansys.dpf.core.server_types.InProcessServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;&#39;, &#39;server_port&#39;: None, &#39;server_process_id&#39;: 5064, &#39;server_version&#39;: &#39;5.0&#39;, &#39;os&#39;: &#39;nt&#39;}
+ &lt;class &#39;ansys.dpf.core.server_types.InProcessServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;&#39;, &#39;server_port&#39;: None, &#39;server_process_id&#39;: 496, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
 DPF  Field
   Location: Nodal
   Unit:
   2 entities
   Data:1 components and 2 elementary data
- &lt;class &#39;ansys.dpf.core.server_types.GrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50056, &#39;server_process_id&#39;: 4772, &#39;server_version&#39;: &#39;5.0&#39;, &#39;os&#39;: &#39;nt&#39;}
+ &lt;class &#39;ansys.dpf.core.server_types.GrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50056, &#39;server_process_id&#39;: 2616, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
 DPF  Field
   Location: Nodal
   Unit:
   2 entities
   Data:1 components and 2 elementary data
- &lt;class &#39;ansys.dpf.core.server_types.LegacyGrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50054, &#39;server_process_id&#39;: 5932, &#39;server_version&#39;: &#39;5.0&#39;, &#39;os&#39;: &#39;nt&#39;}
+ &lt;class &#39;ansys.dpf.core.server_types.LegacyGrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50054, &#39;server_process_id&#39;: 5476, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
 </pre></div>
 </div>
 </section>
@@ -721,8 +719,8 @@ automatically started when a DPF object is created:</p>
 
 <span class="n">dpf</span><span class="o">.</span><span class="n">SERVER_CONFIGURATION</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerConfigs</span><span class="o">.</span><span class="n">GrpcServer</span>
 <span class="n">grpc_field</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">fields_factory</span><span class="o">.</span><span class="n">create_scalar_field</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">1.</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">2.</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">1.0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">grpc_field</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">2.0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grpc_field</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">grpc_field</span><span class="o">.</span><span class="n">_server</span><span class="p">),</span> <span class="n">grpc_field</span><span class="o">.</span><span class="n">_server</span><span class="p">)</span>
 
 <span class="c1"># Go back to default config:</span>
@@ -734,10 +732,10 @@ automatically started when a DPF object is created:</p>
   Unit:
   2 entities
   Data:1 components and 2 elementary data
- &lt;class &#39;ansys.dpf.core.server_types.LegacyGrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50055, &#39;server_process_id&#39;: 1396, &#39;server_version&#39;: &#39;5.0&#39;, &#39;os&#39;: &#39;nt&#39;}
+ &lt;class &#39;ansys.dpf.core.server_types.LegacyGrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50055, &#39;server_process_id&#39;: 3128, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.734 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.174 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-11-server-types-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/7c9ba1e7af07b7f46a02d30c998186bb/11-server_types.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">11-server_types.py</span></code></a></p>

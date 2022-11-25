@@ -22,12 +22,13 @@
 
 Use Result Helpers to compare mode shapes for solids and then shells
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The `Result` class which instances are created by the `Model` gives access to
+The :class:`Result <ansys.dpf.core.results.Result>` class which instances
+are created by the :class:`Model <ansys.dpf.core.model.Model>` gives access to
 helpers to request results on specific mesh and time scopings.
 With those helpers, working on a custom spatial and temporal subset of the
 model is straightforward.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-15
+.. GENERATED FROM PYTHON SOURCE LINES 13-17
 
 .. code-block:: default
 
@@ -42,12 +43,12 @@ model is straightforward.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-18
+.. GENERATED FROM PYTHON SOURCE LINES 18-20
 
 First, create a model object to establish a connection with an
 example result file
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-21
+.. GENERATED FROM PYTHON SOURCE LINES 20-23
 
 .. code-block:: default
 
@@ -141,13 +142,13 @@ example result file
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-25
+.. GENERATED FROM PYTHON SOURCE LINES 24-27
 
 Visualize specific mode shapes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Choose the modes to visualize
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-27
+.. GENERATED FROM PYTHON SOURCE LINES 27-29
 
 .. code-block:: default
 
@@ -160,12 +161,12 @@ Choose the modes to visualize
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-30
+.. GENERATED FROM PYTHON SOURCE LINES 30-32
 
 Choose to split the displacement on solid/shell/beam to only focus on shell
 elements
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-35
+.. GENERATED FROM PYTHON SOURCE LINES 32-37
 
 .. code-block:: default
 
@@ -212,12 +213,12 @@ elements
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-38
+.. GENERATED FROM PYTHON SOURCE LINES 38-40
 
 Choose to split the displacement on solid/shell/beam to only focus on solid
 elements
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-42
+.. GENERATED FROM PYTHON SOURCE LINES 40-44
 
 .. code-block:: default
 
@@ -266,7 +267,7 @@ elements
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.475 seconds)
+   **Total running time of the script:** ( 0 minutes  12.103 seconds)
 
 
 .. _sphx_glr_download_examples_02-modal-harmonic_03-compare_modes.py:

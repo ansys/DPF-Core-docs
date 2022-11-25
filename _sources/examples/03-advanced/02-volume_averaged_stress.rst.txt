@@ -28,7 +28,11 @@ For each list of elements, the elemental stress equivalent is multiplied by the
 volume of each element. This result is then accumulated to divide it by the
 total volume.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-16
+.. note::
+    This example requires the Premium ServerContext.
+    For more information, see :ref:`_ref_getting_started_contexts`.
+
+.. GENERATED FROM PYTHON SOURCE LINES 17-24
 
 .. code-block:: default
 
@@ -37,19 +41,22 @@ total volume.
     from ansys.dpf.core import operators as ops
 
 
+    dpf.set_default_server_context(dpf.AvailableServerContexts.premium)
 
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-20
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 25-28
 
 Create a model targeting a given result file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The model provides easy access to the mesh and time frequency support.
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-37
+.. GENERATED FROM PYTHON SOURCE LINES 28-45
 
 .. code-block:: default
 
@@ -77,12 +84,12 @@ The model provides easy access to the mesh and time frequency support.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-40
+.. GENERATED FROM PYTHON SOURCE LINES 46-48
 
 Read the volume by element
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-44
+.. GENERATED FROM PYTHON SOURCE LINES 48-52
 
 .. code-block:: default
 
@@ -97,12 +104,12 @@ Read the volume by element
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-47
+.. GENERATED FROM PYTHON SOURCE LINES 53-55
 
 Find the minimum list of elements by node to get the volume check
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-89
+.. GENERATED FROM PYTHON SOURCE LINES 55-97
 
 .. code-block:: default
 
@@ -155,7 +162,7 @@ Find the minimum list of elements by node to get the volume check
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-99
+.. GENERATED FROM PYTHON SOURCE LINES 98-107
 
 Create workflow
 ~~~~~~~~~~~~~~~
@@ -167,7 +174,7 @@ For each list of elements surrounding nodes:
 - Divide this sum by the total volume on these elements.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-133
+.. GENERATED FROM PYTHON SOURCE LINES 107-141
 
 .. code-block:: default
 
@@ -212,12 +219,12 @@ For each list of elements surrounding nodes:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-136
+.. GENERATED FROM PYTHON SOURCE LINES 142-144
 
 Plot equivalent elemental stress and volume averaged elemental equivalent stress
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-139
+.. GENERATED FROM PYTHON SOURCE LINES 144-147
 
 .. code-block:: default
 
@@ -248,13 +255,13 @@ Plot equivalent elemental stress and volume averaged elemental equivalent stress
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-143
+.. GENERATED FROM PYTHON SOURCE LINES 148-151
 
 Use the operator instead
 ~~~~~~~~~~~~~~~~~~~~~~~~
 An operator with the same algorithm has been implemented
 
-.. GENERATED FROM PYTHON SOURCE LINES 143-160
+.. GENERATED FROM PYTHON SOURCE LINES 151-168
 
 .. code-block:: default
 
@@ -290,7 +297,7 @@ An operator with the same algorithm has been implemented
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.189 seconds)
+   **Total running time of the script:** ( 0 minutes  3.581 seconds)
 
 
 .. _sphx_glr_download_examples_03-advanced_02-volume_averaged_stress.py:

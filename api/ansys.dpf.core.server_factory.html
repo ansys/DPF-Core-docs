@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Server types" href="ansys.dpf.core.server_types.html" />
-    <link rel="prev" title="Server" href="ansys.dpf.core.server.html" />
+    <link rel="prev" title="ServerContext" href="ansys.dpf.core.server_context.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
   </head>
@@ -543,6 +543,16 @@
       </label>
       <ul>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.invariant.convertnum_bcs_to_nod.html">
+         convertnum_bcs_to_nod
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.invariant.convertnum_nod_to_bcs.html">
+         convertnum_nod_to_bcs
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.invariant.eigen_values.html">
          eigen_values
         </a>
@@ -691,11 +701,6 @@
        </i>
       </label>
       <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys.dpf.core.operators.mapping.create_sc_mapping_workflow.html">
-         create_sc_mapping_workflow
-        </a>
-       </li>
        <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.mapping.find_reduced_coordinates.html">
          find_reduced_coordinates
@@ -969,11 +974,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="ansys.dpf.core.operators.math.min_max_over_time.html">
-         min_max_over_time
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.math.minus.html">
          minus
         </a>
@@ -1136,11 +1136,6 @@
       </label>
       <ul>
        <li class="toctree-l4">
-        <a class="reference internal" href="ansys.dpf.core.operators.mesh.acmo_mesh_provider.html">
-         acmo_mesh_provider
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.mesh.beam_properties.html">
          beam_properties
         </a>
@@ -1153,6 +1148,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.mesh.combine_levelset.html">
          combine_levelset
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.mesh.decimate_mesh.html">
+         decimate_mesh
         </a>
        </li>
        <li class="toctree-l4">
@@ -1223,11 +1223,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.mesh.node_coordinates.html">
          node_coordinates
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys.dpf.core.operators.mesh.point_cloud_search.html">
-         point_cloud_search
         </a>
        </li>
        <li class="toctree-l4">
@@ -1482,13 +1477,83 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.beam_axial_force.html">
+         beam_axial_force
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.beam_axial_plastic_strain.html">
+         beam_axial_plastic_strain
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.beam_axial_stress.html">
+         beam_axial_stress
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.beam_axial_total_strain.html">
+         beam_axial_total_strain
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.beam_rs_shear_stress.html">
+         beam_rs_shear_stress
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.beam_s_bending_moment.html">
+         beam_s_bending_moment
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.beam_s_shear_force.html">
+         beam_s_shear_force
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.beam_t_bending_moment.html">
+         beam_t_bending_moment
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.beam_t_shear_force.html">
+         beam_t_shear_force
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.beam_torsional_moment.html">
+         beam_torsional_moment
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.beam_tr_shear_stress.html">
+         beam_tr_shear_stress
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.cms_dst_table_provider.html">
+         cms_dst_table_provider
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.cms_matrices_provider.html">
          cms_matrices_provider
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.cms_subfile_info_provider.html">
+         cms_subfile_info_provider
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.co_energy.html">
          co_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.compute_invariant_terms_rbd.html">
+         compute_invariant_terms_rbd
         </a>
        </li>
        <li class="toctree-l4">
@@ -1644,6 +1709,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.coordinate_system.html">
          coordinate_system
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.coordinates.html">
+         coordinates
         </a>
        </li>
        <li class="toctree-l4">
@@ -1892,8 +1962,28 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_internal_energy.html">
+         global_internal_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_kinetic_energy.html">
+         global_kinetic_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.global_to_nodal.html">
          global_to_nodal
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_total_energy.html">
+         global_total_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_velocity.html">
+         global_velocity
         </a>
        </li>
        <li class="toctree-l4">
@@ -1924,6 +2014,36 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.incremental_energy.html">
          incremental_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.initial_coordinates.html">
+         initial_coordinates
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.interface_contact_area.html">
+         interface_contact_area
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.interface_contact_force.html">
+         interface_contact_force
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.interface_contact_mass.html">
+         interface_contact_mass
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.interface_contact_moment.html">
+         interface_contact_moment
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.interface_resultant_contact_force.html">
+         interface_resultant_contact_force
         </a>
        </li>
        <li class="toctree-l4">
@@ -2052,6 +2172,46 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.part_added_mass.html">
+         part_added_mass
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.part_eroded_internal_energy.html">
+         part_eroded_internal_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.part_eroded_kinetic_energy.html">
+         part_eroded_kinetic_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.part_hourglass_energy.html">
+         part_hourglass_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.part_internal_energy.html">
+         part_internal_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.part_kinetic_energy.html">
+         part_kinetic_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.part_momentum.html">
+         part_momentum
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.part_rigid_body_velocity.html">
+         part_rigid_body_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.plastic_state_variable.html">
          plastic_state_variable
         </a>
@@ -2097,6 +2257,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.plastic_strain_eqv.html">
+         plastic_strain_eqv
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.plastic_strain_principal_1.html">
          plastic_strain_principal_1
         </a>
@@ -2129,6 +2294,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.pres_to_field.html">
          pres_to_field
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.pressure.html">
+         pressure
         </a>
        </li>
        <li class="toctree-l4">
@@ -2167,8 +2337,18 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.result_provider.html">
+         result_provider
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.rigid_transformation.html">
          rigid_transformation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.rom_data_provider.html">
+         rom_data_provider
         </a>
        </li>
        <li class="toctree-l4">
@@ -2367,6 +2547,16 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.total_strain.html">
+         total_strain
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.transient_rayleigh_integration.html">
+         transient_rayleigh_integration
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.velocity.html">
          velocity
         </a>
@@ -2384,6 +2574,16 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.velocity_Z.html">
          velocity_Z
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.write_cms_rbd_file.html">
+         write_cms_rbd_file
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.zone_pressure_spectrum.html">
+         zone_pressure_spectrum
         </a>
        </li>
       </ul>
@@ -2645,6 +2845,26 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.utility.extract_scoping.html">
+         extract_scoping
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.utility.extract_sub_fc.html">
+         extract_sub_fc
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.utility.extract_sub_mc.html">
+         extract_sub_mc
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.utility.extract_sub_sc.html">
+         extract_sub_sc
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.utility.extract_time_freq.html">
          extract_time_freq
         </a>
@@ -2672,6 +2892,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.utility.forward_meshes_container.html">
          forward_meshes_container
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.utility.hdf5dpf_custom_read.html">
+         hdf5dpf_custom_read
         </a>
        </li>
        <li class="toctree-l4">
@@ -2762,11 +2987,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.utility.python_generator.html">
          python_generator
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys.dpf.core.operators.utility.python_script_exec.html">
-         python_script_exec
         </a>
        </li>
        <li class="toctree-l4">
@@ -3013,6 +3233,11 @@
      Server
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ansys.dpf.core.server_context.html">
+     ServerContext
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Server factory, server configuration and communication protocols
@@ -3120,7 +3345,111 @@ protocols and server configurations available.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">InProcess</span> <span class="pre">=</span> <span class="pre">&quot;InProcess&quot;</span></span></dt>
-<dd><p>Load DPF’s libraries in the Python process, communicates via a CLayer (shared memory).</p>
+<dd><p>Load the DPF libraries in the Python process, communicates via a CLayer (shared memory).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_factory.</span></span><span class="sig-name descname"><span class="pre">DockerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_docker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mounted_volumes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig" title="Permalink to this definition">#</a></dt>
+<dd><p>Intermediate class encapsulating all the configuration options needed to run a docker
+image of DPF and holding tools to communicate with Docker.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>use_docker</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the DPF server should be started in a Docker Container by default.</p></li>
+<li><p><strong>docker_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of Docker Image to run.</p></li>
+<li><p><strong>mounted_volumes</strong> (<em>dict</em><em>, </em><em>optional</em>) – Dictionary of key = local path and value = path of mounted volumes in the Docker Image.
+To prevent from uploading result files on the Docker Image
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpc.core.server_factory.RunningDockerConfig.replace_with_mounted_volumes()</span></code>
+iterates through this dictionary to replace local path instances by their mapped value.</p></li>
+<li><p><strong>extra_args</strong> (<em>str</em><em>, </em><em>optional</em>) – Extra arguments to add to the docker run command.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.use_docker">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">use_docker</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.use_docker" title="Permalink to this definition">#</a></dt>
+<dd><p>Whether the DPF server should be started in a Docker Container by default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.docker_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">docker_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.docker_name" title="Permalink to this definition">#</a></dt>
+<dd><p>Name of Docker Image to run.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.mounted_volumes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mounted_volumes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.mounted_volumes" title="Permalink to this definition">#</a></dt>
+<dd><p>Dictionary of key = local path and value = path of mounted volumes in the Docker Image.
+To prevent from uploading result files on the Docker Image
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpc.core.server_factory.RunningDockerConfig.replace_with_mounted_volumes()</span></code>
+iterates through this dictionary to replace local path instances by their mapped value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.extra_args">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extra_args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.extra_args" title="Permalink to this definition">#</a></dt>
+<dd><p>Extra arguments to add to the docker run command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.docker_run_cmd_command">
+<span class="sig-name descname"><span class="pre">docker_run_cmd_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">docker_server_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.docker_run_cmd_command" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates the docker run command with the <code class="docutils literal notranslate"><span class="pre">DockerConfig</span></code> attributes as well
+as the <code class="docutils literal notranslate"><span class="pre">docker_server_port</span></code> and <code class="docutils literal notranslate"><span class="pre">local_port</span></code> passed in as parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>docker_server_port</strong> (<em>int</em>) – Port used inside the Docker Container to run the gRPC server.</p></li>
+<li><p><strong>local_port</strong> (<em>int</em>) – Port exposed outside the Docker container bounded to the internal
+<code class="docutils literal notranslate"><span class="pre">docker_server_port</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.find_port_available_for_docker_bind">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">find_port_available_for_docker_bind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.find_port_available_for_docker_bind" title="Permalink to this definition">#</a></dt>
+<dd><p>Checks for available internal <code class="docutils literal notranslate"><span class="pre">docker_server_port</span></code> by looking at the stdout of
+all running Docker Containers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> (<em>int</em>) – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>port</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -3139,8 +3468,6 @@ DPF_SERVER_TYPE=LEGACYGRPC can be used.</p>
 <li><p><strong>legacy</strong> (<em>bool</em><em>, </em><em>optional</em>) – If legacy is set to True, the server will be using ansys-grpc-dpf
 Python module. If not, it will communicate with DPF binaries using ctypes
 and DPF CLayer calls.</p></li>
-<li><p><strong>ignore_dpf_server_type</strong> (<em>bool</em><em>, </em><em>optional</em>) – Default is False. DPF_SERVER_TYPE environment variable will be ignored if
-overwrite is set to False.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3148,7 +3475,7 @@ overwrite is set to False.</p></li>
 <p>Use constructor parameters to manually create servers.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">in_process_config</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">ServerConfig</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">protocol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">legacy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">protocol</span><span class="o">=</span><span class="n">dpf</span><span class="o">.</span><span class="n">server_factory</span><span class="o">.</span><span class="n">CommunicationProtocols</span><span class="o">.</span><span class="n">InProcess</span><span class="p">,</span> <span class="n">legacy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">grpc_config</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">ServerConfig</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">protocol</span><span class="o">=</span><span class="n">dpf</span><span class="o">.</span><span class="n">server_factory</span><span class="o">.</span><span class="n">CommunicationProtocols</span><span class="o">.</span><span class="n">gRPC</span><span class="p">,</span> <span class="n">legacy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">legacy_grpc_config</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">ServerConfig</span><span class="p">(</span>
@@ -3232,120 +3559,10 @@ Follows get_default_server_config</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.ServerFactory">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_factory.</span></span><span class="sig-name descname"><span class="pre">ServerFactory</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.ServerFactory" title="Permalink to this definition">#</a></dt>
-<dd><p>Factory for server type choice depending on current configuration.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_factory.</span></span><span class="sig-name descname"><span class="pre">DockerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_docker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mounted_volumes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig" title="Permalink to this definition">#</a></dt>
-<dd><p>Intermediate class encapsulating all the configuration options needed to run a docker
-image of DPF and holding tools to communicate with Docker.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>use_docker</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether DPF’s server should be started in a Docker Container by default.</p></li>
-<li><p><strong>docker_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of Docker Image to run.</p></li>
-<li><p><strong>mounted_volumes</strong> (<em>dict</em><em>, </em><em>optional</em>) – Dictionary of key = local path and value = path of mounted volumes in the Docker Image.
-To prevent from uploading result files on the Docker Image
-<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpc.core.server_factory.RunningDockerConfig.replace_with_mounted_volumes()</span></code>
-iterates through this dictionary to replace local path instances by their mapped value.</p></li>
-<li><p><strong>extra_args</strong> (<em>str</em><em>, </em><em>optional</em>) – Extra arguments to add to the docker run command.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py property">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.use_docker">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">use_docker</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.use_docker" title="Permalink to this definition">#</a></dt>
-<dd><p>Whether DPF’s server should be started in a Docker Container by default.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.docker_name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">docker_name</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.docker_name" title="Permalink to this definition">#</a></dt>
-<dd><p>Name of Docker Image to run.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.mounted_volumes">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mounted_volumes</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.mounted_volumes" title="Permalink to this definition">#</a></dt>
-<dd><p>Dictionary of key = local path and value = path of mounted volumes in the Docker Image.
-To prevent from uploading result files on the Docker Image
-<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpc.core.server_factory.RunningDockerConfig.replace_with_mounted_volumes()</span></code>
-iterates through this dictionary to replace local path instances by their mapped value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.extra_args">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extra_args</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.extra_args" title="Permalink to this definition">#</a></dt>
-<dd><p>Extra arguments to add to the docker run command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.docker_run_cmd_command">
-<span class="sig-name descname"><span class="pre">docker_run_cmd_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">docker_server_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.docker_run_cmd_command" title="Permalink to this definition">#</a></dt>
-<dd><p>Creates the docker run command with the <code class="docutils literal notranslate"><span class="pre">DockerConfig</span></code> attributes as well
-as the <code class="docutils literal notranslate"><span class="pre">docker_server_port</span></code> and <code class="docutils literal notranslate"><span class="pre">local_port</span></code> passed in as parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>docker_server_port</strong> (<em>int</em>) – Port used inside the Docker Container to run the gRPC server.</p></li>
-<li><p><strong>local_port</strong> (<em>int</em>) – Port exposed outside the Docker container bounded to the internal
-<code class="docutils literal notranslate"><span class="pre">docker_server_port</span></code>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.DockerConfig.find_port_available_for_docker_bind">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">find_port_available_for_docker_bind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_factory.DockerConfig.find_port_available_for_docker_bind" title="Permalink to this definition">#</a></dt>
-<dd><p>Checks for available internal <code class="docutils literal notranslate"><span class="pre">docker_server_port</span></code> by looking at the stdout of
-all running Docker Containers.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>port</strong> (<em>int</em>) – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>port</strong></p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_factory.RunningDockerConfig">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_factory.</span></span><span class="sig-name descname"><span class="pre">RunningDockerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">docker_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_server_port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig" title="Permalink to this definition">#</a></dt>
 <dd><p>Holds all the configuration options and the process information of a running Docker image
-of a DPF’s server.</p>
+of a DPF server.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -3357,8 +3574,8 @@ of a DPF’s server.</p>
 </dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_factory.RunningDockerConfig.use_docker">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">use_docker</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.use_docker" title="Permalink to this definition">#</a></dt>
-<dd><p>Whether DPF’s server should be started in a Docker Container by default.</p>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">use_docker</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.use_docker" title="Permalink to this definition">#</a></dt>
+<dd><p>Whether the DPF server should be started in a Docker Container by default.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
@@ -3368,7 +3585,7 @@ of a DPF’s server.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_factory.RunningDockerConfig.docker_server_port">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">docker_server_port</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.docker_server_port" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">docker_server_port</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.docker_server_port" title="Permalink to this definition">#</a></dt>
 <dd><p>Port used inside the Docker Container to run the gRPC server.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3379,7 +3596,7 @@ of a DPF’s server.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_factory.RunningDockerConfig.server_id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">server_id</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.server_id" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">server_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.server_id" title="Permalink to this definition">#</a></dt>
 <dd><p>Running Docker Container id.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3390,7 +3607,7 @@ of a DPF’s server.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_factory.RunningDockerConfig.docker_name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">docker_name</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.docker_name" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">docker_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.docker_name" title="Permalink to this definition">#</a></dt>
 <dd><p>Name of Docker running Image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3401,7 +3618,7 @@ of a DPF’s server.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_factory.RunningDockerConfig.mounted_volumes">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mounted_volumes</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.mounted_volumes" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mounted_volumes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.mounted_volumes" title="Permalink to this definition">#</a></dt>
 <dd><p>Dictionary of local path to docker path of volumes mounted in the Docker Image.
 These paths are checked for when result files are looked for by the server to prevent from
 uploading them.</p>
@@ -3414,7 +3631,7 @@ uploading them.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_factory.RunningDockerConfig.extra_args">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extra_args</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.extra_args" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extra_args</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.extra_args" title="Permalink to this definition">#</a></dt>
 <dd><p>Extra arguments used in the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> command</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -3430,7 +3647,7 @@ uploading them.</p>
 volumes by their mounted path in the docker.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – Path to search for mounted volumes occurences.</p>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – Path to search for mounted volumes occurrences.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>path</strong></p>
@@ -3445,24 +3662,39 @@ volumes by their mounted path in the docker.</p>
 <dt class="sig sig-object py" id="ansys.dpf.core.server_factory.RunningDockerConfig.remove_docker_image">
 <span class="sig-name descname"><span class="pre">remove_docker_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.remove_docker_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Stops and Removes the Docker image with its id==server_id</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.RunningDockerConfig.init_with_stdout">
-<span class="sig-name descname"><span class="pre">init_with_stdout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">docker_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LOG</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.init_with_stdout" title="Permalink to this definition">#</a></dt>
-<dd><p>Search inside the Docker Container stdout log to fill in this instance’s attributes.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>docker_config</strong> (<a class="reference internal" href="#ansys.dpf.core.server_factory.DockerConfig" title="ansys.dpf.core.server_factory.DockerConfig"><em>DockerConfig</em></a>) – </p></li>
-<li><p><strong>LOG</strong> – Instance of <code class="docutils literal notranslate"><span class="pre">logging</span></code> to add debug info to.</p></li>
-<li><p><strong>lines</strong> (<em>list</em>) – Internal Container’s stdout are copied into <code class="docutils literal notranslate"><span class="pre">lines</span></code>.</p></li>
-<li><p><strong>timeout</strong> (<em>time</em>) – When to stop searching for stdout.</p></li>
-</ul>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.RunningDockerConfig.listen_to_process">
+<span class="sig-name descname"><span class="pre">listen_to_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmd_lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.server_factory.RunningDockerConfig.listen_to_process" title="Permalink to this definition">#</a></dt>
+<dd><p>Search inside the Docker Container stdout log to fill in this instance’s attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>log</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Logger</span></code>) – Instance of <code class="docutils literal notranslate"><span class="pre">logging</span></code> to add debug info to.</p></li>
+<li><p><strong>cmd_lines</strong> (<em>list</em>) – Stdout of the shell process run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> command.</p></li>
+<li><p><strong>lines</strong> (<em>list</em>) – Internal Container’s stdout are copied into <code class="docutils literal notranslate"><span class="pre">lines</span></code>.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – When to stop searching for stdout.</p></li>
+<li><p><strong>stdout</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to check stdout or stderr.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_factory.ServerFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_factory.</span></span><span class="sig-name descname"><span class="pre">ServerFactory</span></span><a class="headerlink" href="#ansys.dpf.core.server_factory.ServerFactory" title="Permalink to this definition">#</a></dt>
+<dd><p>Factory for server type choice depending on current configuration.</p>
 </dd></dl>
 
 </section>

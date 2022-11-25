@@ -15,12 +15,17 @@ Submodules
    ansys.dpf.core.operators.utility.change_shell_layers
    ansys.dpf.core.operators.utility.default_value
    ansys.dpf.core.operators.utility.extract_field
+   ansys.dpf.core.operators.utility.extract_scoping
+   ansys.dpf.core.operators.utility.extract_sub_fc
+   ansys.dpf.core.operators.utility.extract_sub_mc
+   ansys.dpf.core.operators.utility.extract_sub_sc
    ansys.dpf.core.operators.utility.extract_time_freq
    ansys.dpf.core.operators.utility.field_to_fc
    ansys.dpf.core.operators.utility.forward
    ansys.dpf.core.operators.utility.forward_field
    ansys.dpf.core.operators.utility.forward_fields_container
    ansys.dpf.core.operators.utility.forward_meshes_container
+   ansys.dpf.core.operators.utility.hdf5dpf_custom_read
    ansys.dpf.core.operators.utility.html_doc
    ansys.dpf.core.operators.utility.make_overall
    ansys.dpf.core.operators.utility.merge_fields
@@ -39,7 +44,6 @@ Submodules
    ansys.dpf.core.operators.utility.merge_weighted_fields_containers
    ansys.dpf.core.operators.utility.overlap_fields
    ansys.dpf.core.operators.utility.python_generator
-   ansys.dpf.core.operators.utility.python_script_exec
    ansys.dpf.core.operators.utility.remote_operator_instantiate
    ansys.dpf.core.operators.utility.remote_workflow_instantiate
    ansys.dpf.core.operators.utility.scalars_to_field

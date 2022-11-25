@@ -27,7 +27,11 @@ with a part on both servers. This example shows how you can read data
 from a given machine and transform this data on another machine
 without any more difficulties than working on a local computer.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-16
+.. note::
+    This example requires the Premium ServerContext.
+    For more information, see :ref:`_ref_getting_started_contexts`.
+
+.. GENERATED FROM PYTHON SOURCE LINES 17-25
 
 .. code-block:: default
 
@@ -37,33 +41,43 @@ without any more difficulties than working on a local computer.
     from ansys.dpf.core import operators as ops
 
 
+    dpf.set_default_server_context(dpf.AvailableServerContexts.premium)
 
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-22
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 26-35
 
 Create two servers
 ~~~~~~~~~~~~~~~~~~
-Use the ``start_local_server()`` method to start two servers on your local
-machine. If you have another server, you can use the ``connect_to_server()``
+Use the :func:`start_local_server() <ansys.dpf.core.server.start_local_server>`
+method to start two servers on your local machine. If you have another server,
+you can use the :func:`connect_to_server() <ansys.dpf.core.server.connect_to_server>`
 method to connect to any DPF server on your network.
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-32
+The ``as_global`` attributes allows you to choose whether a server is stored
+by the module and used by default. This example sets the first server as the default.
+
+.. GENERATED FROM PYTHON SOURCE LINES 35-48
 
 .. code-block:: default
 
-
-    # The ``as_global`` attributes allows you to choose whether a server is stored
-    # by the module and used by default. This example sets the first server as the default.
-    server1 = dpf.start_local_server(as_global=True, config=dpf.AvailableServerConfigs.GrpcServer)
-    server2 = dpf.start_local_server(as_global=False, config=dpf.AvailableServerConfigs.GrpcServer)
+    server1 = dpf.start_local_server(
+        as_global=True, config=dpf.AvailableServerConfigs.GrpcServer
+    )
+    server2 = dpf.start_local_server(
+        as_global=False, config=dpf.AvailableServerConfigs.GrpcServer
+    )
 
     # Check that the two servers are listening on different ports.
-    print(server1.port if hasattr(server1, "port") else "",
-          server2.port if hasattr(server2, "port") else "")
+    print(
+        server1.port if hasattr(server1, "port") else "",
+        server2.port if hasattr(server2, "port") else "",
+    )
 
 
 
@@ -78,7 +92,7 @@ method to connect to any DPF server on your network.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-38
+.. GENERATED FROM PYTHON SOURCE LINES 49-54
 
 Send the result file
 ~~~~~~~~~~~~~~~~~~~~
@@ -86,7 +100,7 @@ The result file is sent to the temporary directory of the first server.
 This file upload is useless in this case because the two servers are local
 machines.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-40
+.. GENERATED FROM PYTHON SOURCE LINES 54-56
 
 .. code-block:: default
 
@@ -99,13 +113,13 @@ machines.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-44
+.. GENERATED FROM PYTHON SOURCE LINES 57-60
 
 Create a workflow on the first server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Create the model
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-50
+.. GENERATED FROM PYTHON SOURCE LINES 60-66
 
 .. code-block:: default
 
@@ -122,12 +136,12 @@ Create the model
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-53
+.. GENERATED FROM PYTHON SOURCE LINES 67-69
 
 Create a workflow on the second server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-66
+.. GENERATED FROM PYTHON SOURCE LINES 69-82
 
 .. code-block:: default
 
@@ -151,12 +165,12 @@ Create a workflow on the second server
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-69
+.. GENERATED FROM PYTHON SOURCE LINES 83-85
 
 Pass data from one server to another
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-79
+.. GENERATED FROM PYTHON SOURCE LINES 85-95
 
 .. code-block:: default
 
@@ -177,12 +191,12 @@ Pass data from one server to another
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-82
+.. GENERATED FROM PYTHON SOURCE LINES 96-98
 
 Plot the output
 ~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-89
+.. GENERATED FROM PYTHON SOURCE LINES 98-105
 
 .. code-block:: default
 
@@ -220,7 +234,7 @@ Plot the output
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.256 seconds)
+   **Total running time of the script:** ( 0 minutes  8.589 seconds)
 
 
 .. _sphx_glr_download_examples_03-advanced_03-exchange_data_between_servers.py:

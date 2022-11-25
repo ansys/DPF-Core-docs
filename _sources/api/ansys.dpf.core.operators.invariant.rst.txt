@@ -7,6 +7,8 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
+   ansys.dpf.core.operators.invariant.convertnum_bcs_to_nod
+   ansys.dpf.core.operators.invariant.convertnum_nod_to_bcs
    ansys.dpf.core.operators.invariant.eigen_values
    ansys.dpf.core.operators.invariant.eigen_values_fc
    ansys.dpf.core.operators.invariant.eigen_vectors

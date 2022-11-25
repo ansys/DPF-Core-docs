@@ -7,7 +7,6 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
-   ansys.dpf.core.operators.mapping.create_sc_mapping_workflow
    ansys.dpf.core.operators.mapping.find_reduced_coordinates
    ansys.dpf.core.operators.mapping.on_coordinates
    ansys.dpf.core.operators.mapping.on_reduced_coordinates

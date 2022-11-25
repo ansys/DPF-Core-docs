@@ -22,7 +22,8 @@
 
 Scope results over custom space domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The ``Result`` class, which are instances created by the ``Model``, give
+The :class:`Result <ansys.dpf.core.results.Result>` class, which are instances
+created by the :class:`Model <ansys.dpf.core.model.Model>`, give
 access to helpers for requesting results on specific mesh and time scopings.
 With these helpers, working on a spatial subset of the model is straightforward.
 In this example, different ways to choose the spatial subset to
@@ -30,7 +31,7 @@ evaluate a result are exposed
 
 Import necessary modules:
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-18
+.. GENERATED FROM PYTHON SOURCE LINES 16-20
 
 .. code-block:: default
 
@@ -45,11 +46,11 @@ Import necessary modules:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-20
+.. GENERATED FROM PYTHON SOURCE LINES 21-22
 
 Create a model object to establish a connection with an example result file:
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-23
+.. GENERATED FROM PYTHON SOURCE LINES 22-25
 
 .. code-block:: default
 
@@ -102,14 +103,14 @@ Create a model object to establish a connection with an example result file:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-28
+.. GENERATED FROM PYTHON SOURCE LINES 26-30
 
 Choose specific nodes
 ~~~~~~~~~~~~~~~~~~~~~
 If some nodes or elements are specifically of interest, a nodal ``mesh_scoping``
 can be connected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-32
+.. GENERATED FROM PYTHON SOURCE LINES 30-34
 
 .. code-block:: default
 
@@ -132,11 +133,11 @@ can be connected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-34
+.. GENERATED FROM PYTHON SOURCE LINES 35-36
 
 or
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-37
+.. GENERATED FROM PYTHON SOURCE LINES 36-39
 
 .. code-block:: default
 
@@ -158,7 +159,7 @@ or
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-43
+.. GENERATED FROM PYTHON SOURCE LINES 40-45
 
 .. code-block:: default
 
@@ -179,11 +180,11 @@ or
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-45
+.. GENERATED FROM PYTHON SOURCE LINES 46-47
 
 Equivalent to:
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-49
+.. GENERATED FROM PYTHON SOURCE LINES 47-51
 
 .. code-block:: default
 
@@ -198,11 +199,11 @@ Equivalent to:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-51
+.. GENERATED FROM PYTHON SOURCE LINES 52-53
 
 Equivalent to:
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-53
+.. GENERATED FROM PYTHON SOURCE LINES 53-55
 
 .. code-block:: default
 
@@ -215,14 +216,14 @@ Equivalent to:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-58
+.. GENERATED FROM PYTHON SOURCE LINES 56-60
 
 Choose specific elements
 ~~~~~~~~~~~~~~~~~~~~~~~~
 If some elements are specifically of interest, an elemental ``mesh_scoping``
 can be connected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-70
+.. GENERATED FROM PYTHON SOURCE LINES 60-72
 
 .. code-block:: default
 
@@ -261,11 +262,11 @@ can be connected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-72
+.. GENERATED FROM PYTHON SOURCE LINES 73-74
 
 Equivalent to:
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-76
+.. GENERATED FROM PYTHON SOURCE LINES 74-78
 
 .. code-block:: default
 
@@ -280,11 +281,11 @@ Equivalent to:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-78
+.. GENERATED FROM PYTHON SOURCE LINES 79-80
 
 Equivalent to:
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-80
+.. GENERATED FROM PYTHON SOURCE LINES 80-82
 
 .. code-block:: default
 
@@ -297,7 +298,7 @@ Equivalent to:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-87
+.. GENERATED FROM PYTHON SOURCE LINES 83-89
 
 Choose specific named selections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -306,7 +307,7 @@ a spatial domain for a result. A ``mesh_scoping`` can be created with a
 named selection.
 To know the available named selections in the result file, use:
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-90
+.. GENERATED FROM PYTHON SOURCE LINES 89-92
 
 .. code-block:: default
 
@@ -326,16 +327,16 @@ To know the available named selections in the result file, use:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-92
+.. GENERATED FROM PYTHON SOURCE LINES 93-94
 
 Get the ``mesh_scoping`` of a named selection:
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-96
+.. GENERATED FROM PYTHON SOURCE LINES 94-98
 
 .. code-block:: default
 
 
-    mesh_scoping = model.metadata.named_selection('_CM82')
+    mesh_scoping = model.metadata.named_selection("_CM82")
     print(mesh_scoping)
 
 
@@ -353,11 +354,11 @@ Get the ``mesh_scoping`` of a named selection:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-98
+.. GENERATED FROM PYTHON SOURCE LINES 99-100
 
 Connect this ``mesh_scoping`` to the result provider
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-101
+.. GENERATED FROM PYTHON SOURCE LINES 100-103
 
 .. code-block:: default
 
@@ -376,15 +377,15 @@ Connect this ``mesh_scoping`` to the result provider
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-103
+.. GENERATED FROM PYTHON SOURCE LINES 104-105
 
 Equivalent to:
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-105
+.. GENERATED FROM PYTHON SOURCE LINES 105-107
 
 .. code-block:: default
 
-    volume = model.results.elemental_volume.on_named_selection('_CM82')
+    volume = model.results.elemental_volume.on_named_selection("_CM82")
 
 
 
@@ -393,17 +394,17 @@ Equivalent to:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-107
+.. GENERATED FROM PYTHON SOURCE LINES 108-109
 
 Equivalent to:
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-114
+.. GENERATED FROM PYTHON SOURCE LINES 109-116
 
 .. code-block:: default
 
     ns_provider = dpf.operators.scoping.on_named_selection(
         requested_location=dpf.locations.elemental,
-        named_selection_name='_CM82',
+        named_selection_name="_CM82",
         data_sources=model,
     )
     volume = model.results.elemental_volume(mesh_scoping=ns_provider).eval()
@@ -415,7 +416,7 @@ Equivalent to:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 115-125
+.. GENERATED FROM PYTHON SOURCE LINES 117-127
 
 Split results depending on spatial properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -428,11 +429,11 @@ by element types. It might also be necessary to get results by element shape
 types, such as shell, solid, or beam, to average data properly.
 Customers might also require split by entirely custom spatial domains.
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-129
+.. GENERATED FROM PYTHON SOURCE LINES 130-131
 
 Split results by element shapes
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-138
+.. GENERATED FROM PYTHON SOURCE LINES 131-140
 
 .. code-block:: default
 
@@ -484,11 +485,11 @@ Split results by element shapes
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-140
+.. GENERATED FROM PYTHON SOURCE LINES 141-142
 
 Split results by bodies
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-149
+.. GENERATED FROM PYTHON SOURCE LINES 142-151
 
 .. code-block:: default
 
@@ -546,11 +547,11 @@ Split results by bodies
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-151
+.. GENERATED FROM PYTHON SOURCE LINES 152-153
 
 Create a custom spatial split
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-162
+.. GENERATED FROM PYTHON SOURCE LINES 153-164
 
 .. code-block:: default
 
@@ -572,13 +573,13 @@ Create a custom spatial split
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 163-170
+.. GENERATED FROM PYTHON SOURCE LINES 165-172
 
 .. code-block:: default
 
     elemental_stress = model.results.stress.on_location(dpf.locations.elemental)(
-        mesh_scoping=scopings_container) \
-        .eval()
+        mesh_scoping=scopings_container
+    ).eval()
     print(elemental_stress)
 
     for field in elemental_stress:
@@ -623,7 +624,7 @@ Create a custom spatial split
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.524 seconds)
+   **Total running time of the script:** ( 0 minutes  13.214 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_09-results_over_space_subset.py:

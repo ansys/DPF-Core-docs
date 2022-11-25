@@ -634,9 +634,9 @@ to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="extrapolation-method-for-strain-result-of-a-2d-element">
 <span id="extrapolation-test-strain-2delement"></span><span id="sphx-glr-examples-03-advanced-05-extrapolation-strain-2d-py"></span><h1>Extrapolation method for strain result of a 2D element<a class="headerlink" href="#extrapolation-method-for-strain-result-of-a-2d-element" title="Permalink to this heading">#</a></h1>
-<p>This example shows how to compute the nodal component elastic strain
-from Gaussian points (integration points) for a 2D element by using the
-extrapolation method.</p>
+<p>This example shows how to compute the stress nodal components from
+Gaussian points (integration points) for a 2D element using
+extrapolation.</p>
 <p>Extrapolate results available at Gaussian or quadrature points to nodal
 points for a field or fields container. The available elements are:</p>
 <ul class="simple">
@@ -651,15 +651,23 @@ points for a field or fields container. The available elements are:</p>
 <ol class="arabic simple">
 <li><p>Get the data source’s solution from the integration points. (This
 result file was generated with the Ansys Mechanical APDL (MAPDL)
-option <code class="docutils literal notranslate"><span class="pre">EREXS,</span> <span class="pre">NO</span></code>).</p></li>
+option <code class="docutils literal notranslate"><span class="pre">ERESX,</span> <span class="pre">NO</span></code>).</p></li>
 <li><p>Use the extrapolation operator to compute the nodal elastic strain.</p></li>
 <li><p>Get the result for nodal elastic strain from the data source.
 The analysis was computed by MAPDL.</p></li>
 <li><p>Compare the result for nodal elastic strain from the data source
 and the nodal elastic strain computed by the extrapolation method.</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example requires the Premium ServerContext.
+For more information, see <span class="xref std std-ref">_ref_getting_started_contexts</span>.</p>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+
+
+<span class="n">dpf</span><span class="o">.</span><span class="n">set_default_server_context</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerContexts</span><span class="o">.</span><span class="n">premium</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Get the data source’s analyse of integration points and data source’s analyse reference</p>
@@ -751,22 +759,51 @@ elastic strain by applying the extrapolation method.</p>
 <h1>Comparison<a class="headerlink" href="#comparison" title="Permalink to this heading">#</a></h1>
 <p>Compare the elastic strain result computed by extrapolation and reference’s result.
 Check if the two fields containers are identical.
-The maximum tolerance gap between two compared values is 1e-3.
+The relative tolerance is set to 1e-14.
 The smallest value that is to be considered during the comparison
-step : all the <code class="docutils literal notranslate"><span class="pre">abs(values)</span></code> in the field less than 1e-14 are considered null.</p>
+step : all the <code class="docutils literal notranslate"><span class="pre">abs(values)</span></code> in the field less than 1e-2 are considered null.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># operator AreFieldsIdentical_fc</span>
 <span class="n">op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">logic</span><span class="o">.</span><span class="n">identical_fc</span><span class="p">()</span>
-<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_containerA</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">fex</span><span class="p">)</span>
-<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_containerB</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">strain_ref</span><span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_containerA</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">fex_nodal_op</span><span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_containerB</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">strain_ref_nodal_op</span><span class="p">)</span>
 <span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">tolerance</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mf">1.0e-14</span><span class="p">)</span>
-<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">small_value</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
-<span class="n">op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">boolean</span><span class="p">()</span>
+<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">small_value</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">boolean</span><span class="p">())</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.705 seconds)</p>
+<p>Compute absolute and relative errors</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">abs_error_sqr</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">sqr_fc</span><span class="p">()</span>
+<span class="n">abs_error</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt_fc</span><span class="p">()</span>
+<span class="n">error</span> <span class="o">=</span> <span class="n">strain_ref_nodal_op</span> <span class="o">-</span> <span class="n">fex_nodal_op</span>
+<span class="n">abs_error_sqr</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_container</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+<span class="n">abs_error</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_container</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">abs_error_sqr</span><span class="p">)</span>
+
+<span class="n">divide</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">component_wise_divide</span><span class="p">()</span>
+<span class="n">divide</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fieldA</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">strain_ref_nodal_op</span> <span class="o">-</span> <span class="n">fex_nodal_op</span><span class="p">)</span>
+<span class="n">divide</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fieldB</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">strain_ref_nodal_op</span><span class="p">)</span>
+<span class="n">rel_error</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">scale</span><span class="p">()</span>
+<span class="n">rel_error</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">divide</span><span class="p">)</span>
+<span class="n">rel_error</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">ponderation</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Plot absolute and relative errors.
+The absolute value is the order of 1e-13, which is very small when compared to the
+magnitude of 1e-5 of the displacements. This is reflected in the relative error
+plot, where the errors are found to be below 1.1e-5%. The result of these plots
+can be used to set the tolerances for the
+<a class="reference internal" href="../../api/ansys.dpf.core.operators.logic.identical_fc.html#module-ansys.dpf.core.operators.logic.identical_fc" title="ansys.dpf.core.operators.logic.identical_fc"><code class="xref py py-class docutils literal notranslate"><span class="pre">identical_fc</span></code></a> operator.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abs_error</span><span class="o">.</span><span class="n">eval</span><span class="p">(),</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Absolute error [mm]&quot;</span><span class="p">})</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rel_error</span><span class="o">.</span><span class="n">eval</span><span class="p">(),</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Relative error [%]&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_05-extrapolation_strain_2d_004.png" srcset="../../_images/sphx_glr_05-extrapolation_strain_2d_004.png" alt="05 extrapolation strain 2d" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_05-extrapolation_strain_2d_005.png" srcset="../../_images/sphx_glr_05-extrapolation_strain_2d_005.png" alt="05 extrapolation strain 2d" class = "sphx-glr-multi-img"/></li>
+</ul>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.738 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-03-advanced-05-extrapolation-strain-2d-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d5b7a76ff8906cb82b31d4ace4b1dae2/05-extrapolation_strain_2d.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">05-extrapolation_strain_2d.py</span></code></a></p>

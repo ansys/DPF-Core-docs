@@ -629,38 +629,57 @@ third-party Python module named <a class="reference external" href="https://pypi
 This operator takes a path, a mesh, and a 3D vector field as inputs
 and then exports the mesh and the norm of the 3D vector field to a GLTF
 file at the given path.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example requires the Premium ServerContext.
+For more information, see <span class="xref std std-ref">_ref_getting_started_contexts</span>.</p>
+</div>
 <section id="create-the-plug-in-package">
 <h2>Create the plug-in package<a class="headerlink" href="#create-the-plug-in-package" title="Permalink to this heading">#</a></h2>
 <p>Each operator implementation derives from the
 <a class="reference internal" href="../../api/ansys.dpf.core.custom_operator.html#ansys.dpf.core.custom_operator.CustomOperatorBase" title="ansys.dpf.core.custom_operator.CustomOperatorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ansys.dpf.core.custom_operator.CustomOperatorBase</span></code></a> class
 and a call to the <a class="reference internal" href="../../api/ansys.dpf.core.custom_operator.html#ansys.dpf.core.custom_operator.record_operator" title="ansys.dpf.core.custom_operator.record_operator"><code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.custom_operator.record_operator()</span></code></a>
 method, which records the operators of the plug-in package.</p>
-<p>Download the <code class="docutils literal notranslate"><span class="pre">`gltf_plugin</span></code> plug-in package that has already been
+<p>Download the <code class="docutils literal notranslate"><span class="pre">gltf_plugin</span></code> plug-in package that has already been
 created for you.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1m gltf_plugin&#39;</span><span class="p">)</span>
-<span class="n">file_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gltf_plugin/__init__.py&quot;</span><span class="p">,</span> <span class="s2">&quot;gltf_plugin/operators.py&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;gltf_plugin/operators_loader.py&quot;</span><span class="p">,</span> <span class="s2">&quot;gltf_plugin/requirements.txt&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;gltf_plugin/gltf_export.py&quot;</span><span class="p">,</span> <span class="s2">&quot;gltf_plugin/texture.png&quot;</span><span class="p">,</span> <span class="s2">&quot;gltf_plugin.xml&quot;</span>
-             <span class="p">]</span>
+<span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+
+<span class="n">dpf</span><span class="o">.</span><span class="n">set_default_server_context</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerContexts</span><span class="o">.</span><span class="n">premium</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m gltf_plugin&quot;</span><span class="p">)</span>
+<span class="n">file_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;gltf_plugin/__init__.py&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gltf_plugin/operators.py&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gltf_plugin/operators_loader.py&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gltf_plugin/requirements.txt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gltf_plugin/gltf_export.py&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gltf_plugin/texture.png&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gltf_plugin.xml&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 <span class="n">plugin_path</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">GITHUB_SOURCE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/pyansys/pydpf-core/raw/&quot;</span> \
-                    <span class="s2">&quot;&quot;</span> \
-                    <span class="s2">&quot;examples/first_python_plugins/python_plugins&quot;</span>
+<span class="n">GITHUB_SOURCE_URL</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;https://github.com/pyansys/pydpf-core/raw/&quot;</span>
+    <span class="s2">&quot;&quot;</span>
+    <span class="s2">&quot;examples/first_python_plugins/python_plugins&quot;</span>
+<span class="p">)</span>
 
 <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
     <span class="n">EXAMPLE_FILE</span> <span class="o">=</span> <span class="n">GITHUB_SOURCE_URL</span> <span class="o">+</span> <span class="s2">&quot;/gltf_plugin/&quot;</span> <span class="o">+</span> <span class="n">file</span>
     <span class="n">operator_file_path</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">_retrieve_file</span><span class="p">(</span>
-        <span class="n">EXAMPLE_FILE</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;python_plugins&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">file</span><span class="p">)))</span>
+        <span class="n">EXAMPLE_FILE</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;python_plugins&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
+    <span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1m </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="se">\n</span><span class="s1"> </span><span class="se">\033</span><span class="s1">[0m&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;.py&quot;</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;.xml&quot;</span><span class="p">)</span> \
-            <span class="ow">and</span> <span class="n">file</span> <span class="o">!=</span> <span class="s2">&quot;gltf_plugin/gltf_export.py&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="se">\n</span><span class="s2"> </span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;.py&quot;</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;.xml&quot;</span>
+    <span class="p">)</span> <span class="ow">and</span> <span class="n">file</span> <span class="o">!=</span> <span class="s2">&quot;gltf_plugin/gltf_export.py&quot;</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">operator_file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t\t\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">plugin_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">plugin_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">operator_file_path</span><span class="p">)</span>
@@ -842,10 +861,10 @@ installed in a Python virtual environment, the site-packages
 placed with the plugin. The path to this ZIP file should be referenced in
 the XML as shown in the preceding code.</p>
 <p>To simplify this step, you can add a requirements file in the plug-in package:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1m gltf_plugin/requirements.txt: </span><span class="se">\n</span><span class="s1"> </span><span class="se">\033</span><span class="s1">[0m&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m gltf_plugin/requirements.txt: </span><span class="se">\n</span><span class="s2"> </span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="p">)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plugin_path</span><span class="p">,</span> <span class="s2">&quot;requirements.txt&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t\t\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>gltf_plugin/requirements.txt:
@@ -884,39 +903,51 @@ the XML as shown in the preceding code.</p>
 </div>
 </li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;nt&quot;</span> <span class="ow">and</span> \
-        <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plugin_path</span><span class="p">,</span> <span class="s1">&#39;assets&#39;</span><span class="p">,</span> <span class="s1">&#39;gltf_sites_winx64.zip&#39;</span><span class="p">)):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;nt&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plugin_path</span><span class="p">,</span> <span class="s2">&quot;assets&quot;</span><span class="p">,</span> <span class="s2">&quot;gltf_sites_winx64.zip&quot;</span><span class="p">)</span>
+<span class="p">):</span>
     <span class="n">CMD_FILE_URL</span> <span class="o">=</span> <span class="n">GITHUB_SOURCE_URL</span> <span class="o">+</span> <span class="s2">&quot;/create_sites_for_python_operators.ps1&quot;</span>
     <span class="n">cmd_file</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">_retrieve_file</span><span class="p">(</span>
-        <span class="n">CMD_FILE_URL</span><span class="p">,</span> <span class="s2">&quot;create_sites_for_python_operators.ps1&quot;</span><span class="p">,</span> <span class="s2">&quot;python_plugins&quot;</span><span class="p">)</span>
-    <span class="n">run_cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;powershell </span><span class="si">{</span><span class="n">cmd_file</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; -pluginpath </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">plugin_path</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> &quot;</span> \
-           <span class="sa">f</span><span class="s2">&quot;-zippath </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plugin_path</span><span class="p">,</span> <span class="s1">&#39;assets&#39;</span><span class="p">,</span> <span class="s1">&#39;gltf_sites_winx64.zip&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">run_cmd</span> <span class="o">+</span> <span class="n">args</span><span class="p">)</span>
+        <span class="n">CMD_FILE_URL</span><span class="p">,</span> <span class="s2">&quot;create_sites_for_python_operators.ps1&quot;</span><span class="p">,</span> <span class="s2">&quot;python_plugins&quot;</span>
+    <span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;powershell&quot;</span><span class="p">,</span> <span class="n">cmd_file</span><span class="p">,</span>
+            <span class="s2">&quot;-pluginpath&quot;</span><span class="p">,</span> <span class="n">plugin_path</span><span class="p">,</span>
+            <span class="s2">&quot;-zippath&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plugin_path</span><span class="p">,</span> <span class="s1">&#39;assets&#39;</span><span class="p">,</span> <span class="s1">&#39;gltf_sites_winx64.zip&#39;</span><span class="p">)</span>
+            <span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
     <span class="kn">import</span> <span class="nn">subprocess</span>
-    <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_cmd</span> <span class="o">+</span> <span class="n">args</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+
+    <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="n">args</span><span class="p">,</span>
+        <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+        <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span>
+    <span class="p">)</span>
     <span class="k">if</span> <span class="n">process</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
             <span class="s2">&quot;Installing pygltf in a virtual environment failed with error:</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="o">+</span> <span class="n">process</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+            <span class="o">+</span> <span class="n">process</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"> and log:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">process</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+        <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Installing pygltf in a virtual environment succeeded&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;posix&quot;</span> <span class="ow">and</span> \
-        <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plugin_path</span><span class="p">,</span> <span class="s1">&#39;assets&#39;</span><span class="p">,</span> <span class="s1">&#39;gltf_sites_linx64.zip&#39;</span><span class="p">)):</span>
+<span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;posix&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plugin_path</span><span class="p">,</span> <span class="s2">&quot;assets&quot;</span><span class="p">,</span> <span class="s2">&quot;gltf_sites_linx64.zip&quot;</span><span class="p">)</span>
+<span class="p">):</span>
     <span class="n">CMD_FILE_URL</span> <span class="o">=</span> <span class="n">GITHUB_SOURCE_URL</span> <span class="o">+</span> <span class="s2">&quot;/create_sites_for_python_operators.sh&quot;</span>
     <span class="n">cmd_file</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">downloads</span><span class="o">.</span><span class="n">_retrieve_file</span><span class="p">(</span>
         <span class="n">CMD_FILE_URL</span><span class="p">,</span> <span class="s2">&quot;create_sites_for_python_operators.ps1&quot;</span><span class="p">,</span> <span class="s2">&quot;python_plugins&quot;</span>
     <span class="p">)</span>
     <span class="n">run_cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cmd_file</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; -pluginpath </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">plugin_path</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> &quot;</span> \
-           <span class="sa">f</span><span class="s2">&quot;-zippath </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plugin_path</span><span class="p">,</span> <span class="s1">&#39;assets&#39;</span><span class="p">,</span> <span class="s1">&#39;gltf_sites_linx64.zip&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s1">&#39; -pluginpath &quot;</span><span class="si">{</span><span class="n">plugin_path</span><span class="si">}</span><span class="s1">&quot; &#39;</span>
+        <span class="sa">f</span><span class="s2">&quot;-zippath </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plugin_path</span><span class="p">,</span> <span class="s1">&#39;assets&#39;</span><span class="p">,</span> <span class="s1">&#39;gltf_sites_linx64.zip&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">run_cmd</span> <span class="o">+</span> <span class="n">args</span><span class="p">)</span>
     <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chmod u=rwx,o=x </span><span class="si">{</span><span class="n">cmd_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">run_cmd</span> <span class="o">+</span> <span class="n">args</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Installing pygltf in a virtual environment succeeded&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>powershell c:\hostedtoolcache\windows\python\3.8.10\x64\lib\site-packages\ansys\dpf\core\examples\python_plugins\create_sites_for_python_operators.ps1 -pluginpath &quot;c:\hostedtoolcache\windows\python\3.8.10\x64\lib\site-packages\ansys\dpf\core\examples\python_plugins\gltf_plugin&quot; -zippath c:\hostedtoolcache\windows\python\3.8.10\x64\lib\site-packages\ansys\dpf\core\examples\python_plugins\gltf_plugin\assets\gltf_sites_winx64.zip
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;powershell&#39;, &#39;c:\\hostedtoolcache\\windows\\python\\3.8.10\\x64\\lib\\site-packages\\ansys\\dpf\\core\\examples\\python_plugins\\create_sites_for_python_operators.ps1&#39;, &#39;-pluginpath&#39;, &#39;c:\\hostedtoolcache\\windows\\python\\3.8.10\\x64\\lib\\site-packages\\ansys\\dpf\\core\\examples\\python_plugins\\gltf_plugin&#39;, &#39;-zippath&#39;, &#39;c:\\hostedtoolcache\\windows\\python\\3.8.10\\x64\\lib\\site-packages\\ansys\\dpf\\core\\examples\\python_plugins\\gltf_plugin\\assets\\gltf_sites_winx64.zip&#39;]
 Installing pygltf in a virtual environment succeeded
 </pre></div>
 </div>
@@ -928,8 +959,9 @@ plug-in package.</p>
 <ul class="simple">
 <li><p>The first argument is the path to the directory where the plug-in package
 is located.</p></li>
-<li><p>The second argument is <code class="docutils literal notranslate"><span class="pre">py_</span></code> plus any name identifying the plug-in package.</p></li>
-<li><p>The third argument is the name of the function exposed in the <code class="docutils literal notranslate"><span class="pre">__init__</span> <span class="pre">file</span></code>
+<li><p>The second argument is <code class="docutils literal notranslate"><span class="pre">py_&lt;package&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;</span></code> is the name
+identifying the plug-in package.</p></li>
+<li><p>The third argument is the name of the function exposed in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> file
 for the plug-in package that is used to record operators.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
@@ -940,18 +972,17 @@ for the plug-in package that is used to record operators.</p></li>
 
 <span class="n">tmp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">make_tmp_dir_server</span><span class="p">()</span>
 <span class="n">dpf</span><span class="o">.</span><span class="n">upload_files_in_folder</span><span class="p">(</span>
-    <span class="n">dpf</span><span class="o">.</span><span class="n">path_utilities</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="s2">&quot;plugins&quot;</span><span class="p">,</span> <span class="s2">&quot;gltf_plugin&quot;</span><span class="p">),</span>
-    <span class="n">plugin_path</span>
+    <span class="n">dpf</span><span class="o">.</span><span class="n">path_utilities</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="s2">&quot;plugins&quot;</span><span class="p">,</span> <span class="s2">&quot;gltf_plugin&quot;</span><span class="p">),</span> <span class="n">plugin_path</span>
 <span class="p">)</span>
 <span class="n">dpf</span><span class="o">.</span><span class="n">upload_file</span><span class="p">(</span>
-    <span class="n">plugin_path</span> <span class="o">+</span> <span class="s2">&quot;.xml&quot;</span><span class="p">,</span>
-    <span class="n">dpf</span><span class="o">.</span><span class="n">path_utilities</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="s2">&quot;plugins&quot;</span><span class="p">,</span> <span class="s2">&quot;gltf_plugin.xml&quot;</span><span class="p">)</span>
+    <span class="n">plugin_path</span> <span class="o">+</span> <span class="s2">&quot;.xml&quot;</span><span class="p">,</span> <span class="n">dpf</span><span class="o">.</span><span class="n">path_utilities</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="s2">&quot;plugins&quot;</span><span class="p">,</span> <span class="s2">&quot;gltf_plugin.xml&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="n">dpf</span><span class="o">.</span><span class="n">load_library</span><span class="p">(</span>
     <span class="n">dpf</span><span class="o">.</span><span class="n">path_utilities</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="s2">&quot;plugins&quot;</span><span class="p">,</span> <span class="s2">&quot;gltf_plugin&quot;</span><span class="p">),</span>
     <span class="s2">&quot;py_dpf_gltf&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;load_operators&quot;</span><span class="p">)</span>
+    <span class="s2">&quot;load_operators&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;py_dpf_gltf successfully loaded&#39;
@@ -1008,7 +1039,7 @@ to extract the surface of the mesh in triangle elements.</p>
 </pre></div>
 </div>
 <p>You can download <code class="xref download docutils literal notranslate"><span class="pre">output</span></code> from the <code class="docutils literal notranslate"><span class="pre">gltf</span></code> operator.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  50.212 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  48.771 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-07-python-operators-02-python-operators-with-dependencies-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/06b0eeb470a2bbfc83c1c57bac64c214/02-python_operators_with_dependencies.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">02-python_operators_with_dependencies.py</span></code></a></p>

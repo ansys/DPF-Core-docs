@@ -728,12 +728,12 @@ then the maximum of the norm of the operator.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connect to the data sources of the model.</span>
 <span class="n">disp_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">data_sources</span><span class="p">)</span>
 
-<span class="c1"># Create a field container norm operator and connect it to the</span>
+<span class="c1"># Create a fields container norm operator and connect it to the</span>
 <span class="c1"># displacement operator to chain the operators.</span>
 <span class="n">norm_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;norm_fc&quot;</span><span class="p">)</span>
 <span class="n">norm_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">disp_op</span><span class="o">.</span><span class="n">outputs</span><span class="p">)</span>
 
-<span class="c1"># Create a field container min/max operator and connect it to the</span>
+<span class="c1"># Create a fields container min/max operator and connect it to the</span>
 <span class="c1"># output of the norm operator.</span>
 <span class="n">mm_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;min_max_fc&quot;</span><span class="p">)</span>
 <span class="n">mm_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">norm_op</span><span class="o">.</span><span class="n">outputs</span><span class="p">)</span>
@@ -845,7 +845,7 @@ scripting syntax.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[1.48153706e-08]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.016 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.188 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-01-basic-operators-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9aa372dff2fc2ef917214ce9663244c9/01-basic_operators.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-basic_operators.py</span></code></a></p>

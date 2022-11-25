@@ -627,7 +627,8 @@ to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="scope-results-over-custom-space-domains">
 <span id="ref-results-over-space"></span><span id="sphx-glr-examples-00-basic-09-results-over-space-subset-py"></span><h1>Scope results over custom space domains<a class="headerlink" href="#scope-results-over-custom-space-domains" title="Permalink to this heading">#</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">Result</span></code> class, which are instances created by the <code class="docutils literal notranslate"><span class="pre">Model</span></code>, give
+<p>The <a class="reference internal" href="../../api/ansys.dpf.core.results.html#ansys.dpf.core.results.Result" title="ansys.dpf.core.results.Result"><code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code></a> class, which are instances
+created by the <a class="reference internal" href="../../api/ansys.dpf.core.model.html#ansys.dpf.core.model.Model" title="ansys.dpf.core.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>, give
 access to helpers for requesting results on specific mesh and time scopings.
 With these helpers, working on a spatial subset of the model is straightforward.
 In this example, different ways to choose the spatial subset to
@@ -762,7 +763,7 @@ To know the available named selections in the result file, use:</p>
 </pre></div>
 </div>
 <p>Get the <code class="docutils literal notranslate"><span class="pre">mesh_scoping</span></code> of a named selection:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh_scoping</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">named_selection</span><span class="p">(</span><span class="s1">&#39;_CM82&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh_scoping</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">named_selection</span><span class="p">(</span><span class="s2">&quot;_CM82&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mesh_scoping</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -776,13 +777,13 @@ To know the available named selections in the result file, use:</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_09-results_over_space_subset_003.png" srcset="../../_images/sphx_glr_09-results_over_space_subset_003.png" alt="09 results over space subset" class = "sphx-glr-single-img"/><p>Equivalent to:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">volume</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">elemental_volume</span><span class="o">.</span><span class="n">on_named_selection</span><span class="p">(</span><span class="s1">&#39;_CM82&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">volume</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">elemental_volume</span><span class="o">.</span><span class="n">on_named_selection</span><span class="p">(</span><span class="s2">&quot;_CM82&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ns_provider</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">scoping</span><span class="o">.</span><span class="n">on_named_selection</span><span class="p">(</span>
     <span class="n">requested_location</span><span class="o">=</span><span class="n">dpf</span><span class="o">.</span><span class="n">locations</span><span class="o">.</span><span class="n">elemental</span><span class="p">,</span>
-    <span class="n">named_selection_name</span><span class="o">=</span><span class="s1">&#39;_CM82&#39;</span><span class="p">,</span>
+    <span class="n">named_selection_name</span><span class="o">=</span><span class="s2">&quot;_CM82&quot;</span><span class="p">,</span>
     <span class="n">data_sources</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">volume</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">elemental_volume</span><span class="p">(</span><span class="n">mesh_scoping</span><span class="o">=</span><span class="n">ns_provider</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
@@ -865,8 +866,8 @@ Customers might also require split by entirely custom spatial domains.</p>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">elemental_stress</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">stress</span><span class="o">.</span><span class="n">on_location</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">locations</span><span class="o">.</span><span class="n">elemental</span><span class="p">)(</span>
-    <span class="n">mesh_scoping</span><span class="o">=</span><span class="n">scopings_container</span><span class="p">)</span> \
-    <span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="n">mesh_scoping</span><span class="o">=</span><span class="n">scopings_container</span>
+<span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">elemental_stress</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">elemental_stress</span><span class="p">:</span>
@@ -886,7 +887,7 @@ Customers might also require split by entirely custom spatial domains.</p>
   - field 1 {custom_split:  2, time:  1} with Elemental location, 6 components and 4500 entities.
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.524 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  13.214 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-09-results-over-space-subset-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/3f5b339fabf8c4e578964e18e3ede332/09-results_over_space_subset.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">09-results_over_space_subset.py</span></code></a></p>

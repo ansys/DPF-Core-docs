@@ -597,65 +597,69 @@ to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="convert-nodal-coordinates-field-to-local-coordinate-system">
 <span id="ref-nodes-in-local-coordinate-system"></span><span id="sphx-glr-examples-00-basic-13-nodes-in-local-coordinate-system-py"></span><h1>Convert nodal coordinates field to local coordinate system<a class="headerlink" href="#convert-nodal-coordinates-field-to-local-coordinate-system" title="Permalink to this heading">#</a></h1>
-<p>GCS: Global Coordinate System
-LCS: Local Coordinate System
-Currently, there is no native operator to get nodal coordinates in an LCS.
-The operator :class: <cite>rotate &lt;ansys.dpf.core.operators.geo.rotate.rotate&gt;</cite>
-rotates the input field in GCS as per the input rotation matrix. So, if the LCS
-is at the same origin as the GCS, only one operation using the <cite>rotate</cite>
-operator give the desired output. But for an LCS with a transformed origin,
-after rotation a transformation along the rotated position vector of LCS’s
-origin is also needed to get the correct coordinates in LCS.</p>
+<p>Currently, there is no native operator to get nodal coordinates in an Local
+Coordinate System (LCS). The operator <a class="reference internal" href="../../api/ansys.dpf.core.operators.geo.rotate.html#ansys.dpf.core.operators.geo.rotate.rotate" title="ansys.dpf.core.operators.geo.rotate.rotate"><code class="xref py py-class docutils literal notranslate"><span class="pre">rotate</span></code></a>
+rotates the input field in Global Coordinate System (GCS) as per the input rotation matrix.
+So, if the LCS is at the same origin as the GCS, only one operation using the
+<a class="reference internal" href="../../api/ansys.dpf.core.operators.geo.rotate.html#ansys.dpf.core.operators.geo.rotate.rotate" title="ansys.dpf.core.operators.geo.rotate.rotate"><code class="xref py py-class docutils literal notranslate"><span class="pre">rotate</span></code></a> operator give the desired output.
+However, if the aim is to obtain the LCS in a case where the LCS origin does not coincide with
+the GCS, a transformation is required after the rotation to get the correct coordinates in LCS.</p>
 <p>The script below demonstrates the methodology using PyDPF.</p>
-<p>Import necessary modules:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example requires the Premium ServerContext.
+For more information, see <span class="xref std std-ref">_ref_getting_started_contexts</span>.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary modules</span>
+<span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+
+
+<span class="n">dpf</span><span class="o">.</span><span class="n">set_default_server_context</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerContexts</span><span class="o">.</span><span class="n">premium</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Create a model object to establish a connection with an example result file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">download_hemisphere</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>Get the property <cite>coordinates_field</cite> from :class: nodes ansys.dpf.core.nodes`</p>
+<p>Get the property <code class="docutils literal notranslate"><span class="pre">coordinates_field</span></code> from <a class="reference internal" href="../../api/ansys.dpf.core.nodes.html#module-ansys.dpf.core.nodes" title="ansys.dpf.core.nodes"><code class="xref py py-class docutils literal notranslate"><span class="pre">nodes</span></code></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncoord_f</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">coordinates_field</span>
 </pre></div>
 </div>
-<p>Get the rotation matrix of the LCS ID 12
-The first 9 values in the <cite>cs</cite> output is the rotation matrix</p>
+<p>Get the rotation matrix of the LCS ID 12.
+The first 9 values in the <code class="docutils literal notranslate"><span class="pre">cs</span></code> output is the rotation matrix.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">operator</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;mapdl::rst::CS&quot;</span><span class="p">)</span>
 <span class="n">cs</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">cs_id</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">cs_rot_mat</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Create a 3x3 rotation matrix field - <cite>rot_mat_f</cite></p>
+<p>Create a 3x3 rotation matrix field <code class="docutils literal notranslate"><span class="pre">rot_mat_f</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rot_mat_f</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">fields_factory</span><span class="o">.</span><span class="n">create_scalar_field</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">rot_mat_f</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">cs_rot_mat</span>
 </pre></div>
 </div>
 <p>Create a 3D vector field for the position vector of the LCS’s origin and
 rotate the origin as per the rotation matrix of the LCS.
-The last 3 entries of <cite>cs</cite> output is the LCS’s origin in GCS.</p>
+The last 3 entries of <code class="docutils literal notranslate"><span class="pre">cs</span></code> output is the LCS’s origin in GCS.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pos_vec</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">fields_factory</span><span class="o">.</span><span class="n">create_3d_vector_field</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">pos_vec</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
-<span class="n">pos_vec_rot</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">geo</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">pos_vec</span><span class="p">,</span>
-                                       <span class="n">field_rotation_matrix</span><span class="o">=</span><span class="n">rot_mat_f</span><span class="p">)</span>
+<span class="n">pos_vec_rot</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">geo</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">pos_vec</span><span class="p">,</span> <span class="n">field_rotation_matrix</span><span class="o">=</span><span class="n">rot_mat_f</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Get rotated nodal coordinates field.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncoord_rot_f</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">geo</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">ncoord_f</span><span class="p">,</span>
-                                        <span class="n">field_rotation_matrix</span><span class="o">=</span><span class="n">rot_mat_f</span><span class="p">)</span>
+<p>Get rotated nodal coordinates field:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncoord_rot_f</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">geo</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">ncoord_f</span><span class="p">,</span> <span class="n">field_rotation_matrix</span><span class="o">=</span><span class="n">rot_mat_f</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Transform rotated nodal coordinates field along rotated position vector -
-<cite>pos_vec_rot</cite>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pos_vec_rot_neg_f</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">pos_vec_rot</span><span class="p">,</span>
-                                             <span class="n">ponderation</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">)</span>
+<p>Transform rotated nodal coordinates field along rotated position vector
+<code class="docutils literal notranslate"><span class="pre">pos_vec_rot</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pos_vec_rot_neg_f</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">pos_vec_rot</span><span class="p">,</span> <span class="n">ponderation</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="n">pos_vec_rot_neg</span> <span class="o">=</span> <span class="n">pos_vec_rot_neg_f</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span><span class="o">.</span><span class="n">data_as_list</span>
-<span class="n">ncoord_translate</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">ncoord_rot_f</span><span class="p">,</span>
-                                                   <span class="n">ponderation</span><span class="o">=</span><span class="n">pos_vec_rot_neg</span><span class="p">)</span>
+<span class="n">ncoord_translate</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span>
+    <span class="n">field</span><span class="o">=</span><span class="n">ncoord_rot_f</span><span class="p">,</span> <span class="n">ponderation</span><span class="o">=</span><span class="n">pos_vec_rot_neg</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<p>Get the nodal coordinates field <cite>ncoord_lcs_f</cite> in LCS</p>
+<p>Get the nodal coordinates field <code class="docutils literal notranslate"><span class="pre">ncoord_lcs_f</span></code> in LCS:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncoord_lcs_f</span> <span class="o">=</span> <span class="n">ncoord_translate</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -673,7 +677,7 @@ The last 3 entries of <cite>cs</cite> output is the LCS’s origin in GCS.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[[11.71685114 -4.83846377 -2.35002614]]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.665 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.360 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-13-nodes-in-local-coordinate-system-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/6b0c0a8b504c93eb9837a49de4b9047f/13-nodes_in_local_coordinate_system.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">13-nodes_in_local_coordinate_system.py</span></code></a></p>

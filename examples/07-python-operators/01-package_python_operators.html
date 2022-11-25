@@ -623,7 +623,7 @@ to download the full example code</p>
 <section class="sphx-glr-example-title" id="create-a-plug-in-package-with-multiple-operators">
 <span id="ref-python-plugin-package"></span><span id="sphx-glr-examples-07-python-operators-01-package-python-operators-py"></span><h1>Create a plug-in package with multiple operators<a class="headerlink" href="#create-a-plug-in-package-with-multiple-operators" title="Permalink to this heading">#</a></h1>
 <p>This example shows how to create a plug-in package with multiple operators.
-The benefits of writing packages rather than simple scripts are:</p>
+The benefits of writing a package rather than simple scripts are:</p>
 <ul class="simple">
 <li><p><strong>Componentization:</strong> You can split the code into several Python modules or files.</p></li>
 <li><p><strong>Distribution:</strong> You can use standard Python tools to upload and download packages.</p></li>
@@ -631,9 +631,14 @@ The benefits of writing packages rather than simple scripts are:</p>
 </ul>
 <p>For this example, the plug-in package contains two different operators:</p>
 <ul class="simple">
-<li><p>One that returns all scoping ID having data higher than the average</p></li>
+<li><p>One that returns all scoping IDs having data higher than the average</p></li>
 <li><p>One that returns all scoping IDs having data lower than the average</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example requires the Premium ServerContext.
+For more information, see <span class="xref std std-ref">_ref_getting_started_contexts</span>.</p>
+</div>
 <section id="create-the-plug-in-package">
 <h2>Create the plug-in package<a class="headerlink" href="#create-the-plug-in-package" title="Permalink to this heading">#</a></h2>
 <p>Each operator implementation derives from the
@@ -643,13 +648,20 @@ method, which records the operators of the plug-in package.</p>
 <p>Download the <code class="docutils literal notranslate"><span class="pre">average_filter_plugin</span></code> plug-in package that has already been
 created for you.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1m average_filter_plugin&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+
+<span class="n">dpf</span><span class="o">.</span><span class="n">set_default_server_context</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerContexts</span><span class="o">.</span><span class="n">premium</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m average_filter_plugin&quot;</span><span class="p">)</span>
 <span class="n">file_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;__init__.py&quot;</span><span class="p">,</span> <span class="s2">&quot;operators.py&quot;</span><span class="p">,</span> <span class="s2">&quot;operators_loader.py&quot;</span><span class="p">,</span> <span class="s2">&quot;common.py&quot;</span><span class="p">]</span>
 <span class="n">plugin_folder</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">GITHUB_SOURCE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/pyansys/pydpf-core/raw/&quot;</span> \
-                    <span class="s2">&quot;examples/first_python_plugins/python_plugins/average_filter_plugin&quot;</span>
+<span class="n">GITHUB_SOURCE_URL</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;https://github.com/pyansys/pydpf-core/raw/&quot;</span>
+    <span class="s2">&quot;examples/first_python_plugins/python_plugins/average_filter_plugin&quot;</span>
+<span class="p">)</span>
 
 <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
     <span class="n">EXAMPLE_FILE</span> <span class="o">=</span> <span class="n">GITHUB_SOURCE_URL</span> <span class="o">+</span> <span class="s2">&quot;/average_filter_plugin/&quot;</span> <span class="o">+</span> <span class="n">file</span>
@@ -657,10 +669,10 @@ created for you.</p>
         <span class="n">EXAMPLE_FILE</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="s2">&quot;python_plugins/average_filter_plugin&quot;</span>
     <span class="p">)</span>
     <span class="n">plugin_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">operator_file_path</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1m </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1">:</span><span class="se">\n</span><span class="s1"> </span><span class="se">\033</span><span class="s1">[0m&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1m </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="s2"> </span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="p">)</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">operator_file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t\t\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -853,11 +865,13 @@ plug-in package.</p>
 <ul class="simple">
 <li><p>The first argument is the path to the directory where the plug-in package
 is located.</p></li>
-<li><p>The second argument is <code class="docutils literal notranslate"><span class="pre">py_</span></code> plus any name identifying the plug-in package.</p></li>
-<li><p>The third argument is the name of the function exposed in the <code class="docutils literal notranslate"><span class="pre">__init__</span> <span class="pre">file</span></code>
+<li><p>The second argument is <code class="docutils literal notranslate"><span class="pre">py_&lt;package&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;</span></code> is the name
+identifying the plug-in package.</p></li>
+<li><p>The third argument is the name of the function exposed in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> file
 for the plug-in package that is used to record operators.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
 <span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 
@@ -866,13 +880,13 @@ for the plug-in package that is used to record operators.</p></li>
 
 <span class="n">tmp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">make_tmp_dir_server</span><span class="p">()</span>
 <span class="n">dpf</span><span class="o">.</span><span class="n">upload_files_in_folder</span><span class="p">(</span>
-    <span class="n">dpf</span><span class="o">.</span><span class="n">path_utilities</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="s2">&quot;average_filter_plugin&quot;</span><span class="p">),</span>
-    <span class="n">plugin_folder</span>
+    <span class="n">dpf</span><span class="o">.</span><span class="n">path_utilities</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="s2">&quot;average_filter_plugin&quot;</span><span class="p">),</span> <span class="n">plugin_folder</span>
 <span class="p">)</span>
 <span class="n">dpf</span><span class="o">.</span><span class="n">load_library</span><span class="p">(</span>
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">path_utilities</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="s2">&quot;average_filter_plugin&quot;</span><span class="p">)),</span>
     <span class="s2">&quot;py_average_filter&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;load_operators&quot;</span><span class="p">)</span>
+    <span class="s2">&quot;load_operators&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;py_average_filter successfully loaded&#39;
@@ -923,7 +937,7 @@ scoping out is: DPF  Scoping:
   with Nodal location and 35 entities
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.193 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.664 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-07-python-operators-01-package-python-operators-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/a509d520cc7e8df99837074c955c911c/01-package_python_operators.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-package_python_operators.py</span></code></a></p>

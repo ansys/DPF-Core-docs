@@ -599,6 +599,11 @@ to download the full example code</p>
 <span id="plot-on-warped-mesh"></span><span id="sphx-glr-examples-05-plotting-05-plot-on-warped-mesh-py"></span><h1>Warp the mesh by a field for plotting<a class="headerlink" href="#warp-the-mesh-by-a-field-for-plotting" title="Permalink to this heading">#</a></h1>
 <p>This example shows how to warp the mesh by a vector field,
 enabling to plot on the deformed geometry.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example requires the Premium ServerContext.
+For more information, see <span class="xref std std-ref">_ref_getting_started_contexts</span>.</p>
+</div>
 <ul class="sphx-glr-horizontal">
 <li><img src="../../_images/sphx_glr_05-plot_on_warped_mesh_001.png" srcset="../../_images/sphx_glr_05-plot_on_warped_mesh_001.png" alt="05 plot on warped mesh" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_05-plot_on_warped_mesh_002.png" srcset="../../_images/sphx_glr_05-plot_on_warped_mesh_002.png" alt="05 plot on warped mesh" class = "sphx-glr-multi-img"/></li>
@@ -643,6 +648,9 @@ Cumulative     Time (s)       LoadStep       Substep
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+
+
+<span class="n">dpf</span><span class="o">.</span><span class="n">set_default_server_context</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerContexts</span><span class="o">.</span><span class="n">premium</span><span class="p">)</span>
 
 <span class="c1"># Get and show the initial model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">find_multishells_rst</span><span class="p">())</span>
@@ -693,7 +701,7 @@ Cumulative     Time (s)       LoadStep       Substep
                  <span class="n">title</span><span class="o">=</span><span class="s1">&#39;MeshesContainer&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;MeshesContainer.plot(disp_fc)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.365 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.573 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-05-plotting-05-plot-on-warped-mesh-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/35af42c999d66cb744869e803166a019/05-plot_on_warped_mesh.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">05-plot_on_warped_mesh.py</span></code></a></p>

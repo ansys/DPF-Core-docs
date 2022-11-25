@@ -619,18 +619,18 @@ to download the full example code</p>
 <span id="ref-basic-example"></span><span id="sphx-glr-examples-00-basic-00-basic-example-py"></span><h1>Basic DPF-Core usage<a class="headerlink" href="#basic-dpf-core-usage" title="Permalink to this heading">#</a></h1>
 <p>This example shows how to open a result file and do some
 basic postprocessing.</p>
-<p>If you have Ansys 2021 R1 installed, starting DPF is quite easy
+<p>If you have Ansys 2021 R1 or higher installed, starting DPF is quite easy
 as DPF-Core takes care of launching all the services that
 are required for postprocessing Ansys files.</p>
-<p>First, import the DPF-Core module as <code class="docutils literal notranslate"><span class="pre">dpf_core</span></code> and import the
+<p>First, import the DPF-Core module as <code class="docutils literal notranslate"><span class="pre">dpf</span></code> and import the
 included examples file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
 <p>Next, open an example and print out the <code class="docutils literal notranslate"><span class="pre">model</span></code> object. The
-<code class="docutils literal notranslate"><span class="pre">Model</span></code> class helps to organize access methods for the result by
-keeping track of the operators and data sources used by the result
+<a class="reference internal" href="../../api/ansys.dpf.core.model.html#ansys.dpf.core.model.Model" title="ansys.dpf.core.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> class helps to organize access methods
+for the result by keeping track of the operators and data sources used by the result
 file.</p>
 <p>Printing the model displays:</p>
 <ul class="simple">
@@ -642,7 +642,7 @@ file.</p>
 <p>Also, note that the first time you create a DPF object, Python
 automatically attempts to start the server in the background. If you
 want to connect to an existing server (either local or remote), use
-<code class="xref py py-func docutils literal notranslate"><span class="pre">dpf.connect_to_server()</span></code>.</p>
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ansys.dpf.core.connect_to_server()</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">examples</span><span class="o">.</span><span class="n">find_simple_bar</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 </pre></div>
@@ -756,7 +756,7 @@ which for this static result is the only result.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_00-basic_example_001.png" srcset="../../_images/sphx_glr_00-basic_example_001.png" alt="00 basic example" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.580 seconds)</p>
+<img src="../../_images/sphx_glr_00-basic_example_001.png" srcset="../../_images/sphx_glr_00-basic_example_001.png" alt="00 basic example" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  13.791 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-00-basic-example-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/10361ee91d55c14598718da56ad8d485/00-basic_example.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">00-basic_example.py</span></code></a></p>

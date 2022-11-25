@@ -601,13 +601,22 @@ to download the full example code</p>
 Because the example is based on creating a path along the normal, the selected node
 must be on the surface of the geometry.
 A path is created of a defined length.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example requires the Premium ServerContext.
+For more information, see <span class="xref std std-ref">_ref_getting_started_contexts</span>.</p>
+</div>
 <p>Import the DPF-Core module as <code class="docutils literal notranslate"><span class="pre">dpf</span></code> and import the
 included examples file and <code class="docutils literal notranslate"><span class="pre">DpfPlotter</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
 <span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+<span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">operators</span> <span class="k">as</span> <span class="n">ops</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core.plotter</span> <span class="kn">import</span> <span class="n">DpfPlotter</span>
-<span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+
+
+<span class="n">dpf</span><span class="o">.</span><span class="n">set_default_server_context</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerContexts</span><span class="o">.</span><span class="n">premium</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Open an example and print out the <code class="docutils literal notranslate"><span class="pre">Model</span></code> object. The
@@ -658,7 +667,7 @@ Cumulative     Time (s)       LoadStep       Substep
 1              1.000000       1              1
 </pre></div>
 </div>
-<p>Define the node ID normal to plot the a stress gradient to.</p>
+<p>Define the node ID normal to plot the a stress gradient</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">node_id</span> <span class="o">=</span> <span class="mi">1928</span>
 </pre></div>
 </div>
@@ -670,9 +679,9 @@ Cumulative     Time (s)       LoadStep       Substep
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Unit: mm
 </pre></div>
 </div>
-<p><cite>depth</cite> defines the length/depth that the path penetrates to.
-While defining <cite>depth</cite> make sure you use the correct mesh unit.
-<cite>delta</cite> defines distance between consecutive points on the path.</p>
+<p><code class="docutils literal notranslate"><span class="pre">depth</span></code> defines the length/depth that the path penetrates to.
+While defining <code class="docutils literal notranslate"><span class="pre">depth</span></code> make sure you use the correct mesh unit.
+<code class="docutils literal notranslate"><span class="pre">delta</span></code> defines distance between consecutive points on the path.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">depth</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># in mm</span>
 <span class="n">delta</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># in mm</span>
 </pre></div>
@@ -687,17 +696,19 @@ While defining <cite>depth</cite> make sure you use the correct mesh unit.
 </div>
 <p>Define Nodal scoping.
 Make sure to define <code class="docutils literal notranslate"><span class="pre">&quot;Nodal&quot;</span></code> as the requested location, important for the
-<cite>normals</cite> operator.</p>
+<a class="reference internal" href="../../api/ansys.dpf.core.operators.geo.normals.html#ansys.dpf.core.operators.geo.normals.normals" title="ansys.dpf.core.operators.geo.normals.normals"><code class="xref py py-class docutils literal notranslate"><span class="pre">normals</span></code></a> operator.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nodal_scoping</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Scoping</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">dpf</span><span class="o">.</span><span class="n">locations</span><span class="o">.</span><span class="n">nodal</span><span class="p">)</span>
 <span class="n">nodal_scoping</span><span class="o">.</span><span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">node_id</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Get Skin Mesh because <cite>normals</cite> operator requires Shells as input.</p>
+<p>Get Skin Mesh because <a class="reference internal" href="../../api/ansys.dpf.core.operators.geo.normals.html#ansys.dpf.core.operators.geo.normals.normals" title="ansys.dpf.core.operators.geo.normals.normals"><code class="xref py py-class docutils literal notranslate"><span class="pre">normals</span></code></a>
+operator requires Shells as input.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">skin_mesh</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">skin</span><span class="p">(</span><span class="n">mesh</span><span class="o">=</span><span class="n">mesh</span><span class="p">)</span>
 <span class="n">skin_meshed_region</span> <span class="o">=</span> <span class="n">skin_mesh</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Get normal at a node using <cite>normals</cite> operator.</p>
+<p>Get normal at a node using <a class="reference internal" href="../../api/ansys.dpf.core.operators.geo.normals.html#ansys.dpf.core.operators.geo.normals.normals" title="ansys.dpf.core.operators.geo.normals.normals"><code class="xref py py-class docutils literal notranslate"><span class="pre">normals</span></code></a>
+operator.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">normal</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">geo</span><span class="o">.</span><span class="n">normals</span><span class="p">()</span>
 <span class="n">normal</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">skin_meshed_region</span><span class="p">)</span>
 <span class="n">normal</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">mesh_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">nodal_scoping</span><span class="p">)</span>
@@ -705,10 +716,9 @@ Make sure to define <code class="docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 <p>The normal vector is along the surface normal. You need to invert the vector
-using <cite>math.scale</cite> operator inwards in the geometry, to get the path
-direction.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">normal_vec_in_field</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">normal_vec_out_field</span><span class="p">,</span>
-                                     <span class="n">ponderation</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">)</span>
+using <a class="reference internal" href="../../api/ansys.dpf.core.operators.math.scale.html#ansys.dpf.core.operators.math.scale.scale" title="ansys.dpf.core.operators.math.scale.scale"><code class="xref py py-class docutils literal notranslate"><span class="pre">scale</span></code></a> operator
+inwards in the geometry, to get the path direction.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">normal_vec_in_field</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="n">normal_vec_out_field</span><span class="p">,</span> <span class="n">ponderation</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="n">normal_vec_in</span> <span class="o">=</span> <span class="n">normal_vec_in_field</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -724,8 +734,9 @@ direction.</p>
 </pre></div>
 </div>
 <p>Create coordinates using 3D line equation.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">[[</span><span class="n">fx</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="n">delta</span><span class="p">),</span> <span class="n">fy</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="n">delta</span><span class="p">),</span> <span class="n">fz</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="n">delta</span><span class="p">)]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span>
-               <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">depth</span> <span class="o">/</span> <span class="n">delta</span><span class="p">))]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="n">fx</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="n">delta</span><span class="p">),</span> <span class="n">fy</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="n">delta</span><span class="p">),</span> <span class="n">fz</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="n">delta</span><span class="p">)]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">depth</span> <span class="o">/</span> <span class="n">delta</span><span class="p">))</span>
+<span class="p">]</span>
 <span class="n">flat_coordinates</span> <span class="o">=</span> <span class="p">[</span><span class="n">entry</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">coordinates</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -737,10 +748,8 @@ direction.</p>
 </div>
 <p>Map results on the path.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapping_operator</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">on_coordinates</span><span class="p">(</span>
-    <span class="n">fields_container</span><span class="o">=</span><span class="n">stress_fc</span><span class="p">,</span>
-    <span class="n">coordinates</span><span class="o">=</span><span class="n">field_coord</span><span class="p">,</span>
-    <span class="n">create_support</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">mesh</span><span class="o">=</span><span class="n">mesh</span><span class="p">)</span>
+    <span class="n">fields_container</span><span class="o">=</span><span class="n">stress_fc</span><span class="p">,</span> <span class="n">coordinates</span><span class="o">=</span><span class="n">field_coord</span><span class="p">,</span> <span class="n">create_support</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mesh</span><span class="o">=</span><span class="n">mesh</span>
+<span class="p">)</span>
 <span class="n">fields_mapped</span> <span class="o">=</span> <span class="n">mapping_operator</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">fields_container</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -758,20 +767,18 @@ direction.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_06-stress_gradient_path_001.png" srcset="../../_images/sphx_glr_06-stress_gradient_path_001.png" alt="06 stress gradient path" class = "sphx-glr-single-img"/><p>Create a plot to add both meshes to.
-<code class="docutils literal notranslate"><span class="pre">mesh_m</span></code> - mapped mesh
-<code class="docutils literal notranslate"><span class="pre">mesh</span></code> - original mesh</p>
+<img src="../../_images/sphx_glr_06-stress_gradient_path_001.png" srcset="../../_images/sphx_glr_06-stress_gradient_path_001.png" alt="06 stress gradient path" class = "sphx-glr-single-img"/><p>Create a plot to add both meshes, <code class="docutils literal notranslate"><span class="pre">mesh_m</span></code> (the mapped mesh) and <code class="docutils literal notranslate"><span class="pre">mesh</span></code>
+(the original mesh)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span> <span class="o">=</span> <span class="n">DpfPlotter</span><span class="p">()</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="n">field_m</span><span class="p">,</span> <span class="n">mesh_m</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;surface&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">show_figure</span><span class="p">(</span><span class="n">show_axes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="p">[</span>
-    <span class="p">(</span><span class="mf">62.687</span><span class="p">,</span> <span class="mf">50.119</span><span class="p">,</span> <span class="mf">67.247</span><span class="p">),</span>
-    <span class="p">(</span><span class="mf">5.135</span><span class="p">,</span> <span class="mf">6.458</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.355</span><span class="p">),</span>
-    <span class="p">(</span><span class="o">-</span><span class="mf">0.286</span><span class="p">,</span> <span class="mf">0.897</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.336</span><span class="p">)])</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;surface&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">show_figure</span><span class="p">(</span>
+    <span class="n">show_axes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">cpos</span><span class="o">=</span><span class="p">[(</span><span class="mf">62.687</span><span class="p">,</span> <span class="mf">50.119</span><span class="p">,</span> <span class="mf">67.247</span><span class="p">),</span> <span class="p">(</span><span class="mf">5.135</span><span class="p">,</span> <span class="mf">6.458</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.355</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.286</span><span class="p">,</span> <span class="mf">0.897</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.336</span><span class="p">)],</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_06-stress_gradient_path_002.png" srcset="../../_images/sphx_glr_06-stress_gradient_path_002.png" alt="06 stress gradient path" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.548 seconds)</p>
+<img src="../../_images/sphx_glr_06-stress_gradient_path_002.png" srcset="../../_images/sphx_glr_06-stress_gradient_path_002.png" alt="06 stress gradient path" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.688 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-03-advanced-06-stress-gradient-path-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/77fbe97971a36d47af03090e65c5af39/06-stress_gradient_path.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">06-stress_gradient_path.py</span></code></a></p>

@@ -619,11 +619,12 @@ with any Python tool.</p>
 
 
 <span class="k">def</span> <span class="nf">search_sequence_numpy</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">seq</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Find a sequence in an array and return its index.&quot;&quot;&quot;</span>
     <span class="n">indexes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
     <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span><span class="n">indexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
         <span class="k">if</span> <span class="n">index</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span>
-                    <span class="n">arr</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="n">seq</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+                <span class="n">arr</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="n">seq</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
             <span class="p">):</span>
                 <span class="k">return</span> <span class="n">index</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
@@ -632,22 +633,22 @@ with any Python tool.</p>
 <p>Add nodes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_id</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
-        <span class="p">[</span>
-            <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">length</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_length</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_nodes_in_length</span><span class="p">)</span>
-        <span class="p">]</span>
+    <span class="p">[</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">length</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_length</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_nodes_in_length</span><span class="p">)</span>
+    <span class="p">]</span>
 <span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
-            <span class="p">[</span>
-                <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">width</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_width</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_nodes_in_width</span><span class="p">)</span>
-            <span class="p">]</span>
+        <span class="p">[</span>
+            <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">width</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_width</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_nodes_in_width</span><span class="p">)</span>
+        <span class="p">]</span>
     <span class="p">):</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
-                <span class="p">[</span>
-                    <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">depth</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_depth</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_nodes_in_depth</span><span class="p">)</span>
-                <span class="p">]</span>
+            <span class="p">[</span>
+                <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">depth</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_depth</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_nodes_in_depth</span><span class="p">)</span>
+            <span class="p">]</span>
         <span class="p">):</span>
             <span class="n">mesh</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">n_id</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">])</span>
             <span class="n">n_id</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -668,22 +669,22 @@ with any Python tool.</p>
 <p>Add solid elements (linear hexa with eight nodes):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e_id</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
-        <span class="p">[</span>
-            <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">length</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_length</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_nodes_in_length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="p">]</span>
+    <span class="p">[</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">length</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_length</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_nodes_in_length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">]</span>
 <span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
-            <span class="p">[</span>
-                <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">width</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_width</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_nodes_in_width</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="p">]</span>
+        <span class="p">[</span>
+            <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">width</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_width</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_nodes_in_width</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">]</span>
     <span class="p">):</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
-                <span class="p">[</span>
-                    <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">depth</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_depth</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_nodes_in_depth</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-                <span class="p">]</span>
+            <span class="p">[</span>
+                <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">depth</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_nodes_in_depth</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_nodes_in_depth</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">]</span>
         <span class="p">):</span>
             <span class="n">coord1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">])</span>
             <span class="n">connectivity</span> <span class="o">=</span> <span class="p">[]</span>
@@ -708,12 +709,12 @@ with any Python tool.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_03-create_entities_001.png" srcset="../../_images/sphx_glr_03-create_entities_001.png" alt="03 create entities" class = "sphx-glr-single-img"/><p>Create displacement fields over time with three time sets.
-Here the displacement on each node is the value of its x, y, and
-z coordinates for time 1.
-The displacement on each node is two times the value of its x, y,
-and z coordinates for time 2.
-The displacement on each node is three times the value of its x,
-y, and z coordinates for time 3.</p>
+For the first time set, the displacement on each node is the
+value of its x, y, and z coordinates.
+For the second time set, the displacement on each node is two
+times the value of its x, y, and z coordinates.
+For the third time set, the displacement on each node is three
+times the value of its x, y, and z coordinates.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num_nodes</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">n_nodes</span>
 <span class="n">time1_array</span> <span class="o">=</span> <span class="n">coordinates_data</span>
 <span class="n">time2_array</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">coordinates_data</span>
@@ -767,7 +768,7 @@ Cumulative     Time (s)       LoadStep       Substep
 <li><img src="../../_images/sphx_glr_03-create_entities_003.png" srcset="../../_images/sphx_glr_03-create_entities_003.png" alt="03 create entities" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_03-create_entities_004.png" srcset="../../_images/sphx_glr_03-create_entities_004.png" alt="03 create entities" class = "sphx-glr-multi-img"/></li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.896 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.521 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-03-create-entities-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8e0366e1a90373804ae4d1e5538d3c15/03-create_entities.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">03-create_entities.py</span></code></a></p>

@@ -29,7 +29,7 @@ with any Python tool.
 
 Import necessary modules:
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-18
+.. GENERATED FROM PYTHON SOURCE LINES 14-19
 
 .. code-block:: default
 
@@ -45,11 +45,11 @@ Import necessary modules:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-20
+.. GENERATED FROM PYTHON SOURCE LINES 20-21
 
 Create a parallel piped mesh made of linear hexa:
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-40
+.. GENERATED FROM PYTHON SOURCE LINES 21-42
 
 .. code-block:: default
 
@@ -63,11 +63,12 @@ Create a parallel piped mesh made of linear hexa:
 
 
     def search_sequence_numpy(arr, seq):
+        """Find a sequence in an array and return its index."""
         indexes = np.where(np.isclose(arr, seq[0]))
         for index in np.nditer(indexes[0]):
             if index % 3 == 0:
                 if np.allclose(arr[index + 1], seq[1]) and np.allclose(
-                        arr[index + 2], seq[2]
+                    arr[index + 2], seq[2]
                 ):
                     return index
         return -1
@@ -80,32 +81,32 @@ Create a parallel piped mesh made of linear hexa:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-42
+.. GENERATED FROM PYTHON SOURCE LINES 43-44
 
 Add nodes:
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-64
+.. GENERATED FROM PYTHON SOURCE LINES 44-66
 
 .. code-block:: default
 
     n_id = 1
     for i, x in enumerate(
-            [
-                float(i) * length / float(num_nodes_in_length)
-                for i in range(0, num_nodes_in_length)
-            ]
+        [
+            float(i) * length / float(num_nodes_in_length)
+            for i in range(0, num_nodes_in_length)
+        ]
     ):
         for j, y in enumerate(
-                [
-                    float(i) * width / float(num_nodes_in_width)
-                    for i in range(0, num_nodes_in_width)
-                ]
+            [
+                float(i) * width / float(num_nodes_in_width)
+                for i in range(0, num_nodes_in_width)
+            ]
         ):
             for k, z in enumerate(
-                    [
-                        float(i) * depth / float(num_nodes_in_depth)
-                        for i in range(0, num_nodes_in_depth)
-                    ]
+                [
+                    float(i) * depth / float(num_nodes_in_depth)
+                    for i in range(0, num_nodes_in_depth)
+                ]
             ):
                 mesh.nodes.add_node(n_id, [x, y, z])
                 n_id += 1
@@ -117,11 +118,11 @@ Add nodes:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-66
+.. GENERATED FROM PYTHON SOURCE LINES 67-68
 
 Get the nodes' coordinates field:
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-68
+.. GENERATED FROM PYTHON SOURCE LINES 68-70
 
 .. code-block:: default
 
@@ -134,11 +135,11 @@ Get the nodes' coordinates field:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-70
+.. GENERATED FROM PYTHON SOURCE LINES 71-72
 
 Set the mesh unit:
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-76
+.. GENERATED FROM PYTHON SOURCE LINES 72-78
 
 .. code-block:: default
 
@@ -155,32 +156,32 @@ Set the mesh unit:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-78
+.. GENERATED FROM PYTHON SOURCE LINES 79-80
 
 Add solid elements (linear hexa with eight nodes):
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-118
+.. GENERATED FROM PYTHON SOURCE LINES 80-120
 
 .. code-block:: default
 
     e_id = 1
     for i, x in enumerate(
-            [
-                float(i) * length / float(num_nodes_in_length)
-                for i in range(0, num_nodes_in_length - 1)
-            ]
+        [
+            float(i) * length / float(num_nodes_in_length)
+            for i in range(num_nodes_in_length - 1)
+        ]
     ):
         for j, y in enumerate(
-                [
-                    float(i) * width / float(num_nodes_in_width)
-                    for i in range(0, num_nodes_in_width - 1)
-                ]
+            [
+                float(i) * width / float(num_nodes_in_width)
+                for i in range(num_nodes_in_width - 1)
+            ]
         ):
             for k, z in enumerate(
-                    [
-                        float(i) * depth / float(num_nodes_in_depth)
-                        for i in range(0, num_nodes_in_depth - 1)
-                    ]
+                [
+                    float(i) * depth / float(num_nodes_in_depth)
+                    for i in range(num_nodes_in_depth - 1)
+                ]
             ):
                 coord1 = np.array([x, y, z])
                 connectivity = []
@@ -215,17 +216,17 @@ Add solid elements (linear hexa with eight nodes):
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 119-126
+.. GENERATED FROM PYTHON SOURCE LINES 121-128
 
 Create displacement fields over time with three time sets.
-Here the displacement on each node is the value of its x, y, and
-z coordinates for time 1.
-The displacement on each node is two times the value of its x, y,
-and z coordinates for time 2.
-The displacement on each node is three times the value of its x,
-y, and z coordinates for time 3.
+For the first time set, the displacement on each node is the
+value of its x, y, and z coordinates.
+For the second time set, the displacement on each node is two
+times the value of its x, y, and z coordinates.
+For the third time set, the displacement on each node is three
+times the value of its x, y, and z coordinates.
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-147
+.. GENERATED FROM PYTHON SOURCE LINES 128-149
 
 .. code-block:: default
 
@@ -257,11 +258,11 @@ y, and z coordinates for time 3.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-149
+.. GENERATED FROM PYTHON SOURCE LINES 150-151
 
 Create results over times in a fields container with its time frequency support:
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-153
+.. GENERATED FROM PYTHON SOURCE LINES 151-155
 
 .. code-block:: default
 
@@ -276,11 +277,11 @@ Create results over times in a fields container with its time frequency support:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-155
+.. GENERATED FROM PYTHON SOURCE LINES 156-157
 
 Check that the time frequency support has been built:
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-157
+.. GENERATED FROM PYTHON SOURCE LINES 157-159
 
 .. code-block:: default
 
@@ -305,11 +306,11 @@ Check that the time frequency support has been built:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-159
+.. GENERATED FROM PYTHON SOURCE LINES 160-161
 
 Plot the norm over time of the fields container:
 
-.. GENERATED FROM PYTHON SOURCE LINES 159-164
+.. GENERATED FROM PYTHON SOURCE LINES 161-166
 
 .. code-block:: default
 
@@ -352,7 +353,7 @@ Plot the norm over time of the fields container:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.896 seconds)
+   **Total running time of the script:** ( 0 minutes  8.521 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_03-create_entities.py:

@@ -25,10 +25,16 @@ Plot results on a specific path
 This example shows how to get a result mapped over a specific path
 and how to plot it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-16
+.. note::
+    This example requires the Premium ServerContext.
+    For more information, see :ref:`_ref_getting_started_contexts`.
+
+.. GENERATED FROM PYTHON SOURCE LINES 15-26
 
 .. code-block:: default
 
+
+    import matplotlib.pyplot as plt
 
     from ansys.dpf import core as dpf
     from ansys.dpf.core import examples
@@ -36,20 +42,23 @@ and how to plot it.
     from ansys.dpf.core.plotter import DpfPlotter
 
 
+    dpf.set_default_server_context(dpf.AvailableServerContexts.premium)
 
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-21
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 27-31
 
 Plot path
 ~~~~~~~~~
 Use the :class:`ansys.dpf.core.plotter.DpfPlotter` class to plot a mapped
 result over a defined path of coordinates.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-27
+.. GENERATED FROM PYTHON SOURCE LINES 31-37
 
 .. code-block:: default
 
@@ -66,18 +75,20 @@ result over a defined path of coordinates.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-29
+.. GENERATED FROM PYTHON SOURCE LINES 38-39
 
 Create a coordinates field to map on.
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-38
+.. GENERATED FROM PYTHON SOURCE LINES 39-50
 
 .. code-block:: default
 
     coordinates = [[0.024, 0.03, 0.003]]
-    for i in range(1, 51):
+    delta = 0.001
+    n_points = 51
+    for i in range(1, n_points):
         coord_copy = coordinates[0].copy()
-        coord_copy[1] = coord_copy[0] + i * 0.001
+        coord_copy[1] = coord_copy[0] + i * delta
         coordinates.append(coord_copy)
     field_coord = dpf.fields_factory.create_3d_vector_field(len(coordinates))
     field_coord.data = coordinates
@@ -90,19 +101,17 @@ Create a coordinates field to map on.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-40
+.. GENERATED FROM PYTHON SOURCE LINES 51-52
 
 Compute the mapped data using the mapping operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-47
+.. GENERATED FROM PYTHON SOURCE LINES 52-57
 
 .. code-block:: default
 
     mapping_operator = ops.mapping.on_coordinates(
-        fields_container=stress_fc,
-        coordinates=field_coord,
-        create_support=True,
-        mesh=mesh)
+        fields_container=stress_fc, coordinates=field_coord, create_support=True, mesh=mesh
+    )
     fields_mapped = mapping_operator.outputs.fields_container()
 
 
@@ -112,11 +121,11 @@ Compute the mapped data using the mapping operator.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-49
+.. GENERATED FROM PYTHON SOURCE LINES 58-59
 
 Request the mapped field data and its mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-52
+.. GENERATED FROM PYTHON SOURCE LINES 59-62
 
 .. code-block:: default
 
@@ -130,22 +139,22 @@ Request the mapped field data and its mesh.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-54
+.. GENERATED FROM PYTHON SOURCE LINES 63-64
 
 Create the plotter and add fields and meshes.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-62
+.. GENERATED FROM PYTHON SOURCE LINES 64-72
 
 .. code-block:: default
 
     pl = DpfPlotter()
 
     pl.add_field(field_m, mesh_m)
-    pl.add_mesh(mesh, style="surface", show_edges=True,
-                color="w", opacity=0.3)
+    pl.add_mesh(mesh, style="surface", show_edges=True, color="w", opacity=0.3)
 
     # Plot the result.
     pl.show_figure(show_axes=True)
+
 
 
 
@@ -158,10 +167,38 @@ Create the plotter and add fields and meshes.
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 73-75
+
+Plot the solution along the specified line. Note that since the line is only
+moving along the y-axis, the stresses are plotted with respect to the y coordinate.
+
+.. GENERATED FROM PYTHON SOURCE LINES 75-82
+
+.. code-block:: default
+
+    y_coords = [
+        mesh_m.nodes.coordinates_field.data[i][1] for i in range(mesh_m.nodes.n_nodes)
+    ]
+    plt.plot(y_coords, field_m.data, "r")
+    plt.xlabel(f"y-coordinate [{mesh.unit}]")
+    plt.ylabel(f"Stress [{field_m.unit}]")
+    plt.show()
+
+
+
+.. image-sg:: /examples/05-plotting/images/sphx_glr_04-plot_on_path_002.png
+   :alt: 04 plot on path
+   :srcset: /examples/05-plotting/images/sphx_glr_04-plot_on_path_002.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.282 seconds)
+   **Total running time of the script:** ( 0 minutes  1.610 seconds)
 
 
 .. _sphx_glr_download_examples_05-plotting_04-plot_on_path.py:

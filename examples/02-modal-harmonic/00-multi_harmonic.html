@@ -614,11 +614,19 @@ to download the full example code</p>
 <span id="ref-basic-harmonic"></span><span id="sphx-glr-examples-02-modal-harmonic-00-multi-harmonic-py"></span><h1>Multi-harmonic response example<a class="headerlink" href="#multi-harmonic-response-example" title="Permalink to this heading">#</a></h1>
 <p>This example shows how to compute a multi-harmonic response
 using <code class="docutils literal notranslate"><span class="pre">fft</span></code> transformations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example requires the Premium ServerContext.
+For more information, see <span class="xref std std-ref">_ref_getting_started_contexts</span>.</p>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">pyplot</span>
 
 <span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">operators</span> <span class="k">as</span> <span class="n">ops</span>
+
+
+<span class="n">dpf</span><span class="o">.</span><span class="n">set_default_server_context</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerContexts</span><span class="o">.</span><span class="n">premium</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Begin by downloading the example harmonic result. This result is
@@ -1712,7 +1720,7 @@ selected nodes and a set of EOs (engine orders).</p>
 <span class="n">pyplot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_00-multi_harmonic_001.png" srcset="../../_images/sphx_glr_00-multi_harmonic_001.png" alt="00 multi harmonic" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.032 seconds)</p>
+<img src="../../_images/sphx_glr_00-multi_harmonic_001.png" srcset="../../_images/sphx_glr_00-multi_harmonic_001.png" alt="00 multi harmonic" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.453 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-02-modal-harmonic-00-multi-harmonic-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/706507128639cba5b2223bd939ceeeb2/00-multi_harmonic.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">00-multi_harmonic.py</span></code></a></p>

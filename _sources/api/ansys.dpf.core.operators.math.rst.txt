@@ -53,7 +53,6 @@ Submodules
    ansys.dpf.core.operators.math.ln_fc
    ansys.dpf.core.operators.math.make_one_on_comp
    ansys.dpf.core.operators.math.matrix_inverse
-   ansys.dpf.core.operators.math.min_max_over_time
    ansys.dpf.core.operators.math.minus
    ansys.dpf.core.operators.math.minus_fc
    ansys.dpf.core.operators.math.modal_superposition

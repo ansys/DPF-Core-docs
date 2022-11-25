@@ -25,7 +25,11 @@ Warp the mesh by a field for plotting
 This example shows how to warp the mesh by a vector field,
 enabling to plot on the deformed geometry.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-61
+.. note::
+    This example requires the Premium ServerContext.
+    For more information, see :ref:`_ref_getting_started_contexts`.
+
+.. GENERATED FROM PYTHON SOURCE LINES 14-68
 
 
 
@@ -123,6 +127,9 @@ enabling to plot on the deformed geometry.
     from ansys.dpf import core as dpf
     from ansys.dpf.core import examples
 
+
+    dpf.set_default_server_context(dpf.AvailableServerContexts.premium)
+
     # Get and show the initial model
     model = dpf.Model(examples.find_multishells_rst())
     print(model)
@@ -174,7 +181,7 @@ enabling to plot on the deformed geometry.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.365 seconds)
+   **Total running time of the script:** ( 0 minutes  10.573 seconds)
 
 
 .. _sphx_glr_download_examples_05-plotting_05-plot_on_warped_mesh.py:

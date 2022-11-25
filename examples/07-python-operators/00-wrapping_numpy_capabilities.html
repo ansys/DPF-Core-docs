@@ -628,6 +628,11 @@ computes simple statistics quantities on a scalar field with the help of
 the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package.</p>
 <p>The objective of this simple example is to show how routines for DPF can
 be wrapped in Python plugins.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example requires the Premium ServerContext.
+For more information, see <span class="xref std std-ref">_ref_getting_started_contexts</span>.</p>
+</div>
 <section id="create-the-operator">
 <h2>Create the operator<a class="headerlink" href="#create-the-operator" title="Permalink to this heading">#</a></h2>
 <p>Creating a basic operator plugin consists of writing a single Python script.
@@ -641,6 +646,10 @@ The Python operator and its recording are available in the
 <code class="docutils literal notranslate"><span class="pre">easy_statistics.py</span></code> file.</p>
 <p>Download and display the Python script.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+
+<span class="n">dpf</span><span class="o">.</span><span class="n">set_default_server_context</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerContexts</span><span class="o">.</span><span class="n">premium</span><span class="p">)</span>
 
 <span class="n">GITHUB_SOURCE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/pyansys/pydpf-core/&quot;</span> \
                     <span class="s2">&quot;raw/examples/first_python_plugins/python_plugins&quot;</span>
@@ -809,7 +818,7 @@ third quartile is 1.4276663319275634e-08
 variance is 3.054190175494998e-17
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.376 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.361 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-07-python-operators-00-wrapping-numpy-capabilities-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/ed1907232d69ade0798fc5971e321e6c/00-wrapping_numpy_capabilities.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">00-wrapping_numpy_capabilities.py</span></code></a></p>

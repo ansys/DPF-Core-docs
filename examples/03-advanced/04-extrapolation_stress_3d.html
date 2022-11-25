@@ -634,9 +634,9 @@ to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="extrapolation-method-for-stress-result-of-a-3d-element">
 <span id="extrapolation-test-stress-3delement"></span><span id="sphx-glr-examples-03-advanced-04-extrapolation-stress-3d-py"></span><h1>Extrapolation method for stress result of a 3D element<a class="headerlink" href="#extrapolation-method-for-stress-result-of-a-3d-element" title="Permalink to this heading">#</a></h1>
-<p>This example shows how to compute the nodal components stress from
-Gaussian points (integration points) for a 3D element by using
-of extrapolation.</p>
+<p>This example shows how to compute the stress nodal components from
+Gaussian points (integration points) for a 3D element using
+extrapolation.</p>
 <p>Extrapolate results available at Gaussian or quadrature points to nodal
 points for a field or fields container. The available elements are:</p>
 <ul class="simple">
@@ -651,15 +651,23 @@ points for a field or fields container. The available elements are:</p>
 <ol class="arabic simple">
 <li><p>Get the data source’s solution from the integration points. (This
 result file was generated with the Ansys Mechanical APDL (MAPDL)
-option <code class="docutils literal notranslate"><span class="pre">EREXS,</span> <span class="pre">NO</span></code>).</p></li>
+option <code class="docutils literal notranslate"><span class="pre">ERESX,</span> <span class="pre">NO</span></code>).</p></li>
 <li><p>Use the extrapolation operator to compute the nodal stress.</p></li>
 <li><p>Get the result for nodal stress from the data source.
 The analysis was computed by MAPDL.</p></li>
 <li><p>Compare the result for nodal stress from the data source
 and the nodal stress computed by the extrapolation method.</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example requires the Premium ServerContext.
+For more information, see <span class="xref std std-ref">_ref_getting_started_contexts</span>.</p>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+
+
+<span class="n">dpf</span><span class="o">.</span><span class="n">set_default_server_context</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerContexts</span><span class="o">.</span><span class="n">premium</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Get the data source’s analysis of integration points and analysis reference</p>
@@ -741,11 +749,14 @@ by applying the extrapolation method.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># extrapolation</span>
 <span class="n">fex_nodal_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">averaging</span><span class="o">.</span><span class="n">elemental_nodal_to_nodal_fc</span><span class="p">()</span>
 <span class="n">fex_nodal_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_container</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">fex</span><span class="p">)</span>
-<span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fex_nodal_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">fields_container</span><span class="p">())</span>
+<span class="n">fex_nodal_fc</span> <span class="o">=</span> <span class="n">fex_nodal_op</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fex_nodal_fc</span><span class="p">)</span>
+
 <span class="c1"># reference</span>
 <span class="n">stress_ref_nodal_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">averaging</span><span class="o">.</span><span class="n">elemental_nodal_to_nodal_fc</span><span class="p">()</span>
 <span class="n">stress_ref_nodal_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_container</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">stress_ref</span><span class="p">)</span>
-<span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">stress_ref_nodal_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">fields_container</span><span class="p">())</span>
+<span class="n">stress_ref_nodal_fc</span> <span class="o">=</span> <span class="n">stress_ref_nodal_op</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">stress_ref_nodal_fc</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
@@ -756,23 +767,54 @@ by applying the extrapolation method.</p>
 <section id="compare-stress-results">
 <h1>Compare stress results<a class="headerlink" href="#compare-stress-results" title="Permalink to this heading">#</a></h1>
 <p>Compare the stress result computed by extrapolation and the reference’s result.
-Check if the two fields container are identical.
-The maximum tolerance gap between two compared values is 1e-2.
+Check if the two fields container are identical using the
+<a class="reference internal" href="../../api/ansys.dpf.core.operators.logic.identical_fc.html#module-ansys.dpf.core.operators.logic.identical_fc" title="ansys.dpf.core.operators.logic.identical_fc"><code class="xref py py-class docutils literal notranslate"><span class="pre">identical_fc</span></code></a> operator.
+The relative tolerance is set to 1.1e-6.
 The smallest value that is considered during the comparison step: all the
-<code class="docutils literal notranslate"><span class="pre">abs(values)</span></code> in field less than 1e-8 is considered as null.</p>
+<code class="docutils literal notranslate"><span class="pre">abs(values)</span></code> in field less than 1e-2 is considered as null.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># operator AreFieldsIdentical_fc</span>
 <span class="n">op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">logic</span><span class="o">.</span><span class="n">identical_fc</span><span class="p">()</span>
-<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_containerA</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">fex</span><span class="p">)</span>
-<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_containerB</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">stress_ref</span><span class="p">)</span>
-<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">tolerance</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mf">1.0e-8</span><span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_containerA</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">fex_nodal_op</span><span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_containerB</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">stress_ref_nodal_op</span><span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">tolerance</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mf">1.1e-6</span><span class="p">)</span>
 <span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">small_value</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
 <span class="n">op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">boolean</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>False
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.064 seconds)</p>
+<p>Compute absolute and relative errors</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">abs_error_sqr</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">sqr_fc</span><span class="p">()</span>
+<span class="n">abs_error</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt_fc</span><span class="p">()</span>
+<span class="n">error</span> <span class="o">=</span> <span class="n">stress_ref_nodal_op</span> <span class="o">-</span> <span class="n">fex_nodal_op</span>
+<span class="n">abs_error_sqr</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_container</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+<span class="n">abs_error</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fields_container</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">abs_error_sqr</span><span class="p">)</span>
+
+
+<span class="n">divide</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">component_wise_divide</span><span class="p">()</span>
+<span class="n">divide</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fieldA</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">stress_ref_nodal_op</span> <span class="o">-</span> <span class="n">fex_nodal_op</span><span class="p">)</span>
+<span class="n">divide</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">fieldB</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">stress_ref_nodal_op</span><span class="p">)</span>
+<span class="n">rel_error</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">scale</span><span class="p">()</span>
+<span class="n">rel_error</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">divide</span><span class="p">)</span>
+<span class="n">rel_error</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">ponderation</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Plot absolute and relative errors.
+The absolute value is the order of 10, which is very small when compared to the
+magnitude of 1e8 of the displacements. This is reflected in the relative error
+plot, where the errors are found to be below 1.02e-6%. The result of these plots
+can be used to set the tolerances for the
+<a class="reference internal" href="../../api/ansys.dpf.core.operators.logic.identical_fc.html#module-ansys.dpf.core.operators.logic.identical_fc" title="ansys.dpf.core.operators.logic.identical_fc"><code class="xref py py-class docutils literal notranslate"><span class="pre">identical_fc</span></code></a> operator.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">abs_error</span><span class="o">.</span><span class="n">eval</span><span class="p">(),</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Absolute error [mm]&quot;</span><span class="p">})</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rel_error</span><span class="o">.</span><span class="n">eval</span><span class="p">(),</span> <span class="n">scalar_bar_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Relative error [%]&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_04-extrapolation_stress_3d_004.png" srcset="../../_images/sphx_glr_04-extrapolation_stress_3d_004.png" alt="04 extrapolation stress 3d" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_04-extrapolation_stress_3d_005.png" srcset="../../_images/sphx_glr_04-extrapolation_stress_3d_005.png" alt="04 extrapolation stress 3d" class = "sphx-glr-multi-img"/></li>
+</ul>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.852 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-03-advanced-04-extrapolation-stress-3d-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/c743cdddb222eb034113118cd4c58391/04-extrapolation_stress_3d.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">04-extrapolation_stress_3d.py</span></code></a></p>

@@ -632,12 +632,20 @@ to download the full example code</p>
 <p>This example shows how to activate and deactivate the DPF option for averaging
 across bodies. When a multi-body simulation calculates <code class="docutils literal notranslate"><span class="pre">ElementalNodal</span></code> fields,
 like stresses or strains, you can either activate or deactivate the averaging
-of theses fields across the different bodies when they share common nodes. This
+of these fields across the different bodies when they share common nodes. This
 likely changes the end results that are shown after postprocessing of the simulation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example requires the Premium ServerContext.
+For more information, see <span class="xref std std-ref">_ref_getting_started_contexts</span>.</p>
+</div>
 <p>Perform the required imports.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">operators</span> <span class="k">as</span> <span class="n">ops</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
+
+
+<span class="n">dpf</span><span class="o">.</span><span class="n">set_default_server_context</span><span class="p">(</span><span class="n">dpf</span><span class="o">.</span><span class="n">AvailableServerContexts</span><span class="o">.</span><span class="n">premium</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Load the simulation results from an RST file and create a model of it.</p>
@@ -942,7 +950,7 @@ Max stress when averaging across bodies is deactivated: 6988756864.00 Pa
 The maximum stress value when averaging across bodies is ACTIVATED is 0.44% LOWER than when it is DEACTIVATED
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.488 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.425 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-08-averaging-01-average-across-bodies-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2e83048bea6393f9b6a5eeb1dada3999/01-average_across_bodies.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-average_across_bodies.py</span></code></a></p>

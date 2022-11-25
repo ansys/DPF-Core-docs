@@ -23,7 +23,7 @@
 Create a plug-in package with multiple operators
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This example shows how to create a plug-in package with multiple operators.
-The benefits of writing packages rather than simple scripts are:
+The benefits of writing a package rather than simple scripts are:
 
 - **Componentization:** You can split the code into several Python modules or files.
 - **Distribution:** You can use standard Python tools to upload and download packages.
@@ -31,10 +31,14 @@ The benefits of writing packages rather than simple scripts are:
 
 For this example, the plug-in package contains two different operators:
 
-- One that returns all scoping ID having data higher than the average
+- One that returns all scoping IDs having data higher than the average
 - One that returns all scoping IDs having data lower than the average
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-30
+.. note::
+    This example requires the Premium ServerContext.
+    For more information, see :ref:`_ref_getting_started_contexts`.
+
+.. GENERATED FROM PYTHON SOURCE LINES 25-34
 
 Create the plug-in package
 --------------------------
@@ -46,19 +50,26 @@ method, which records the operators of the plug-in package.
 Download the ``average_filter_plugin`` plug-in package that has already been
 created for you.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-53
+.. GENERATED FROM PYTHON SOURCE LINES 34-64
 
 .. code-block:: default
 
 
     import os
-    from ansys.dpf.core import examples
 
-    print('\033[1m average_filter_plugin')
+    from ansys.dpf.core import examples
+    from ansys.dpf import core as dpf
+
+
+    dpf.set_default_server_context(dpf.AvailableServerContexts.premium)
+
+    print("\033[1m average_filter_plugin")
     file_list = ["__init__.py", "operators.py", "operators_loader.py", "common.py"]
     plugin_folder = None
-    GITHUB_SOURCE_URL = "https://github.com/pyansys/pydpf-core/raw/" \
-                        "examples/first_python_plugins/python_plugins/average_filter_plugin"
+    GITHUB_SOURCE_URL = (
+        "https://github.com/pyansys/pydpf-core/raw/"
+        "examples/first_python_plugins/python_plugins/average_filter_plugin"
+    )
 
     for file in file_list:
         EXAMPLE_FILE = GITHUB_SOURCE_URL + "/average_filter_plugin/" + file
@@ -66,10 +77,10 @@ created for you.
             EXAMPLE_FILE, file, "python_plugins/average_filter_plugin"
         )
         plugin_folder = os.path.dirname(operator_file_path)
-        print(f'\033[1m {file}:\n \033[0m')
+        print(f"\033[1m {file}:\n \033[0m")
         with open(operator_file_path, "r") as f:
             for line in f.readlines():
-                print('\t\t\t' + line)
+                print("\t\t\t" + line)
         print("\n\n")
 
 
@@ -268,7 +279,7 @@ created for you.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-65
+.. GENERATED FROM PYTHON SOURCE LINES 65-77
 
 Load the plug-in package
 ------------------------
@@ -277,17 +288,19 @@ plug-in package.
 
 - The first argument is the path to the directory where the plug-in package
   is located.
-- The second argument is ``py_`` plus any name identifying the plug-in package.
-- The third argument is the name of the function exposed in the ``__init__ file``
+- The second argument is ``py_<package>``, where ``<package>`` is the name
+  identifying the plug-in package.
+- The third argument is the name of the function exposed in the ``__init__`` file
   for the plug-in package that is used to record operators.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-83
+.. GENERATED FROM PYTHON SOURCE LINES 77-96
 
 .. code-block:: default
 
 
     import os
+
     from ansys.dpf import core as dpf
     from ansys.dpf.core import examples
 
@@ -296,13 +309,13 @@ plug-in package.
 
     tmp = dpf.make_tmp_dir_server()
     dpf.upload_files_in_folder(
-        dpf.path_utilities.join(tmp, "average_filter_plugin"),
-        plugin_folder
+        dpf.path_utilities.join(tmp, "average_filter_plugin"), plugin_folder
     )
     dpf.load_library(
         os.path.join(dpf.path_utilities.join(tmp, "average_filter_plugin")),
         "py_average_filter",
-        "load_operators")
+        "load_operators",
+    )
 
 
 
@@ -317,11 +330,11 @@ plug-in package.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-85
+.. GENERATED FROM PYTHON SOURCE LINES 97-98
 
 Instantiate the operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-88
+.. GENERATED FROM PYTHON SOURCE LINES 98-101
 
 .. code-block:: default
 
@@ -335,7 +348,7 @@ Instantiate the operator.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-96
+.. GENERATED FROM PYTHON SOURCE LINES 102-109
 
 Connect a workflow
 ------------------
@@ -345,7 +358,7 @@ Methods of the ``ids_with_data_lower_than_average`` class are dynamically
 added because specifications for the operator are defined in the plug-in
 package.
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-110
+.. GENERATED FROM PYTHON SOURCE LINES 111-123
 
 .. graphviz::
 
@@ -360,12 +373,12 @@ package.
       norm -> ids_with_data_lower_than_average;
    }
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-114
+.. GENERATED FROM PYTHON SOURCE LINES 125-127
 
 Use the operator
 ----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-125
+.. GENERATED FROM PYTHON SOURCE LINES 127-138
 
 .. code-block:: default
 
@@ -402,7 +415,7 @@ Use the operator
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.193 seconds)
+   **Total running time of the script:** ( 0 minutes  4.664 seconds)
 
 
 .. _sphx_glr_download_examples_07-python-operators_01-package_python_operators.py:

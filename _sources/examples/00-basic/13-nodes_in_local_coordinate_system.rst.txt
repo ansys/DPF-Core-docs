@@ -22,40 +22,43 @@
 
 Convert nodal coordinates field to local coordinate system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-GCS: Global Coordinate System
-LCS: Local Coordinate System
-Currently, there is no native operator to get nodal coordinates in an LCS.
-The operator :class: `rotate <ansys.dpf.core.operators.geo.rotate.rotate>`
-rotates the input field in GCS as per the input rotation matrix. So, if the LCS
-is at the same origin as the GCS, only one operation using the `rotate`
-operator give the desired output. But for an LCS with a transformed origin,
-after rotation a transformation along the rotated position vector of LCS's
-origin is also needed to get the correct coordinates in LCS.
+Currently, there is no native operator to get nodal coordinates in an Local
+Coordinate System (LCS). The operator :class:`rotate <ansys.dpf.core.operators.geo.rotate.rotate>`
+rotates the input field in Global Coordinate System (GCS) as per the input rotation matrix.
+So, if the LCS is at the same origin as the GCS, only one operation using the
+:class:`rotate <ansys.dpf.core.operators.geo.rotate.rotate>` operator give the desired output.
+However, if the aim is to obtain the LCS in a case where the LCS origin does not coincide with
+the GCS, a transformation is required after the rotation to get the correct coordinates in LCS.
 
 The script below demonstrates the methodology using PyDPF.
 
-Import necessary modules:
+.. note::
+    This example requires the Premium ServerContext.
+    For more information, see :ref:`_ref_getting_started_contexts`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-24
+.. GENERATED FROM PYTHON SOURCE LINES 23-30
 
 .. code-block:: default
 
-
+    # Import necessary modules
     from ansys.dpf import core as dpf
     from ansys.dpf.core import examples
 
 
+    dpf.set_default_server_context(dpf.AvailableServerContexts.premium)
 
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-26
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 31-32
 
 Create a model object to establish a connection with an example result file:
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-28
+.. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 .. code-block:: default
 
@@ -68,11 +71,11 @@ Create a model object to establish a connection with an example result file:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-30
+.. GENERATED FROM PYTHON SOURCE LINES 35-36
 
-Get the property `coordinates_field` from :class: nodes ansys.dpf.core.nodes`
+Get the property ``coordinates_field`` from :class:`nodes <ansys.dpf.core.nodes>`:
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-32
+.. GENERATED FROM PYTHON SOURCE LINES 36-38
 
 .. code-block:: default
 
@@ -85,12 +88,12 @@ Get the property `coordinates_field` from :class: nodes ansys.dpf.core.nodes`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-35
+.. GENERATED FROM PYTHON SOURCE LINES 39-41
 
-Get the rotation matrix of the LCS ID 12
-The first 9 values in the `cs` output is the rotation matrix
+Get the rotation matrix of the LCS ID 12.
+The first 9 values in the ``cs`` output is the rotation matrix.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-39
+.. GENERATED FROM PYTHON SOURCE LINES 41-45
 
 .. code-block:: default
 
@@ -105,11 +108,11 @@ The first 9 values in the `cs` output is the rotation matrix
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-41
+.. GENERATED FROM PYTHON SOURCE LINES 46-47
 
-Create a 3x3 rotation matrix field - `rot_mat_f`
+Create a 3x3 rotation matrix field ``rot_mat_f``:
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-44
+.. GENERATED FROM PYTHON SOURCE LINES 47-50
 
 .. code-block:: default
 
@@ -123,20 +126,19 @@ Create a 3x3 rotation matrix field - `rot_mat_f`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-48
+.. GENERATED FROM PYTHON SOURCE LINES 51-54
 
 Create a 3D vector field for the position vector of the LCS's origin and
 rotate the origin as per the rotation matrix of the LCS.
-The last 3 entries of `cs` output is the LCS's origin in GCS.
+The last 3 entries of ``cs`` output is the LCS's origin in GCS.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-53
+.. GENERATED FROM PYTHON SOURCE LINES 54-58
 
 .. code-block:: default
 
     pos_vec = dpf.fields_factory.create_3d_vector_field(1)
     pos_vec.data = cs.outputs.field.get_data().data.T[-3:]
-    pos_vec_rot = dpf.operators.geo.rotate(field=pos_vec,
-                                           field_rotation_matrix=rot_mat_f)
+    pos_vec_rot = dpf.operators.geo.rotate(field=pos_vec, field_rotation_matrix=rot_mat_f)
 
 
 
@@ -145,38 +147,37 @@ The last 3 entries of `cs` output is the LCS's origin in GCS.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-55
+.. GENERATED FROM PYTHON SOURCE LINES 59-60
 
-Get rotated nodal coordinates field.
+Get rotated nodal coordinates field:
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-58
-
-.. code-block:: default
-
-    ncoord_rot_f = dpf.operators.geo.rotate(field=ncoord_f,
-                                            field_rotation_matrix=rot_mat_f)
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 59-61
-
-Transform rotated nodal coordinates field along rotated position vector -
-`pos_vec_rot`,
-
-.. GENERATED FROM PYTHON SOURCE LINES 61-66
+.. GENERATED FROM PYTHON SOURCE LINES 60-62
 
 .. code-block:: default
 
-    pos_vec_rot_neg_f = dpf.operators.math.scale(field=pos_vec_rot,
-                                                 ponderation=-1.0)
+    ncoord_rot_f = dpf.operators.geo.rotate(field=ncoord_f, field_rotation_matrix=rot_mat_f)
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 63-65
+
+Transform rotated nodal coordinates field along rotated position vector
+``pos_vec_rot``:
+
+.. GENERATED FROM PYTHON SOURCE LINES 65-70
+
+.. code-block:: default
+
+    pos_vec_rot_neg_f = dpf.operators.math.scale(field=pos_vec_rot, ponderation=-1.0)
     pos_vec_rot_neg = pos_vec_rot_neg_f.outputs.field.get_data().data_as_list
-    ncoord_translate = dpf.operators.math.add_constant(field=ncoord_rot_f,
-                                                       ponderation=pos_vec_rot_neg)
+    ncoord_translate = dpf.operators.math.add_constant(
+        field=ncoord_rot_f, ponderation=pos_vec_rot_neg
+    )
 
 
 
@@ -184,11 +185,11 @@ Transform rotated nodal coordinates field along rotated position vector -
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-68
+.. GENERATED FROM PYTHON SOURCE LINES 71-72
 
-Get the nodal coordinates field `ncoord_lcs_f` in LCS
+Get the nodal coordinates field ``ncoord_lcs_f`` in LCS:
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-70
+.. GENERATED FROM PYTHON SOURCE LINES 72-74
 
 .. code-block:: default
 
@@ -201,11 +202,11 @@ Get the nodal coordinates field `ncoord_lcs_f` in LCS
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-72
+.. GENERATED FROM PYTHON SOURCE LINES 75-76
 
 Coordinates of NID 1 in GCS
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-74
+.. GENERATED FROM PYTHON SOURCE LINES 76-78
 
 .. code-block:: default
 
@@ -224,11 +225,11 @@ Coordinates of NID 1 in GCS
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-76
+.. GENERATED FROM PYTHON SOURCE LINES 79-80
 
 Coordinates of NID 1 in LCS
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-77
+.. GENERATED FROM PYTHON SOURCE LINES 80-81
 
 .. code-block:: default
 
@@ -249,7 +250,7 @@ Coordinates of NID 1 in LCS
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.665 seconds)
+   **Total running time of the script:** ( 0 minutes  0.360 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_13-nodes_in_local_coordinate_system.py:

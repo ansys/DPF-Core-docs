@@ -25,14 +25,14 @@ Basic DPF-Core usage
 This example shows how to open a result file and do some
 basic postprocessing.
 
-If you have Ansys 2021 R1 installed, starting DPF is quite easy
+If you have Ansys 2021 R1 or higher installed, starting DPF is quite easy
 as DPF-Core takes care of launching all the services that
 are required for postprocessing Ansys files.
 
-First, import the DPF-Core module as ``dpf_core`` and import the
+First, import the DPF-Core module as ``dpf`` and import the
 included examples file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-22
+.. GENERATED FROM PYTHON SOURCE LINES 19-23
 
 .. code-block:: default
 
@@ -47,11 +47,11 @@ included examples file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-39
+.. GENERATED FROM PYTHON SOURCE LINES 24-40
 
 Next, open an example and print out the ``model`` object. The
-``Model`` class helps to organize access methods for the result by
-keeping track of the operators and data sources used by the result
+:class:`Model <ansys.dpf.core.model.Model>` class helps to organize access methods
+for the result by keeping track of the operators and data sources used by the result
 file.
 
 Printing the model displays:
@@ -64,9 +64,9 @@ Printing the model displays:
 Also, note that the first time you create a DPF object, Python
 automatically attempts to start the server in the background. If you
 want to connect to an existing server (either local or remote), use
-:func:`dpf.connect_to_server`.
+:func:`ansys.dpf.core.connect_to_server`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-43
+.. GENERATED FROM PYTHON SOURCE LINES 40-44
 
 .. code-block:: default
 
@@ -114,7 +114,7 @@ want to connect to an existing server (either local or remote), use
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-49
+.. GENERATED FROM PYTHON SOURCE LINES 45-50
 
 Model metadata
 ~~~~~~~~~~~~~~
@@ -122,7 +122,7 @@ Specific metadata can be extracted from the model by referencing the
 model's ``metadata`` property. For example, to print only the
 ``result_info``:
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-53
+.. GENERATED FROM PYTHON SOURCE LINES 50-54
 
 .. code-block:: default
 
@@ -157,11 +157,11 @@ model's ``metadata`` property. For example, to print only the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-55
+.. GENERATED FROM PYTHON SOURCE LINES 55-56
 
 Print the mesh region:
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-58
+.. GENERATED FROM PYTHON SOURCE LINES 56-59
 
 .. code-block:: default
 
@@ -185,11 +185,11 @@ Print the mesh region:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-60
+.. GENERATED FROM PYTHON SOURCE LINES 60-61
 
 Print the time or frequency of the results:
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-63
+.. GENERATED FROM PYTHON SOURCE LINES 61-64
 
 .. code-block:: default
 
@@ -213,7 +213,7 @@ Print the time or frequency of the results:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-76
+.. GENERATED FROM PYTHON SOURCE LINES 65-77
 
 Extract displacement results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -228,7 +228,7 @@ takes place automatically when running ``results.displacement()``.
 By default, the ``'U'`` operator is connected to the first result set,
 which for this static result is the only result.
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-84
+.. GENERATED FROM PYTHON SOURCE LINES 77-85
 
 .. code-block:: default
 
@@ -259,7 +259,7 @@ which for this static result is the only result.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-86
+.. GENERATED FROM PYTHON SOURCE LINES 86-87
 
 .. code-block:: default
 
@@ -279,7 +279,7 @@ which for this static result is the only result.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.580 seconds)
+   **Total running time of the script:** ( 0 minutes  13.791 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_00-basic_example.py:

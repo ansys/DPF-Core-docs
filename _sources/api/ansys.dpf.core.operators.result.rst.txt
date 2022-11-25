@@ -16,8 +16,22 @@ Submodules
    ansys.dpf.core.operators.result.add_rigid_body_motion
    ansys.dpf.core.operators.result.add_rigid_body_motion_fc
    ansys.dpf.core.operators.result.artificial_hourglass_energy
+   ansys.dpf.core.operators.result.beam_axial_force
+   ansys.dpf.core.operators.result.beam_axial_plastic_strain
+   ansys.dpf.core.operators.result.beam_axial_stress
+   ansys.dpf.core.operators.result.beam_axial_total_strain
+   ansys.dpf.core.operators.result.beam_rs_shear_stress
+   ansys.dpf.core.operators.result.beam_s_bending_moment
+   ansys.dpf.core.operators.result.beam_s_shear_force
+   ansys.dpf.core.operators.result.beam_t_bending_moment
+   ansys.dpf.core.operators.result.beam_t_shear_force
+   ansys.dpf.core.operators.result.beam_torsional_moment
+   ansys.dpf.core.operators.result.beam_tr_shear_stress
+   ansys.dpf.core.operators.result.cms_dst_table_provider
    ansys.dpf.core.operators.result.cms_matrices_provider
+   ansys.dpf.core.operators.result.cms_subfile_info_provider
    ansys.dpf.core.operators.result.co_energy
+   ansys.dpf.core.operators.result.compute_invariant_terms_rbd
    ansys.dpf.core.operators.result.compute_stress
    ansys.dpf.core.operators.result.compute_stress_1
    ansys.dpf.core.operators.result.compute_stress_2
@@ -49,6 +63,7 @@ Submodules
    ansys.dpf.core.operators.result.contact_surface_heat_flux
    ansys.dpf.core.operators.result.contact_total_stress
    ansys.dpf.core.operators.result.coordinate_system
+   ansys.dpf.core.operators.result.coordinates
    ansys.dpf.core.operators.result.creep_strain_energy_density
    ansys.dpf.core.operators.result.current_density
    ansys.dpf.core.operators.result.custom
@@ -98,13 +113,23 @@ Submodules
    ansys.dpf.core.operators.result.erp_radiation_efficiency
    ansys.dpf.core.operators.result.euler_load_buckling
    ansys.dpf.core.operators.result.euler_nodes
+   ansys.dpf.core.operators.result.global_internal_energy
+   ansys.dpf.core.operators.result.global_kinetic_energy
    ansys.dpf.core.operators.result.global_to_nodal
+   ansys.dpf.core.operators.result.global_total_energy
+   ansys.dpf.core.operators.result.global_velocity
    ansys.dpf.core.operators.result.heat_flux
    ansys.dpf.core.operators.result.heat_flux_X
    ansys.dpf.core.operators.result.heat_flux_Y
    ansys.dpf.core.operators.result.heat_flux_Z
    ansys.dpf.core.operators.result.hydrostatic_pressure
    ansys.dpf.core.operators.result.incremental_energy
+   ansys.dpf.core.operators.result.initial_coordinates
+   ansys.dpf.core.operators.result.interface_contact_area
+   ansys.dpf.core.operators.result.interface_contact_force
+   ansys.dpf.core.operators.result.interface_contact_mass
+   ansys.dpf.core.operators.result.interface_contact_moment
+   ansys.dpf.core.operators.result.interface_resultant_contact_force
    ansys.dpf.core.operators.result.joint_force_reaction
    ansys.dpf.core.operators.result.joint_moment_reaction
    ansys.dpf.core.operators.result.joint_relative_acceleration
@@ -130,6 +155,14 @@ Submodules
    ansys.dpf.core.operators.result.normal_contact_force
    ansys.dpf.core.operators.result.normal_contact_moment
    ansys.dpf.core.operators.result.num_surface_status_changes
+   ansys.dpf.core.operators.result.part_added_mass
+   ansys.dpf.core.operators.result.part_eroded_internal_energy
+   ansys.dpf.core.operators.result.part_eroded_kinetic_energy
+   ansys.dpf.core.operators.result.part_hourglass_energy
+   ansys.dpf.core.operators.result.part_internal_energy
+   ansys.dpf.core.operators.result.part_kinetic_energy
+   ansys.dpf.core.operators.result.part_momentum
+   ansys.dpf.core.operators.result.part_rigid_body_velocity
    ansys.dpf.core.operators.result.plastic_state_variable
    ansys.dpf.core.operators.result.plastic_strain
    ansys.dpf.core.operators.result.plastic_strain_X
@@ -139,6 +172,7 @@ Submodules
    ansys.dpf.core.operators.result.plastic_strain_YZ
    ansys.dpf.core.operators.result.plastic_strain_Z
    ansys.dpf.core.operators.result.plastic_strain_energy_density
+   ansys.dpf.core.operators.result.plastic_strain_eqv
    ansys.dpf.core.operators.result.plastic_strain_principal_1
    ansys.dpf.core.operators.result.plastic_strain_principal_2
    ansys.dpf.core.operators.result.plastic_strain_principal_3
@@ -146,6 +180,7 @@ Submodules
    ansys.dpf.core.operators.result.poynting_vector
    ansys.dpf.core.operators.result.poynting_vector_surface
    ansys.dpf.core.operators.result.pres_to_field
+   ansys.dpf.core.operators.result.pressure
    ansys.dpf.core.operators.result.prns_to_field
    ansys.dpf.core.operators.result.raw_displacement
    ansys.dpf.core.operators.result.raw_reaction_force
@@ -153,7 +188,9 @@ Submodules
    ansys.dpf.core.operators.result.recombine_harmonic_indeces_cyclic
    ansys.dpf.core.operators.result.remove_rigid_body_motion
    ansys.dpf.core.operators.result.remove_rigid_body_motion_fc
+   ansys.dpf.core.operators.result.result_provider
    ansys.dpf.core.operators.result.rigid_transformation
+   ansys.dpf.core.operators.result.rom_data_provider
    ansys.dpf.core.operators.result.run
    ansys.dpf.core.operators.result.smisc
    ansys.dpf.core.operators.result.stiffness_matrix_energy
@@ -193,10 +230,14 @@ Submodules
    ansys.dpf.core.operators.result.total_contact_force
    ansys.dpf.core.operators.result.total_contact_moment
    ansys.dpf.core.operators.result.total_mass
+   ansys.dpf.core.operators.result.total_strain
+   ansys.dpf.core.operators.result.transient_rayleigh_integration
    ansys.dpf.core.operators.result.velocity
    ansys.dpf.core.operators.result.velocity_X
    ansys.dpf.core.operators.result.velocity_Y
    ansys.dpf.core.operators.result.velocity_Z
+   ansys.dpf.core.operators.result.write_cms_rbd_file
+   ansys.dpf.core.operators.result.zone_pressure_spectrum
 
 Module contents
 ---------------

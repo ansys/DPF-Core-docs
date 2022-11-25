@@ -26,11 +26,15 @@ This example shows how stress can be read from distributed files and
 averaged from elemental nodal to nodal in parallel with a distributed workflow.
 After remote post-processing, results are merged on the local process.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-13
+.. note::
+    This example requires the Premium ServerContext.
+    For more information, see :ref:`_ref_getting_started_contexts`.
+
+.. GENERATED FROM PYTHON SOURCE LINES 17-18
 
 Import dpf module and its examples files
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-18
+.. GENERATED FROM PYTHON SOURCE LINES 18-26
 
 .. code-block:: default
 
@@ -40,13 +44,16 @@ Import dpf module and its examples files
     from ansys.dpf.core import operators as ops
 
 
+    dpf.set_default_server_context(dpf.AvailableServerContexts.premium)
 
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-28
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 27-36
 
 Configure the servers
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -58,7 +65,7 @@ we will consequently require 2 remote processes.
 To make this example easier, we will start local servers here,
 but we could get connected to any existing servers on the network.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-36
+.. GENERATED FROM PYTHON SOURCE LINES 36-44
 
 .. code-block:: default
 
@@ -77,11 +84,11 @@ but we could get connected to any existing servers on the network.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-38
+.. GENERATED FROM PYTHON SOURCE LINES 45-46
 
 Print the ips and ports
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-42
+.. GENERATED FROM PYTHON SOURCE LINES 46-50
 
 .. code-block:: default
 
@@ -103,12 +110,12 @@ Print the ips and ports
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-45
+.. GENERATED FROM PYTHON SOURCE LINES 51-53
 
 Distributed Workflow
 ~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-93
+.. GENERATED FROM PYTHON SOURCE LINES 55-101
 
 .. graphviz::
 
@@ -157,12 +164,12 @@ Distributed Workflow
 
    }
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-97
+.. GENERATED FROM PYTHON SOURCE LINES 103-105
 
 Create a local workflow able to merge the results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-102
+.. GENERATED FROM PYTHON SOURCE LINES 105-110
 
 .. code-block:: default
 
@@ -178,14 +185,14 @@ Create a local workflow able to merge the results
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-107
+.. GENERATED FROM PYTHON SOURCE LINES 111-115
 
 Send workflows on servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Here we create new instances on the server by copies of the template workflow
 We also connect the data sources to those workflows
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-124
+.. GENERATED FROM PYTHON SOURCE LINES 115-132
 
 .. code-block:: default
 
@@ -234,13 +241,13 @@ We also connect the data sources to those workflows
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-128
+.. GENERATED FROM PYTHON SOURCE LINES 133-136
 
 Compare with non distributed Workflow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Create DataSources with Domain id (one domain by distributed file).
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-140
+.. GENERATED FROM PYTHON SOURCE LINES 136-148
 
 .. code-block:: default
 
@@ -280,7 +287,7 @@ Create DataSources with Domain id (one domain by distributed file).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.611 seconds)
+   **Total running time of the script:** ( 0 minutes  3.471 seconds)
 
 
 .. _sphx_glr_download_examples_06-distributed-post_06-distributed_stress_averaging.py:
