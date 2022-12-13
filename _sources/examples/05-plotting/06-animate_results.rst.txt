@@ -22,10 +22,11 @@
 
 Review of available animation commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This example lists the different commands available for creating animations of transient results,
 shown with the arguments available.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-112
+.. GENERATED FROM PYTHON SOURCE LINES 11-113
 
 
 
@@ -205,7 +206,7 @@ shown with the arguments available.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.718 seconds)
+   **Total running time of the script:** ( 0 minutes  15.806 seconds)
 
 
 .. _sphx_glr_download_examples_05-plotting_06-animate_results.py:

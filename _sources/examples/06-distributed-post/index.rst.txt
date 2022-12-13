@@ -35,7 +35,7 @@ different machines) and connect them.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="    digraph foo {         graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]         node [shape=box...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to read and postprocess distributed files on distributed processes. Afte...">
 
 .. only:: html
 
@@ -52,7 +52,7 @@ different machines) and connect them.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The following diagram helps you to understand this example. It shows the operator chain that is...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to read and expand distributed files on distributed processes. The modal...">
 
 .. only:: html
 
@@ -69,7 +69,7 @@ different machines) and connect them.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The following diagram helps you to understand this example. It shows the operator chain that is...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to read and expand distributed files on distributed processes. The modal...">
 
 .. only:: html
 
@@ -86,7 +86,7 @@ different machines) and connect them.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Average Stress in distributed Workflows">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how stress can be read from distributed files and averaged from elemental no...">
 
 .. only:: html
 

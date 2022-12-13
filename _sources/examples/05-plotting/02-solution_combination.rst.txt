@@ -22,15 +22,16 @@
 
 Load case combination for principal stress
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This example shows how to get a principal stress load case combination using DPF
 And highlight min/max values in the plot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-15
+.. GENERATED FROM PYTHON SOURCE LINES 14-16
 
 Import the ``dpf_core`` module, included examples file, and the ``DpfPlotter``
 module.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-19
+.. GENERATED FROM PYTHON SOURCE LINES 16-20
 
 .. code-block:: default
 
@@ -45,7 +46,7 @@ module.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-32
+.. GENERATED FROM PYTHON SOURCE LINES 21-33
 
 Open an example and print the ``Model`` object. The
 :class:`Model <ansys.dpf.core.model.Model>` class helps to organize access
@@ -60,7 +61,7 @@ Printing the model displays this metadata:
 - Number of results
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-35
+.. GENERATED FROM PYTHON SOURCE LINES 33-36
 
 .. code-block:: default
 
@@ -129,14 +130,14 @@ Printing the model displays this metadata:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-40
+.. GENERATED FROM PYTHON SOURCE LINES 37-41
 
 Get the stress tensor and ``connect`` time scoping.
 Make sure that you define ``"Nodal"`` as the scoping location because
 labels are supported only for nodal results.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-46
+.. GENERATED FROM PYTHON SOURCE LINES 41-47
 
 .. code-block:: default
 
@@ -153,13 +154,13 @@ labels are supported only for nodal results.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-50
+.. GENERATED FROM PYTHON SOURCE LINES 48-51
 
 This code performs solution combination on two load cases, LC1 and LC2.
 You can access individual load cases as the fields of a fields container for
 the stress tensor.
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-56
+.. GENERATED FROM PYTHON SOURCE LINES 51-57
 
 .. code-block:: default
 
@@ -176,11 +177,11 @@ the stress tensor.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-58
+.. GENERATED FROM PYTHON SOURCE LINES 58-59
 
 Add load cases.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-62
+.. GENERATED FROM PYTHON SOURCE LINES 59-63
 
 .. code-block:: default
 
@@ -195,13 +196,13 @@ Add load cases.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-66
+.. GENERATED FROM PYTHON SOURCE LINES 64-67
 
 Principal stresses are the Eigenvalues of the stress tensor.
 Use principal invariants to get S1, S2, and S3.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-69
+.. GENERATED FROM PYTHON SOURCE LINES 67-70
 
 .. code-block:: default
 
@@ -215,12 +216,12 @@ Use principal invariants to get S1, S2, and S3.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-72
+.. GENERATED FROM PYTHON SOURCE LINES 71-73
 
 Print S1 (maximum principal stress).
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-74
+.. GENERATED FROM PYTHON SOURCE LINES 73-75
 
 .. code-block:: default
 
@@ -337,12 +338,12 @@ Print S1 (maximum principal stress).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-77
+.. GENERATED FROM PYTHON SOURCE LINES 76-78
 
 Get the meshed region.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-79
+.. GENERATED FROM PYTHON SOURCE LINES 78-80
 
 .. code-block:: default
 
@@ -355,14 +356,14 @@ Get the meshed region.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-84
+.. GENERATED FROM PYTHON SOURCE LINES 81-85
 
 Plot the results on the mesh.
 The ``label_text_size`` and ``label_point_size`` arguments control the font
 size of the label.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-91
+.. GENERATED FROM PYTHON SOURCE LINES 85-92
 
 .. code-block:: default
 
@@ -388,7 +389,7 @@ size of the label.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.126 seconds)
+   **Total running time of the script:** ( 0 minutes  1.032 seconds)
 
 
 .. _sphx_glr_download_examples_05-plotting_02-solution_combination.py:

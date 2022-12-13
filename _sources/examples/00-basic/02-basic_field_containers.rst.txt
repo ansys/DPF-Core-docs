@@ -22,6 +22,7 @@
 
 Field and field containers overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 In DPF, the field is the main simulation data container. During a numerical
 simulation, the result data is defined by values associated to entities
 (scoping). These entities are a subset of a model (support).
@@ -47,12 +48,12 @@ indexed, just like a Python list. Operators applied to a fields
 container have each individual field operated on. Fields
 containers are outputs from operators.
 
-First, import necessary modules:
-
-.. GENERATED FROM PYTHON SOURCE LINES 35-40
+.. GENERATED FROM PYTHON SOURCE LINES 34-41
 
 .. code-block:: default
 
+
+    # First, import necessary modules
     import numpy as np
 
     from ansys.dpf import core as dpf
@@ -65,12 +66,12 @@ First, import necessary modules:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-43
+.. GENERATED FROM PYTHON SOURCE LINES 42-44
 
 Create a model object to establish a connection with an
 example result file and then extract:
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-46
+.. GENERATED FROM PYTHON SOURCE LINES 44-47
 
 .. code-block:: default
 
@@ -119,12 +120,12 @@ example result file and then extract:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-49
+.. GENERATED FROM PYTHON SOURCE LINES 48-50
 
 Create the displacement operator directly from the ``results``
 property and extract the displacement fields container:
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-53
+.. GENERATED FROM PYTHON SOURCE LINES 50-54
 
 .. code-block:: default
 
@@ -151,12 +152,12 @@ property and extract the displacement fields container:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-56
+.. GENERATED FROM PYTHON SOURCE LINES 55-57
 
 A field can be extracted from a fields container by simply indexing
 the requested field:
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-59
+.. GENERATED FROM PYTHON SOURCE LINES 57-60
 
 .. code-block:: default
 
@@ -181,14 +182,14 @@ the requested field:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-64
+.. GENERATED FROM PYTHON SOURCE LINES 61-65
 
 Extract data from a field
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 You can extract all the data from a given field using the ``data``
 property. This returns a ``numpy`` array.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-67
+.. GENERATED FROM PYTHON SOURCE LINES 65-68
 
 .. code-block:: default
 
@@ -288,7 +289,7 @@ property. This returns a ``numpy`` array.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-78
+.. GENERATED FROM PYTHON SOURCE LINES 69-79
 
 While it might seem preferable to work entirely within ``numpy``,
 DPF runs outside of Python and potentially even on a
@@ -301,7 +302,7 @@ For example, if you want the maximum displacement for a given
 result, use the min/max operator:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-87
+.. GENERATED FROM PYTHON SOURCE LINES 79-88
 
 .. code-block:: default
 
@@ -329,13 +330,13 @@ result, use the min/max operator:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-91
+.. GENERATED FROM PYTHON SOURCE LINES 89-92
 
 Note that the numpy array does not retain any information about the
 field it describes. Using the DPF ``max`` operator of the field does
 retain this information.
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-93
+.. GENERATED FROM PYTHON SOURCE LINES 92-94
 
 .. code-block:: default
 

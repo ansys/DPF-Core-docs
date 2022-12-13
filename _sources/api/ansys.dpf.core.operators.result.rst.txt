@@ -113,10 +113,27 @@ Submodules
    ansys.dpf.core.operators.result.erp_radiation_efficiency
    ansys.dpf.core.operators.result.euler_load_buckling
    ansys.dpf.core.operators.result.euler_nodes
+   ansys.dpf.core.operators.result.global_added_mass
+   ansys.dpf.core.operators.result.global_added_mass_pct
+   ansys.dpf.core.operators.result.global_center_mass
+   ansys.dpf.core.operators.result.global_energy_ratio
+   ansys.dpf.core.operators.result.global_energy_ratio_wo_eroded
+   ansys.dpf.core.operators.result.global_eroded_hourglass_energy
+   ansys.dpf.core.operators.result.global_eroded_internal_energy
+   ansys.dpf.core.operators.result.global_eroded_kinetic_energy
+   ansys.dpf.core.operators.result.global_external_work
+   ansys.dpf.core.operators.result.global_hourglass_energy
    ansys.dpf.core.operators.result.global_internal_energy
+   ansys.dpf.core.operators.result.global_joint_internal_energy
    ansys.dpf.core.operators.result.global_kinetic_energy
+   ansys.dpf.core.operators.result.global_rigid_body_stopper_energy
+   ansys.dpf.core.operators.result.global_sliding_interface_energy
+   ansys.dpf.core.operators.result.global_spring_damper_energy
+   ansys.dpf.core.operators.result.global_system_damping_energy
+   ansys.dpf.core.operators.result.global_time_step
    ansys.dpf.core.operators.result.global_to_nodal
    ansys.dpf.core.operators.result.global_total_energy
+   ansys.dpf.core.operators.result.global_total_mass
    ansys.dpf.core.operators.result.global_velocity
    ansys.dpf.core.operators.result.heat_flux
    ansys.dpf.core.operators.result.heat_flux_X

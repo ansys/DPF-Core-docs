@@ -22,6 +22,7 @@
 
 Create a plug-in package with multiple operators
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This example shows how to create a plug-in package with multiple operators.
 The benefits of writing a package rather than simple scripts are:
 
@@ -36,9 +37,9 @@ For this example, the plug-in package contains two different operators:
 
 .. note::
     This example requires the Premium ServerContext.
-    For more information, see :ref:`_ref_getting_started_contexts`.
+    For more information, see :ref:`user_guide_server_context`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-34
+.. GENERATED FROM PYTHON SOURCE LINES 26-35
 
 Create the plug-in package
 --------------------------
@@ -50,7 +51,7 @@ method, which records the operators of the plug-in package.
 Download the ``average_filter_plugin`` plug-in package that has already been
 created for you.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-64
+.. GENERATED FROM PYTHON SOURCE LINES 35-65
 
 .. code-block:: default
 
@@ -279,7 +280,7 @@ created for you.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-77
+.. GENERATED FROM PYTHON SOURCE LINES 66-78
 
 Load the plug-in package
 ------------------------
@@ -294,7 +295,7 @@ plug-in package.
   for the plug-in package that is used to record operators.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-96
+.. GENERATED FROM PYTHON SOURCE LINES 78-97
 
 .. code-block:: default
 
@@ -330,11 +331,11 @@ plug-in package.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-98
+.. GENERATED FROM PYTHON SOURCE LINES 98-99
 
 Instantiate the operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-101
+.. GENERATED FROM PYTHON SOURCE LINES 99-102
 
 .. code-block:: default
 
@@ -348,7 +349,7 @@ Instantiate the operator.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-109
+.. GENERATED FROM PYTHON SOURCE LINES 103-110
 
 Connect a workflow
 ------------------
@@ -358,7 +359,7 @@ Methods of the ``ids_with_data_lower_than_average`` class are dynamically
 added because specifications for the operator are defined in the plug-in
 package.
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-123
+.. GENERATED FROM PYTHON SOURCE LINES 112-124
 
 .. graphviz::
 
@@ -373,12 +374,12 @@ package.
       norm -> ids_with_data_lower_than_average;
    }
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-127
+.. GENERATED FROM PYTHON SOURCE LINES 126-128
 
 Use the operator
 ----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-138
+.. GENERATED FROM PYTHON SOURCE LINES 128-139
 
 .. code-block:: default
 
@@ -415,7 +416,7 @@ Use the operator
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.664 seconds)
+   **Total running time of the script:** ( 0 minutes  3.887 seconds)
 
 
 .. _sphx_glr_download_examples_07-python-operators_01-package_python_operators.py:

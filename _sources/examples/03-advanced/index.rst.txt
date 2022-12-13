@@ -17,7 +17,7 @@ These demos show advanced use cases demonstrating high level of workflow customi
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Multi-stage cyclic symmetry using advanced customization">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to expand on selected sectors the mesh and results from a multi-stage cy...">
 
 .. only:: html
 
@@ -34,7 +34,7 @@ These demos show advanced use cases demonstrating high level of workflow customi
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Solve harmonic problem (with damping) using matrix inverse">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to create a harmonic (over frequencies) fields container for an analysis...">
 
 .. only:: html
 
@@ -51,7 +51,7 @@ These demos show advanced use cases demonstrating high level of workflow customi
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Average elemental stress on a given volume">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to find the minimum list of surrounding elements for a given node to get...">
 
 .. only:: html
 
@@ -68,7 +68,7 @@ These demos show advanced use cases demonstrating high level of workflow customi
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Exchange data between servers">
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, two DPF servers are started, and a workflow is created with a part on both ser...">
 
 .. only:: html
 
@@ -85,7 +85,7 @@ These demos show advanced use cases demonstrating high level of workflow customi
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Extrapolate results available at Gaussian or quadrature points to nodal points for a field or f...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the stress nodal components from Gaussian points (integration...">
 
 .. only:: html
 
@@ -102,7 +102,7 @@ These demos show advanced use cases demonstrating high level of workflow customi
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Extrapolate results available at Gaussian or quadrature points to nodal points for a field or f...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute the stress nodal components from Gaussian points (integration...">
 
 .. only:: html
 
@@ -119,7 +119,7 @@ These demos show advanced use cases demonstrating high level of workflow customi
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Stress gradient normal to a defined node">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to plot a stress gradient normal to a selected node. Because the example...">
 
 .. only:: html
 
@@ -136,7 +136,24 @@ These demos show advanced use cases demonstrating high level of workflow customi
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example is taken from Workshop 02.1 from Ansys Mechanical Advanced Topics. Instead of usin...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to load a plugin that is not loaded automatically.">
+
+.. only:: html
+
+  .. image:: /examples/03-advanced/images/thumb/sphx_glr_07-load_plugin_thumb.png
+    :alt: Load plugin
+
+  :ref:`sphx_glr_examples_03-advanced_07-load_plugin.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Load plugin</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how you can use PyDPF to postprocess a Mechanical model according to ...">
 
 .. only:: html
 
@@ -166,5 +183,6 @@ These demos show advanced use cases demonstrating high level of workflow customi
    /examples/03-advanced/04-extrapolation_stress_3d
    /examples/03-advanced/05-extrapolation_strain_2d
    /examples/03-advanced/06-stress_gradient_path
+   /examples/03-advanced/07-load_plugin
    /examples/03-advanced/10-asme_secviii_divtwo
 

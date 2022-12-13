@@ -22,6 +22,7 @@
 
 Averaging order
 ~~~~~~~~~~~~~~~
+
 This example compares two different workflows that accomplish the same task to show
 how the order of the operators can change the end result.
 
@@ -72,11 +73,11 @@ The following images shows these workflows:
         }
     }
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-58
+.. GENERATED FROM PYTHON SOURCE LINES 58-59
 
 Import the necessary modules.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-62
+.. GENERATED FROM PYTHON SOURCE LINES 59-63
 
 .. code-block:: default
 
@@ -91,11 +92,11 @@ Import the necessary modules.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-64
+.. GENERATED FROM PYTHON SOURCE LINES 64-65
 
 Load the simulation results from an RST file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-67
+.. GENERATED FROM PYTHON SOURCE LINES 65-68
 
 .. code-block:: default
 
@@ -109,7 +110,7 @@ Load the simulation results from an RST file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-73
+.. GENERATED FROM PYTHON SOURCE LINES 69-74
 
 Create the first workflow
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,7 +118,7 @@ The first workflow applies the averaging operator after computing the equivalent
 stresses. To create it, define a function that computes the von Mises stresses
 in the crankshaft and then apply the averaging operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-105
+.. GENERATED FROM PYTHON SOURCE LINES 74-106
 
 .. code-block:: default
 
@@ -160,7 +161,7 @@ in the crankshaft and then apply the averaging operator.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-112
+.. GENERATED FROM PYTHON SOURCE LINES 107-113
 
 Create the second workflow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,7 +170,7 @@ operator. To create this workflow, first apply the averaging operator to the
 stress field in the crankshaft and then calculate the von Mises stresses, which
 are already located on a ``Nodal`` position.
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-145
+.. GENERATED FROM PYTHON SOURCE LINES 113-146
 
 .. code-block:: default
 
@@ -213,7 +214,7 @@ are already located on a ``Nodal`` position.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-152
+.. GENERATED FROM PYTHON SOURCE LINES 147-153
 
 Plot the results
 ~~~~~~~~~~~~~~~~
@@ -222,7 +223,7 @@ Plot both von Mises stress fields side by side to compare them.
 - The second plot shows the results when the averaging is done first.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 152-156
+.. GENERATED FROM PYTHON SOURCE LINES 153-157
 
 .. code-block:: default
 
@@ -254,7 +255,7 @@ Plot both von Mises stress fields side by side to compare them.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-164
+.. GENERATED FROM PYTHON SOURCE LINES 158-165
 
 .. code-block:: default
 
@@ -280,7 +281,7 @@ Plot both von Mises stress fields side by side to compare them.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 165-167
+.. GENERATED FROM PYTHON SOURCE LINES 166-168
 
 Even though both workflows apply the same steps to the same initial data,
 their final results are different because of the order in which the operators
@@ -289,7 +290,7 @@ are applied.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.715 seconds)
+   **Total running time of the script:** ( 0 minutes  3.847 seconds)
 
 
 .. _sphx_glr_download_examples_08-averaging_00-compute_and_average.py:

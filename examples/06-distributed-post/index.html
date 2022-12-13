@@ -51,6 +51,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Postprocessing of displacement on distributed processes" href="00-distributed_total_disp.html" />
@@ -108,6 +109,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../user_guide/index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -234,18 +241,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../00-basic/04-basic-load-file.html">
-     Working with a result file
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/05-use_local_data.html">
      Bring a field’s data locally to improve performance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../00-basic/06-load_plugin.html">
-     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
@@ -273,15 +270,10 @@
      Get material properties from the result file
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../00-basic/13-nodes_in_local_coordinate_system.html">
-     Convert nodal coordinates field to local coordinate system
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01-static-transient/index.html">
+  <a class="reference internal" href="../01-transient_analyses/index.html">
    Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -291,13 +283,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
+    <a class="reference internal" href="../01-transient_analyses/00-basic_transient.html">
      Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
+    <a class="reference internal" href="../01-transient_analyses/01-transient_easy_time_scoping.html">
      Choose a time scoping for a transient analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-transient_analyses/02-lsdyna_operators.html">
+     Results extraction and analysis from LS-DYNA sources
     </a>
    </li>
   </ul>
@@ -340,6 +337,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/05-read_distributed_files.html">
      Read results from distributed files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-modal-harmonic/06-cycles_to_failure.html">
+     Calculate the number of cycles to fatigue failure
     </a>
    </li>
   </ul>
@@ -390,6 +392,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../03-advanced/07-load_plugin.html">
+     Load plugin
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/10-asme_secviii_divtwo.html">
      Pressure vessel analysis according to an ASME standard
     </a>
@@ -397,8 +404,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04-specific-requests/index.html">
-   Target-specific request examples
+  <a class="reference internal" href="../04-file-IO/index.html">
+   File manipulation and input-output examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -407,13 +414,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
+    <a class="reference internal" href="../04-file-IO/00-hdf5_double_float_comparison.html">
      HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-specific-requests/01-reduced_matrices_export.html">
+    <a class="reference internal" href="../04-file-IO/01-reduced_matrices_export.html">
      Get reduced matrices and make export
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-file-IO/04-basic-load-file.html">
+     Working with a result file
     </a>
    </li>
   </ul>
@@ -551,6 +563,33 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09-mesh_operations/index.html">
+   Mesh operations examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/00-create_polygons_and_polyhedrons.html">
+     Create and display a mesh with polygon and polyhedron elements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/05-skin_extraction.html">
+     Extract the skin from a mesh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
   </div>
@@ -596,16 +635,16 @@ different machines) and connect them.</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This diagram helps you to understand this example. It shows the operator chain that is used to ..."><img alt="Postprocessing of displacement on distributed processes" src="../../_images/sphx_glr_00-distributed_total_disp_thumb.png" />
 <p><a class="reference internal" href="00-distributed_total_disp.html#sphx-glr-examples-06-distributed-post-00-distributed-total-disp-py"><span class="std std-ref">Postprocessing of displacement on distributed processes</span></a></p>
   <div class="sphx-glr-thumbnail-title">Postprocessing of displacement on distributed processes</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="    digraph foo {         graph [pad=&quot;0&quot;, nodesep=&quot;0.3&quot;, ranksep=&quot;0.3&quot;]         node [shape=box..."><img alt="Create a custom workflow on distributed processes" src="../../_images/sphx_glr_01-distributed_workflows_on_remote_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to read and postprocess distributed files on distributed processes. Afte..."><img alt="Create a custom workflow on distributed processes" src="../../_images/sphx_glr_01-distributed_workflows_on_remote_thumb.png" />
 <p><a class="reference internal" href="01-distributed_workflows_on_remote.html#sphx-glr-examples-06-distributed-post-01-distributed-workflows-on-remote-py"><span class="std std-ref">Create a custom workflow on distributed processes</span></a></p>
   <div class="sphx-glr-thumbnail-title">Create a custom workflow on distributed processes</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The following diagram helps you to understand this example. It shows the operator chain that is..."><img alt="Distributed mode superposition (MSUP)" src="../../_images/sphx_glr_02-distributed-msup_expansion_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to read and expand distributed files on distributed processes. The modal..."><img alt="Distributed mode superposition (MSUP)" src="../../_images/sphx_glr_02-distributed-msup_expansion_thumb.png" />
 <p><a class="reference internal" href="02-distributed-msup_expansion.html#sphx-glr-examples-06-distributed-post-02-distributed-msup-expansion-py"><span class="std std-ref">Distributed mode superposition (MSUP)</span></a></p>
   <div class="sphx-glr-thumbnail-title">Distributed mode superposition (MSUP)</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The following diagram helps you to understand this example. It shows the operator chain that is..."><img alt="Distributed MSUP distributed modal response" src="../../_images/sphx_glr_03-distributed-msup_expansion_steps_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to read and expand distributed files on distributed processes. The modal..."><img alt="Distributed MSUP distributed modal response" src="../../_images/sphx_glr_03-distributed-msup_expansion_steps_thumb.png" />
 <p><a class="reference internal" href="03-distributed-msup_expansion_steps.html#sphx-glr-examples-06-distributed-post-03-distributed-msup-expansion-steps-py"><span class="std std-ref">Distributed MSUP distributed modal response</span></a></p>
   <div class="sphx-glr-thumbnail-title">Distributed MSUP distributed modal response</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Average Stress in distributed Workflows"><img alt="Average Stress in distributed Workflows" src="../../_images/sphx_glr_06-distributed_stress_averaging_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how stress can be read from distributed files and averaged from elemental no..."><img alt="Average Stress in distributed Workflows" src="../../_images/sphx_glr_06-distributed_stress_averaging_thumb.png" />
 <p><a class="reference internal" href="06-distributed_stress_averaging.html#sphx-glr-examples-06-distributed-post-06-distributed-stress-averaging-py"><span class="std std-ref">Average Stress in distributed Workflows</span></a></p>
   <div class="sphx-glr-thumbnail-title">Average Stress in distributed Workflows</div>
 </div></div><div class="toctree-wrapper compound">

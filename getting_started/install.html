@@ -51,6 +51,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Dependencies" href="dependencies.html" />
@@ -108,6 +109,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../user_guide/index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -218,11 +225,6 @@
    Dependencies
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="docker.html">
-   DPF in Docker
-  </a>
- </li>
 </ul>
 
   </div>
@@ -272,6 +274,11 @@
    Install in development mode
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-with-plotting-capabilities">
+   Install with plotting capabilities
+  </a>
+ </li>
 </ul>
 
 </nav>
@@ -312,7 +319,7 @@ with:</p>
 <p>If you are unable to install PyDPF-Post on the host machine due to
 network isolation, download the latest wheel file from <a class="reference external" href="https://github.com/pyansys/pydpf-post">PyDPF-Post
 GitHub</a> or
-<a class="reference external" href="https://pypi.org/project/ansys-dpf-post/">PyDPF-Post PyPi</a>.</p>
+<a class="reference external" href="https://pypi.org/project/ansys-dpf-post/">PyDPF-Post PyPI</a>.</p>
 </section>
 <section id="install-for-a-quick-tryout">
 <h2>Install for a quick tryout<a class="headerlink" href="#install-for-a-quick-tryout" title="Permalink to this heading">#</a></h2>
@@ -334,6 +341,15 @@ development flag:</p>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
 </pre></div>
 </div>
+</section>
+<section id="install-with-plotting-capabilities">
+<span id="target-to-install-with-plotting-capabilities"></span><h2>Install with plotting capabilities<a class="headerlink" href="#install-with-plotting-capabilities" title="Permalink to this heading">#</a></h2>
+<p>PyDPF-Core plotting capabilities are based on PyVista. That means that PyVista must be installed with PyDPF-Core.
+To proceed, use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ansys</span><span class="o">-</span><span class="n">dpf</span><span class="o">-</span><span class="n">core</span><span class="p">[</span><span class="n">plotting</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For more information about PyDPF-Core plotting capabilities, see <span class="xref std std-ref">ref_plotter</span>.</p>
 </section>
 </section>
 

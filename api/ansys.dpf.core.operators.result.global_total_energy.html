@@ -51,9 +51,10 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="global_velocity" href="ansys.dpf.core.operators.result.global_velocity.html" />
+    <link rel="next" title="global_total_mass" href="ansys.dpf.core.operators.result.global_total_mass.html" />
     <link rel="prev" title="global_to_nodal" href="ansys.dpf.core.operators.result.global_to_nodal.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
@@ -108,6 +109,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../user_guide/index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -1964,13 +1971,93 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_added_mass.html">
+         global_added_mass
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_added_mass_pct.html">
+         global_added_mass_pct
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_center_mass.html">
+         global_center_mass
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_energy_ratio.html">
+         global_energy_ratio
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_energy_ratio_wo_eroded.html">
+         global_energy_ratio_wo_eroded
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_eroded_hourglass_energy.html">
+         global_eroded_hourglass_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_eroded_internal_energy.html">
+         global_eroded_internal_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_eroded_kinetic_energy.html">
+         global_eroded_kinetic_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_external_work.html">
+         global_external_work
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_hourglass_energy.html">
+         global_hourglass_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.global_internal_energy.html">
          global_internal_energy
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_joint_internal_energy.html">
+         global_joint_internal_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.global_kinetic_energy.html">
          global_kinetic_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_rigid_body_stopper_energy.html">
+         global_rigid_body_stopper_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_sliding_interface_energy.html">
+         global_sliding_interface_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_spring_damper_energy.html">
+         global_spring_damper_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_system_damping_energy.html">
+         global_system_damping_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_time_step.html">
+         global_time_step
         </a>
        </li>
        <li class="toctree-l4">
@@ -1981,6 +2068,11 @@
        <li class="toctree-l4 current active">
         <a class="current reference internal" href="#">
          global_total_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_total_mass.html">
+         global_total_mass
         </a>
        </li>
        <li class="toctree-l4">
@@ -3335,18 +3427,12 @@
 <p>Autogenerated DPF operator classes.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ansys.dpf.core.operators.result.global_total_energy.global_total_energy">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.operators.result.global_total_energy.</span></span><span class="sig-name descname"><span class="pre">global_total_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_scoping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">streams_container</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_sources</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.operators.result.global_total_energy.global_total_energy" title="Permalink to this definition">#</a></dt>
-<dd><p>Read/compute Global Total Energy (LSDyna) by calling the readers
-defined by the datasources. The location will be overall (global
-result).</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.operators.result.global_total_energy.</span></span><span class="sig-name descname"><span class="pre">global_total_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">streams_container</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_sources</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.dpf.core.operators.result.global_total_energy.global_total_energy" title="Permalink to this definition">#</a></dt>
+<dd><p>Read Global Total Energy (LSDyna) by calling the readers defined by
+the datasources.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>time_scoping</strong> (<a class="reference internal" href="ansys.dpf.core.scoping.html#ansys.dpf.core.scoping.Scoping" title="ansys.dpf.core.scoping.Scoping"><em>Scoping</em></a><em> or </em><em>int</em><em> or </em><em>float</em><em> or </em><a class="reference internal" href="ansys.dpf.core.field.html#ansys.dpf.core.field.Field" title="ansys.dpf.core.field.Field"><em>Field</em></a><em>, </em><em>optional</em>) – Time/freq (use doubles or field), time/freq
-set ids (use ints or scoping) or
-time/freq step ids (use scoping with
-timefreq_steps location) required in
-output</p></li>
 <li><p><strong>streams_container</strong> (<a class="reference internal" href="ansys.dpf.core.streams_container.html#ansys.dpf.core.streams_container.StreamsContainer" title="ansys.dpf.core.streams_container.StreamsContainer"><em>StreamsContainer</em></a><em>, </em><em>optional</em>) – Result file container allowed to be kept open
 to cache data</p></li>
 <li><p><strong>data_sources</strong> (<a class="reference internal" href="ansys.dpf.core.data_sources.html#ansys.dpf.core.data_sources.DataSources" title="ansys.dpf.core.data_sources.DataSources"><em>DataSources</em></a>) – Result file path container, used if no
@@ -3363,8 +3449,6 @@ streams are set</p></li>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Make input connections</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">my_time_scoping</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Scoping</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">my_time_scoping</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_streams_container</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">StreamsContainer</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">streams_container</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">my_streams_container</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_data_sources</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
@@ -3373,7 +3457,6 @@ streams are set</p></li>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Instantiate operator and connect inputs in one line</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">global_total_energy</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="n">time_scoping</span><span class="o">=</span><span class="n">my_time_scoping</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">streams_container</span><span class="o">=</span><span class="n">my_streams_container</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">data_sources</span><span class="o">=</span><span class="n">my_data_sources</span><span class="p">,</span>
 <span class="gp">... </span><span class="p">)</span>
@@ -3574,38 +3657,12 @@ global_total_energy operator.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">global_total_energy</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">my_time_scoping</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Scoping</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">my_time_scoping</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_streams_container</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">StreamsContainer</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">streams_container</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">my_streams_container</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_data_sources</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">my_data_sources</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="py property">
-<dt class="sig sig-object py" id="ansys.dpf.core.operators.result.global_total_energy.InputsGlobalTotalEnergy.time_scoping">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time_scoping</span></span><a class="headerlink" href="#ansys.dpf.core.operators.result.global_total_energy.InputsGlobalTotalEnergy.time_scoping" title="Permalink to this definition">#</a></dt>
-<dd><p>Allows to connect time_scoping input to the operator.</p>
-<p>Time/freq (use doubles or field), time/freq
-set ids (use ints or scoping) or
-time/freq step ids (use scoping with
-timefreq_steps location) required in
-output</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>my_time_scoping</strong> (<a class="reference internal" href="ansys.dpf.core.scoping.html#ansys.dpf.core.scoping.Scoping" title="ansys.dpf.core.scoping.Scoping"><em>Scoping</em></a><em> or </em><em>int</em><em> or </em><em>float</em><em> or </em><a class="reference internal" href="ansys.dpf.core.field.html#ansys.dpf.core.field.Field" title="ansys.dpf.core.field.Field"><em>Field</em></a>) – </p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">global_total_energy</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">my_time_scoping</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># or</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="p">(</span><span class="n">my_time_scoping</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="py property">
 <dt class="sig sig-object py" id="ansys.dpf.core.operators.result.global_total_energy.InputsGlobalTotalEnergy.streams_container">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">streams_container</span></span><a class="headerlink" href="#ansys.dpf.core.operators.result.global_total_energy.InputsGlobalTotalEnergy.streams_container" title="Permalink to this definition">#</a></dt>

@@ -22,10 +22,11 @@
 
 Multi-stage cyclic symmetry example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This example shows how to expand the mesh and results from a
 multi-stage cyclic analysis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-14
+.. GENERATED FROM PYTHON SOURCE LINES 12-15
 
 .. code-block:: default
 
@@ -39,11 +40,11 @@ multi-stage cyclic analysis.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-16
+.. GENERATED FROM PYTHON SOURCE LINES 16-17
 
 Create the model and display the state of the result.
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-20
+.. GENERATED FROM PYTHON SOURCE LINES 17-21
 
 .. code-block:: default
 
@@ -90,7 +91,7 @@ Create the model and display the state of the result.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-28
+.. GENERATED FROM PYTHON SOURCE LINES 22-29
 
 Expand displacement results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,7 +101,7 @@ the :func:`read_cyclic
 <ansys.dpf.core.operators.mesh.mesh_provider.InputsMeshProvider.read_cyclic>`
 property with 2 as an argument (1 would ignore the cyclic symmetry).
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-46
+.. GENERATED FROM PYTHON SOURCE LINES 29-47
 
 .. code-block:: default
 
@@ -134,12 +135,12 @@ property with 2 as an argument (1 would ignore the cyclic symmetry).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-49
+.. GENERATED FROM PYTHON SOURCE LINES 48-50
 
 Expand stresses at a given time step
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-68
+.. GENERATED FROM PYTHON SOURCE LINES 50-69
 
 .. code-block:: default
 
@@ -177,7 +178,7 @@ Expand stresses at a given time step
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.721 seconds)
+   **Total running time of the script:** ( 0 minutes  2.298 seconds)
 
 
 .. _sphx_glr_download_examples_02-modal-harmonic_02-cyclic_multi_stage.py:

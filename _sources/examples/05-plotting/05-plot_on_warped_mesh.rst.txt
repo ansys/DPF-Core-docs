@@ -22,14 +22,15 @@
 
 Warp the mesh by a field for plotting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This example shows how to warp the mesh by a vector field,
 enabling to plot on the deformed geometry.
 
 .. note::
     This example requires the Premium ServerContext.
-    For more information, see :ref:`_ref_getting_started_contexts`.
+    For more information, see :ref:`user_guide_server_context`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-68
+.. GENERATED FROM PYTHON SOURCE LINES 15-69
 
 
 
@@ -181,7 +182,7 @@ enabling to plot on the deformed geometry.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.573 seconds)
+   **Total running time of the script:** ( 0 minutes  9.583 seconds)
 
 
 .. _sphx_glr_download_examples_05-plotting_05-plot_on_warped_mesh.py:

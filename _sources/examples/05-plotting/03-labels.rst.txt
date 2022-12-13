@@ -22,15 +22,16 @@
 
 Add nodal labels on plots
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 You can add use label properties to add custom labels to specific nodes.
 If label for a node is missing, the nodal scalar value is shown by default.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-13
+.. GENERATED FROM PYTHON SOURCE LINES 12-14
 
 Import the ``dpf_core`` module, included examples files, and the ``DpfPlotter``
 module.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-17
+.. GENERATED FROM PYTHON SOURCE LINES 14-18
 
 .. code-block:: default
 
@@ -45,7 +46,7 @@ module.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-30
+.. GENERATED FROM PYTHON SOURCE LINES 19-31
 
 Open an example and print the ``Model`` object. The
 :class:`Model <ansys.dpf.core.model.Model>` class helps to organize access
@@ -60,7 +61,7 @@ Printing the model displays this metadata:
 - Number of results
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-33
+.. GENERATED FROM PYTHON SOURCE LINES 31-34
 
 .. code-block:: default
 
@@ -129,14 +130,14 @@ Printing the model displays this metadata:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-38
+.. GENERATED FROM PYTHON SOURCE LINES 35-39
 
 Get the stress tensor and ``connect`` time scoping.
 Make sure that you define ``"Nodal"`` as the scoping location because
 labels are supported only for nodal results.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-56
+.. GENERATED FROM PYTHON SOURCE LINES 39-57
 
 .. code-block:: default
 
@@ -182,12 +183,12 @@ labels are supported only for nodal results.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-59
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
 
 Get the meshed region.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-61
+.. GENERATED FROM PYTHON SOURCE LINES 60-62
 
 .. code-block:: default
 
@@ -200,12 +201,12 @@ Get the meshed region.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-64
+.. GENERATED FROM PYTHON SOURCE LINES 63-65
 
 Plot the results on the mesh and show the minimum and maximum.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-116
+.. GENERATED FROM PYTHON SOURCE LINES 65-117
 
 .. code-block:: default
 
@@ -276,7 +277,7 @@ Plot the results on the mesh and show the minimum and maximum.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.361 seconds)
+   **Total running time of the script:** ( 0 minutes  1.469 seconds)
 
 
 .. _sphx_glr_download_examples_05-plotting_03-labels.py:

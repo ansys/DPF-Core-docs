@@ -22,6 +22,7 @@
 
 Create a plug-in package that has third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This example shows how to create a Python plug-in package with
 third-party dependencies. You should be familiar with these
 examples before proceeding with this more advanced one:
@@ -37,9 +38,9 @@ file at the given path.
 
 .. note::
     This example requires the Premium ServerContext.
-    For more information, see :ref:`_ref_getting_started_contexts`.
+    For more information, see :ref:`user_guide_server_context`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-36
+.. GENERATED FROM PYTHON SOURCE LINES 28-37
 
 Create the plug-in package
 --------------------------
@@ -51,7 +52,7 @@ method, which records the operators of the plug-in package.
 Download the ``gltf_plugin`` plug-in package that has already been
 created for you.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-79
+.. GENERATED FROM PYTHON SOURCE LINES 37-80
 
 .. code-block:: default
 
@@ -274,7 +275,7 @@ created for you.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-97
+.. GENERATED FROM PYTHON SOURCE LINES 81-98
 
 To add third-party modules as dependencies to a plug-in package, you must
 create and reference a folder or ZIP file with the sites of the dependencies
@@ -294,7 +295,7 @@ the XML as shown in the preceding code.
 To simplify this step, you can add a requirements file in the plug-in package:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-103
+.. GENERATED FROM PYTHON SOURCE LINES 98-104
 
 .. code-block:: default
 
@@ -320,7 +321,7 @@ To simplify this step, you can add a requirements file in the plug-in package:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-131
+.. GENERATED FROM PYTHON SOURCE LINES 105-132
 
 Download the script for your operating system.
 
@@ -350,7 +351,7 @@ Run the command for your operating system.
 
    create_sites_for_python_operators.sh -pluginpath /path/to/plugin -zippath /path/to/plugin/assets/linx64.zip # noqa: E501
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-176
+.. GENERATED FROM PYTHON SOURCE LINES 132-177
 
 .. code-block:: default
 
@@ -413,7 +414,7 @@ Run the command for your operating system.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 177-188
+.. GENERATED FROM PYTHON SOURCE LINES 178-189
 
 Load the plug-in package
 ------------------------
@@ -427,7 +428,7 @@ plug-in package.
 - The third argument is the name of the function exposed in the ``__init__`` file
   for the plug-in package that is used to record operators.
 
-.. GENERATED FROM PYTHON SOURCE LINES 188-209
+.. GENERATED FROM PYTHON SOURCE LINES 189-210
 
 .. code-block:: default
 
@@ -465,11 +466,11 @@ plug-in package.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 210-211
+.. GENERATED FROM PYTHON SOURCE LINES 211-212
 
 Instantiate the operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 211-214
+.. GENERATED FROM PYTHON SOURCE LINES 212-215
 
 .. code-block:: default
 
@@ -483,7 +484,7 @@ Instantiate the operator.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 215-223
+.. GENERATED FROM PYTHON SOURCE LINES 216-224
 
 This new ``gltf_export`` operator requires the following as inputs: a triangle
 surface mesh, a displacement field on this surface mesh, and a path to export
@@ -494,7 +495,7 @@ is created on a simple file and the
 :class:`ansys.dpf.core.operators.mesh.tri_mesh_skin` operator is used
 to extract the surface of the mesh in triangle elements.
 
-.. GENERATED FROM PYTHON SOURCE LINES 225-240
+.. GENERATED FROM PYTHON SOURCE LINES 226-241
 
 .. graphviz::
 
@@ -512,12 +513,12 @@ to extract the surface of the mesh in triangle elements.
       displacement -> gltf_export [splines=ortho];
    }
 
-.. GENERATED FROM PYTHON SOURCE LINES 242-244
+.. GENERATED FROM PYTHON SOURCE LINES 243-245
 
 Use the custom operator
 -----------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 244-264
+.. GENERATED FROM PYTHON SOURCE LINES 245-265
 
 .. code-block:: default
 
@@ -554,14 +555,14 @@ Use the custom operator
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 265-266
+.. GENERATED FROM PYTHON SOURCE LINES 266-267
 
 You can download :download:`output <images/thumb/out02.glb>` from the ``gltf`` operator.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  48.771 seconds)
+   **Total running time of the script:** ( 0 minutes  39.740 seconds)
 
 
 .. _sphx_glr_download_examples_07-python-operators_02-python_operators_with_dependencies.py:

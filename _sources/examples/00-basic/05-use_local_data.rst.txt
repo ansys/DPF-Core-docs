@@ -22,19 +22,17 @@
 
 Bring a field's data locally to improve performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Reducing the number of calls to the server is key to improving
 performance. Using the ``as_local_field`` option brings the data
 from the server to your local machine where you can work on it.
 When finished, you send the updated data back to the server
 in one transaction.
 
-.. note::
-    This example requires the Premium ServerContext.
-    For more information, see :ref:`_ref_getting_started_contexts`.
-
-.. GENERATED FROM PYTHON SOURCE LINES 17-25
+.. GENERATED FROM PYTHON SOURCE LINES 14-21
 
 .. code-block:: default
+
 
     # Import necessary modules
     from ansys.dpf import core as dpf
@@ -42,7 +40,6 @@ in one transaction.
     from ansys.dpf.core import operators as ops
 
 
-    dpf.set_default_server_context(dpf.AvailableServerContexts.premium)
 
 
 
@@ -50,18 +47,18 @@ in one transaction.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 26-28
+.. GENERATED FROM PYTHON SOURCE LINES 22-24
 
 Create a model object to establish a connection with an
 example result file and then extract:
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-31
+.. GENERATED FROM PYTHON SOURCE LINES 24-28
 
 .. code-block:: default
 
     model = dpf.Model(examples.download_multi_stage_cyclic_result())
     print(model)
+    mesh = model.metadata.meshed_region
 
 
 
@@ -102,64 +99,22 @@ example result file and then extract:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-36
+.. GENERATED FROM PYTHON SOURCE LINES 29-31
 
 Create the workflow
 ~~~~~~~~~~~~~~~~~~~~
-Maximum principal stress usually occurs on the skin of the
-model. Computing results only on this skin reduces the data size.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-43
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
-.. code-block:: default
+Compute the stress principal invariants:
 
-
-    # Create a simple workflow computing the principal stress on the skin
-    # of the model.
-
-    skin_op = ops.mesh.external_layer(model.metadata.meshed_region)
-    skin_mesh = skin_op.outputs.mesh()
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 44-45
-
-Plot the mesh skin:
-
-.. GENERATED FROM PYTHON SOURCE LINES 45-47
-
-.. code-block:: default
-
-    skin_mesh.plot()
-
-
-
-
-.. image-sg:: /examples/00-basic/images/sphx_glr_05-use_local_data_001.png
-   :alt: 05 use local data
-   :srcset: /examples/00-basic/images/sphx_glr_05-use_local_data_001.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 48-49
-
-Compute the stress principal invariants on the skin nodes only:
-
-.. GENERATED FROM PYTHON SOURCE LINES 49-58
+.. GENERATED FROM PYTHON SOURCE LINES 34-43
 
 .. code-block:: default
 
     stress_op = ops.result.stress(data_sources=model.metadata.data_sources)
     stress_op.inputs.requested_location.connect(dpf.locations.nodal)
-    stress_op.inputs.mesh_scoping.connect(skin_op.outputs.nodes_mesh_scoping)
+    stress_op.inputs.mesh_scoping.connect(mesh.nodes.scoping)
 
     principal_op = ops.invariant.principal_invariants_fc(stress_op)
     principal_stress_1 = principal_op.outputs.fields_eig_1()[0]
@@ -173,18 +128,18 @@ Compute the stress principal invariants on the skin nodes only:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-61
+.. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 Manipulate data locally
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-67
+.. GENERATED FROM PYTHON SOURCE LINES 49-52
 
 This example goes over the fields, keeping the largest invariant value
 by node if the averaged value of invariants is large enough.
 Exploring data allows you to customize it to meet your needs.
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-87
+.. GENERATED FROM PYTHON SOURCE LINES 52-72
 
 .. code-block:: default
 
@@ -215,55 +170,62 @@ Exploring data allows you to customize it to meet your needs.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-90
+.. GENERATED FROM PYTHON SOURCE LINES 73-75
 
 Plot result field
 ~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-94
+.. GENERATED FROM PYTHON SOURCE LINES 78-79
 
 Plot the result field on the skin mesh:
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-96
+.. GENERATED FROM PYTHON SOURCE LINES 79-81
 
 .. code-block:: default
 
-    skin_mesh.plot(field_to_keep)
+    mesh.plot(field_to_keep)
 
 
 
 
-.. image-sg:: /examples/00-basic/images/sphx_glr_05-use_local_data_002.png
+.. image-sg:: /examples/00-basic/images/sphx_glr_05-use_local_data_001.png
    :alt: 05 use local data
-   :srcset: /examples/00-basic/images/sphx_glr_05-use_local_data_002.png
+   :srcset: /examples/00-basic/images/sphx_glr_05-use_local_data_001.png
    :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-99
+.. GENERATED FROM PYTHON SOURCE LINES 82-84
 
 Plot initial invariants
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-103
+.. GENERATED FROM PYTHON SOURCE LINES 87-88
 
-Plot the initial invariants on the skin mesh:
+Plot the initial invariants:
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-107
+.. GENERATED FROM PYTHON SOURCE LINES 88-92
 
 .. code-block:: default
 
 
-    skin_mesh.plot(principal_stress_1)
-    skin_mesh.plot(principal_stress_2)
-    skin_mesh.plot(principal_stress_3)
+    mesh.plot(principal_stress_1)
+    mesh.plot(principal_stress_2)
+    mesh.plot(principal_stress_3)
 
 
 
 .. rst-class:: sphx-glr-horizontal
 
+
+    *
+
+      .. image-sg:: /examples/00-basic/images/sphx_glr_05-use_local_data_002.png
+          :alt: 05 use local data
+          :srcset: /examples/00-basic/images/sphx_glr_05-use_local_data_002.png
+          :class: sphx-glr-multi-img
 
     *
 
@@ -279,13 +241,6 @@ Plot the initial invariants on the skin mesh:
           :srcset: /examples/00-basic/images/sphx_glr_05-use_local_data_004.png
           :class: sphx-glr-multi-img
 
-    *
-
-      .. image-sg:: /examples/00-basic/images/sphx_glr_05-use_local_data_005.png
-          :alt: 05 use local data
-          :srcset: /examples/00-basic/images/sphx_glr_05-use_local_data_005.png
-          :class: sphx-glr-multi-img
-
 
 
 
@@ -293,7 +248,7 @@ Plot the initial invariants on the skin mesh:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.748 seconds)
+   **Total running time of the script:** ( 0 minutes  4.096 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_05-use_local_data.py:

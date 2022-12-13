@@ -51,6 +51,7 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Getting started" href="getting_started/index.html" />
@@ -107,6 +108,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="user_guide/index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -283,7 +290,7 @@ and extract results:</p>
 </div>
 <p>Here is how you plot displacement results:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">disp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">displacement</span><span class="p">()</span><span class="o">.</span><span class="n">X</span><span class="p">()</span>
-<span class="go">model.metadata.meshed_region.plot(disp.outputs.fields_container())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">disp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">fields_container</span><span class="p">())</span>
 </pre></div>
 </div>
 <p>For comprehensive demos, see <a class="reference internal" href="examples/index.html#gallery"><span class="std std-ref">Examples</span></a>.</p>

@@ -22,17 +22,18 @@
 
 Create your own entities using DPF operators
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 You can create your field, fields container, or meshed region to use DPF operators
 with your own data. The ability to use scripting to create any DPF entity means
 that you are not dependent on result files and can connect the DPF environment
 with any Python tool.
 
-Import necessary modules:
-
-.. GENERATED FROM PYTHON SOURCE LINES 14-19
+.. GENERATED FROM PYTHON SOURCE LINES 14-21
 
 .. code-block:: default
 
+
+    # Import necessary modules
     import numpy as np
 
     from ansys.dpf import core as dpf
@@ -45,11 +46,11 @@ Import necessary modules:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-21
+.. GENERATED FROM PYTHON SOURCE LINES 22-23
 
 Create a parallel piped mesh made of linear hexa:
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-42
+.. GENERATED FROM PYTHON SOURCE LINES 23-44
 
 .. code-block:: default
 
@@ -81,11 +82,11 @@ Create a parallel piped mesh made of linear hexa:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-44
+.. GENERATED FROM PYTHON SOURCE LINES 45-46
 
 Add nodes:
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-66
+.. GENERATED FROM PYTHON SOURCE LINES 46-68
 
 .. code-block:: default
 
@@ -118,11 +119,11 @@ Add nodes:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-68
+.. GENERATED FROM PYTHON SOURCE LINES 69-70
 
 Get the nodes' coordinates field:
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-70
+.. GENERATED FROM PYTHON SOURCE LINES 70-72
 
 .. code-block:: default
 
@@ -135,11 +136,11 @@ Get the nodes' coordinates field:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-72
+.. GENERATED FROM PYTHON SOURCE LINES 73-74
 
 Set the mesh unit:
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-78
+.. GENERATED FROM PYTHON SOURCE LINES 74-80
 
 .. code-block:: default
 
@@ -156,11 +157,11 @@ Set the mesh unit:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-80
+.. GENERATED FROM PYTHON SOURCE LINES 81-82
 
 Add solid elements (linear hexa with eight nodes):
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-120
+.. GENERATED FROM PYTHON SOURCE LINES 82-122
 
 .. code-block:: default
 
@@ -216,7 +217,7 @@ Add solid elements (linear hexa with eight nodes):
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-128
+.. GENERATED FROM PYTHON SOURCE LINES 123-130
 
 Create displacement fields over time with three time sets.
 For the first time set, the displacement on each node is the
@@ -226,7 +227,7 @@ times the value of its x, y, and z coordinates.
 For the third time set, the displacement on each node is three
 times the value of its x, y, and z coordinates.
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-149
+.. GENERATED FROM PYTHON SOURCE LINES 130-151
 
 .. code-block:: default
 
@@ -258,11 +259,11 @@ times the value of its x, y, and z coordinates.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-151
+.. GENERATED FROM PYTHON SOURCE LINES 152-153
 
 Create results over times in a fields container with its time frequency support:
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-155
+.. GENERATED FROM PYTHON SOURCE LINES 153-157
 
 .. code-block:: default
 
@@ -277,11 +278,11 @@ Create results over times in a fields container with its time frequency support:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 156-157
+.. GENERATED FROM PYTHON SOURCE LINES 158-159
 
 Check that the time frequency support has been built:
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-159
+.. GENERATED FROM PYTHON SOURCE LINES 159-161
 
 .. code-block:: default
 
@@ -306,11 +307,11 @@ Check that the time frequency support has been built:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-161
+.. GENERATED FROM PYTHON SOURCE LINES 162-163
 
 Plot the norm over time of the fields container:
 
-.. GENERATED FROM PYTHON SOURCE LINES 161-166
+.. GENERATED FROM PYTHON SOURCE LINES 163-168
 
 .. code-block:: default
 
@@ -353,7 +354,7 @@ Plot the norm over time of the fields container:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.521 seconds)
+   **Total running time of the script:** ( 0 minutes  6.785 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_03-create_entities.py:

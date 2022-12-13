@@ -51,6 +51,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Get material properties from the result file" href="12-get_material_properties.html" />
@@ -108,6 +109,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../user_guide/index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -235,18 +242,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04-basic-load-file.html">
-     Working with a result file
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="05-use_local_data.html">
      Bring a field’s data locally to improve performance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06-load_plugin.html">
-     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,15 +271,10 @@
      Get material properties from the result file
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13-nodes_in_local_coordinate_system.html">
-     Convert nodal coordinates field to local coordinate system
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01-static-transient/index.html">
+  <a class="reference internal" href="../01-transient_analyses/index.html">
    Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -292,13 +284,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
+    <a class="reference internal" href="../01-transient_analyses/00-basic_transient.html">
      Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
+    <a class="reference internal" href="../01-transient_analyses/01-transient_easy_time_scoping.html">
      Choose a time scoping for a transient analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-transient_analyses/02-lsdyna_operators.html">
+     Results extraction and analysis from LS-DYNA sources
     </a>
    </li>
   </ul>
@@ -341,6 +338,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/05-read_distributed_files.html">
      Read results from distributed files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-modal-harmonic/06-cycles_to_failure.html">
+     Calculate the number of cycles to fatigue failure
     </a>
    </li>
   </ul>
@@ -391,6 +393,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../03-advanced/07-load_plugin.html">
+     Load plugin
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/10-asme_secviii_divtwo.html">
      Pressure vessel analysis according to an ASME standard
     </a>
@@ -398,8 +405,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04-specific-requests/index.html">
-   Target-specific request examples
+  <a class="reference internal" href="../04-file-IO/index.html">
+   File manipulation and input-output examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -408,13 +415,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
+    <a class="reference internal" href="../04-file-IO/00-hdf5_double_float_comparison.html">
      HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-specific-requests/01-reduced_matrices_export.html">
+    <a class="reference internal" href="../04-file-IO/01-reduced_matrices_export.html">
      Get reduced matrices and make export
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-file-IO/04-basic-load-file.html">
+     Working with a result file
     </a>
    </li>
   </ul>
@@ -548,6 +560,33 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../08-averaging/01-average_across_bodies.html">
      Average across bodies
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09-mesh_operations/index.html">
+   Mesh operations examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/00-create_polygons_and_polyhedrons.html">
+     Create and display a mesh with polygon and polyhedron elements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/05-skin_extraction.html">
+     Extract the skin from a mesh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
     </a>
    </li>
   </ul>
@@ -695,19 +734,19 @@ Python module <code class="docutils literal notranslate"><span class="pre">ansys
   Unit:
   2 entities
   Data:1 components and 2 elementary data
- &lt;class &#39;ansys.dpf.core.server_types.InProcessServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;&#39;, &#39;server_port&#39;: None, &#39;server_process_id&#39;: 496, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
+ &lt;class &#39;ansys.dpf.core.server_types.InProcessServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;&#39;, &#39;server_port&#39;: None, &#39;server_process_id&#39;: 4616, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
 DPF  Field
   Location: Nodal
   Unit:
   2 entities
   Data:1 components and 2 elementary data
- &lt;class &#39;ansys.dpf.core.server_types.GrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50056, &#39;server_process_id&#39;: 2616, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
+ &lt;class &#39;ansys.dpf.core.server_types.GrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50056, &#39;server_process_id&#39;: 3756, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
 DPF  Field
   Location: Nodal
   Unit:
   2 entities
   Data:1 components and 2 elementary data
- &lt;class &#39;ansys.dpf.core.server_types.LegacyGrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50054, &#39;server_process_id&#39;: 5476, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
+ &lt;class &#39;ansys.dpf.core.server_types.LegacyGrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50054, &#39;server_process_id&#39;: 2592, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
 </pre></div>
 </div>
 </section>
@@ -732,10 +771,10 @@ automatically started when a DPF object is created:</p>
   Unit:
   2 entities
   Data:1 components and 2 elementary data
- &lt;class &#39;ansys.dpf.core.server_types.LegacyGrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50055, &#39;server_process_id&#39;: 3128, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
+ &lt;class &#39;ansys.dpf.core.server_types.LegacyGrpcServer&#39;&gt; DPF Server: {&#39;server_ip&#39;: &#39;127.0.0.1&#39;, &#39;server_port&#39;: 50055, &#39;server_process_id&#39;: 1056, &#39;server_version&#39;: &#39;6.0&#39;, &#39;os&#39;: &#39;nt&#39;}
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.174 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.126 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-11-server-types-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/7c9ba1e7af07b7f46a02d30c998186bb/11-server_types.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">11-server_types.py</span></code></a></p>

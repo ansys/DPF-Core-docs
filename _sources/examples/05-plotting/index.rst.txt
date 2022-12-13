@@ -16,7 +16,7 @@ These examples show how to use the ``DpfPlotter`` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Review of available plotting commands">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example lists the different plotting commands available, shown with the arguments availabl...">
 
 .. only:: html
 
@@ -33,7 +33,7 @@ These examples show how to use the ``DpfPlotter`` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Compare results using the plotter">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to plot several mesh/result combinations on the same plot so that you ca...">
 
 .. only:: html
 
@@ -50,7 +50,7 @@ These examples show how to use the ``DpfPlotter`` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Load case combination for principal stress">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to get a principal stress load case combination using DPF And highlight ...">
 
 .. only:: html
 
@@ -67,7 +67,7 @@ These examples show how to use the ``DpfPlotter`` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Add nodal labels on plots">
+    <div class="sphx-glr-thumbcontainer" tooltip="You can add use label properties to add custom labels to specific nodes. If label for a node is...">
 
 .. only:: html
 
@@ -84,7 +84,7 @@ These examples show how to use the ``DpfPlotter`` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Plot results on a specific path">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to get a result mapped over a specific path and how to plot it.">
 
 .. only:: html
 
@@ -101,7 +101,7 @@ These examples show how to use the ``DpfPlotter`` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Warp the mesh by a field for plotting">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to warp the mesh by a vector field, enabling to plot on the deformed geo...">
 
 .. only:: html
 
@@ -118,7 +118,7 @@ These examples show how to use the ``DpfPlotter`` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Review of available animation commands">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example lists the different commands available for creating animations of transient result...">
 
 .. only:: html
 

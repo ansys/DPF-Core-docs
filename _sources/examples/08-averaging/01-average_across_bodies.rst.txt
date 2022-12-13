@@ -22,6 +22,7 @@
 
 Average across bodies
 ~~~~~~~~~~~~~~~~~~~~~
+
 This example shows how to activate and deactivate the DPF option for averaging
 across bodies. When a multi-body simulation calculates ``ElementalNodal`` fields,
 like stresses or strains, you can either activate or deactivate the averaging
@@ -30,13 +31,13 @@ likely changes the end results that are shown after postprocessing of the simula
 
 .. note::
     This example requires the Premium ServerContext.
-    For more information, see :ref:`_ref_getting_started_contexts`.
+    For more information, see :ref:`user_guide_server_context`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-19
+.. GENERATED FROM PYTHON SOURCE LINES 19-20
 
 Perform the required imports.
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-27
+.. GENERATED FROM PYTHON SOURCE LINES 20-28
 
 .. code-block:: default
 
@@ -55,11 +56,11 @@ Perform the required imports.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-29
+.. GENERATED FROM PYTHON SOURCE LINES 29-30
 
 Load the simulation results from an RST file and create a model of it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-34
+.. GENERATED FROM PYTHON SOURCE LINES 30-35
 
 .. code-block:: default
 
@@ -112,13 +113,13 @@ Load the simulation results from an RST file and create a model of it.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-38
+.. GENERATED FROM PYTHON SOURCE LINES 36-39
 
 To take a look at the system to see how bodies are connected to each other,
 extract the mesh of the model and then divide it into different meshes
 using the ``split_mesh`` operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-45
+.. GENERATED FROM PYTHON SOURCE LINES 39-46
 
 .. code-block:: default
 
@@ -141,13 +142,13 @@ using the ``split_mesh`` operator.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-49
+.. GENERATED FROM PYTHON SOURCE LINES 47-50
 
 As you can see in the preceding image, even though the piston rod is one single part,
 it is composed of two different bodies. Additionally, you can see that the region
 where the two bodies are bonded together contains nodes that are common between them.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-57
+.. GENERATED FROM PYTHON SOURCE LINES 52-58
 
 Averaging across bodies with DPF
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,7 +157,7 @@ of the simulation, define two workflows. The first workflow does averaging acros
 bodies, while the second workflow does not. The variable of interest is the stress
 in the Z direction, which is obtained using the "stress_Z" operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-88
+.. GENERATED FROM PYTHON SOURCE LINES 60-89
 
 .. graphviz::
 
@@ -188,14 +189,14 @@ in the Z direction, which is obtained using the "stress_Z" operator.
       }
   }
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-95
+.. GENERATED FROM PYTHON SOURCE LINES 92-96
 
 Averaging across bodies activated
 ---------------------------------
 The extraction of the stresses in the Z direction applies averaging
 across bodies by default. Thus, you can use a simple workflow.
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-126
+.. GENERATED FROM PYTHON SOURCE LINES 96-127
 
 .. code-block:: default
 
@@ -237,7 +238,7 @@ across bodies by default. Thus, you can use a simple workflow.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-133
+.. GENERATED FROM PYTHON SOURCE LINES 128-134
 
 Averaging across bodies deactivated
 -----------------------------------
@@ -246,12 +247,12 @@ averaging across the bodies of the simulated part. Instead of presenting
 the workflow as a function, it is broken into various parts with explanations
 of what is being done.
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-137
+.. GENERATED FROM PYTHON SOURCE LINES 136-138
 
 Create a model from the simulation results and extract its mesh and
 step information.
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-142
+.. GENERATED FROM PYTHON SOURCE LINES 138-143
 
 .. code-block:: default
 
@@ -267,13 +268,13 @@ step information.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 143-146
+.. GENERATED FROM PYTHON SOURCE LINES 144-147
 
 Split the meshes of the two bodies so that separate scopings can be
 created for each one of them. The `'mat'`` label is used to split the mesh
 by bodies.
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-149
+.. GENERATED FROM PYTHON SOURCE LINES 147-150
 
 .. code-block:: default
 
@@ -287,12 +288,12 @@ by bodies.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-152
+.. GENERATED FROM PYTHON SOURCE LINES 151-153
 
 Given that there are three different time steps, create a scopings container
 that contains the meshes of each of these time steps.
 
-.. GENERATED FROM PYTHON SOURCE LINES 152-165
+.. GENERATED FROM PYTHON SOURCE LINES 153-166
 
 .. code-block:: default
 
@@ -326,14 +327,14 @@ that contains the meshes of each of these time steps.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 166-170
+.. GENERATED FROM PYTHON SOURCE LINES 167-171
 
 The scopings container has six different scopings, one for each body over
 each of the three time steps.
 
 Set the time set of interest to the last time set.
 
-.. GENERATED FROM PYTHON SOURCE LINES 170-172
+.. GENERATED FROM PYTHON SOURCE LINES 171-173
 
 .. code-block:: default
 
@@ -346,14 +347,14 @@ Set the time set of interest to the last time set.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 173-177
+.. GENERATED FROM PYTHON SOURCE LINES 174-178
 
 To retrieve the Z stresses without averaging across the two bodies, you must
 pass a scopings container that contains their respective meshes as a parameter
 to the ``stress_Z`` operator. To do this, create a scopings container that contains
 the meshes of the two bodies in the desired time step.
 
-.. GENERATED FROM PYTHON SOURCE LINES 177-186
+.. GENERATED FROM PYTHON SOURCE LINES 178-187
 
 .. code-block:: default
 
@@ -383,15 +384,15 @@ the meshes of the two bodies in the desired time step.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 187-188
+.. GENERATED FROM PYTHON SOURCE LINES 188-189
 
 This contain has only two scopings, one for each body in the last time step.
 
-.. GENERATED FROM PYTHON SOURCE LINES 190-191
+.. GENERATED FROM PYTHON SOURCE LINES 191-192
 
 Extract the stresses in the Z direction.
 
-.. GENERATED FROM PYTHON SOURCE LINES 191-201
+.. GENERATED FROM PYTHON SOURCE LINES 192-202
 
 .. code-block:: default
 
@@ -425,11 +426,11 @@ Extract the stresses in the Z direction.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 202-203
+.. GENERATED FROM PYTHON SOURCE LINES 203-204
 
 Find the maximum value of the stress field for comparison purposes.
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-207
+.. GENERATED FROM PYTHON SOURCE LINES 204-208
 
 .. code-block:: default
 
@@ -444,11 +445,11 @@ Find the maximum value of the stress field for comparison purposes.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 208-209
+.. GENERATED FROM PYTHON SOURCE LINES 209-210
 
 Define the preceding workflow as a function:
 
-.. GENERATED FROM PYTHON SOURCE LINES 209-261
+.. GENERATED FROM PYTHON SOURCE LINES 210-262
 
 .. code-block:: default
 
@@ -511,7 +512,7 @@ Define the preceding workflow as a function:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 262-267
+.. GENERATED FROM PYTHON SOURCE LINES 263-268
 
 Plot and compare the results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -519,7 +520,7 @@ Plot and compare the results. The first plot shows the stress distribution
 when averaging across bodies is activated. The second plot shows the stress
 distribution when averaging across bodies is deactivated.
 
-.. GENERATED FROM PYTHON SOURCE LINES 267-271
+.. GENERATED FROM PYTHON SOURCE LINES 268-272
 
 .. code-block:: default
 
@@ -551,7 +552,7 @@ distribution when averaging across bodies is deactivated.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 272-287
+.. GENERATED FROM PYTHON SOURCE LINES 273-288
 
 .. code-block:: default
 
@@ -588,7 +589,7 @@ distribution when averaging across bodies is deactivated.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.425 seconds)
+   **Total running time of the script:** ( 0 minutes  4.533 seconds)
 
 
 .. _sphx_glr_download_examples_08-averaging_01-average_across_bodies.py:

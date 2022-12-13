@@ -22,6 +22,7 @@
 
 Distributed MSUP distributed modal response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This example shows how to read and expand distributed files on distributed
 processes. The modal basis (two distributed files) is read on two remote
 servers. The modal response (two distributed files) is then read and expanded
@@ -89,13 +90,13 @@ chain that is used to compute the final result.
 
 .. note::
     This example requires the Premium ServerContext.
-    For more information, see :ref:`_ref_getting_started_contexts`.
+    For more information, see :ref:`user_guide_server_context`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-79
+.. GENERATED FROM PYTHON SOURCE LINES 79-80
 
 Import the ``dpf-core`` module and its examples files.
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-88
+.. GENERATED FROM PYTHON SOURCE LINES 80-89
 
 .. code-block:: default
 
@@ -115,7 +116,7 @@ Import the ``dpf-core`` module and its examples files.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-100
+.. GENERATED FROM PYTHON SOURCE LINES 90-101
 
 Configure the servers
 ~~~~~~~~~~~~~~~~~~~~~
@@ -129,7 +130,7 @@ Consequently, it requires two remote processes.
 To make it easier, this example starts local servers. However, you can
 connect to any existing servers on your network.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-115
+.. GENERATED FROM PYTHON SOURCE LINES 101-116
 
 .. code-block:: default
 
@@ -155,11 +156,11 @@ connect to any existing servers on your network.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-117
+.. GENERATED FROM PYTHON SOURCE LINES 117-118
 
 Print the IP addresses and ports.
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-120
+.. GENERATED FROM PYTHON SOURCE LINES 118-121
 
 .. code-block:: default
 
@@ -180,11 +181,11 @@ Print the IP addresses and ports.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-122
+.. GENERATED FROM PYTHON SOURCE LINES 122-123
 
 Specify the file path.
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-127
+.. GENERATED FROM PYTHON SOURCE LINES 123-128
 
 .. code-block:: default
 
@@ -200,7 +201,7 @@ Specify the file path.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-134
+.. GENERATED FROM PYTHON SOURCE LINES 129-135
 
 Create operators on each server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -209,7 +210,7 @@ and one for providing the mesh. Then, define their data sources. Both the
 displacement operator and mesh provider operator receive data from their
 respective data files on each server.
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-147
+.. GENERATED FROM PYTHON SOURCE LINES 135-148
 
 .. code-block:: default
 
@@ -233,14 +234,14 @@ respective data files on each server.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-152
+.. GENERATED FROM PYTHON SOURCE LINES 149-153
 
 Create a local operator chain for expansion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following series of operators merge the modal basis and the meshes, read
 the modal response, and expand the modal response with the modal basis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 152-179
+.. GENERATED FROM PYTHON SOURCE LINES 153-180
 
 .. code-block:: default
 
@@ -284,12 +285,12 @@ the modal response, and expand the modal response with the modal basis.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 180-182
+.. GENERATED FROM PYTHON SOURCE LINES 181-183
 
 Connect the operator chains together and get the output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 182-192
+.. GENERATED FROM PYTHON SOURCE LINES 183-193
 
 .. code-block:: default
 
@@ -381,7 +382,7 @@ Connect the operator chains together and get the output
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.955 seconds)
+   **Total running time of the script:** ( 0 minutes  3.518 seconds)
 
 
 .. _sphx_glr_download_examples_06-distributed-post_03-distributed-msup_expansion_steps.py:

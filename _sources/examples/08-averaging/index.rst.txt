@@ -16,7 +16,7 @@ These examples show how to use some of DPF's averaging operators.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="- The first workflow extracts the stress field of a crankshaft under load from a   result file,...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example compares two different workflows that accomplish the same task to show how the ord...">
 
 .. only:: html
 
@@ -33,7 +33,7 @@ These examples show how to use some of DPF's averaging operators.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Average across bodies">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to activate and deactivate the DPF option for averaging across bodies. W...">
 
 .. only:: html
 

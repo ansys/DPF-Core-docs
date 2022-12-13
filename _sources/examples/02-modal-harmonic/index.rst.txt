@@ -18,7 +18,7 @@ results from harmonic or modal analyses.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Multi-harmonic response example">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute a multi-harmonic response using fft transformations.">
 
 .. only:: html
 
@@ -35,7 +35,7 @@ results from harmonic or modal analyses.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Modal cyclic symmetry example">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to expand a cyclic mesh and its results.">
 
 .. only:: html
 
@@ -52,7 +52,7 @@ results from harmonic or modal analyses.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Multi-stage cyclic symmetry example">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to expand the mesh and results from a multi-stage cyclic analysis.">
 
 .. only:: html
 
@@ -69,7 +69,7 @@ results from harmonic or modal analyses.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Use Result Helpers to compare mode shapes for solids and then shells">
+    <div class="sphx-glr-thumbcontainer" tooltip="The ansys.dpf.core.results.Result class which instances are created by the ansys.dpf.core.model...">
 
 .. only:: html
 
@@ -86,7 +86,7 @@ results from harmonic or modal analyses.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Expand harmonic modal superposition with DPF">
+    <div class="sphx-glr-thumbcontainer" tooltip="Different types of linear dynamics expansions are implemented in DPF. With modal superposition ...">
 
 .. only:: html
 
@@ -103,7 +103,7 @@ results from harmonic or modal analyses.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Read results from distributed files">
+    <div class="sphx-glr-thumbcontainer" tooltip="Solvers usually solve analysis with distributed architecture. In this case, one file is written...">
 
 .. only:: html
 
@@ -115,6 +115,23 @@ results from harmonic or modal analyses.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Read results from distributed files</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to generate and use a result file to calculate the cycles to failure res...">
+
+.. only:: html
+
+  .. image:: /examples/02-modal-harmonic/images/thumb/sphx_glr_06-cycles_to_failure_thumb.png
+    :alt: Calculate the number of cycles to fatigue failure
+
+  :ref:`sphx_glr_examples_02-modal-harmonic_06-cycles_to_failure.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Calculate the number of cycles to fatigue failure</div>
     </div>
 
 
@@ -132,4 +149,5 @@ results from harmonic or modal analyses.
    /examples/02-modal-harmonic/03-compare_modes
    /examples/02-modal-harmonic/04-modal_superposition
    /examples/02-modal-harmonic/05-read_distributed_files
+   /examples/02-modal-harmonic/06-cycles_to_failure
 

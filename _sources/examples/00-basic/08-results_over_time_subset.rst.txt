@@ -22,6 +22,7 @@
 
 Scope results over custom time domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The :class:`Result <ansys.dpf.core.results.Result>` class, which are instances
 created by the :class:`Model <ansys.dpf.core.model.Model>`, give
 access to helpers for requesting results on specific mesh and time scopings.
@@ -29,13 +30,12 @@ With these helpers, working on a temporal subset of the
 model is straightforward. In this example, different ways to choose the temporal subset to
 evaluate a result are exposed. This example can be extended to frequency subsets.
 
-Import necessary modules:
-
-.. GENERATED FROM PYTHON SOURCE LINES 16-20
+.. GENERATED FROM PYTHON SOURCE LINES 16-21
 
 .. code-block:: default
 
 
+    # Import necessary modules
     from ansys.dpf import core as dpf
     from ansys.dpf.core import examples
 
@@ -46,11 +46,11 @@ Import necessary modules:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-22
+.. GENERATED FROM PYTHON SOURCE LINES 22-23
 
 Create a model object to establish a connection with an example result file:
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-25
+.. GENERATED FROM PYTHON SOURCE LINES 23-26
 
 .. code-block:: default
 
@@ -137,14 +137,14 @@ Create a model object to establish a connection with an example result file:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-30
+.. GENERATED FROM PYTHON SOURCE LINES 27-31
 
 Request specific time sets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 If specific time sets are of interest, looking into the ``TimeFreqSupport``
 and connect a given ``time_scoping`` accordingly to the cumulative indexes can be useful.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-44
+.. GENERATED FROM PYTHON SOURCE LINES 31-45
 
 .. code-block:: default
 
@@ -231,11 +231,11 @@ and connect a given ``time_scoping`` accordingly to the cumulative indexes can b
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-46
+.. GENERATED FROM PYTHON SOURCE LINES 46-47
 
 Equivalent to:
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-50
+.. GENERATED FROM PYTHON SOURCE LINES 47-51
 
 .. code-block:: default
 
@@ -250,11 +250,11 @@ Equivalent to:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-52
+.. GENERATED FROM PYTHON SOURCE LINES 52-53
 
 Equivalent to:
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-54
+.. GENERATED FROM PYTHON SOURCE LINES 53-55
 
 .. code-block:: default
 
@@ -267,14 +267,14 @@ Equivalent to:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-59
+.. GENERATED FROM PYTHON SOURCE LINES 56-60
 
 Request specific time steps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If specific time steps or load steps are of interest, looking into the
 ``TimeFreqSupport`` and connect a given ``time_scoping`` located on steps can be done.
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-64
+.. GENERATED FROM PYTHON SOURCE LINES 60-65
 
 .. code-block:: default
 
@@ -336,11 +336,11 @@ If specific time steps or load steps are of interest, looking into the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-66
+.. GENERATED FROM PYTHON SOURCE LINES 66-67
 
 Equivalent to:
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-70
+.. GENERATED FROM PYTHON SOURCE LINES 67-71
 
 .. code-block:: default
 
@@ -355,13 +355,13 @@ Equivalent to:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-74
+.. GENERATED FROM PYTHON SOURCE LINES 72-75
 
 Using helpers
 ~~~~~~~~~~~~~
 Evaluate at all times.
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-77
+.. GENERATED FROM PYTHON SOURCE LINES 75-78
 
 .. code-block:: default
 
@@ -375,11 +375,11 @@ Evaluate at all times.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-79
+.. GENERATED FROM PYTHON SOURCE LINES 79-80
 
 Evaluate at first and last times
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-83
+.. GENERATED FROM PYTHON SOURCE LINES 80-84
 
 .. code-block:: default
 
@@ -416,7 +416,7 @@ Evaluate at first and last times
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.734 seconds)
+   **Total running time of the script:** ( 0 minutes  0.641 seconds)
 
 
 .. _sphx_glr_download_examples_00-basic_08-results_over_time_subset.py:

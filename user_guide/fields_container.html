@@ -51,6 +51,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Plot" href="plotting.html" />
@@ -108,6 +109,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -312,7 +319,6 @@ vector of fields.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF elastic_strain(s)Fields Container
   with 20 field(s)
   defined on labels: time
@@ -350,7 +356,6 @@ by time set.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>20
 </pre></div>
 </div>
@@ -369,7 +374,6 @@ by time set.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF elastic_strain_0.01s Field
  Location: ElementalNodal
  Unit:
@@ -388,7 +392,6 @@ by time set.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF elastic_strain_1.s_elshape:0 Field
  Location: ElementalNodal
  Unit:
@@ -410,7 +413,6 @@ time complex IDs are available in the fields container:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">fields</span><span class="o">.</span><span class="n">time_freq_support</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF  Time/Freq Support:
   Number of sets: 20
 Cumulative     Time (s)       LoadStep       Substep
@@ -458,7 +460,6 @@ dimensionality, unit, and location.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF elastic_strain_0.01s Field
    Location: ElementalNodal
    Unit:
@@ -478,7 +479,6 @@ includes the location (such as <code class="docutils literal notranslate"><span 
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;field.location:&#39;</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">location</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span> DPF scoping:
    with Elemental location and 40 entities
 
@@ -524,7 +524,6 @@ units of the data:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">field</span><span class="o">.</span><span class="n">component_count</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Pa&#39;
 &#39;ElementalNodal&#39;
 6
@@ -656,7 +655,6 @@ average of a field:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">avg_field</span><span class="o">.</span><span class="n">location</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[[ 4.65393066e-04 -2.47955322e-05  0.00000000e+00  7.68026390e+02
   -7.59655688e+04  0.00000000e+00]]
 Elemental

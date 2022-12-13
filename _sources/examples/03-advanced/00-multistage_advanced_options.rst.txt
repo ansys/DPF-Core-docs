@@ -22,11 +22,12 @@
 
 Multi-stage cyclic symmetry using advanced customization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This example shows how to expand on selected sectors the mesh and results
 from a multi-stage cyclic analysis. It also shows how to use the cyclic support
 for advanced postprocessing
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-14
+.. GENERATED FROM PYTHON SOURCE LINES 11-15
 
 .. code-block:: default
 
@@ -41,11 +42,11 @@ for advanced postprocessing
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-16
+.. GENERATED FROM PYTHON SOURCE LINES 16-17
 
 Create the model and display the state of the result.
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-20
+.. GENERATED FROM PYTHON SOURCE LINES 17-21
 
 .. code-block:: default
 
@@ -92,11 +93,11 @@ Create the model and display the state of the result.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-22
+.. GENERATED FROM PYTHON SOURCE LINES 22-23
 
 Check the result info to verify that it's a multi-stage model
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-26
+.. GENERATED FROM PYTHON SOURCE LINES 23-27
 
 .. code-block:: default
 
@@ -118,11 +119,11 @@ Check the result info to verify that it's a multi-stage model
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-28
+.. GENERATED FROM PYTHON SOURCE LINES 28-29
 
 Go over the cyclic support
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-37
+.. GENERATED FROM PYTHON SOURCE LINES 29-38
 
 .. code-block:: default
 
@@ -151,13 +152,13 @@ Go over the cyclic support
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-41
+.. GENERATED FROM PYTHON SOURCE LINES 39-42
 
 Expand displacement results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This example expands displacement results on chosen sectors.
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-65
+.. GENERATED FROM PYTHON SOURCE LINES 42-66
 
 .. code-block:: default
 
@@ -192,12 +193,12 @@ This example expands displacement results on chosen sectors.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-68
+.. GENERATED FROM PYTHON SOURCE LINES 67-69
 
 Plot the expanded result on the expanded mesh
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-70
+.. GENERATED FROM PYTHON SOURCE LINES 69-71
 
 .. code-block:: default
 
@@ -215,12 +216,12 @@ Plot the expanded result on the expanded mesh
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-73
+.. GENERATED FROM PYTHON SOURCE LINES 72-74
 
 Choose to expand only some sectors for the mesh
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-83
+.. GENERATED FROM PYTHON SOURCE LINES 74-84
 
 .. code-block:: default
 
@@ -246,12 +247,12 @@ Choose to expand only some sectors for the mesh
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-86
+.. GENERATED FROM PYTHON SOURCE LINES 85-87
 
 Check results precisely
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-103
+.. GENERATED FROM PYTHON SOURCE LINES 87-104
 
 .. code-block:: default
 
@@ -303,7 +304,7 @@ Check results precisely
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.423 seconds)
+   **Total running time of the script:** ( 0 minutes  2.111 seconds)
 
 
 .. _sphx_glr_download_examples_03-advanced_00-multistage_advanced_options.py:

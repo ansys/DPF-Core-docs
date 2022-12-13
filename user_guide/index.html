@@ -51,10 +51,11 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Terms and concepts" href="concepts.html" />
-    <link rel="prev" title="DPF in Docker" href="../getting_started/docker.html" />
+    <link rel="next" title="DPF model" href="model.html" />
+    <link rel="prev" title="Dependencies" href="../getting_started/dependencies.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
   </head>
@@ -108,6 +109,12 @@
 <li class="toctree-l1 current active nav-item">
  <a class="current reference internal nav-link" href="#">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -203,23 +210,6 @@
   <div class="bd-toc-item active">
     <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="concepts.html">
-   Terms and concepts
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="waysofusing.html">
-   DPF scripting languages
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stepbystep.html">
-   DPF usage
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
   <a class="reference internal" href="model.html">
    DPF model
   </a>
@@ -244,6 +234,21 @@
  <li class="toctree-l1">
   <a class="reference internal" href="custom_operators.html">
    Custom operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started_with_dpf_server.html">
+   Getting Started with DPF Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="server_types.html">
+   Client-server communication
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="server_context.html">
+   Server context
   </a>
  </li>
  <li class="toctree-l1">
@@ -282,11 +287,6 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dpf-concepts">
-   DPF concepts
-  </a>
- </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dpf-most-used-entities">
    DPF most-used entities
@@ -329,41 +329,12 @@ computation, customization, and remote postprocessing accessible in Python.</p>
 <p>This section has the following goals:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Describe basic DPF concepts, including terminology.</p></li>
 <li><p>Describe the most-used DPF entities and how they can help you to access and modify solver data.</p></li>
 <li><p>Provide simple how-tos for tackling most common use cases.</p></li>
 </ul>
 </div></blockquote>
-<p>Other sections of this guide include <a class="reference internal" href="../api/index.html#ref-api-section"><span class="std std-ref">API reference</span></a>, <a class="reference internal" href="../operator_reference.html#ref-dpf-operators-reference"><span class="std std-ref">Operators</span></a>,
-and <span class="xref std std-ref">sphx_glr_examples</span>.</p>
-<section id="dpf-concepts">
-<span id="id1"></span><h2>DPF concepts<a class="headerlink" href="#dpf-concepts" title="Permalink to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-</div>
-<div class="sd-sphinx-override sd-cards-carousel sd-card-cols-2 docutils">
-<div class="sd-card sd-sphinx-override sd-w-25 sd-mb-3 sd-shadow-sm sd-card-hover sd-text-center docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Concepts and terminology</div>
-<img alt="../_images/book-logo.png" src="../_images/book-logo.png" />
-</div>
-<a class="sd-stretched-link reference internal" href="concepts.html#user-guide-concepts"><span class="std std-ref"></span></a></div>
-<div class="sd-card sd-sphinx-override sd-w-25 sd-mb-3 sd-shadow-sm sd-card-hover sd-text-center docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Ways of using DPF</div>
-<img alt="../_images/using-dpf.png" src="../_images/using-dpf.png" />
-</div>
-<a class="sd-stretched-link reference internal" href="waysofusing.html#user-guide-waysofusing"><span class="std std-ref"></span></a></div>
-<div class="sd-card sd-sphinx-override sd-w-25 sd-mb-3 sd-shadow-sm sd-card-hover sd-text-center docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Using DPF: Step by step</div>
-<img alt="../_images/checklist.png" src="../_images/checklist.png" />
-</div>
-<a class="sd-stretched-link reference internal" href="stepbystep.html#user-guide-stepbystep"><span class="std std-ref"></span></a></div>
-</div>
-</section>
+<p>Other sections of this guide include <a class="reference internal" href="../concepts/index.html#ref-concepts"><span class="std std-ref">Concepts</span></a>, <a class="reference internal" href="../api/index.html#ref-api-section"><span class="std std-ref">API reference</span></a>,
+<a class="reference internal" href="../operator_reference.html#ref-dpf-operators-reference"><span class="std std-ref">Operators</span></a>, and <a class="reference internal" href="../examples/index.html#gallery"><span class="std std-ref">Examples</span></a>.</p>
 <section id="dpf-most-used-entities">
 <span id="ref-main-entities"></span><h2>DPF most-used entities<a class="headerlink" href="#dpf-most-used-entities" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
@@ -414,6 +385,29 @@ Create Custom Operators</div>
 <div class="sd-card sd-sphinx-override sd-w-25 sd-mb-3 sd-shadow-sm sd-card-hover sd-text-center docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
+Use DPF Server package</div>
+<img alt="../_images/dpf_server_client.png" src="../_images/dpf_server_client.png" />
+</div>
+<a class="sd-stretched-link reference internal" href="getting_started_with_dpf_server.html#ref-getting-started-with-dpf-server"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-sphinx-override sd-cards-carousel sd-card-cols-2 docutils">
+<div class="sd-card sd-sphinx-override sd-w-25 sd-mb-3 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Switch between local and remote server</div>
+<img alt="../_images/remote_machines.png" src="../_images/remote_machines.png" />
+</div>
+<a class="sd-stretched-link reference internal" href="server_types.html#user-guide-server-types"><span class="std std-ref"></span></a></div>
+<div class="sd-card sd-sphinx-override sd-w-25 sd-mb-3 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Access Entry and Premium capabilities</div>
+<img alt="../_images/entry_premium.png" src="../_images/entry_premium.png" />
+</div>
+<a class="sd-stretched-link reference internal" href="server_context.html#user-guide-server-context"><span class="std std-ref"></span></a></div>
+<div class="sd-card sd-sphinx-override sd-w-25 sd-mb-3 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
 Use DPF XML Files</div>
 <img alt="../_images/xml.png" src="../_images/xml.png" />
 </div>
@@ -435,6 +429,7 @@ Use DPF XML Files</div>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#invalid-utf-8-error">Invalid UTF-8 error</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#plotting-issues">Plotting issues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#performance-issues">Performance issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#get-and-set-a-field-s-data">Get and set a field’s data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#autocompletion-in-notebooks">Autocompletion in notebooks</a></li>

@@ -51,6 +51,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Server factory, server configuration and communication protocols" href="ansys.dpf.core.server_factory.html" />
@@ -108,6 +109,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../user_guide/index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -1962,13 +1969,93 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_added_mass.html">
+         global_added_mass
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_added_mass_pct.html">
+         global_added_mass_pct
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_center_mass.html">
+         global_center_mass
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_energy_ratio.html">
+         global_energy_ratio
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_energy_ratio_wo_eroded.html">
+         global_energy_ratio_wo_eroded
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_eroded_hourglass_energy.html">
+         global_eroded_hourglass_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_eroded_internal_energy.html">
+         global_eroded_internal_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_eroded_kinetic_energy.html">
+         global_eroded_kinetic_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_external_work.html">
+         global_external_work
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_hourglass_energy.html">
+         global_hourglass_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.global_internal_energy.html">
          global_internal_energy
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_joint_internal_energy.html">
+         global_joint_internal_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.global_kinetic_energy.html">
          global_kinetic_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_rigid_body_stopper_energy.html">
+         global_rigid_body_stopper_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_sliding_interface_energy.html">
+         global_sliding_interface_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_spring_damper_energy.html">
+         global_spring_damper_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_system_damping_energy.html">
+         global_system_damping_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_time_step.html">
+         global_time_step
         </a>
        </li>
        <li class="toctree-l4">
@@ -1979,6 +2066,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ansys.dpf.core.operators.result.global_total_energy.html">
          global_total_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ansys.dpf.core.operators.result.global_total_mass.html">
+         global_total_mass
         </a>
        </li>
        <li class="toctree-l4">
@@ -3369,7 +3461,7 @@ xml_path argument won’t be taken into account if using LicensingContextType.en
 <dl class="py property">
 <dt class="sig sig-object py" id="ansys.dpf.core.server_context.ServerContext.licensing_context_type">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">licensing_context_type</span></span><a class="headerlink" href="#ansys.dpf.core.server_context.ServerContext.licensing_context_type" title="Permalink to this definition">#</a></dt>
-<dd><p>Whether capabilities requiring Licenses check out should be allowed.</p>
+<dd><p>Whether capabilities requiring Licenses checkout should be allowed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#ansys.dpf.core.server_context.LicensingContextType" title="ansys.dpf.core.server_context.LicensingContextType">LicensingContextType</a></p>
@@ -3386,6 +3478,38 @@ xml_path argument won’t be taken into account if using LicensingContextType.en
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_context.AvailableServerContexts">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.dpf.core.server_context.</span></span><span class="sig-name descname"><span class="pre">AvailableServerContexts</span></span><a class="headerlink" href="#ansys.dpf.core.server_context.AvailableServerContexts" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines available server contexts.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_context.AvailableServerContexts.pre_defined_environment">
+<span class="sig-name descname"><span class="pre">pre_defined_environment</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;ansys.dpf.core.server_context.ServerContext</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ansys.dpf.core.server_context.AvailableServerContexts.pre_defined_environment" title="Permalink to this definition">#</a></dt>
+<dd><p>DataProcessingCore.xml that is next to DataProcessingCore.dll/libDataProcessingCore.so will
+be taken</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_context.AvailableServerContexts.premium">
+<span class="sig-name descname"><span class="pre">premium</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;ansys.dpf.core.server_context.ServerContext</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ansys.dpf.core.server_context.AvailableServerContexts.premium" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the Specific premium DataProcessingCore.xml to load most plugins with their
+environments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_context.AvailableServerContexts.custom_defined">
+<span class="sig-name descname"><span class="pre">custom_defined</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;ansys.dpf.core.server_context.ServerContext</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ansys.dpf.core.server_context.AvailableServerContexts.custom_defined" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads the xml named “DpfCustomDefined.xml” that the user can modify.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ansys.dpf.core.server_context.AvailableServerContexts.entry">
+<span class="sig-name descname"><span class="pre">entry</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;ansys.dpf.core.server_context.ServerContext</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ansys.dpf.core.server_context.AvailableServerContexts.entry" title="Permalink to this definition">#</a></dt>
+<dd><p>Loads the minimum number of plugins for a basic usage. Is the default.</p>
 </dd></dl>
 
 </dd></dl>

@@ -51,6 +51,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Fields container and fields" href="fields_container.html" />
@@ -108,6 +109,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -347,7 +354,6 @@ operator by printing it:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF U Operator:
   Read/compute nodal displacements by calling the readers defined by the datasources.
   Inputs:
@@ -394,7 +400,6 @@ results, you must provide paths for the result files.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">data_src</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF  DataSources:
 Result files:
    result key: rst and path: D:\ANSYSDev\dpf-python-core\ansys\dpf\core\examples\model_with_ns.rst
@@ -423,7 +428,6 @@ class from the operator:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">fc</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF displacement(s)Fields Container
   with 1 field(s)
   defined on labels: time
@@ -439,7 +443,6 @@ like this one:</p>
 <span class="n">fc</span> <span class="o">=</span> <span class="n">new_oper</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">fields_container</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPFServerException: U&lt;-Data sources are not defined.
 </pre></div>
 </div>
@@ -467,7 +470,6 @@ displacement data on the client side to compute the maximum:</p>
 <span class="n">disp</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([8.20217171e-07, 6.26510654e-06, 0.00000000e+00])
 </pre></div>
 </div>
@@ -482,7 +484,6 @@ displacement data on the client side to compute the maximum:</p>
 <span class="n">max_field</span><span class="o">.</span><span class="n">data</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([8.20217171e-07, 6.26510654e-06, 0.00000000e+00])
 </pre></div>
 </div>
@@ -541,7 +542,7 @@ File readers can be used generically thanks to DPF’s result providers, which m
 </div>
 <p>Standard file format readers are also supported to import custom data.
 Fields can be imported from CSV, VTK, and HDF5 files.</p>
-<p>For an example of importing and exporting a CSV file, see <a class="reference internal" href="../examples/00-basic/04-basic-load-file.html#ref-basic-load-file-example"><span class="std std-ref">Working with a result file</span></a>.</p>
+<p>For an example of importing and exporting a CSV file, see <a class="reference internal" href="../examples/04-file-IO/04-basic-load-file.html#ref-basic-load-file-example"><span class="std std-ref">Working with a result file</span></a>.</p>
 </section>
 <section id="operators-for-transforming-data">
 <h3>Operators for transforming data<a class="headerlink" href="#operators-for-transforming-data" title="Permalink to this heading">#</a></h3>
@@ -567,7 +568,6 @@ operators:</p>
 <span class="n">out</span><span class="o">.</span><span class="n">data</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 2.,  4.,  6.],
   [ 8., 10., 12.],
   [14., 16., 18.]])
@@ -581,7 +581,6 @@ operators:</p>
 <span class="n">out</span><span class="o">.</span><span class="n">data</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[4., 5., 6.],
   [7., 8., 9.]])
 </pre></div>
@@ -622,7 +621,6 @@ Python client is not on the same machine as the server:</p>
 <span class="n">dpf</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">server_dir</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">file.vtk&quot;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;c:/temp/file_downloaded.vtk&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>C:\Users\cbellot\AppData\Local\Temp\dataProcessingTemp17168
 Downloading...: 759 KB|
 </pre></div>

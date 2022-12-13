@@ -51,10 +51,11 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Operators" href="operators.html" />
-    <link rel="prev" title="DPF usage" href="stepbystep.html" />
+    <link rel="prev" title="User guide" href="index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
   </head>
@@ -108,6 +109,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -281,7 +288,6 @@ or a path relative to the DPF server.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DPF Model
 ------------------------------
 Static analysis
@@ -326,7 +332,6 @@ Cumulative     Time (s)       LoadStep       Substep
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">result_info</span><span class="o">.</span><span class="n">analysis_type</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;static&#39;
 </pre></div>
 </div>
@@ -336,7 +341,6 @@ Cumulative     Time (s)       LoadStep       Substep
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">meshed_region</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">element_by_id</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>3751
 3000
 DPF Element 1
@@ -351,7 +355,6 @@ DPF Element 1
 <span class="nb">print</span><span class="p">(</span><span class="n">time_freq_support</span><span class="o">.</span><span class="n">time_frequencies</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[1.]
 </pre></div>
 </div>
@@ -365,7 +368,6 @@ create operators to access certain results.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">results</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Static analysis
 Unit system: Metric (m, kg, N, s, V, A)
 Physics Type: Mechanical
@@ -443,7 +445,7 @@ the mesh scoping:</p>
 <span class="n">disp_at_all_times_on_node_1</span> <span class="o">=</span>  <span class="n">disp_result</span><span class="o">.</span><span class="n">on_all_time_freqs</span><span class="o">.</span><span class="n">on_mesh_scoping</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>For an example using the <code class="docutils literal notranslate"><span class="pre">Result</span></code> object, see <a class="reference internal" href="../examples/01-static-transient/01-transient_easy_time_scoping.html#ref-transient-easy-time-scoping"><span class="std std-ref">Choose a time scoping for a transient analysis</span></a>.</p>
+<p>For an example using the <code class="docutils literal notranslate"><span class="pre">Result</span></code> object, see <a class="reference internal" href="../examples/01-transient_analyses/01-transient_easy_time_scoping.html#ref-transient-easy-time-scoping"><span class="std std-ref">Choose a time scoping for a transient analysis</span></a>.</p>
 <p>For a description of the <code class="docutils literal notranslate"><span class="pre">Model</span></code> object, see <a class="reference internal" href="../api/ansys.dpf.core.results.html#ref-results"><span class="std std-ref">Results</span></a>.</p>
 <section id="api-reference">
 <h3>API reference<a class="headerlink" href="#api-reference" title="Permalink to this heading">#</a></h3>

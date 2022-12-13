@@ -51,6 +51,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Basic DPF-Core usage" href="00-basic_example.html" />
@@ -108,6 +109,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../user_guide/index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -234,18 +241,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04-basic-load-file.html">
-     Working with a result file
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="05-use_local_data.html">
      Bring a field’s data locally to improve performance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06-load_plugin.html">
-     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
@@ -273,15 +270,10 @@
      Get material properties from the result file
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13-nodes_in_local_coordinate_system.html">
-     Convert nodal coordinates field to local coordinate system
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01-static-transient/index.html">
+  <a class="reference internal" href="../01-transient_analyses/index.html">
    Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -291,13 +283,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
+    <a class="reference internal" href="../01-transient_analyses/00-basic_transient.html">
      Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
+    <a class="reference internal" href="../01-transient_analyses/01-transient_easy_time_scoping.html">
      Choose a time scoping for a transient analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-transient_analyses/02-lsdyna_operators.html">
+     Results extraction and analysis from LS-DYNA sources
     </a>
    </li>
   </ul>
@@ -340,6 +337,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/05-read_distributed_files.html">
      Read results from distributed files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-modal-harmonic/06-cycles_to_failure.html">
+     Calculate the number of cycles to fatigue failure
     </a>
    </li>
   </ul>
@@ -390,6 +392,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../03-advanced/07-load_plugin.html">
+     Load plugin
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/10-asme_secviii_divtwo.html">
      Pressure vessel analysis according to an ASME standard
     </a>
@@ -397,8 +404,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04-specific-requests/index.html">
-   Target-specific request examples
+  <a class="reference internal" href="../04-file-IO/index.html">
+   File manipulation and input-output examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -407,13 +414,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
+    <a class="reference internal" href="../04-file-IO/00-hdf5_double_float_comparison.html">
      HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-specific-requests/01-reduced_matrices_export.html">
+    <a class="reference internal" href="../04-file-IO/01-reduced_matrices_export.html">
      Get reduced matrices and make export
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-file-IO/04-basic-load-file.html">
+     Working with a result file
     </a>
    </li>
   </ul>
@@ -551,6 +563,33 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09-mesh_operations/index.html">
+   Mesh operations examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/00-create_polygons_and_polyhedrons.html">
+     Create and display a mesh with polygon and polyhedron elements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/05-skin_extraction.html">
+     Extract the skin from a mesh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
   </div>
@@ -592,45 +631,36 @@
   <section id="basic-dpf-examples">
 <span id="basic-gallery"></span><span id="sphx-glr-examples-00-basic"></span><h1>Basic DPF examples<a class="headerlink" href="#basic-dpf-examples" title="Permalink to this heading">#</a></h1>
 <p>These examples explain the basic concepts of DPF.</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="If you have Ansys 2021 R1 or higher installed, starting DPF is quite easy as DPF-Core takes car..."><img alt="Basic DPF-Core usage" src="../../_images/sphx_glr_00-basic_example_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to open a result file and do some basic postprocessing."><img alt="Basic DPF-Core usage" src="../../_images/sphx_glr_00-basic_example_thumb.png" />
 <p><a class="reference internal" href="00-basic_example.html#sphx-glr-examples-00-basic-00-basic-example-py"><span class="std std-ref">Basic DPF-Core usage</span></a></p>
   <div class="sphx-glr-thumbnail-title">Basic DPF-Core usage</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="In DPF, operators provide the primary method for interacting with and extracting results. Withi..."><img alt="Operators overview" src="../../_images/sphx_glr_01-basic_operators_thumb.png" />
 <p><a class="reference internal" href="01-basic_operators.html#sphx-glr-examples-00-basic-01-basic-operators-py"><span class="std std-ref">Operators overview</span></a></p>
   <div class="sphx-glr-thumbnail-title">Operators overview</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Because the field data is always associated to its scoping and support, the field is a self-des..."><img alt="Field and field containers overview" src="../../_images/sphx_glr_02-basic_field_containers_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="In DPF, the field is the main simulation data container. During a numerical simulation, the res..."><img alt="Field and field containers overview" src="../../_images/sphx_glr_02-basic_field_containers_thumb.png" />
 <p><a class="reference internal" href="02-basic_field_containers.html#sphx-glr-examples-00-basic-02-basic-field-containers-py"><span class="std std-ref">Field and field containers overview</span></a></p>
   <div class="sphx-glr-thumbnail-title">Field and field containers overview</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Import necessary modules:"><img alt="Create your own entities using DPF operators" src="../../_images/sphx_glr_03-create_entities_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="You can create your field, fields container, or meshed region to use DPF operators with your ow..."><img alt="Create your own entities using DPF operators" src="../../_images/sphx_glr_03-create_entities_thumb.png" />
 <p><a class="reference internal" href="03-create_entities.html#sphx-glr-examples-00-basic-03-create-entities-py"><span class="std std-ref">Create your own entities using DPF operators</span></a></p>
   <div class="sphx-glr-thumbnail-title">Create your own entities using DPF operators</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to write and upload files on the server machine and then download them b..."><img alt="Working with a result file" src="../../_images/sphx_glr_04-basic-load-file_thumb.png" />
-<p><a class="reference internal" href="04-basic-load-file.html#sphx-glr-examples-00-basic-04-basic-load-file-py"><span class="std std-ref">Working with a result file</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Working with a result file</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Bring a field&#x27;s data locally to improve performance"><img alt="Bring a field's data locally to improve performance" src="../../_images/sphx_glr_05-use_local_data_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Reducing the number of calls to the server is key to improving performance. Using the as_local_..."><img alt="Bring a field's data locally to improve performance" src="../../_images/sphx_glr_05-use_local_data_thumb.png" />
 <p><a class="reference internal" href="05-use_local_data.html#sphx-glr-examples-00-basic-05-use-local-data-py"><span class="std std-ref">Bring a field’s data locally to improve performance</span></a></p>
   <div class="sphx-glr-thumbnail-title">Bring a field's data locally to improve performance</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Load plugin"><img alt="Load plugin" src="../../_images/sphx_glr_06-load_plugin_thumb.png" />
-<p><a class="reference internal" href="06-load_plugin.html#sphx-glr-examples-00-basic-06-load-plugin-py"><span class="std std-ref">Load plugin</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Load plugin</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Import necessary modules:"><img alt="Use result helpers to load custom data" src="../../_images/sphx_glr_07-use_result_helpers_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="The ansys.dpf.core.results.Result class, which is an instance created by the ansys.dpf.core.mod..."><img alt="Use result helpers to load custom data" src="../../_images/sphx_glr_07-use_result_helpers_thumb.png" />
 <p><a class="reference internal" href="07-use_result_helpers.html#sphx-glr-examples-00-basic-07-use-result-helpers-py"><span class="std std-ref">Use result helpers to load custom data</span></a></p>
   <div class="sphx-glr-thumbnail-title">Use result helpers to load custom data</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Import necessary modules:"><img alt="Scope results over custom time domains" src="../../_images/sphx_glr_08-results_over_time_subset_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="The ansys.dpf.core.results.Result class, which are instances created by the ansys.dpf.core.mode..."><img alt="Scope results over custom time domains" src="../../_images/sphx_glr_08-results_over_time_subset_thumb.png" />
 <p><a class="reference internal" href="08-results_over_time_subset.html#sphx-glr-examples-00-basic-08-results-over-time-subset-py"><span class="std std-ref">Scope results over custom time domains</span></a></p>
   <div class="sphx-glr-thumbnail-title">Scope results over custom time domains</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Import necessary modules:"><img alt="Scope results over custom space domains" src="../../_images/sphx_glr_09-results_over_space_subset_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="The ansys.dpf.core.results.Result class, which are instances created by the ansys.dpf.core.mode..."><img alt="Scope results over custom space domains" src="../../_images/sphx_glr_09-results_over_space_subset_thumb.png" />
 <p><a class="reference internal" href="09-results_over_space_subset.html#sphx-glr-examples-00-basic-09-results-over-space-subset-py"><span class="std std-ref">Scope results over custom space domains</span></a></p>
   <div class="sphx-glr-thumbnail-title">Scope results over custom space domains</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="- ansys.dpf.core.server_types.InProcessServer loading DPF in process."><img alt="Communicate in process or via gRPC" src="../../_images/sphx_glr_11-server_types_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Starting with Ansys 2022 R2, PyDPF can communicate either via In Process or via gRPC with DPF C..."><img alt="Communicate in process or via gRPC" src="../../_images/sphx_glr_11-server_types_thumb.png" />
 <p><a class="reference internal" href="11-server_types.html#sphx-glr-examples-00-basic-11-server-types-py"><span class="std std-ref">Communicate in process or via gRPC</span></a></p>
   <div class="sphx-glr-thumbnail-title">Communicate in process or via gRPC</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Import necessary modules:"><img alt="Get material properties from the result file" src="../../_images/sphx_glr_12-get_material_properties_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Material properties are assigned to each element in APDL and by default they are written out in..."><img alt="Get material properties from the result file" src="../../_images/sphx_glr_12-get_material_properties_thumb.png" />
 <p><a class="reference internal" href="12-get_material_properties.html#sphx-glr-examples-00-basic-12-get-material-properties-py"><span class="std std-ref">Get material properties from the result file</span></a></p>
   <div class="sphx-glr-thumbnail-title">Get material properties from the result file</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The script below demonstrates the methodology using PyDPF."><img alt="Convert nodal coordinates field to local coordinate system" src="../../_images/sphx_glr_13-nodes_in_local_coordinate_system_thumb.png" />
-<p><a class="reference internal" href="13-nodes_in_local_coordinate_system.html#sphx-glr-examples-00-basic-13-nodes-in-local-coordinate-system-py"><span class="std std-ref">Convert nodal coordinates field to local coordinate system</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Convert nodal coordinates field to local coordinate system</div>
 </div></div><div class="toctree-wrapper compound">
 </div>
 </section>

@@ -22,6 +22,7 @@
 
 Create a custom workflow on distributed processes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This example shows how to read and postprocess distributed files on
 distributed processes. After remote postprocessing, results are merged
 on the local process. This example creates different operator
@@ -62,11 +63,11 @@ remote processes.
         mul -> "merge";
     }
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-49
+.. GENERATED FROM PYTHON SOURCE LINES 49-50
 
 Import the ``dpf-core`` module and its examples files.
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-54
+.. GENERATED FROM PYTHON SOURCE LINES 50-55
 
 .. code-block:: default
 
@@ -82,13 +83,13 @@ Import the ``dpf-core`` module and its examples files.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-58
+.. GENERATED FROM PYTHON SOURCE LINES 56-59
 
 Configure the servers.
 To make it easier, this example starts local servers. However, you can
 connect to any existing servers on your network.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-70
+.. GENERATED FROM PYTHON SOURCE LINES 59-71
 
 .. code-block:: default
 
@@ -111,11 +112,11 @@ connect to any existing servers on your network.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-72
+.. GENERATED FROM PYTHON SOURCE LINES 72-73
 
 Send files to the temporary directory if they are not in shared memory.
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-77
+.. GENERATED FROM PYTHON SOURCE LINES 73-78
 
 .. code-block:: default
 
@@ -131,11 +132,11 @@ Send files to the temporary directory if they are not in shared memory.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-79
+.. GENERATED FROM PYTHON SOURCE LINES 79-80
 
 Create the first operator chain.
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-87
+.. GENERATED FROM PYTHON SOURCE LINES 80-88
 
 .. code-block:: default
 
@@ -154,11 +155,11 @@ Create the first operator chain.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-89
+.. GENERATED FROM PYTHON SOURCE LINES 89-90
 
 Create the second operator chain.
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-96
+.. GENERATED FROM PYTHON SOURCE LINES 90-97
 
 .. code-block:: default
 
@@ -176,11 +177,11 @@ Create the second operator chain.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-98
+.. GENERATED FROM PYTHON SOURCE LINES 98-99
 
 Create the local merge operator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-101
+.. GENERATED FROM PYTHON SOURCE LINES 99-102
 
 .. code-block:: default
 
@@ -194,11 +195,11 @@ Create the local merge operator.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-103
+.. GENERATED FROM PYTHON SOURCE LINES 103-104
 
 Connect the operator chains together and get the output.
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-112
+.. GENERATED FROM PYTHON SOURCE LINES 104-113
 
 .. code-block:: default
 
@@ -237,7 +238,7 @@ Connect the operator chains together and get the output.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.362 seconds)
+   **Total running time of the script:** ( 0 minutes  2.126 seconds)
 
 
 .. _sphx_glr_download_examples_06-distributed-post_01-distributed_workflows_on_remote.py:

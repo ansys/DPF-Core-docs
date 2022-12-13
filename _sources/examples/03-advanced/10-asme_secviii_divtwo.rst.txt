@@ -22,6 +22,7 @@
 
 Pressure vessel analysis according to an ASME standard
 ------------------------------------------------------
+
 This example demonstrates how you can use PyDPF to postprocess a Mechanical
 model according to the ASME Section VIII Division 2 standard for pressure
 vessel designs.
@@ -34,7 +35,7 @@ equivalent plastic strain, as specified in Equation 5.7 assuming 0 forming strai
 Please be aware that this is just an example, so it is the user's duty to verify
 that calculation is made according to latest ASME standard.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-35
+.. GENERATED FROM PYTHON SOURCE LINES 19-36
 
 .. code-block:: default
 
@@ -62,7 +63,7 @@ that calculation is made according to latest ASME standard.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-50
+.. GENERATED FROM PYTHON SOURCE LINES 37-51
 
 Parameters input
 ~~~~~~~~~~~~~~~~
@@ -79,7 +80,7 @@ For this exercise, ``alfasl`` = 2.2 and ``m2`` = .288, which is the same
 as the original.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-54
+.. GENERATED FROM PYTHON SOURCE LINES 51-55
 
 .. code-block:: default
 
@@ -94,7 +95,7 @@ as the original.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-61
+.. GENERATED FROM PYTHON SOURCE LINES 56-62
 
 Stresses and strains
 ~~~~~~~~~~~~~~~~~~~~
@@ -103,7 +104,7 @@ elemental nodal strains and apply von Mises invariant. This operator
 does not have an option for defining the effective Poisson's ratio.
 Consequently, a correction factor is applied.
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-99
+.. GENERATED FROM PYTHON SOURCE LINES 62-100
 
 .. code-block:: default
 
@@ -152,12 +153,12 @@ Consequently, a correction factor is applied.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-102
+.. GENERATED FROM PYTHON SOURCE LINES 101-103
 
 Triaxial strain limit calculation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-137
+.. GENERATED FROM PYTHON SOURCE LINES 103-138
 
 .. code-block:: default
 
@@ -203,12 +204,12 @@ Triaxial strain limit calculation
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-140
+.. GENERATED FROM PYTHON SOURCE LINES 139-141
 
 Strain limit condition (less than 1 pass the criteria)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-144
+.. GENERATED FROM PYTHON SOURCE LINES 141-145
 
 .. code-block:: default
 
@@ -223,12 +224,12 @@ Strain limit condition (less than 1 pass the criteria)
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-147
+.. GENERATED FROM PYTHON SOURCE LINES 146-148
 
 Strain limit condition is plot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-149
+.. GENERATED FROM PYTHON SOURCE LINES 148-150
 
 .. code-block:: default
 
@@ -249,7 +250,7 @@ Strain limit condition is plot
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.798 seconds)
+   **Total running time of the script:** ( 0 minutes  1.970 seconds)
 
 
 .. _sphx_glr_download_examples_03-advanced_10-asme_secviii_divtwo.py:

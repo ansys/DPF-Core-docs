@@ -22,9 +22,10 @@
 
 Modal cyclic symmetry example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 This example shows how to expand a cyclic mesh and its results.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-14
+.. GENERATED FROM PYTHON SOURCE LINES 11-15
 
 .. code-block:: default
 
@@ -39,11 +40,11 @@ This example shows how to expand a cyclic mesh and its results.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-16
+.. GENERATED FROM PYTHON SOURCE LINES 16-17
 
 Create the model and display the state of the result.
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-19
+.. GENERATED FROM PYTHON SOURCE LINES 17-20
 
 .. code-block:: default
 
@@ -119,7 +120,7 @@ Create the model and display the state of the result.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-27
+.. GENERATED FROM PYTHON SOURCE LINES 21-28
 
 Expand displacement results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -129,7 +130,7 @@ the :func:`read_cyclic
 <ansys.dpf.core.operators.mesh.mesh_provider.InputsMeshProvider.read_cyclic>`
 prpoerty with 2 as an argument (1 would ignore the cyclic symmetry).
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-42
+.. GENERATED FROM PYTHON SOURCE LINES 28-43
 
 .. code-block:: default
 
@@ -160,12 +161,12 @@ prpoerty with 2 as an argument (1 would ignore the cyclic symmetry).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-45
+.. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 Expand stresses at a given time step
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-69
+.. GENERATED FROM PYTHON SOURCE LINES 46-70
 
 .. code-block:: default
 
@@ -200,12 +201,12 @@ Expand stresses at a given time step
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-72
+.. GENERATED FROM PYTHON SOURCE LINES 71-73
 
 Expand stresses at given sectors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-100
+.. GENERATED FROM PYTHON SOURCE LINES 73-101
 
 .. code-block:: default
 
@@ -244,12 +245,12 @@ Expand stresses at given sectors
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-103
+.. GENERATED FROM PYTHON SOURCE LINES 102-104
 
 Expand stresses and average to elemental location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-130
+.. GENERATED FROM PYTHON SOURCE LINES 104-131
 
 .. code-block:: default
 
@@ -295,7 +296,7 @@ Expand stresses and average to elemental location
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.283 seconds)
+   **Total running time of the script:** ( 0 minutes  1.907 seconds)
 
 
 .. _sphx_glr_download_examples_02-modal-harmonic_01-modal_cyclic.py:

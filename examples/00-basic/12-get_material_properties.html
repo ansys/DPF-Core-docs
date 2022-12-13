@@ -51,9 +51,10 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Convert nodal coordinates field to local coordinate system" href="13-nodes_in_local_coordinate_system.html" />
+    <link rel="next" title="Transient analysis examples" href="../01-transient_analyses/index.html" />
     <link rel="prev" title="Communicate in process or via gRPC" href="11-server_types.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
@@ -108,6 +109,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../user_guide/index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -235,18 +242,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04-basic-load-file.html">
-     Working with a result file
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="05-use_local_data.html">
      Bring a field’s data locally to improve performance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06-load_plugin.html">
-     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
@@ -274,15 +271,10 @@
      Get material properties from the result file
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13-nodes_in_local_coordinate_system.html">
-     Convert nodal coordinates field to local coordinate system
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01-static-transient/index.html">
+  <a class="reference internal" href="../01-transient_analyses/index.html">
    Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -292,13 +284,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
+    <a class="reference internal" href="../01-transient_analyses/00-basic_transient.html">
      Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
+    <a class="reference internal" href="../01-transient_analyses/01-transient_easy_time_scoping.html">
      Choose a time scoping for a transient analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-transient_analyses/02-lsdyna_operators.html">
+     Results extraction and analysis from LS-DYNA sources
     </a>
    </li>
   </ul>
@@ -341,6 +338,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../02-modal-harmonic/05-read_distributed_files.html">
      Read results from distributed files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-modal-harmonic/06-cycles_to_failure.html">
+     Calculate the number of cycles to fatigue failure
     </a>
    </li>
   </ul>
@@ -391,6 +393,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../03-advanced/07-load_plugin.html">
+     Load plugin
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/10-asme_secviii_divtwo.html">
      Pressure vessel analysis according to an ASME standard
     </a>
@@ -398,8 +405,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04-specific-requests/index.html">
-   Target-specific request examples
+  <a class="reference internal" href="../04-file-IO/index.html">
+   File manipulation and input-output examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -408,13 +415,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
+    <a class="reference internal" href="../04-file-IO/00-hdf5_double_float_comparison.html">
      HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-specific-requests/01-reduced_matrices_export.html">
+    <a class="reference internal" href="../04-file-IO/01-reduced_matrices_export.html">
      Get reduced matrices and make export
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-file-IO/04-basic-load-file.html">
+     Working with a result file
     </a>
    </li>
   </ul>
@@ -552,6 +564,33 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09-mesh_operations/index.html">
+   Mesh operations examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/00-create_polygons_and_polyhedrons.html">
+     Create and display a mesh with polygon and polyhedron elements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/05-skin_extraction.html">
+     Extract the skin from a mesh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
   </div>
@@ -600,8 +639,8 @@ to download the full example code</p>
 <p>Material properties are assigned to each element in APDL and by default they
 are written out in the APDL result file. This example shows how you can extract
 material properties of each element using PyDPF-Core.</p>
-<p>Import necessary modules:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary modules</span>
+<span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
 <span class="kn">from</span> <span class="nn">ansys.dpf.core</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
@@ -676,7 +715,7 @@ print the operator help.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[0.3]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.031 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.016 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-basic-12-get-material-properties-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/e6c59776291d0af7a4f51f7fdf131b4b/12-get_material_properties.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">12-get_material_properties.py</span></code></a></p>

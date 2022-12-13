@@ -51,10 +51,11 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Multi-harmonic response example" href="00-multi_harmonic.html" />
-    <link rel="prev" title="Choose a time scoping for a transient analysis" href="../01-static-transient/01-transient_easy_time_scoping.html" />
+    <link rel="prev" title="Results extraction and analysis from LS-DYNA sources" href="../01-transient_analyses/02-lsdyna_operators.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
   </head>
@@ -108,6 +109,12 @@
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../user_guide/index.html">
   User guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../concepts/index.html">
+  Concepts
  </a>
 </li>
 
@@ -234,18 +241,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../00-basic/04-basic-load-file.html">
-     Working with a result file
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../00-basic/05-use_local_data.html">
      Bring a field’s data locally to improve performance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../00-basic/06-load_plugin.html">
-     Load plugin
     </a>
    </li>
    <li class="toctree-l2">
@@ -273,15 +270,10 @@
      Get material properties from the result file
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../00-basic/13-nodes_in_local_coordinate_system.html">
-     Convert nodal coordinates field to local coordinate system
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01-static-transient/index.html">
+  <a class="reference internal" href="../01-transient_analyses/index.html">
    Transient analysis examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -291,13 +283,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-static-transient/00-basic_transient.html">
+    <a class="reference internal" href="../01-transient_analyses/00-basic_transient.html">
      Transient analysis result example
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01-static-transient/01-transient_easy_time_scoping.html">
+    <a class="reference internal" href="../01-transient_analyses/01-transient_easy_time_scoping.html">
      Choose a time scoping for a transient analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-transient_analyses/02-lsdyna_operators.html">
+     Results extraction and analysis from LS-DYNA sources
     </a>
    </li>
   </ul>
@@ -340,6 +337,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="05-read_distributed_files.html">
      Read results from distributed files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-cycles_to_failure.html">
+     Calculate the number of cycles to fatigue failure
     </a>
    </li>
   </ul>
@@ -390,6 +392,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../03-advanced/07-load_plugin.html">
+     Load plugin
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../03-advanced/10-asme_secviii_divtwo.html">
      Pressure vessel analysis according to an ASME standard
     </a>
@@ -397,8 +404,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04-specific-requests/index.html">
-   Target-specific request examples
+  <a class="reference internal" href="../04-file-IO/index.html">
+   File manipulation and input-output examples
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -407,13 +414,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-specific-requests/00-hdf5_double_float_comparison.html">
+    <a class="reference internal" href="../04-file-IO/00-hdf5_double_float_comparison.html">
      HDF5 export and compare precision
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04-specific-requests/01-reduced_matrices_export.html">
+    <a class="reference internal" href="../04-file-IO/01-reduced_matrices_export.html">
      Get reduced matrices and make export
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-file-IO/04-basic-load-file.html">
+     Working with a result file
     </a>
    </li>
   </ul>
@@ -551,6 +563,33 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09-mesh_operations/index.html">
+   Mesh operations examples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/00-create_polygons_and_polyhedrons.html">
+     Create and display a mesh with polygon and polyhedron elements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/05-skin_extraction.html">
+     Extract the skin from a mesh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-mesh_operations/13-nodes_in_local_coordinate_system.html">
+     Convert nodal coordinates field to local coordinate system
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
   </div>
@@ -593,24 +632,27 @@
 <span id="modal-harmonic-examples"></span><span id="sphx-glr-examples-02-modal-harmonic"></span><h1>Harmonic analysis examples<a class="headerlink" href="#harmonic-analysis-examples" title="Permalink to this heading">#</a></h1>
 <p>These examples show how to use DPF to extract and manipulate,
 results from harmonic or modal analyses.</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Multi-harmonic response example"><img alt="Multi-harmonic response example" src="../../_images/sphx_glr_00-multi_harmonic_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to compute a multi-harmonic response using fft transformations."><img alt="Multi-harmonic response example" src="../../_images/sphx_glr_00-multi_harmonic_thumb.png" />
 <p><a class="reference internal" href="00-multi_harmonic.html#sphx-glr-examples-02-modal-harmonic-00-multi-harmonic-py"><span class="std std-ref">Multi-harmonic response example</span></a></p>
   <div class="sphx-glr-thumbnail-title">Multi-harmonic response example</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Modal cyclic symmetry example"><img alt="Modal cyclic symmetry example" src="../../_images/sphx_glr_01-modal_cyclic_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to expand a cyclic mesh and its results."><img alt="Modal cyclic symmetry example" src="../../_images/sphx_glr_01-modal_cyclic_thumb.png" />
 <p><a class="reference internal" href="01-modal_cyclic.html#sphx-glr-examples-02-modal-harmonic-01-modal-cyclic-py"><span class="std std-ref">Modal cyclic symmetry example</span></a></p>
   <div class="sphx-glr-thumbnail-title">Modal cyclic symmetry example</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Multi-stage cyclic symmetry example"><img alt="Multi-stage cyclic symmetry example" src="../../_images/sphx_glr_02-cyclic_multi_stage_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to expand the mesh and results from a multi-stage cyclic analysis."><img alt="Multi-stage cyclic symmetry example" src="../../_images/sphx_glr_02-cyclic_multi_stage_thumb.png" />
 <p><a class="reference internal" href="02-cyclic_multi_stage.html#sphx-glr-examples-02-modal-harmonic-02-cyclic-multi-stage-py"><span class="std std-ref">Multi-stage cyclic symmetry example</span></a></p>
   <div class="sphx-glr-thumbnail-title">Multi-stage cyclic symmetry example</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Use Result Helpers to compare mode shapes for solids and then shells"><img alt="Use Result Helpers to compare mode shapes for solids and then shells" src="../../_images/sphx_glr_03-compare_modes_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="The ansys.dpf.core.results.Result class which instances are created by the ansys.dpf.core.model..."><img alt="Use Result Helpers to compare mode shapes for solids and then shells" src="../../_images/sphx_glr_03-compare_modes_thumb.png" />
 <p><a class="reference internal" href="03-compare_modes.html#sphx-glr-examples-02-modal-harmonic-03-compare-modes-py"><span class="std std-ref">Use Result Helpers to compare mode shapes for solids and then shells</span></a></p>
   <div class="sphx-glr-thumbnail-title">Use Result Helpers to compare mode shapes for solids and then shells</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Expand harmonic modal superposition with DPF"><img alt="Expand harmonic modal superposition with DPF" src="../../_images/sphx_glr_04-modal_superposition_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Different types of linear dynamics expansions are implemented in DPF. With modal superposition ..."><img alt="Expand harmonic modal superposition with DPF" src="../../_images/sphx_glr_04-modal_superposition_thumb.png" />
 <p><a class="reference internal" href="04-modal_superposition.html#sphx-glr-examples-02-modal-harmonic-04-modal-superposition-py"><span class="std std-ref">Expand harmonic modal superposition with DPF</span></a></p>
   <div class="sphx-glr-thumbnail-title">Expand harmonic modal superposition with DPF</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Read results from distributed files"><img alt="Read results from distributed files" src="../../_images/sphx_glr_05-read_distributed_files_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Solvers usually solve analysis with distributed architecture. In this case, one file is written..."><img alt="Read results from distributed files" src="../../_images/sphx_glr_05-read_distributed_files_thumb.png" />
 <p><a class="reference internal" href="05-read_distributed_files.html#sphx-glr-examples-02-modal-harmonic-05-read-distributed-files-py"><span class="std std-ref">Read results from distributed files</span></a></p>
   <div class="sphx-glr-thumbnail-title">Read results from distributed files</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to generate and use a result file to calculate the cycles to failure res..."><img alt="Calculate the number of cycles to fatigue failure" src="../../_images/sphx_glr_06-cycles_to_failure_thumb.png" />
+<p><a class="reference internal" href="06-cycles_to_failure.html#sphx-glr-examples-02-modal-harmonic-06-cycles-to-failure-py"><span class="std std-ref">Calculate the number of cycles to fatigue failure</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Calculate the number of cycles to fatigue failure</div>
 </div></div><div class="toctree-wrapper compound">
 </div>
 </section>

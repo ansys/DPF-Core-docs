@@ -19,7 +19,7 @@ so that you can use them like native DPF operators.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The objective of this simple example is to show how routines for DPF can be wrapped in Python p...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to create a basic operator plugin, which is for a single custom operator...">
 
 .. only:: html
 
@@ -36,7 +36,7 @@ so that you can use them like native DPF operators.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="- **Componentization:** You can split the code into several Python modules or files. - **Distri...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to create a plug-in package with multiple operators. The benefits of wri...">
 
 .. only:: html
 
@@ -53,7 +53,7 @@ so that you can use them like native DPF operators.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="- ref_wrapping_numpy_capabilities - ref_python_plugin_package">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how to create a Python plug-in package with third-party dependencies. You sh...">
 
 .. only:: html
 
